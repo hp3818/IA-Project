@@ -208,11 +208,10 @@ public class FollowThePath : MonoBehaviour {
                     DiceNumberTextScript.whosTurn = 8;
                 }
 
-            }  // when it stand on waypoint[12] OK
+            }  
 
 			if ((transform.position == waypoints[53].transform.position) && (Movement == GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown)) 
 			{
-                Debug.Log("Test");
                 Dice.boolean = 1; 
                 wayPointIndex = 66;
 
@@ -249,7 +248,7 @@ public class FollowThePath : MonoBehaviour {
                     DiceNumberTextScript.whosTurn = 8;
                 }
 
-            } // when it stand on waypoint[53] 
+            } 
 
             if ((transform.position == waypoints[18].transform.position) && (Movement == GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
             {
@@ -290,7 +289,7 @@ public class FollowThePath : MonoBehaviour {
                     DiceNumberTextScript.whosTurn = 8;
                 }
 
-            } // OK
+            } 
 
             if (transform.position == waypoints [41].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown)) {
                 transform.position = waypoints[0].transform.position;
@@ -329,6 +328,7 @@ public class FollowThePath : MonoBehaviour {
                 }
                 Accept += Movement;
             } 
+
         }
 
     }

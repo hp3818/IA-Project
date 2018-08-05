@@ -7,6 +7,11 @@ public class DiceNumberTextScript : MonoBehaviour {
 
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public static GameObject dice1, dice2, dice3;
+    public Transform[] waypoints;
+    public Text JailTurn;
+    public static GameObject ImageForMid, ImageForRich;
+    public static GameObject ImageForBuyHouse;
+    public static GameObject ImageForBuyOtherHouse;
 
     Text text;
 	public static int dice1Number;
@@ -14,7 +19,7 @@ public class DiceNumberTextScript : MonoBehaviour {
 	public static int dice3Number;
 	public int sum;
     public Camera[] camera;
-    public static int jail1 = 0, jail2 = 0, jail3 =, jail4 = 0, jail5 = 0, jail6 = 0, jail7 = 0, jail8 = 0;
+    public static int jail1 = 0, jail2 = 0, jail3 = 0, jail4 = 0, jail5 = 0, jail6 = 0, jail7 = 0, jail8 = 0;
 
     public static int whosTurn = 1;
     public static int MaxPeople;
@@ -23,7 +28,8 @@ public class DiceNumberTextScript : MonoBehaviour {
 	public static int Redrop = 0;
 
     public void Start () {
-		text = GetComponent<Text> ();
+
+        text = GetComponent<Text> ();
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
         player3 = GameObject.Find("player3");
@@ -32,6 +38,11 @@ public class DiceNumberTextScript : MonoBehaviour {
         player6 = GameObject.Find("player6");
         player7 = GameObject.Find("player7");
         player8 = GameObject.Find("player8");
+
+        ImageForMid = GameObject.Find("ImageForMiddle");
+        ImageForRich = GameObject.Find("ImageForRicher");
+        ImageForBuyHouse = GameObject.Find("ImageForBuyingHouse");
+        ImageForBuyOtherHouse = GameObject.Find("ImageForBuyingOtherHouse");
 
         dice1 = GameObject.Find("dice");
         dice2 = GameObject.Find("dice2");
@@ -82,58 +93,36 @@ public class DiceNumberTextScript : MonoBehaviour {
 
         whosTurn++;
         runOnce = true;
+        Debug.Log(whosTurn);
     }
 
     public void FourPeople()
     {
+
         if (whosTurn == 1)
         {
-            if (jail1 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(1);
-                cam1();
-            }
+            GameControl.MovePlayer(1);
+            cam1();
+            Jail();
         }
         else if (whosTurn == 2)
         {
-            if (jail2 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(2);
-                cam2();
-            }
+            GameControl.MovePlayer(2);
+            cam2();
+            Jail();
         }
         else if (whosTurn == 3)
         {
-            if (jail3 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(3);
-                cam3();
-            }
+            GameControl.MovePlayer(3);
+            cam3();
+            Jail();
         }
         else if (whosTurn == 4)
         {
-            if (jail4 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(4);
-                cam4();
-                whosTurn = 0;
-            }
+            GameControl.MovePlayer(4);
+            cam4();
+            Jail();
+            whosTurn = 0;
         }
 
     }
@@ -142,64 +131,28 @@ public class DiceNumberTextScript : MonoBehaviour {
     {
         if (whosTurn == 1)
         {
-            if (jail1 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(1);
-                cam1();
-            }
+            GameControl.MovePlayer(1);
+            cam1();
         }
         else if (whosTurn == 2)
         {
-            if (jail2 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(2);
-                cam2();
-            }
+            GameControl.MovePlayer(2);
+            cam2();
         }
         else if (whosTurn == 3)
         {
-            if (jail3 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(3);
-                cam3();
-            }
+            GameControl.MovePlayer(3);
+            cam3();
         }
         else if (whosTurn == 4)
         {
-            if (jail4 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(4);
-                cam4();
-            }
+            GameControl.MovePlayer(4);
+            cam4();
         }
         else if (whosTurn == 5)
         {
-            if (jail5 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(5);
-                cam5();
-                whosTurn = 0;
-            }
+            GameControl.MovePlayer(4);
+            cam4();
         }
 
     }
@@ -208,76 +161,33 @@ public class DiceNumberTextScript : MonoBehaviour {
     {
         if (whosTurn == 1)
         {
-            if (jail1 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(1);
-                cam1();
-            }
+            GameControl.MovePlayer(1);
+            cam1();
         }
         else if (whosTurn == 2)
         {
-            if (jail2 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(2);
-                cam2();
-            }
+            GameControl.MovePlayer(2);
+            cam2();
         }
         else if (whosTurn == 3)
         {
-            if (jail3 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(3);
-                cam3();
-            }
+            GameControl.MovePlayer(3);
+            cam3();
         }
         else if (whosTurn == 4)
         {
-            if (jail4 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(4);
-                cam4();
-            }
+            GameControl.MovePlayer(4);
+            cam4();
         }
         else if (whosTurn == 5)
         {
-            if (jail5 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(5);
-                cam5();
-            }
+            GameControl.MovePlayer(5);
+            cam5();
         }
         else if (whosTurn == 6)
         {
-            if (jail6 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(6);
-                cam6();
-                whosTurn = 0;
-            }
+            GameControl.MovePlayer(6);
+            cam6();
         }
 
     }
@@ -286,88 +196,38 @@ public class DiceNumberTextScript : MonoBehaviour {
     {
         if (whosTurn == 1)
         {
-            if (jail1 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(1);
-                cam1();
-            }
+            GameControl.MovePlayer(1);
+            cam1();
         }
         else if (whosTurn == 2)
         {
-            if (jail2 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(2);
-                cam2();
-            }
+            GameControl.MovePlayer(2);
+            cam2();
         }
         else if (whosTurn == 3)
         {
-            if (jail3 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(3);
-                cam3();
-            }
+            GameControl.MovePlayer(3);
+            cam3();
         }
         else if (whosTurn == 4)
         {
-            if (jail4 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(4);
-                cam4();
-            }
+            GameControl.MovePlayer(4);
+            cam4();
         }
         else if (whosTurn == 5)
         {
-            if (jail5 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(5);
-                cam5();
-            }
+            GameControl.MovePlayer(5);
+            cam5();
         }
         else if (whosTurn == 6)
         {
-            if (jail6 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(6);
-                cam6();
-            }
+            GameControl.MovePlayer(6);
+            cam6();
         }
         else if (whosTurn == 7)
         {
-            if (jail7 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(7);
-                cam7();
-                whosTurn = 0;
-            }
+            GameControl.MovePlayer(7);
+            cam7();
         }
     }
 
@@ -375,100 +235,43 @@ public class DiceNumberTextScript : MonoBehaviour {
     {
         if (whosTurn == 1)
         {
-            if (jail1 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(1);
-                cam1();
-            }
+            GameControl.MovePlayer(1);
+            cam1();
         }
         else if (whosTurn == 2)
         {
-            if (jail2 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(2);
-                cam2();
-            }
+            GameControl.MovePlayer(2);
+            cam2();
         }
         else if (whosTurn == 3)
         {
-            if (jail3 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(3);
-                cam3();
-            }
+            GameControl.MovePlayer(3);
+            cam3();
         }
         else if (whosTurn == 4)
         {
-            if (jail4 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(4);
-                cam4();
-            }
+            GameControl.MovePlayer(4);
+            cam4();
         }
         else if (whosTurn == 5)
         {
-            if (jail5 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(5);
-                cam5();
-            }
+            GameControl.MovePlayer(5);
+            cam5();
         }
         else if (whosTurn == 6)
         {
-            if (jail6 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(6);
-                cam6();
-            }
+            GameControl.MovePlayer(6);
+            cam6();
         }
         else if (whosTurn == 7)
         {
-            if (jail7 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(7);
-                cam7();
-            }
+            GameControl.MovePlayer(7);
+            cam7();
         }
         else if (whosTurn == 8)
         {
-            if (jail8 == 1)
-            {
-                ImageForJail.gameObject.setActive(true);
-            }
-            else
-            {
-                GameControl.MovePlayer(8);
-                cam8();
-                whosTurn = 0;
-            }
+            GameControl.MovePlayer(8);
+            cam8();
         }
     }
 
@@ -596,5 +399,219 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[8].enabled = true; //
 		FollowThePath.whosTurn = 8;
     }
+
+    void Jail()
+    {
+        if (whosTurn + 1 == 2)
+        {
+            if (jail2 == 1)
+            {
+                GameControl.jail2turn--;
+                JailTurn.text = GameControl.jail2turn.ToString();
+                if(GameControl.jail2turn == 0)
+                {
+                    GameControl.jail2turn = 3;
+                    jail2 = 0;
+                }
+                whosTurn++;
+            }
+        }
+
+        if (whosTurn + 1 == 3)
+        {
+            if (jail3 == 1)
+            {
+                GameControl.jail3turn--;
+                JailTurn.text = GameControl.jail3turn.ToString();
+                whosTurn++;
+                if (GameControl.jail3turn == 0)
+                {
+                    GameControl.jail3turn = 3;
+                    jail3 = 0;
+                }
+            }
+        }
+
+        if (whosTurn + 1 == 4)
+        {
+            if (jail4 == 1)
+            {
+                GameControl.jail4turn--;
+                JailTurn.text = GameControl.jail4turn.ToString();
+                if (GameControl.jail4turn == 0)
+                {
+                    GameControl.jail4turn = 3;
+                    jail4 = 0;
+                }
+                if (MaxPeople == 4)
+                {
+                    whosTurn = 0;
+                }
+                else
+                    whosTurn++;
+                
+            }
+        }
+
+        if (whosTurn + 1 == 5)
+        {
+            if (jail5 == 1)
+            {
+                GameControl.jail5turn--;
+                JailTurn.text = GameControl.jail5turn.ToString();
+                if (GameControl.jail5turn == 0)
+                {
+                    GameControl.jail5turn = 3;
+                    jail5 = 0;
+                }
+                if (MaxPeople == 5)
+                {
+                    whosTurn = 0;
+                }
+                else
+                    whosTurn++;
+            }
+        }
+
+        if (whosTurn + 1 == 6)
+        {
+            if (jail6 == 1)
+            {
+                GameControl.jail6turn--;
+                JailTurn.text = GameControl.jail6turn.ToString();
+                if (GameControl.jail6turn == 0)
+                {
+                    GameControl.jail6turn = 3;
+                    jail6 = 0;
+                }
+                if (MaxPeople == 5)
+                {
+                    whosTurn = 0;
+                }
+                else
+                    whosTurn++;
+            }
+        }
+
+        if (whosTurn + 1 == 7)
+        {
+            if (jail7 == 1)
+            {
+                GameControl.jail7turn--;
+                JailTurn.text = GameControl.jail7turn.ToString();
+                if (GameControl.jail7turn == 0)
+                {
+                    GameControl.jail7turn = 3;
+                    jail7 = 0;
+                }
+                if (MaxPeople == 6)
+                {
+                    whosTurn = 0;
+                }
+                else
+                    whosTurn++;
+            }
+        }
+
+        if (whosTurn + 1 == 8)
+        {
+            if (jail8 == 1)
+            {
+                GameControl.jail8turn--;
+                JailTurn.text = GameControl.jail8turn.ToString();
+                if (GameControl.jail8turn == 0)
+                {
+                    GameControl.jail8turn = 3;
+                    jail8 = 0;
+                }
+                if (MaxPeople == 7)
+                {
+                    whosTurn = 1;
+                }
+                else
+                    whosTurn = 0;
+            }
+        }
+
+        if (whosTurn -3 == 1 || whosTurn - 4 == 1 || whosTurn -5 == 1 || whosTurn -6 == 1 || whosTurn -7 == 1)
+        {
+            if(whosTurn == 4 && MaxPeople == 4)
+            {
+                if (jail1 == 1)
+                {
+                    GameControl.jail1turn--;
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    if (GameControl.jail1turn == 0)
+                    {
+                        GameControl.jail1turn = 3;
+                        jail1 = 0;
+                    }
+                    whosTurn = 1;
+                }
+            }
+            if (whosTurn == 5 && MaxPeople == 5)
+            {
+                if (jail1 == 1)
+                {
+                    GameControl.jail1turn--;
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    if (GameControl.jail1turn == 0)
+                    {
+                        GameControl.jail1turn = 3;
+                        jail1 = 0;
+                    }
+                    whosTurn = 1;
+
+                }
+            }
+            if (whosTurn == 6 && MaxPeople == 6)
+            {
+                if (jail1 == 1)
+                {
+                    GameControl.jail1turn--;
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    if (GameControl.jail1turn == 0)
+                    {
+                        GameControl.jail1turn = 3;
+                        jail1 = 0;
+                    }
+                    whosTurn = 1;
+                }
+            }
+            if (whosTurn == 7 && MaxPeople == 7)
+            {
+                if (jail1 == 1)
+                {
+                    GameControl.jail1turn--;
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    if (ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse == false && ImageForMid == false && ImageForRich == false)
+                    if (GameControl.jail1turn == 0)
+                    {
+                        GameControl.jail1turn = 3;
+                        jail1 = 0;
+                    }
+                    whosTurn = 1;
+                }
+            }
+            if (whosTurn == 7 && MaxPeople == 7)
+            {
+                if (jail1 == 1)
+                {
+                    GameControl.jail1turn--;
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    if (ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse == false && ImageForMid == false && ImageForRich == false)
+                    if (GameControl.jail1turn == 0)
+                    {
+                        GameControl.jail1turn = 3;
+                        jail1 = 0;
+                    }
+                    whosTurn = 1;
+                }
+            }
+
+        }
+
+    }
+
 
 }

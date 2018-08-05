@@ -13,6 +13,7 @@ public class HouseSelection : MonoBehaviour {
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public Transform[] waypoints;
     public static int whosTurn, geter;
+    public GameObject ImageForJail;
 
     public static int reduce;
 
@@ -3885,6 +3886,15 @@ public class HouseSelection : MonoBehaviour {
                 break;
         }
 
+    }
+
+    public void Confirm()
+    {
+        ImageForJail = GameObject.Find("ImageForJail");
+
+        ImageForJail.gameObject.SetActive(false);
+        dropButton.interactable = true;
+        camMain();
     }
 
 }

@@ -8,6 +8,8 @@ public class Dice : MonoBehaviour {
     public Button dropButton;
     public static int boolean = 0;
     public static int accept = 0;
+    public GameObject ImageForJail;
+    public Text JailTurn;
 
     public void Clicked()
     {
@@ -48,7 +50,6 @@ public class Dice : MonoBehaviour {
                     DiceNumberTextScript.dice2Number = 0; GameControl.diceSide2Thrown = 0;
                     DiceNumberTextScript.dice3Number = 0; GameControl.diceSide3Thrown = 0;
                     accept = 1;
-
                 } else {
                     DiceNumberTextScript.dice1.gameObject.SetActive(true);
                     DiceNumberTextScript.dice2.gameObject.SetActive(false);
