@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
@@ -22,6 +22,7 @@ public class GameControl : MonoBehaviour {
     public static int buyValue;
 	public static int Reduce;
 	public static int own;
+	//public static int showJail = 0;
     
     public static int whoTurn;
     public Button dropButton;
@@ -142,6 +143,36 @@ public class GameControl : MonoBehaviour {
         {
             buy.interactable = false;
         }
+
+		/*
+		if (showJail == 1) {
+			if (player1.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
+				ImageForJail.gameObject.SetActive (true);
+			}
+			if (player2.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
+				ImageForJail.gameObject.SetActive (true);
+			}
+			if (player3.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
+				ImageForJail.gameObject.SetActive (true);
+			}
+			if (player4.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
+				ImageForJail.gameObject.SetActive (true);
+			}
+			if (player5.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
+				ImageForJail.gameObject.SetActive (true);
+			}
+			if (player6.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
+				ImageForJail.gameObject.SetActive (true);
+			}
+			if (player7.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
+				ImageForJail.gameObject.SetActive (true);
+			}
+			if (player8.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
+				ImageForJail.gameObject.SetActive (true);
+			}
+			showJail = 0;
+		}
+		*/
 
         if (player1.GetComponent<FollowThePath>().wayPointIndex > player1Waypoint + diceSide1Thrown + diceSide2Thrown + diceSide3Thrown - player1.GetComponent<FollowThePath>().Accept)                                                                                                                                                              
         {
@@ -989,9 +1020,51 @@ public class GameControl : MonoBehaviour {
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
             {
+
+                if (DiceNumberTextScript.jail2 == 1 || DiceNumberTextScript.jail3 == 1 || DiceNumberTextScript.jail4 == 1 || DiceNumberTextScript.jail5 == 1 || DiceNumberTextScript.jail6 == 1
+                    || DiceNumberTextScript.jail7 == 1 || DiceNumberTextScript.jail8 == 1)
+                {
+                    if (DiceNumberTextScript.jail2 == 1)
+                    {
+                        jail2turn = 3;
+                        DiceNumberTextScript.jail2 = 0;
+                    }
+                    if (DiceNumberTextScript.jail3 == 1)
+                    {
+                        jail3turn = 3;
+                        DiceNumberTextScript.jail3 = 0;
+                    }
+                    if (DiceNumberTextScript.jail4 == 1)
+                    {
+                        jail4turn = 3;
+                        DiceNumberTextScript.jail4 = 0;
+                    }
+                    if (DiceNumberTextScript.jail5 == 1)
+                    {
+                        jail5turn = 3;
+                        DiceNumberTextScript.jail5 = 0;
+                    }
+                    if (DiceNumberTextScript.jail6 == 1)
+                    {
+                        jail6turn = 3;
+                        DiceNumberTextScript.jail6 = 0;
+                    }
+                    if (DiceNumberTextScript.jail7 == 1)
+                    {
+                        jail7turn = 3;
+                        DiceNumberTextScript.jail7 = 0;
+                    }
+                    if (DiceNumberTextScript.jail8 == 1)
+                    {
+                        jail8turn = 3;
+                        DiceNumberTextScript.jail8 = 0;
+                    }
+                }
+
                 DiceNumberTextScript.jail1 = 1;
                 JailTurn.text = jail1turn.ToString();
                 ImageForJail.gameObject.SetActive(true);
+
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -2614,6 +2687,47 @@ public class GameControl : MonoBehaviour {
             }
             else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
             {
+                if (DiceNumberTextScript.jail1 == 1 || DiceNumberTextScript.jail3 == 1 || DiceNumberTextScript.jail4 == 1 || DiceNumberTextScript.jail5 == 1 || DiceNumberTextScript.jail6 == 1
+                    || DiceNumberTextScript.jail7 == 1 || DiceNumberTextScript.jail8 == 1)
+                {
+                    if (DiceNumberTextScript.jail1 == 1)
+                    {
+                        jail1turn = 3;
+                        DiceNumberTextScript.jail1 = 0;
+                    }
+                    if (DiceNumberTextScript.jail3 == 1)
+                    {
+                        jail3turn = 3;
+                        DiceNumberTextScript.jail3 = 0;
+                    }
+                    if (DiceNumberTextScript.jail4 == 1)
+                    {
+                        jail4turn = 3;
+                        DiceNumberTextScript.jail4 = 0;
+                    }
+                    if (DiceNumberTextScript.jail5 == 1)
+                    {
+                        jail5turn = 3;
+                        DiceNumberTextScript.jail5 = 0;
+                    }
+                    if (DiceNumberTextScript.jail6 == 1)
+                    {
+                        jail6turn = 3;
+                        DiceNumberTextScript.jail6 = 0;
+                    }
+                    if (DiceNumberTextScript.jail7 == 1)
+                    {
+                        jail7turn = 3;
+                        DiceNumberTextScript.jail7 = 0;
+                    }
+                    if (DiceNumberTextScript.jail8 == 1)
+                    {
+                        jail8turn = 3;
+                        DiceNumberTextScript.jail8 = 0;
+                    }
+
+                }
+
                 DiceNumberTextScript.jail2 = 1;
                 JailTurn.text = jail2turn.ToString();
                 ImageForJail.gameObject.SetActive(true);
@@ -4303,6 +4417,47 @@ public class GameControl : MonoBehaviour {
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
             {
+                if (DiceNumberTextScript.jail1 == 1 || DiceNumberTextScript.jail2 == 1 || DiceNumberTextScript.jail4 == 1 || DiceNumberTextScript.jail5 == 1 || DiceNumberTextScript.jail6 == 1
+                    || DiceNumberTextScript.jail7 == 1 || DiceNumberTextScript.jail8 == 1)
+                {
+                    if (DiceNumberTextScript.jail1 == 1)
+                    {
+                        jail1turn = 3;
+                        DiceNumberTextScript.jail1 = 0;
+                    }
+                    if (DiceNumberTextScript.jail2 == 1)
+                    {
+                        jail2turn = 3;
+                        DiceNumberTextScript.jail2 = 0;
+                    }
+                    if (DiceNumberTextScript.jail4 == 1)
+                    {
+                        jail4turn = 3;
+                        DiceNumberTextScript.jail4 = 0;
+                    }
+                    if (DiceNumberTextScript.jail5 == 1)
+                    {
+                        jail5turn = 3;
+                        DiceNumberTextScript.jail5 = 0;
+                    }
+                    if (DiceNumberTextScript.jail6 == 1)
+                    {
+                        jail6turn = 3;
+                        DiceNumberTextScript.jail6 = 0;
+                    }
+                    if (DiceNumberTextScript.jail7 == 1)
+                    {
+                        jail7turn = 3;
+                        DiceNumberTextScript.jail7 = 0;
+                    }
+                    if (DiceNumberTextScript.jail8 == 1)
+                    {
+                        jail8turn = 3;
+                        DiceNumberTextScript.jail8 = 0;
+                    }
+
+                }
+
                 DiceNumberTextScript.jail3 = 1;
                 JailTurn.text = jail3turn.ToString();
                 ImageForJail.gameObject.SetActive(true);
@@ -5877,6 +6032,48 @@ public class GameControl : MonoBehaviour {
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
             {
+                if (DiceNumberTextScript.jail1 == 1 || DiceNumberTextScript.jail2 == 1 || DiceNumberTextScript.jail3 == 1 || DiceNumberTextScript.jail5 == 1 || DiceNumberTextScript.jail6 == 1
+                    || DiceNumberTextScript.jail7 == 1 || DiceNumberTextScript.jail8 == 1)
+                {
+                    if (DiceNumberTextScript.jail1 == 1)
+                    {
+                        jail1turn = 3;
+                        DiceNumberTextScript.jail1 = 0;
+                    }
+                    if (DiceNumberTextScript.jail2 == 1)
+                    {
+                        jail2turn = 3;
+                        DiceNumberTextScript.jail2 = 0;
+                    }
+                    if (DiceNumberTextScript.jail3 == 1)
+                    {
+                        jail3turn = 3;
+                        DiceNumberTextScript.jail3 = 0;
+                    }
+                    if (DiceNumberTextScript.jail5 == 1)
+                    {
+                        jail5turn = 3;
+                        DiceNumberTextScript.jail5 = 0;
+                    } 
+                    if (DiceNumberTextScript.jail6 == 1)
+                    {
+                        jail6turn = 3;
+                        DiceNumberTextScript.jail6 = 0;
+                    }
+                    if (DiceNumberTextScript.jail7 == 1)
+                    {
+                        jail7turn = 3;
+                        DiceNumberTextScript.jail7 = 0;
+                    }
+                    if (DiceNumberTextScript.jail8 == 1)
+                    {
+                        jail8turn = 3;
+                        DiceNumberTextScript.jail8 = 0;
+                    }
+ 
+                    
+                }
+
                 DiceNumberTextScript.jail4 = 1;
                 JailTurn.text = jail4turn.ToString();
                 ImageForJail.gameObject.SetActive(true);
@@ -7356,6 +7553,47 @@ public class GameControl : MonoBehaviour {
             }
             else if(player5.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
             {
+                if (DiceNumberTextScript.jail2 == 1 || DiceNumberTextScript.jail3 == 1 || DiceNumberTextScript.jail4 == 1 || DiceNumberTextScript.jail1 == 1 || DiceNumberTextScript.jail6 == 1
+                    || DiceNumberTextScript.jail7 == 1 || DiceNumberTextScript.jail8 == 1)
+                {
+                    if (DiceNumberTextScript.jail2 == 1)
+                    {
+                        jail2turn = 3;
+                        DiceNumberTextScript.jail2 = 0;
+                    }
+                    if (DiceNumberTextScript.jail3 == 1)
+                    {
+                        jail3turn = 3;
+                        DiceNumberTextScript.jail3 = 0;
+                    }
+                    if (DiceNumberTextScript.jail4 == 1)
+                    {
+                        jail4turn = 3;
+                        DiceNumberTextScript.jail4 = 0;
+                    }
+                    if (DiceNumberTextScript.jail1 == 1)
+                    {
+                        jail1turn = 3;
+                        DiceNumberTextScript.jail1 = 1;
+                    }
+                    if (DiceNumberTextScript.jail6 == 1)
+                    {
+                        jail6turn = 3;
+                        DiceNumberTextScript.jail6 = 0;
+                    }
+                    if (DiceNumberTextScript.jail7 == 1)
+                    {
+                        jail7turn = 3;
+                        DiceNumberTextScript.jail7 = 0;
+                    }
+                    if (DiceNumberTextScript.jail8 == 1)
+                    {
+                        jail8turn = 3;
+                        DiceNumberTextScript.jail8 = 0;
+                    }
+
+                }
+
                 DiceNumberTextScript.jail5 = 1;
                 JailTurn.text = jail5turn.ToString();
                 ImageForJail.gameObject.SetActive(true);
@@ -8038,6 +8276,7 @@ public class GameControl : MonoBehaviour {
         {
             whoTurn = 6;
             player6.GetComponent<FollowThePath>().moveAllowed = false;
+
             player6Waypoint = player6.GetComponent<FollowThePath>().wayPointIndex - 1;
             player6.GetComponent<FollowThePath>().Movement = 0;
             player6.GetComponent<FollowThePath>().Accept = 0;
@@ -8837,6 +9076,47 @@ public class GameControl : MonoBehaviour {
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
             {
+                if (DiceNumberTextScript.jail2 == 1 || DiceNumberTextScript.jail3 == 1 || DiceNumberTextScript.jail4 == 1 || DiceNumberTextScript.jail5 == 1 || DiceNumberTextScript.jail1 == 1
+                    || DiceNumberTextScript.jail7 == 1 || DiceNumberTextScript.jail8 == 1)
+                {
+                    if (DiceNumberTextScript.jail2 == 1)
+                    {
+                        jail2turn = 3;
+                        DiceNumberTextScript.jail2 = 0;
+                    }
+                    if (DiceNumberTextScript.jail3 == 1)
+                    {
+                        jail3turn = 3;
+                        DiceNumberTextScript.jail3 = 0;
+                    }
+                    if (DiceNumberTextScript.jail4 == 1)
+                    {
+                        jail4turn = 3;
+                        DiceNumberTextScript.jail4 = 0;
+                    }
+                    if (DiceNumberTextScript.jail5 == 1)
+                    {
+                        jail5turn = 3;
+                        DiceNumberTextScript.jail5 = 0;
+                    }
+                    if (DiceNumberTextScript.jail1 == 1)
+                    {
+                        jail1turn = 3;
+                        DiceNumberTextScript.jail1 = 0;
+                    }
+                    if (DiceNumberTextScript.jail7 == 1)
+                    {
+                        jail7turn = 3;
+                        DiceNumberTextScript.jail7 = 0;
+                    }
+                    if (DiceNumberTextScript.jail8 == 1)
+                    {
+                        jail8turn = 3;
+                        DiceNumberTextScript.jail8 = 0;
+                    }
+                     
+                }
+
                 DiceNumberTextScript.jail6 = 1;
                 JailTurn.text = jail6turn.ToString();
                 ImageForJail.gameObject.SetActive(true);
@@ -10313,6 +10593,46 @@ public class GameControl : MonoBehaviour {
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
             {
+                if (DiceNumberTextScript.jail2 == 1 || DiceNumberTextScript.jail3 == 1 || DiceNumberTextScript.jail4 == 1 || DiceNumberTextScript.jail5 == 1 || DiceNumberTextScript.jail6 == 1
+                    || DiceNumberTextScript.jail1 == 1 || DiceNumberTextScript.jail8 == 1)
+                {
+                    if (DiceNumberTextScript.jail2 == 1)
+                    {
+                        jail2turn = 3;
+                        DiceNumberTextScript.jail2 = 0;
+                    }
+                    if (DiceNumberTextScript.jail3 == 1)
+                    {
+                        jail3turn = 3;
+                        DiceNumberTextScript.jail3 = 0;
+                    }
+                    if (DiceNumberTextScript.jail4 == 1)
+                    {
+                        jail4turn = 3;
+                        DiceNumberTextScript.jail4 = 0;
+                    }
+                    if (DiceNumberTextScript.jail5 == 1)
+                    {
+                        jail5turn = 3;
+                        DiceNumberTextScript.jail5 = 0;
+                    }
+                    if (DiceNumberTextScript.jail6 == 1)
+                    {
+                        jail6turn = 3;
+                        DiceNumberTextScript.jail6 = 0;
+                    }
+                    if (DiceNumberTextScript.jail1 == 1)
+                    {
+                        jail1turn = 3;
+                        DiceNumberTextScript.jail1 = 0;
+                    }
+                    if (DiceNumberTextScript.jail8 == 1)
+                    {
+                        jail8turn = 3;
+                        DiceNumberTextScript.jail8 = 0;
+                    }
+                }
+
                 DiceNumberTextScript.jail7 = 1;
                 JailTurn.text = jail7turn.ToString();
                 ImageForJail.gameObject.SetActive(true);
@@ -11790,6 +12110,47 @@ public class GameControl : MonoBehaviour {
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
             {
+                if (DiceNumberTextScript.jail2 == 1 || DiceNumberTextScript.jail3 == 1 || DiceNumberTextScript.jail4 == 1 || DiceNumberTextScript.jail5 == 1 || DiceNumberTextScript.jail6 == 1
+                    || DiceNumberTextScript.jail7 == 1 || DiceNumberTextScript.jail1 == 1)
+                {
+                    if (DiceNumberTextScript.jail2 == 1)
+                    {
+                        jail2turn = 3;
+                        DiceNumberTextScript.jail2 = 0;
+                    }
+                    if (DiceNumberTextScript.jail3 == 1)
+                    {
+                        jail3turn = 3;
+                        DiceNumberTextScript.jail3 = 0;
+                    }
+                    if (DiceNumberTextScript.jail4 == 1)
+                    {
+                        jail4turn = 3;
+                        DiceNumberTextScript.jail4 = 0;
+                    }
+                    if (DiceNumberTextScript.jail5 == 1)
+                    {
+                        jail5turn = 3;
+                        DiceNumberTextScript.jail5 = 0;
+                    }
+                    if (DiceNumberTextScript.jail6 == 1)
+                    {
+                        jail6turn = 3;
+                        DiceNumberTextScript.jail6 = 0;
+                    }
+                    if (DiceNumberTextScript.jail7 == 1)
+                    {
+                        jail7turn = 3;
+                        DiceNumberTextScript.jail7 = 0;
+                    }
+                    if (DiceNumberTextScript.jail1 == 1)
+                    {
+                        jail8turn = 3;
+                        DiceNumberTextScript.jail8 = 0;
+                    }
+
+                }
+
                 DiceNumberTextScript.jail8 = 1;
                 JailTurn.text = jail8turn.ToString();
                 ImageForJail.gameObject.SetActive(true);

@@ -8,8 +8,6 @@ public class Dice : MonoBehaviour {
     public Button dropButton;
     public static int boolean = 0;
     public static int accept = 0;
-    public GameObject ImageForJail;
-    public Text JailTurn;
 
     public void Clicked()
     {
@@ -51,12 +49,22 @@ public class Dice : MonoBehaviour {
                     DiceNumberTextScript.dice3Number = 0; GameControl.diceSide3Thrown = 0;
                     accept = 1;
                 } else {
-                    DiceNumberTextScript.dice1.gameObject.SetActive(true);
-                    DiceNumberTextScript.dice2.gameObject.SetActive(false);
-                    DiceNumberTextScript.dice3.gameObject.SetActive(false);
-                    DiceNumberTextScript.dice2Number = 0; GameControl.diceSide2Thrown = 0;
-                    DiceNumberTextScript.dice3Number = 0; GameControl.diceSide3Thrown = 0;
-                    accept = 1;
+					if (DiceNumberTextScript.jail1 == 1) {
+						DiceNumberTextScript.dice1.gameObject.SetActive(true);
+						DiceNumberTextScript.dice2.gameObject.SetActive(false);
+						DiceNumberTextScript.dice3.gameObject.SetActive(false);
+						DiceNumberTextScript.dice2Number = 0; GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0; GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					} else {
+						DiceNumberTextScript.dice1.gameObject.SetActive(true);
+						DiceNumberTextScript.dice2.gameObject.SetActive(false);
+						DiceNumberTextScript.dice3.gameObject.SetActive(false);
+						DiceNumberTextScript.dice2Number = 0; GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0; GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					}
+
                 }
 
             }
@@ -102,7 +110,19 @@ public class Dice : MonoBehaviour {
                     GameControl.diceSide3Thrown = 0;
                     accept = 1;
                 } else {
-                    GameControl.ImageForMid.gameObject.SetActive(true);
+					if (DiceNumberTextScript.jail2 == 1) {
+						DiceNumberTextScript.dice1.gameObject.SetActive (true);
+						DiceNumberTextScript.dice2.gameObject.SetActive (false);
+						DiceNumberTextScript.dice3.gameObject.SetActive (false);
+						DiceNumberTextScript.dice2Number = 0;
+						GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0;
+						GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					} else {
+						GameControl.ImageForMid.gameObject.SetActive(true);
+					}
+                    
                 }
 
             }
@@ -147,7 +167,18 @@ public class Dice : MonoBehaviour {
                     GameControl.diceSide3Thrown = 0;
                     accept = 1;
                 } else {
-                    GameControl.ImageForMid.gameObject.SetActive(true);
+					if (DiceNumberTextScript.jail3 == 1) {
+						DiceNumberTextScript.dice1.gameObject.SetActive (true);
+						DiceNumberTextScript.dice2.gameObject.SetActive (false);
+						DiceNumberTextScript.dice3.gameObject.SetActive (false);
+						DiceNumberTextScript.dice2Number = 0;
+						GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0;
+						GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					} else {
+						GameControl.ImageForMid.gameObject.SetActive(true);
+					}
                 }
 
             }
@@ -192,7 +223,18 @@ public class Dice : MonoBehaviour {
                     GameControl.diceSide3Thrown = 0;
                     accept = 1;
                 } else {
-                    GameControl.ImageForRich.gameObject.SetActive(true);
+					if (DiceNumberTextScript.jail4 == 1) {
+						DiceNumberTextScript.dice1.gameObject.SetActive (true);
+						DiceNumberTextScript.dice2.gameObject.SetActive (false);
+						DiceNumberTextScript.dice3.gameObject.SetActive (false);
+						DiceNumberTextScript.dice2Number = 0;
+						GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0;
+						GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					} else {
+						GameControl.ImageForRich.gameObject.SetActive(true);
+					}
                 }
 
             }
@@ -237,7 +279,18 @@ public class Dice : MonoBehaviour {
                     GameControl.diceSide3Thrown = 0;
                     accept = 1;
                 } else {
-                    GameControl.ImageForRich.gameObject.SetActive(true);
+					if (DiceNumberTextScript.jail5 == 1) {
+						DiceNumberTextScript.dice1.gameObject.SetActive (true);
+						DiceNumberTextScript.dice2.gameObject.SetActive (false);
+						DiceNumberTextScript.dice3.gameObject.SetActive (false);
+						DiceNumberTextScript.dice2Number = 0;
+						GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0;
+						GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					} else {
+						GameControl.ImageForRich.gameObject.SetActive(true);
+					}
                 }
 
             }
@@ -282,7 +335,18 @@ public class Dice : MonoBehaviour {
                     GameControl.diceSide3Thrown = 0;
                     accept = 1;
                 } else {
-                    GameControl.ImageForRich.gameObject.SetActive(true);
+					if (DiceNumberTextScript.jail6 == 1) {
+						DiceNumberTextScript.dice1.gameObject.SetActive (true);
+						DiceNumberTextScript.dice2.gameObject.SetActive (false);
+						DiceNumberTextScript.dice3.gameObject.SetActive (false);
+						DiceNumberTextScript.dice2Number = 0;
+						GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0;
+						GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					} else {
+						GameControl.ImageForRich.gameObject.SetActive(true);
+					}
                 }
 
             }
@@ -327,7 +391,18 @@ public class Dice : MonoBehaviour {
                     GameControl.diceSide3Thrown = 0;
                     accept = 1;
                 } else {
-                    GameControl.ImageForRich.gameObject.SetActive(true);
+					if (DiceNumberTextScript.jail7 == 1) {
+						DiceNumberTextScript.dice1.gameObject.SetActive (true);
+						DiceNumberTextScript.dice2.gameObject.SetActive (false);
+						DiceNumberTextScript.dice3.gameObject.SetActive (false);
+						DiceNumberTextScript.dice2Number = 0;
+						GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0;
+						GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					} else {
+						GameControl.ImageForRich.gameObject.SetActive(true);
+					}
                 }
 
             }
@@ -372,7 +447,18 @@ public class Dice : MonoBehaviour {
                     GameControl.diceSide3Thrown = 0;
                     accept = 1;
                 } else {
-                    GameControl.ImageForRich.gameObject.SetActive(true);
+					if (DiceNumberTextScript.jail8 == 1) {
+						DiceNumberTextScript.dice1.gameObject.SetActive (true);
+						DiceNumberTextScript.dice2.gameObject.SetActive (false);
+						DiceNumberTextScript.dice3.gameObject.SetActive (false);
+						DiceNumberTextScript.dice2Number = 0;
+						GameControl.diceSide2Thrown = 0;
+						DiceNumberTextScript.dice3Number = 0;
+						GameControl.diceSide3Thrown = 0;
+						accept = 1;
+					} else {
+						GameControl.ImageForRich.gameObject.SetActive(true);
+					}
                 }
 
             }
