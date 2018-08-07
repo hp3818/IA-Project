@@ -22,7 +22,7 @@ public class GameControl : MonoBehaviour {
     public static int buyValue;
 	public static int Reduce;
 	public static int own;
-	//public static int showJail = 0;
+	public static int whoAreYou;
     
     public static int whoTurn;
     public Button dropButton;
@@ -143,36 +143,6 @@ public class GameControl : MonoBehaviour {
         {
             buy.interactable = false;
         }
-
-		/*
-		if (showJail == 1) {
-			if (player1.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
-				ImageForJail.gameObject.SetActive (true);
-			}
-			if (player2.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
-				ImageForJail.gameObject.SetActive (true);
-			}
-			if (player3.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
-				ImageForJail.gameObject.SetActive (true);
-			}
-			if (player4.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
-				ImageForJail.gameObject.SetActive (true);
-			}
-			if (player5.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
-				ImageForJail.gameObject.SetActive (true);
-			}
-			if (player6.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
-				ImageForJail.gameObject.SetActive (true);
-			}
-			if (player7.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
-				ImageForJail.gameObject.SetActive (true);
-			}
-			if (player8.GetComponent<FollowThePath>().moveAllowed == false && ImageForMid.activeSelf == false && ImageForRich.activeSelf == false && ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse.activeSelf == false) {
-				ImageForJail.gameObject.SetActive (true);
-			}
-			showJail = 0;
-		}
-		*/
 
         if (player1.GetComponent<FollowThePath>().wayPointIndex > player1Waypoint + diceSide1Thrown + diceSide2Thrown + diceSide3Thrown - player1.GetComponent<FollowThePath>().Accept)                                                                                                                                                              
         {
@@ -5902,7 +5872,6 @@ public class GameControl : MonoBehaviour {
                     camMain();
                 }
             }
-
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[26].transform.position)
             {
                 detect = count22;
@@ -7423,7 +7392,6 @@ public class GameControl : MonoBehaviour {
                     camMain();
                 }
             }
-
             else if(player5.GetComponent<FollowThePath>().transform.position == waypoints[26].transform.position)
             {
                 detect = count22;
@@ -11980,7 +11948,6 @@ public class GameControl : MonoBehaviour {
                     camMain();
                 }
             }
-
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[26].transform.position)
             {
                 detect = count22;

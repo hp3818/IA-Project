@@ -110,7 +110,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail1turn == 0) {
 						jail1 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 
@@ -130,7 +129,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail2turn == 0) {
 						jail2 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -149,7 +147,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail3turn == 0) {
 						jail3 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -194,7 +191,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail1turn == 0) {
 						jail1 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -213,7 +209,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail2turn == 0) {
 						jail2 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -232,7 +227,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail3turn == 0) {
 						jail3 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -251,7 +245,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail4turn == 0) {
 						jail4 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -296,7 +289,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail1turn == 0) {
 						jail1 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -315,7 +307,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail2turn == 0) {
 						jail2 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -334,7 +325,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail3turn == 0) {
 						jail3 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -353,7 +343,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail4turn == 0) {
 						jail4 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -372,7 +361,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail5turn == 0) {
 						jail5 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -417,7 +405,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail1turn == 0) {
 						jail1 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -436,7 +423,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail2turn == 0) {
 						jail2 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -455,7 +441,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail3turn == 0) {
 						jail3 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -474,7 +459,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail4turn == 0) {
 						jail4 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -493,7 +477,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail5turn == 0) {
 						jail5 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -512,7 +495,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail6turn == 0) {
 						jail6 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -555,7 +537,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail1turn == 0) {
 						jail1 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -574,7 +555,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail2turn == 0) {
 						jail2 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -593,7 +573,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail3turn == 0) {
 						jail3 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -612,7 +591,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail4turn == 0) {
 						jail4 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -631,7 +609,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail5turn == 0) {
 						jail5 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -650,7 +627,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail6turn == 0) {
 						jail6 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -669,7 +645,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 					if(GameControl.jail7turn == 0) {
 						jail7 = 0;
 					}
-					whosTurn++;
 					dropButton.interactable = true;
 				}
 			} else {
@@ -824,7 +799,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[8].enabled = true; //
 		FollowThePath.whosTurn = 8;
     }
-	/*
+
     void Jail()
     {
         if (whosTurn + 1 == 2)
@@ -1030,7 +1005,7 @@ public class DiceNumberTextScript : MonoBehaviour {
 
         }
 
-    }*/
+    }
 
 
 }

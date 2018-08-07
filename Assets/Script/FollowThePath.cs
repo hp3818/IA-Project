@@ -8,6 +8,7 @@ public class FollowThePath : MonoBehaviour {
     public int Movement = 0;
     public int Accept = 0;
 	public static int whosTurn = 1;
+	public static int numberOfChance;
 
     public static int point0 = 1;
     public static int point12 = 0;
@@ -45,7 +46,7 @@ public class FollowThePath : MonoBehaviour {
 
             Movement++; //  Walk++
 
-            if (transform.position == waypoints[57].transform.position )
+            if (transform.position == waypoints[57].transform.position)
             {
                 wayPointIndex = 0;
                 if(whosTurn == 1)
@@ -329,8 +330,67 @@ public class FollowThePath : MonoBehaviour {
                 Accept += Movement;
             } 
 
+			if (transform.position == waypoints [25].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown) ||
+				transform.position == waypoints [45].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown) ||
+				transform.position == waypoints [54].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown)) {
+				random ();
+			}
+
         }
 
     }
+
+	void random() {
+
+		int getRangeNum = 0;
+		int rangeRadomNum = 0;
+
+
+		do {
+			rangeRadomNum = Random.Range (1, 6);				
+		} while (getRangeNum == rangeRadomNum);
+
+		getRangeNum = rangeRadomNum;
+
+		numberOfChance = getRangeNum;
+
+		switch (numberOfChance) {
+		case 1:
+			goToJail ();
+			break;
+		case 2:
+			goToBadLuckyRoad ();
+			break;
+		case 3:
+			goToGo ();
+			break;
+		case 4:
+			break;
+		case 5: 
+			break;
+		case 6:
+			break;
+		}
+
+		Debug.Log (numberOfChance);
+
+	}
+
+
+	void goToJail() {
+		transform.position = waypoints [30].transform.position;
+		wayPointIndex = 30;
+	}
+
+	void goToBadLuckyRoad () {
+		transform.position = waypoints [53].transform.position;
+		wayPointIndex = 66;
+	}
+
+	void goToGo() {
+		transform.position = waypoints[0].transform.position;
+		wayPointIndex = 0;
+	}
+		
 
 }
