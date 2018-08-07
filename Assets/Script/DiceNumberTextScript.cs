@@ -13,6 +13,9 @@ public class DiceNumberTextScript : MonoBehaviour {
     public static GameObject ImageForBuyHouse;
     public static GameObject ImageForBuyOtherHouse;
 	public Button dropButton;
+    public static GameObject ImageForJail;
+    public static GameObject ImageForHospital;
+    public Text InjureTurn;
 
     Text text;
 	public static int dice1Number;
@@ -21,6 +24,8 @@ public class DiceNumberTextScript : MonoBehaviour {
 	public int sum;
     public Camera[] camera;
     public static int jail1 = 0, jail2 = 0, jail3 = 0, jail4 = 0, jail5 = 0, jail6 = 0, jail7 = 0, jail8 = 0;
+    public static int injure1 = 0, injure2 = 0, injure3 = 0, injure4 = 0, injure5 = 0, injure6 = 0, injure7 = 0, injure8 = 0;
+    public static int injure1Turn = 2, injure2Turn = 2, injure3Turn = 2, injure4Turn = 2, injure5Turn = 2, injure6Turn = 2, injure7Turn = 2, injure8Turn = 2;
 
     public static int whosTurn = 1;
     public static int MaxPeople;
@@ -44,6 +49,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         ImageForRich = GameObject.Find("ImageForRicher");
         ImageForBuyHouse = GameObject.Find("ImageForBuyingHouse");
         ImageForBuyOtherHouse = GameObject.Find("ImageForBuyingOtherHouse");
+        ImageForJail = GameObject.Find("ImageForJail");
+        ImageForHospital = GameObject.Find("ImageForHospital");
+        ImageForHospital.gameObject.SetActive(false);
 
         dice1 = GameObject.Find("dice");
         dice2 = GameObject.Find("dice2");
@@ -101,40 +109,195 @@ public class DiceNumberTextScript : MonoBehaviour {
 
         if (whosTurn == 1)
         {
-			if (jail1 == 1) {
+            if (jail1 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
 					GameControl.MovePlayer (1);
 					cam1 ();
 				} else {
 					GameControl.jail1turn--;
-					if(GameControl.jail1turn == 0) {
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail1turn == 0) {
 						jail1 = 0;
 					}
 					dropButton.interactable = true;
 				}
-
-			} else {
-				GameControl.MovePlayer (1);
-				cam1 ();
-			}
+			} else if (injure1 == 1 ){
+                injure1Turn--;
+                InjureTurn.text = injure1Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure1Turn == 0)
+                    injure1 = 0;
+			} else
+            {
+                GameControl.MovePlayer(1);
+                cam1();
+            }
         }
         else if (whosTurn == 2)
-        {	
+        {
+            if (jail2 == 1) {
+				if (DiceNumberTextScript.dice1Number == 6) {
+					GameControl.MovePlayer (2);
+					cam2 ();
+				} else {
+					GameControl.jail2turn--;
+                    JailTurn.text = GameControl.jail2turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail2turn == 0) {
+						jail2 = 0;
+					}
+					dropButton.interactable = true;
+				}
+            }
+            else if (injure2 == 1)
+            {
+                injure2Turn--;
+                InjureTurn.text = injure2Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure2Turn == 0)
+                    injure2 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(2);
+                cam2();
+            }
+        }
+        else if (whosTurn == 3)
+        {
+            if (jail3 == 1) {
+				if (DiceNumberTextScript.dice1Number == 6) {
+					GameControl.MovePlayer (3);
+					cam3 ();
+				} else {
+					GameControl.jail3turn--;
+                    JailTurn.text = GameControl.jail3turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail3turn == 0) {
+						jail3 = 0;
+					}
+					dropButton.interactable = true;
+				}
+            }
+            else if (injure3 == 1)
+            {
+                injure3Turn--;
+                InjureTurn.text = injure3Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure3Turn == 0)
+                    injure3 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(3);
+                cam3();
+            }
+        }
+        else if (whosTurn == 4)
+        {
+            if (jail4 == 1) {
+				if (DiceNumberTextScript.dice1Number == 6) {
+					GameControl.MovePlayer (4);
+					cam4 ();
+					whosTurn = 0;
+				} else {
+					GameControl.jail4turn--;
+                    JailTurn.text = GameControl.jail4turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail4turn == 0) {
+						jail4 = 0;
+					}
+					whosTurn = 0;
+					dropButton.interactable = true;
+				}
+            }
+            else if (injure4 == 1)
+            {
+                injure4Turn--;
+                InjureTurn.text = injure4Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure4Turn == 0)
+                    injure4 = 0;
+                whosTurn = 0;
+                dropButton.interactable = true;
+            }
+            else
+            {
+                GameControl.MovePlayer(4);
+                cam4();
+                whosTurn = 0;
+            }
+        }
+
+    }
+
+    public void FivePeople()
+    {
+        if (whosTurn == 1)
+        {
+            if (jail1 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(1);
+                    cam1();
+                }
+                else
+                {
+                    GameControl.jail1turn--;
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail1turn == 0)
+                    {
+                        jail1 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure1 == 1)
+            {
+                injure1Turn--;
+                InjureTurn.text = injure1Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure1Turn == 0)
+                    injure1 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(1);
+                cam1();
+            }
+        }
+        else if (whosTurn == 2)
+        {
 			if (jail2 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
 					GameControl.MovePlayer (2);
 					cam2 ();
 				} else {
 					GameControl.jail2turn--;
-					if(GameControl.jail2turn == 0) {
+                    JailTurn.text = GameControl.jail2turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail2turn == 0) {
 						jail2 = 0;
 					}
 					dropButton.interactable = true;
 				}
-			} else {
-				GameControl.MovePlayer (2);
-				cam2 ();
-			}
+            }
+            else if (injure2 == 1)
+            {
+                injure2Turn--;
+                InjureTurn.text = injure2Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure2Turn == 0)
+                    injure2 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(2);
+                cam2();
+            }
         }
         else if (whosTurn == 3)
         {
@@ -144,95 +307,27 @@ public class DiceNumberTextScript : MonoBehaviour {
 					cam3 ();
 				} else {
 					GameControl.jail3turn--;
-					if(GameControl.jail3turn == 0) {
+                    JailTurn.text = GameControl.jail3turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail3turn == 0) {
 						jail3 = 0;
 					}
 					dropButton.interactable = true;
 				}
-			} else {
-				GameControl.MovePlayer (3);
-				cam3 ();
-			}
-        }
-        else if (whosTurn == 4)
-        {
-			if (jail4 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (4);
-					cam4 ();
-					whosTurn = 0;
-				} else {
-					GameControl.jail4turn--;
-					if(GameControl.jail4turn == 0) {
-						jail4 = 0;
-					}
-					whosTurn = 0;
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (4);
-				cam4 ();
-				whosTurn = 0;
-			}
-        }
-
-    }
-
-    public void FivePeople()
-    {
-        if (whosTurn == 1)
-        {
-			if (jail1 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (1);
-					cam1 ();
-				} else {
-					GameControl.jail1turn--;
-					if(GameControl.jail1turn == 0) {
-						jail1 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (1);
-				cam1 ();
-			}
-        }
-        else if (whosTurn == 2)
-        {
-			if (jail2 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (2);
-					cam2 ();
-				} else {
-					GameControl.jail2turn--;
-					if(GameControl.jail2turn == 0) {
-						jail2 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (2);
-				cam2 ();
-			}
-        }
-        else if (whosTurn == 3)
-        {
-			if (jail2 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (2);
-					cam2 ();
-				} else {
-					GameControl.jail3turn--;
-					if(GameControl.jail3turn == 0) {
-						jail3 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (2);
-				cam2 ();
-			}
+            }
+            else if (injure3 == 1)
+            {
+                injure3Turn--;
+                InjureTurn.text = injure3Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure3Turn == 0)
+                    injure3 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(3);
+                cam3();
+            }
         }
         else if (whosTurn == 4)
         {
@@ -242,15 +337,27 @@ public class DiceNumberTextScript : MonoBehaviour {
 					cam4 ();
 				} else {
 					GameControl.jail4turn--;
-					if(GameControl.jail4turn == 0) {
+                    JailTurn.text = GameControl.jail4turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail4turn == 0) {
 						jail4 = 0;
 					}
 					dropButton.interactable = true;
 				}
-			} else {
-				GameControl.MovePlayer (4);
-				cam4 ();
-			}
+            }
+            else if (injure4 == 1)
+            {
+                injure4Turn--;
+                InjureTurn.text = injure4Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure4Turn == 0)
+                    injure4 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(4);
+                cam4();
+            }
         }
         else if (whosTurn == 5)
         {
@@ -261,13 +368,25 @@ public class DiceNumberTextScript : MonoBehaviour {
 					whosTurn = 0;
 				} else {
 					GameControl.jail5turn--;
-					if(GameControl.jail5turn == 0) {
+                    JailTurn.text = GameControl.jail5turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail5turn == 0) {
 						jail5 = 0;
 					}
                     whosTurn = 0;
                     dropButton.interactable = true;
 				}
-			} else {
+            }
+            else if (injure5 == 1)
+            {
+                injure5Turn--;
+                InjureTurn.text = injure5Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure5Turn == 0)
+                    injure5 = 0;
+                whosTurn = 0;
+            }
+            else {
 				GameControl.MovePlayer (5);
 				cam5 ();
 				whosTurn = 0;
@@ -286,12 +405,23 @@ public class DiceNumberTextScript : MonoBehaviour {
 					cam1 ();
 				} else {
 					GameControl.jail1turn--;
-					if(GameControl.jail1turn == 0) {
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail1turn == 0) {
 						jail1 = 0;
 					}
 					dropButton.interactable = true;
 				}
-			} else {
+            }
+            else if (injure1 == 1)
+            {
+                injure1Turn--;
+                InjureTurn.text = injure1Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure1Turn == 0)
+                    injure1 = 0;
+            }
+            else {
 				GameControl.MovePlayer (1);
 				cam1 ();
 			}
@@ -304,12 +434,23 @@ public class DiceNumberTextScript : MonoBehaviour {
 					cam2 ();
 				} else {
 					GameControl.jail2turn--;
-					if(GameControl.jail2turn == 0) {
+                    JailTurn.text = GameControl.jail2turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail2turn == 0) {
 						jail2 = 0;
 					}
 					dropButton.interactable = true;
 				}
-			} else {
+			}
+            else if (injure2 == 1)
+            {
+                injure2Turn--;
+                InjureTurn.text = injure2Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure2Turn == 0)
+                    injure2 = 0;
+            }
+            else {
 				GameControl.MovePlayer (2);
 				cam2 ();
 			}
@@ -322,12 +463,23 @@ public class DiceNumberTextScript : MonoBehaviour {
 					cam3 ();
 				} else {
 					GameControl.jail3turn--;
-					if(GameControl.jail3turn == 0) {
+                    JailTurn.text = GameControl.jail3turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail3turn == 0) {
 						jail3 = 0;
 					}
 					dropButton.interactable = true;
 				}
-			} else {
+			}
+            else if (injure3 == 1)
+            {
+                injure3Turn--;
+                InjureTurn.text = injure3Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure3Turn == 0)
+                    injure3 = 0;
+            }
+            else {
 				GameControl.MovePlayer (3);
 				cam3 ();
 			}
@@ -340,12 +492,23 @@ public class DiceNumberTextScript : MonoBehaviour {
 					cam4 ();
 				} else {
 					GameControl.jail4turn--;
-					if(GameControl.jail4turn == 0) {
+                    JailTurn.text = GameControl.jail4turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail4turn == 0) {
 						jail4 = 0;
 					}
 					dropButton.interactable = true;
 				}
-			} else {
+			}
+            else if (injure4 == 1)
+            {
+                injure4Turn--;
+                InjureTurn.text = injure4Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure4Turn == 0)
+                    injure4 = 0;
+            }
+            else {
 				GameControl.MovePlayer (4);
 				cam4 ();
 			}
@@ -358,12 +521,23 @@ public class DiceNumberTextScript : MonoBehaviour {
 					cam5 ();
 				} else {
 					GameControl.jail5turn--;
-					if(GameControl.jail5turn == 0) {
+                    JailTurn.text = GameControl.jail5turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail5turn == 0) {
 						jail5 = 0;
 					}
 					dropButton.interactable = true;
 				}
-			} else {
+			}
+            else if (injure5 == 1)
+            {
+                injure5Turn--;
+                InjureTurn.text = injure5Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure5Turn == 0)
+                    injure5 = 0;
+            }
+            else {
 				GameControl.MovePlayer (5);
 				cam5 ();
 			}
@@ -377,14 +551,26 @@ public class DiceNumberTextScript : MonoBehaviour {
 					whosTurn = 0;
 				} else {
 					GameControl.jail6turn--;
-					if(GameControl.jail6turn == 0) {
+                    JailTurn.text = GameControl.jail6turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail6turn == 0) {
 						jail6 = 0;
 					}
                     whosTurn = 0;
                     dropButton.interactable = true;
 				}
-			} else {
-				GameControl.MovePlayer (1);
+			}
+            else if (injure6 == 1)
+            {
+                injure6Turn--;
+                InjureTurn.text = injure6Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure6Turn == 0)
+                    injure6 = 0;
+                whosTurn = 0;
+            }
+            else {
+				GameControl.MovePlayer (6);
 				cam6 ();
 				whosTurn = 0;
 			}
@@ -396,111 +582,215 @@ public class DiceNumberTextScript : MonoBehaviour {
     {
         if (whosTurn == 1)
         {
-			if (jail1 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (1);
-					cam1 ();
-				} else {
-					GameControl.jail1turn--;
-					if(GameControl.jail1turn == 0) {
-						jail1 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (1);
-				cam1 ();
-			}
+            if (jail1 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(1);
+                    cam1();
+                }
+                else
+                {
+                    GameControl.jail1turn--;
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail1turn == 0)
+                    {
+                        jail1 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure1 == 1)
+            {
+                injure1Turn--;
+                InjureTurn.text = injure1Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure1Turn == 0)
+                    injure1 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(1);
+                cam1();
+            }
         }
         else if (whosTurn == 2)
         {
-			if (jail2 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (2);
-					cam2 ();
-				} else {
-					GameControl.jail2turn--;
-					if(GameControl.jail2turn == 0) {
-						jail2 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (2);
-				cam2 ();
-			}
+            if (jail2 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
+                else
+                {
+                    GameControl.jail2turn--;
+                    JailTurn.text = GameControl.jail2turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail2turn == 0)
+                    {
+                        jail2 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure2 == 1)
+            {
+                injure2Turn--;
+                InjureTurn.text = injure2Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure2Turn == 0)
+                    injure2 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(2);
+                cam2();
+            }
         }
         else if (whosTurn == 3)
         {
-			if (jail3 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (3);
-					cam3 ();
-				} else {
-					GameControl.jail3turn--;
-					if(GameControl.jail3turn == 0) {
-						jail3 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (3);
-				cam3 ();
-			}
+            if (jail3 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(3);
+                    cam3();
+                }
+                else
+                {
+                    GameControl.jail3turn--;
+                    JailTurn.text = GameControl.jail3turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail3turn == 0)
+                    {
+                        jail3 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure3 == 1)
+            {
+                injure3Turn--;
+                InjureTurn.text = injure3Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure3Turn == 0)
+                    injure3 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(3);
+                cam3();
+            }
         }
         else if (whosTurn == 4)
         {
-			if (jail4 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (4);
-					cam4 ();
-				} else {
-					GameControl.jail4turn--;
-					if(GameControl.jail4turn == 0) {
-						jail4 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (4);
-				cam4 ();
-			}
+            if (jail4 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(4);
+                    cam4();
+                }
+                else
+                {
+                    GameControl.jail4turn--;
+                    JailTurn.text = GameControl.jail4turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail4turn == 0)
+                    {
+                        jail4 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure4 == 1)
+            {
+                injure4Turn--;
+                InjureTurn.text = injure4Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure4Turn == 0)
+                    injure4 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(4);
+                cam4();
+            }
         }
         else if (whosTurn == 5)
         {
-			if (jail5 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (5);
-					cam5 ();
-				} else {
-					GameControl.jail5turn--;
-					if(GameControl.jail5turn == 0) {
-						jail5 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (5);
-				cam5 ();
-			}
+            if (jail5 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(5);
+                    cam5();
+                }
+                else
+                {
+                    GameControl.jail5turn--;
+                    JailTurn.text = GameControl.jail5turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail5turn == 0)
+                    {
+                        jail5 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure5 == 1)
+            {
+                injure5Turn--;
+                InjureTurn.text = injure5Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure5Turn == 0)
+                    injure5 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(5);
+                cam5();
+            }
         }
         else if (whosTurn == 6)
         {
-			if (jail6 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (6);
-					cam6 ();
-				} else {
-					GameControl.jail6turn--;
-					if(GameControl.jail6turn == 0) {
-						jail6 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (6);
-				cam6 ();
-			}
+            if (jail6 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(6);
+                    cam6();
+                    whosTurn = 0;
+                }
+                else
+                {
+                    GameControl.jail6turn--;
+                    JailTurn.text = GameControl.jail6turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail6turn == 0)
+                    {
+                        jail6 = 0;
+                    }
+                    whosTurn = 0;
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure6 == 1)
+            {
+                injure6Turn--;
+                InjureTurn.text = injure6Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure6Turn == 0)
+                    injure6 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(6);
+                cam6();
+            }
         }
         else if (whosTurn == 7)
         {
@@ -511,15 +801,28 @@ public class DiceNumberTextScript : MonoBehaviour {
 					whosTurn = 0;
 				} else {
 					GameControl.jail7turn--;
-					if(GameControl.jail7turn == 0) {
+                    JailTurn.text = GameControl.jail7turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail7turn == 0) {
 						jail7 = 0;
 					}
                     whosTurn = 0;
                     dropButton.interactable = true;
 				}
-			} else {
+			}
+            else if (injure7 == 1)
+            {
+                injure7Turn--;
+                InjureTurn.text = injure7Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure7Turn == 0)
+                    injure7 = 0;
+                whosTurn = 0;
+            }
+            else {
 				GameControl.MovePlayer (7);
 				cam7 ();
+                whosTurn = 0;
 			}
         }
     }
@@ -528,129 +831,252 @@ public class DiceNumberTextScript : MonoBehaviour {
     {
         if (whosTurn == 1)
         {
-			if (jail1 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (1);
-					cam1 ();
-				} else {
-					GameControl.jail1turn--;
-					if(GameControl.jail1turn == 0) {
-						jail1 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (1);
-				cam1 ();
-			}
+            if (jail1 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(1);
+                    cam1();
+                }
+                else
+                {
+                    GameControl.jail1turn--;
+                    JailTurn.text = GameControl.jail1turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail1turn == 0)
+                    {
+                        jail1 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure1 == 1)
+            {
+                injure1Turn--;
+                InjureTurn.text = injure1Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure1Turn == 0)
+                    injure1 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(1);
+                cam1();
+            }
         }
         else if (whosTurn == 2)
         {
-			if (jail2 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (2);
-					cam2 ();
-				} else {
-					GameControl.jail2turn--;
-					if(GameControl.jail2turn == 0) {
-						jail2 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (2);
-				cam2 ();
-			}
+            if (jail2 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
+                else
+                {
+                    GameControl.jail2turn--;
+                    JailTurn.text = GameControl.jail2turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail2turn == 0)
+                    {
+                        jail2 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure2 == 1)
+            {
+                injure2Turn--;
+                InjureTurn.text = injure2Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure2Turn == 0)
+                    injure2 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(2);
+                cam2();
+            }
         }
         else if (whosTurn == 3)
         {
-			if (jail3 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (3);
-					cam3 ();
-				} else {
-					GameControl.jail3turn--;
-					if(GameControl.jail3turn == 0) {
-						jail3 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (3);
-				cam3 ();
-			}
+            if (jail3 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(3);
+                    cam3();
+                }
+                else
+                {
+                    GameControl.jail3turn--;
+                    JailTurn.text = GameControl.jail3turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail3turn == 0)
+                    {
+                        jail3 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure3 == 1)
+            {
+                injure3Turn--;
+                InjureTurn.text = injure3Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure3Turn == 0)
+                    injure3 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(3);
+                cam3();
+            }
         }
         else if (whosTurn == 4)
         {
-			if (jail4 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (4);
-					cam4 ();
-				} else {
-					GameControl.jail4turn--;
-					if(GameControl.jail4turn == 0) {
-						jail4 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (4);
-				cam4 ();
-			}
+            if (jail4 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(4);
+                    cam4();
+                }
+                else
+                {
+                    GameControl.jail4turn--;
+                    JailTurn.text = GameControl.jail4turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail4turn == 0)
+                    {
+                        jail4 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure4 == 1)
+            {
+                injure4Turn--;
+                InjureTurn.text = injure4Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure4Turn == 0)
+                    injure4 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(4);
+                cam4();
+            }
         }
         else if (whosTurn == 5)
         {
-			if (jail5 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (5);
-					cam5 ();
-				} else {
-					GameControl.jail5turn--;
-					if(GameControl.jail5turn == 0) {
-						jail5 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (5);
-				cam5 ();
-			}
+            if (jail5 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(5);
+                    cam5();
+                }
+                else
+                {
+                    GameControl.jail5turn--;
+                    JailTurn.text = GameControl.jail5turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail5turn == 0)
+                    {
+                        jail5 = 0;
+                    }
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure5 == 1)
+            {
+                injure5Turn--;
+                InjureTurn.text = injure5Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure5Turn == 0)
+                    injure5 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(5);
+                cam5();
+            }
         }
         else if (whosTurn == 6)
         {
-			if (jail6 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (6);
-					cam6 ();
-				} else {
-					GameControl.jail6turn--;
-					if(GameControl.jail6turn == 0) {
-						jail6 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (6);
-				cam6 ();
-			}
+            if (jail6 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(6);
+                    cam6();
+                    whosTurn = 0;
+                }
+                else
+                {
+                    GameControl.jail6turn--;
+                    JailTurn.text = GameControl.jail6turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail6turn == 0)
+                    {
+                        jail6 = 0;
+                    }
+                    whosTurn = 0;
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure6 == 1)
+            {
+                injure6Turn--;
+                InjureTurn.text = injure6Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure6Turn == 0)
+                    injure6 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(6);
+                cam6();
+            }
         }
         else if (whosTurn == 7)
         {
-			if (jail7 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (7);
-					cam7 ();
-				} else {
-					GameControl.jail7turn--;
-					if(GameControl.jail7turn == 0) {
-						jail7 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			} else {
-				GameControl.MovePlayer (7);
-				cam7 ();
-			}
+            if (jail7 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
+                    GameControl.MovePlayer(7);
+                    cam7();
+                    whosTurn = 0;
+                }
+                else
+                {
+                    GameControl.jail7turn--;
+                    JailTurn.text = GameControl.jail7turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail7turn == 0)
+                    {
+                        jail7 = 0;
+                    }
+                    whosTurn = 0;
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure7 == 1)
+            {
+                injure7Turn--;
+                InjureTurn.text = injure7Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure7Turn == 0)
+                    injure7 = 0;
+            }
+            else
+            {
+                GameControl.MovePlayer(7);
+                cam7();
+            }
         }
         else if (whosTurn == 8)
         {
@@ -661,13 +1087,25 @@ public class DiceNumberTextScript : MonoBehaviour {
 					whosTurn = 0;
 				} else {
 					GameControl.jail8turn--;
-					if(GameControl.jail8turn == 0) {
+                    JailTurn.text = GameControl.jail8turn.ToString();
+                    StartCoroutine(TemporarilyDeactivate(2));
+                    if (GameControl.jail8turn == 0) {
 						jail8 = 0;
 					}
                     whosTurn = 0;
                     dropButton.interactable = true;
 				}
-			} else {
+			}
+            else if (injure8 == 1)
+            {
+                injure8Turn--;
+                InjureTurn.text = injure8Turn.ToString();
+                StartCoroutine(TemporarilyDeactivat2(2));
+                if (injure8Turn == 0)
+                    injure8 = 0;
+                whosTurn = 0;
+            }
+            else {
 				GameControl.MovePlayer(8);
 				cam8 ();
 				whosTurn = 0;
@@ -701,7 +1139,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[8].enabled = false;
 		FollowThePath.whosTurn = 1;
     }
-
+   
     public void cam2()
     {
         camera[0].enabled = false;
@@ -799,7 +1237,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[8].enabled = true; //
 		FollowThePath.whosTurn = 8;
     }
-
+    /*
     void Jail()
     {
         if (whosTurn + 1 == 2)
@@ -1004,8 +1442,19 @@ public class DiceNumberTextScript : MonoBehaviour {
             }
 
         }
-
+    }
+    */
+    private IEnumerator TemporarilyDeactivate(float duration)
+    {
+        ImageForJail.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForJail.gameObject.SetActive(false);
     }
 
-
+    private IEnumerator TemporarilyDeactivat2(float duration)
+    {
+        ImageForHospital.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForHospital.gameObject.SetActive(false);
+    }
 }

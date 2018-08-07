@@ -14,6 +14,7 @@ public class HouseSelection : MonoBehaviour {
     public Transform[] waypoints;
     public static int whosTurn, geter;
     public GameObject ImageForJail;
+    //public GameObject ImageForChance;
 
     public static int reduce;
 

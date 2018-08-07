@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FollowThePath : MonoBehaviour {
 
@@ -9,6 +10,9 @@ public class FollowThePath : MonoBehaviour {
     public int Accept = 0;
 	public static int whosTurn = 1;
 	public static int numberOfChance;
+    public Text chance;
+    public GameObject ImageForChance;
+    public static int Go = 0;
 
     public static int point0 = 1;
     public static int point12 = 0;
@@ -20,9 +24,11 @@ public class FollowThePath : MonoBehaviour {
 
     public bool moveAllowed = false;
 
-    private void Start()
+    void Start()
     {
         transform.position = waypoints[wayPointIndex].transform.position;
+
+        ImageForChance.gameObject.SetActive(false);
     }
     
     private void Update()
@@ -45,6 +51,47 @@ public class FollowThePath : MonoBehaviour {
             wayPointIndex += 1; // Wosition++
 
             Movement++; //  Walk++
+
+            if (transform.position == waypoints[1].transform.position) 
+            {
+                Go = 1;
+            }
+
+            if (transform.position == waypoints[0].transform.position && Go == 1) 
+            {
+                if (whosTurn == 1)
+                {
+                    GameControl.Go1 = 1;
+                }
+                if (whosTurn == 2)
+                {
+                    GameControl.Go2 = 1;
+                }
+                if (whosTurn == 3)
+                {
+                    GameControl.Go3 = 1;
+                }
+                if (whosTurn == 4)
+                {
+                    GameControl.Go4 = 1;
+                }
+                if (whosTurn == 5)
+                {
+                    GameControl.Go5 = 1;
+                }
+                if (whosTurn == 6)
+                {
+                    GameControl.Go6 = 1;
+                }
+                if (whosTurn == 7)
+                {
+                    GameControl.Go7 = 1;
+                }
+                if (whosTurn == 8)
+                {
+                    GameControl.Go8 = 1;
+                }
+            }
 
             if (transform.position == waypoints[57].transform.position)
             {
@@ -248,7 +295,6 @@ public class FollowThePath : MonoBehaviour {
                 {
                     DiceNumberTextScript.whosTurn = 8;
                 }
-
             } 
 
             if ((transform.position == waypoints[18].transform.position) && (Movement == GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
@@ -289,7 +335,6 @@ public class FollowThePath : MonoBehaviour {
                 {
                     DiceNumberTextScript.whosTurn = 8;
                 }
-
             } 
 
             if (transform.position == waypoints [41].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown)) {
@@ -340,40 +385,44 @@ public class FollowThePath : MonoBehaviour {
 
     }
 
-	void random() {
+    void random() {
 
 		int getRangeNum = 0;
 		int rangeRadomNum = 0;
 
 
 		do {
-			rangeRadomNum = Random.Range (1, 6);				
+			rangeRadomNum = Random.Range (1, 3);				// 1, 6
 		} while (getRangeNum == rangeRadomNum);
 
 		getRangeNum = rangeRadomNum;
 
-		numberOfChance = getRangeNum;
+		numberOfChance = 4;
 
 		switch (numberOfChance) {
 		case 1:
-			goToJail ();
-			break;
+                chance.text = "你被陷害入獄了";
+                StartCoroutine(TemporarilyDeactivate(2));
+                goToJail();
+                break;
 		case 2:
-			goToBadLuckyRoad ();
-			break;
+                chance.text = "災難之地";
+                StartCoroutine(TemporarilyDeactivate(2));
+                goToBadLuckyRoad();
+                break;
 		case 3:
-			goToGo ();
-			break;
-		case 4:
-			break;
-		case 5: 
-			break;
-		case 6:
-			break;
-		}
+                chance.text = "重生!!";
+                StartCoroutine(TemporarilyDeactivate(2));
+                goToGo();
+                break;
+        case 4:
+                chance.text = "負傷!!";
+                StartCoroutine(TemporarilyDeactivate(2));
+                goToHospital();
+                break;
 
-		Debug.Log (numberOfChance);
-
+        }
+        
 	}
 
 
@@ -385,12 +434,91 @@ public class FollowThePath : MonoBehaviour {
 	void goToBadLuckyRoad () {
 		transform.position = waypoints [53].transform.position;
 		wayPointIndex = 66;
-	}
+        Dice.boolean = 1;
+        if (whosTurn == 1)
+        {
+            DiceNumberTextScript.whosTurn = 1;
+        }
+        else if (whosTurn == 2)
+        {
+            DiceNumberTextScript.whosTurn = 2;
+        }
+        else if (whosTurn == 3)
+        {
+            DiceNumberTextScript.whosTurn = 3;
+        }
+        else if (whosTurn == 4)
+        {
+            DiceNumberTextScript.whosTurn = 4;
+        }
+        else if (whosTurn == 5)
+        {
+            DiceNumberTextScript.whosTurn = 5;
+        }
+        else if (whosTurn == 6)
+        {
+            DiceNumberTextScript.whosTurn = 6;
+        }
+        else if (whosTurn == 7)
+        {
+            DiceNumberTextScript.whosTurn = 7;
+        }
+        else if (whosTurn == 8)
+        {
+            DiceNumberTextScript.whosTurn = 8;
+        }
+    }
 
 	void goToGo() {
 		transform.position = waypoints[0].transform.position;
 		wayPointIndex = 0;
 	}
-		
+
+    void goToHospital()
+    {
+        transform.position = waypoints[46].transform.position;
+        wayPointIndex = 47;
+        if (whosTurn == 1)
+        {
+            DiceNumberTextScript.injure1 = 1;
+        }
+        else if (whosTurn == 2)
+        {
+            DiceNumberTextScript.injure2 = 1;
+        }
+        else if (whosTurn == 3)
+        {
+            DiceNumberTextScript.injure3 = 1;
+        }
+        else if (whosTurn == 4)
+        {
+            DiceNumberTextScript.injure4 = 1;
+        }
+        else if (whosTurn == 5)
+        {
+            DiceNumberTextScript.injure5 = 1;
+        }
+        else if (whosTurn == 6)
+        {
+            DiceNumberTextScript.injure6 = 1;
+        }
+        else if (whosTurn == 7)
+        {
+            DiceNumberTextScript.injure7 = 1;
+        }
+        else if (whosTurn == 8)
+        {
+            DiceNumberTextScript.injure8 = 1;
+        }
+
+    }
+
+    private IEnumerator TemporarilyDeactivate(float duration)
+    {
+        ImageForChance.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForChance.gameObject.SetActive(false);
+    }
+
 
 }

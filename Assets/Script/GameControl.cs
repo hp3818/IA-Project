@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour {
 	public static int Reduce;
 	public static int own;
 	public static int whoAreYou;
+    public static int Go1 = 0, Go2 = 0, Go3 = 0, Go4 = 0, Go5 = 0, Go6 = 0, Go7 = 0, Go8 = 0;
     
     public static int whoTurn;
     public Button dropButton;
@@ -142,6 +143,55 @@ public class GameControl : MonoBehaviour {
         if (detect >= 3)
         {
             buy.interactable = false;
+        }
+
+        if (Go1 == 1 || Go2 == 1 || Go3 == 1 || Go4 == 1 || Go5 == 1 || Go6 == 1 || Go7 == 1 || Go8 == 1)
+        {
+            if (Go1 == 1)
+            {
+                HouseSelection.sum1 += 200000;
+                player1Cost.text = HouseSelection.sum1.ToString();
+                Go1 = 0;
+            }
+            if (Go2 == 1)
+            {
+                HouseSelection.sum2 += 100000;
+                player2Cost.text = HouseSelection.sum2.ToString();
+                Go2 = 0;
+            }
+            if (Go3 == 1)
+            {
+                HouseSelection.sum3 += 100000;
+                player3Cost.text = HouseSelection.sum3.ToString();
+                Go3 = 0;
+            }
+            if (Go4 == 1)
+            {
+                HouseSelection.sum4 += 50000;
+                player4Cost.text = HouseSelection.sum4.ToString();
+                Go4 = 0;
+            }
+            if (Go5 == 1)
+            {
+                HouseSelection.sum5 += 50000;
+                player5Cost.text = HouseSelection.sum5.ToString();
+                Go5 = 0;
+            }
+            if (Go6 == 1)
+            {
+                HouseSelection.sum6 += 50000;
+                player6Cost.text = HouseSelection.sum6.ToString();
+            }
+            if (Go7 == 1)
+            {
+                HouseSelection.sum7 += 50000;
+                player7Cost.text = HouseSelection.sum7.ToString();
+            }
+            if (Go8 == 1)
+            {
+                HouseSelection.sum8 += 50000;
+                player8Cost.text = HouseSelection.sum8.ToString();
+            }
         }
 
         if (player1.GetComponent<FollowThePath>().wayPointIndex > player1Waypoint + diceSide1Thrown + diceSide2Thrown + diceSide3Thrown - player1.GetComponent<FollowThePath>().Accept)                                                                                                                                                              
