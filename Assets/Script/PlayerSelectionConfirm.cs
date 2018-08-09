@@ -14,7 +14,6 @@ public class PlayerSelectionConfirm : MonoBehaviour {
     {
         numberOfPlayer = int.Parse(text.text);
         GameControl.numberOfPlayer = numberOfPlayer;
-        //Debug.Log(numberOfPlayer);
         SceneManager.LoadScene("Hong Shing Monopoly");
     }
 

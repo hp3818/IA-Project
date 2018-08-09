@@ -27,7 +27,7 @@ public class GameControl : MonoBehaviour {
     
     public static int whoTurn;
     public Button dropButton;
-    public static int numberOfPlayer = 4;
+    public static int numberOfPlayer;
     public Camera[] camera;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
@@ -181,20 +181,23 @@ public class GameControl : MonoBehaviour {
             {
                 HouseSelection.sum6 += 50000;
                 player6Cost.text = HouseSelection.sum6.ToString();
+                Go6 = 0;
             }
             if (Go7 == 1)
             {
                 HouseSelection.sum7 += 50000;
                 player7Cost.text = HouseSelection.sum7.ToString();
+                Go7 = 0;
             }
             if (Go8 == 1)
             {
                 HouseSelection.sum8 += 50000;
                 player8Cost.text = HouseSelection.sum8.ToString();
+                Go8 = 0;
             }
         }
 
-        if (player1.GetComponent<FollowThePath>().wayPointIndex > player1Waypoint + diceSide1Thrown + diceSide2Thrown + diceSide3Thrown - player1.GetComponent<FollowThePath>().Accept)                                                                                                                                                              
+        if (player1.GetComponent<FollowThePath>().wayPointIndex > player1Waypoint + diceSide1Thrown + diceSide2Thrown + diceSide3Thrown - player1.GetComponent<FollowThePath>().Accept)
         {
             whoTurn = 1;
             player1.GetComponent<FollowThePath>().moveAllowed = false;
@@ -202,7 +205,7 @@ public class GameControl : MonoBehaviour {
             player1.GetComponent<FollowThePath>().Movement = 0;
             player1.GetComponent<FollowThePath>().Accept = 0;
 
-            if(player1.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
+            if (player1.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {
                 detect = count1;
                 houseName.text = "紅1";
@@ -216,17 +219,17 @@ public class GameControl : MonoBehaviour {
                     HouseSelection.reduce = 5000;
                 }
 
-				if (detect == 0) {
-					ImageForBuyHouse.gameObject.SetActive (true);	
-				} else {
-					own = own1;
-					if (detect == 1)
-						Reduce = 10000;
-					else if (detect == 2)
-						Reduce = 15000;
-					else if (detect == 3)
-						Reduce = 20000;
-					ReduceSum (1, Reduce, own);
+                if (detect == 0 || own1 == 1) {
+                    ImageForBuyHouse.gameObject.SetActive(true);
+                } else {
+                    own = own1;
+                    if (detect == 1)
+                        Reduce = 10000;
+                    else if (detect == 2)
+                        Reduce = 15000;
+                    else if (detect == 3)
+                        Reduce = 20000;
+                    ReduceSum(1, Reduce, own);
 
                     if (own1 > 1)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -252,7 +255,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-				if (detect == 0) {
+                if (detect == 0 || own2 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own2;
@@ -286,7 +289,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own3 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own3;
@@ -320,7 +323,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own4 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own4;
@@ -354,7 +357,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own5 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own5;
@@ -388,7 +391,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own6 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own6;
@@ -421,7 +424,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own7 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own7;
@@ -455,7 +458,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own8 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own8;
@@ -515,7 +518,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own10 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own10;
@@ -549,7 +552,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own11 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own11;
@@ -583,7 +586,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own12 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own12;
@@ -617,7 +620,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own13 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own13;
@@ -651,7 +654,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own14 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own14;
@@ -685,7 +688,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own15 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own15;
@@ -719,7 +722,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own16 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own16;
@@ -753,7 +756,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own17 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own17;
@@ -787,7 +790,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 30000;
                 }
-				if (detect == 0) {
+				if (detect == 0 ) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own18;
@@ -813,7 +816,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own19 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own19;
@@ -847,7 +850,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own20 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own20;
@@ -881,7 +884,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own21 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own21;
@@ -915,7 +918,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own22 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own22;
@@ -949,7 +952,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own23 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own23;
@@ -983,7 +986,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own24 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own24;
@@ -1017,7 +1020,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own25 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own25;
@@ -1099,7 +1102,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own26 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own26;
@@ -1133,7 +1136,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own27 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own27;
@@ -1167,7 +1170,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own28 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own28;
@@ -1201,7 +1204,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own29 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own29;
@@ -1235,7 +1238,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own30 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own30;
@@ -1269,7 +1272,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own31 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own31;
@@ -1329,7 +1332,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own33 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own33;
@@ -1363,7 +1366,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own34 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own34;
@@ -1397,7 +1400,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own35 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own35;
@@ -1431,7 +1434,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own36 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own36;
@@ -1465,7 +1468,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own37 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own37;
@@ -1499,7 +1502,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own38 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own38;
@@ -1533,7 +1536,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own39 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own39;
@@ -1567,7 +1570,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own40 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own40;
@@ -1625,7 +1628,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own42 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own42;
@@ -1659,7 +1662,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own43 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own43;
@@ -1693,7 +1696,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own44 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own44;
@@ -1727,7 +1730,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own45 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own45;
@@ -1761,7 +1764,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-				if (detect == 0) {
+				if (detect == 0 || own46 == 1) {
 					ImageForBuyHouse.gameObject.SetActive (true);	
 				} else {
 					own = own46;
@@ -1811,7 +1814,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own1 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -1847,7 +1850,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own2 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -1884,7 +1887,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own3 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -1921,7 +1924,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own4 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -1958,7 +1961,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own5 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -1995,7 +1998,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own6 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2032,7 +2035,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own7 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2069,7 +2072,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own8 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2134,7 +2137,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                                if (detect == 0)
+                if (detect == 0 || own10 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2171,7 +2174,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own11 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2208,7 +2211,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own12 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2245,7 +2248,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own13 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2282,7 +2285,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own14 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2319,7 +2322,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own15 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2356,7 +2359,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own16 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2393,7 +2396,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own17 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2459,7 +2462,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own19 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2496,7 +2499,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own20 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2533,7 +2536,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own21 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2570,7 +2573,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own22 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2607,7 +2610,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own23 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2644,7 +2647,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own24 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2681,7 +2684,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own25 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2765,7 +2768,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own26 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2802,7 +2805,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own27 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2839,7 +2842,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own28 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2873,7 +2876,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own29 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2910,7 +2913,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own30 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -2947,7 +2950,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own31 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3013,7 +3016,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own33 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3050,7 +3053,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own34 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3087,7 +3090,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own35 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3124,7 +3127,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own36 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3161,7 +3164,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own37 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3198,7 +3201,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own38 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3235,7 +3238,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own39 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3272,7 +3275,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own40 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3330,7 +3333,7 @@ public class GameControl : MonoBehaviour {
                 detect = count42;
                 houseName.text = "啡2";
                 cost1.text = "$85000"; cost2.text = "+ $9000"; cost3.text = "+ $9000";
-                if (count42 == 0)
+                if (count42 == 0 || own42 == 2)
                 {
                     HouseSelection.reduce = 85000;
                 }
@@ -3367,7 +3370,7 @@ public class GameControl : MonoBehaviour {
                 detect = count43;
                 houseName.text = "啡3";
                 cost1.text = "$85000"; cost2.text = "+ $9000"; cost3.text = "+ $9000";
-                if (count43 == 0)
+                if (count43 == 0 || own43 == 2)
                 {
                     HouseSelection.reduce = 85000;
                 }
@@ -3404,7 +3407,7 @@ public class GameControl : MonoBehaviour {
                 detect = count44;
                 houseName.text = "黑1";
                 cost1.text = "$100000"; cost2.text = "+ $10000"; cost3.text = "+ $10000";
-                if (count44 == 0)
+                if (count44 == 0 || own44 == 2)
                 {
                     HouseSelection.reduce = 100000;
                 }
@@ -3449,7 +3452,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own45 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3486,14 +3489,14 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own46 == 2)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
                 else
                 {
                     own = own46;
-                    if (detect == 1)
+                    if (detect == 1 || own46 == 2)
                         Reduce = 100000;
                     else if (detect == 2)
                         Reduce = 110000;
@@ -3538,7 +3541,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own1 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3575,7 +3578,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own2 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3612,7 +3615,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own3 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3649,7 +3652,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own4 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3686,7 +3689,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own5 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3723,7 +3726,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own1 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3760,7 +3763,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own7 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3797,7 +3800,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own8 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3863,7 +3866,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own10 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3900,7 +3903,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own11 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3937,7 +3940,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own12 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -3974,7 +3977,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own13 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4011,7 +4014,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own14 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4048,7 +4051,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own15 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4085,7 +4088,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own16 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4122,7 +4125,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own17 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4189,7 +4192,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own19 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4226,7 +4229,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own20 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4263,7 +4266,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own21 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4300,7 +4303,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own22 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4337,7 +4340,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own23 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4374,7 +4377,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own24 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4411,7 +4414,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own25 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4495,7 +4498,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own26 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4532,7 +4535,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own27 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4569,7 +4572,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own28 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4606,7 +4609,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own29 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4643,7 +4646,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own30 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4680,7 +4683,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own31 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4717,7 +4720,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 30000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own32 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4746,7 +4749,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own33 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4783,7 +4786,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own34 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4820,7 +4823,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own35 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4857,7 +4860,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own36 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4894,7 +4897,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own37 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4931,7 +4934,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own38 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -4968,7 +4971,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own39 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5005,7 +5008,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own40 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5071,7 +5074,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own42 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5108,7 +5111,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own43 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
 
@@ -5146,7 +5149,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own44 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5183,7 +5186,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own45 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5220,7 +5223,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own46 == 3)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5249,7 +5252,7 @@ public class GameControl : MonoBehaviour {
                 dropButton.interactable = true;
                 camMain();
             }
-        }
+        }   
                                                                                            
         if (player4.GetComponent<FollowThePath>().wayPointIndex > player4Waypoint + diceSide1Thrown + diceSide2Thrown + diceSide3Thrown - player4.GetComponent<FollowThePath>().Accept)
         {
@@ -5272,7 +5275,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own1 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5304,7 +5307,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own2 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5336,7 +5339,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own3 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5368,7 +5371,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own4 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5400,7 +5403,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own5 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5432,7 +5435,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own6 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5464,7 +5467,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own7 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5496,7 +5499,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own8 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5556,7 +5559,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own10 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5588,7 +5591,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own11 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5620,7 +5623,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own12 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5652,7 +5655,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own13 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5684,7 +5687,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own14 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5716,7 +5719,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own15 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5748,7 +5751,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own16 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5780,7 +5783,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own17 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5791,7 +5794,7 @@ public class GameControl : MonoBehaviour {
                         Reduce = 20000;
                     else if (detect == 2)
                         Reduce = 27000;
-                    else if (detect == 3)
+                    else if (detect == 3 || own17 == 4)
                         Reduce = 34000;
                     ReduceSum(4, Reduce, own);
                     dropButton.interactable = true;
@@ -5812,7 +5815,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 30000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own18 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5840,7 +5843,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own19 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5872,7 +5875,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own20 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5904,7 +5907,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own21 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5935,7 +5938,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own22 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5967,7 +5970,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own23 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -5999,7 +6002,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own24 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6031,7 +6034,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own25 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6111,7 +6114,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own26 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6143,7 +6146,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own27 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6175,7 +6178,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own28 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6207,7 +6210,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own29 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6239,7 +6242,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own30 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6271,7 +6274,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own31 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6332,7 +6335,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own33 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6364,7 +6367,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own34 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6396,7 +6399,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own35 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6428,7 +6431,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own36 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6460,7 +6463,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own37 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6492,7 +6495,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own38 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6524,7 +6527,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own39 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6557,7 +6560,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own40 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6609,7 +6612,7 @@ public class GameControl : MonoBehaviour {
                 detect = count42;
                 houseName.text = "啡2";
                 cost1.text = "$85000"; cost2.text = "+ $9000"; cost3.text = "+ $9000";
-                if (count42 == 0)
+                if (count42 == 0 || own42 == 4)
                 {
                     HouseSelection.reduce = 85000;
                 }
@@ -6650,7 +6653,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own43 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6682,7 +6685,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own44 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6721,7 +6724,7 @@ public class GameControl : MonoBehaviour {
                 else
                 {
                     own = own45;
-                    if (detect == 1)
+                    if (detect == 1 || own45 == 4)
                         Reduce = 100000;
                     else if (detect == 2)
                         Reduce = 110000;
@@ -6746,7 +6749,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own46 == 4)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6792,7 +6795,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own1 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6824,7 +6827,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own2 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6856,7 +6859,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own3 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -6880,7 +6883,7 @@ public class GameControl : MonoBehaviour {
                 detect = count4;
                 houseName.text = "紅4";
                 cost1.text = "$10000"; cost2.text = "+ $5000"; cost3.text = "+ $5000";
-                if (count4 == 0)
+                if (count4 == 0 || own4 == 5)
                 {
                     HouseSelection.reduce = 10000;
                 }
@@ -6912,7 +6915,7 @@ public class GameControl : MonoBehaviour {
                 detect = count5;
                 houseName.text = "紅5";
                 cost1.text = "$10000"; cost2.text = "+ $5000"; cost3.text = "+ $5000";
-                if (count5 == 0)
+                if (count5 == 0 || own5 == 5)
                 {
                     HouseSelection.reduce = 10000;
                 }
@@ -6944,7 +6947,7 @@ public class GameControl : MonoBehaviour {
                 detect = count6;
                 houseName.text = "紅6";
                 cost1.text = "$10000"; cost2.text = "+ $5000"; cost3.text = "+ $5000";
-                if (count6 == 0)
+                if (count6 == 0 || own6 == 5)
                 {
                     HouseSelection.reduce = 10000;
                 }
@@ -6984,7 +6987,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own7 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7016,7 +7019,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own8 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7076,7 +7079,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own10 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7108,7 +7111,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own11 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7140,7 +7143,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own12 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7172,7 +7175,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own13 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7204,7 +7207,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own14 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7236,7 +7239,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own15 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7268,7 +7271,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own16 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7300,7 +7303,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own17 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7360,7 +7363,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own19 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7392,7 +7395,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own20 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7424,7 +7427,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own21 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7455,7 +7458,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own22 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7487,7 +7490,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own23 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7519,7 +7522,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own24 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7551,7 +7554,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own25 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7629,7 +7632,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own26 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7665,7 +7668,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own27 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7697,7 +7700,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own28 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7729,7 +7732,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own29 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7761,7 +7764,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own30 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7794,7 +7797,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own31 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7851,7 +7854,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own33 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7883,7 +7886,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own34 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7915,7 +7918,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own35 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7947,7 +7950,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own36 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -7979,7 +7982,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own37 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8011,7 +8014,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own38 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8044,7 +8047,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own39 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8076,7 +8079,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own40 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8136,7 +8139,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own42 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8168,7 +8171,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own43 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8200,7 +8203,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own44 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8232,7 +8235,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own45 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8264,7 +8267,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own46 == 5)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8312,7 +8315,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own1 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8344,7 +8347,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own2 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8376,7 +8379,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own3 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8408,7 +8411,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own4 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8441,7 +8444,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own5 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8474,7 +8477,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own6 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8506,7 +8509,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own7 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8538,7 +8541,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own8 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8570,7 +8573,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 30000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own9 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8598,7 +8601,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own10 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8630,7 +8633,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own11 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8662,7 +8665,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own12 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8694,7 +8697,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own13 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8726,7 +8729,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own14 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8758,7 +8761,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own15 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8790,7 +8793,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own16 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8822,7 +8825,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own17 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8854,7 +8857,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 30000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own18 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8882,7 +8885,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own19 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8914,7 +8917,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own20 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8946,7 +8949,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own21 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -8978,7 +8981,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own22 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9010,7 +9013,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own23 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9042,7 +9045,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own24 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9074,7 +9077,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own25 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9153,7 +9156,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own26 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9185,7 +9188,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own27 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9217,7 +9220,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own28 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9241,7 +9244,7 @@ public class GameControl : MonoBehaviour {
                 detect = count29;
                 houseName.text = "綠6";
                 cost1.text = "$30000"; cost2.text = "+ $8500"; cost3.text = "+ $8500";
-                if (count29 == 0)
+                if (count29 == 0 || own29 == 6)
                 {
                     HouseSelection.reduce = 30000;
                 }
@@ -9281,7 +9284,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own30 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9313,7 +9316,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own31 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9373,7 +9376,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own33 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9405,7 +9408,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own34 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9437,7 +9440,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own35 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9469,7 +9472,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own36 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9501,7 +9504,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own37 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9533,7 +9536,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own38 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9565,7 +9568,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own39 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9597,7 +9600,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own40 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9657,7 +9660,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own42 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9689,7 +9692,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own43 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9721,7 +9724,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own44 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9753,7 +9756,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own45 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9785,7 +9788,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own46 == 6)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9831,7 +9834,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own1 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9863,7 +9866,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own2 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9895,7 +9898,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own3 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9927,7 +9930,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own4 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9959,7 +9962,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own5 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -9991,7 +9994,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own6 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10023,7 +10026,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own7 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10055,7 +10058,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own8 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10087,7 +10090,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 30000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own9 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10115,7 +10118,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own10 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10147,7 +10150,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own11 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10179,7 +10182,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own12 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10211,7 +10214,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own13 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10243,7 +10246,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own14 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10275,7 +10278,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own15 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10307,7 +10310,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own16 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10339,7 +10342,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own17 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10371,7 +10374,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 30000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own18 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10399,7 +10402,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own19 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10431,7 +10434,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own20 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10463,7 +10466,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own21 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10495,7 +10498,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own22 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10527,7 +10530,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own23 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10559,7 +10562,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own24 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10591,7 +10594,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own25 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10669,7 +10672,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own26 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10701,7 +10704,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own27 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10733,7 +10736,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own28 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10765,7 +10768,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own29 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10797,7 +10800,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own30 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10829,7 +10832,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own31 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10861,7 +10864,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 30000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own32 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10889,7 +10892,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own33 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10921,7 +10924,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own34 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10953,7 +10956,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own35 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -10985,7 +10988,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own36 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11017,7 +11020,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own37 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11049,7 +11052,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own38 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11081,7 +11084,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own39 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11113,13 +11116,13 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own40 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
                 else
                 {
-                    own = own45;
+                    own = own40;
                     if (detect == 1)
                         Reduce = 85000;
                     else if (detect == 2)
@@ -11173,7 +11176,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own42 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11205,7 +11208,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own43 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11237,7 +11240,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own44 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11269,7 +11272,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own45 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11301,7 +11304,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own46 == 7)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11348,7 +11351,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own1 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11380,7 +11383,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own2 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11412,7 +11415,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own3 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11444,7 +11447,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own4 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11476,7 +11479,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own5 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11508,7 +11511,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own6 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11540,7 +11543,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 5000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own7 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11572,7 +11575,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own8 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11632,7 +11635,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own10 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11664,7 +11667,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own11 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11696,7 +11699,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own12 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11728,7 +11731,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own13 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11760,7 +11763,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own14 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11792,7 +11795,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 6000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own15 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11824,7 +11827,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own16 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11856,7 +11859,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own17 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11916,7 +11919,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own19 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11948,7 +11951,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own20 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -11980,7 +11983,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own21 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12011,7 +12014,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own22 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12043,7 +12046,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 7000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own23 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12075,7 +12078,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own24 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12107,7 +12110,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own25 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12186,7 +12189,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own26 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12218,7 +12221,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own27 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12250,7 +12253,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own28 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12282,7 +12285,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own29 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12314,7 +12317,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own30 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12346,7 +12349,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own31 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12406,7 +12409,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own33 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12438,7 +12441,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 8500;
                 }
-                if (detect == 0)
+                if (detect == 0 || own34 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12470,7 +12473,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own35 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12502,7 +12505,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own35 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12534,7 +12537,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own37 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12566,7 +12569,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own38 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12598,7 +12601,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own39 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12630,7 +12633,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own40 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12690,7 +12693,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own42 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12722,7 +12725,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 9000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own43 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12754,7 +12757,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own44 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12786,7 +12789,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own45 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }
@@ -12818,7 +12821,7 @@ public class GameControl : MonoBehaviour {
                 {
                     HouseSelection.reduce = 10000;
                 }
-                if (detect == 0)
+                if (detect == 0 || own46 == 8)
                 {
                     ImageForBuyHouse.gameObject.SetActive(true);
                 }

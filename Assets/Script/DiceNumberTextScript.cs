@@ -111,7 +111,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
             if (jail1 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (1);
+                    GameControl.jail1turn = 3;
+                    jail1 = 0;
+                    GameControl.MovePlayer (1);
 					cam1 ();
 				} else {
 					GameControl.jail1turn--;
@@ -119,7 +121,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail1turn == 0) {
 						jail1 = 0;
-					}
+                        GameControl.jail1turn = 3;
+                    }
 					dropButton.interactable = true;
 				}
 			} else if (injure1 == 1 ){
@@ -127,8 +130,12 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure1Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure1Turn == 0)
+                {
                     injure1 = 0;
-			} else
+                    injure2Turn = 2;
+                }     
+                dropButton.interactable = true;
+            } else
             {
                 GameControl.MovePlayer(1);
                 cam1();
@@ -138,7 +145,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
             if (jail2 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (2);
+                    GameControl.jail2turn = 3;
+                    jail2 = 0;
+                    GameControl.MovePlayer (2);
 					cam2 ();
 				} else {
 					GameControl.jail2turn--;
@@ -146,7 +155,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail2turn == 0) {
 						jail2 = 0;
-					}
+                        GameControl.jail2turn = 3;
+                    }
 					dropButton.interactable = true;
 				}
             }
@@ -156,7 +166,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure2Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure2Turn == 0)
+                {
                     injure2 = 0;
+                    injure2Turn = 2;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -168,14 +182,17 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
             if (jail3 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (3);
+                    GameControl.jail3turn = 3;
+                    jail3 = 0;
+                    GameControl.MovePlayer (3);
 					cam3 ();
 				} else {
 					GameControl.jail3turn--;
                     JailTurn.text = GameControl.jail3turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail3turn == 0) {
-						jail3 = 0;
+                        GameControl.jail3turn = 3;
+                        jail3 = 0;
 					}
 					dropButton.interactable = true;
 				}
@@ -186,7 +203,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure3Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure3Turn == 0)
+                {
+                    injure3Turn = 2;
                     injure3 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -198,7 +219,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
             if (jail4 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (4);
+                    GameControl.jail4turn = 3;
+                    jail4 = 0;
+                    GameControl.MovePlayer (4);
 					cam4 ();
 					whosTurn = 0;
 				} else {
@@ -206,8 +229,9 @@ public class DiceNumberTextScript : MonoBehaviour {
                     JailTurn.text = GameControl.jail4turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail4turn == 0) {
-						jail4 = 0;
-					}
+                        GameControl.jail4turn = 3;
+                        jail4 = 0;
+                    }
 					whosTurn = 0;
 					dropButton.interactable = true;
 				}
@@ -218,7 +242,10 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure4Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure4Turn == 0)
+                {
                     injure4 = 0;
+                    injure4Turn = 2;
+                }
                 whosTurn = 0;
                 dropButton.interactable = true;
             }
@@ -240,6 +267,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail1turn = 3;
+                    jail1 = 0;
                     GameControl.MovePlayer(1);
                     cam1();
                 }
@@ -251,6 +280,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     if (GameControl.jail1turn == 0)
                     {
                         jail1 = 0;
+                        GameControl.jail2turn = 3;
                     }
                     dropButton.interactable = true;
                 }
@@ -261,7 +291,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure1Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure1Turn == 0)
+                {
                     injure1 = 0;
+                    injure1Turn = 2;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -273,14 +307,17 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail2 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (2);
+                    GameControl.jail2turn = 3;
+                    jail2 = 0;
+                    GameControl.MovePlayer (2);
 					cam2 ();
 				} else {
 					GameControl.jail2turn--;
                     JailTurn.text = GameControl.jail2turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail2turn == 0) {
-						jail2 = 0;
+                        GameControl.jail2turn = 3;
+                        jail2 = 0;
 					}
 					dropButton.interactable = true;
 				}
@@ -291,7 +328,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure2Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure2Turn == 0)
+                {
+                    injure2Turn = 2;
                     injure2 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -303,14 +344,17 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail3 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (3);
+                    GameControl.jail3turn = 3;
+                    jail3 = 0;
+                    GameControl.MovePlayer (3);
 					cam3 ();
 				} else {
 					GameControl.jail3turn--;
                     JailTurn.text = GameControl.jail3turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail3turn == 0) {
-						jail3 = 0;
+                        GameControl.jail3turn = 3;
+                        jail3 = 0;
 					}
 					dropButton.interactable = true;
 				}
@@ -321,7 +365,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure3Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure3Turn == 0)
+                {
+                    injure3Turn = 2;
                     injure3 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -333,14 +381,17 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail4 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (4);
+                    GameControl.jail4turn = 3;
+                    jail4 = 0;
+                    GameControl.MovePlayer (4);
 					cam4 ();
 				} else {
 					GameControl.jail4turn--;
                     JailTurn.text = GameControl.jail4turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail4turn == 0) {
-						jail4 = 0;
+                        GameControl.jail4turn = 3;
+                        jail4 = 0;
 					}
 					dropButton.interactable = true;
 				}
@@ -351,7 +402,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure4Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure4Turn == 0)
+                {
+                    injure4Turn = 2;
                     injure4 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -363,7 +418,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail5 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (5);
+                    GameControl.jail5turn = 3;
+                    jail5 = 0;
+                    GameControl.MovePlayer (5);
 					cam5 ();
 					whosTurn = 0;
 				} else {
@@ -371,7 +428,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     JailTurn.text = GameControl.jail5turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail5turn == 0) {
-						jail5 = 0;
+                        GameControl.jail5turn = 3;
+                        jail5 = 0;
 					}
                     whosTurn = 0;
                     dropButton.interactable = true;
@@ -383,7 +441,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure5Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure5Turn == 0)
+                {
+                    injure5Turn = 2;
                     injure5 = 0;
+                }
+                dropButton.interactable = true;
                 whosTurn = 0;
             }
             else {
@@ -401,14 +463,17 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail1 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (1);
+                    GameControl.jail1turn = 3;
+                    jail1 = 0;
+                    GameControl.MovePlayer (1);
 					cam1 ();
 				} else {
 					GameControl.jail1turn--;
                     JailTurn.text = GameControl.jail1turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail1turn == 0) {
-						jail1 = 0;
+                        GameControl.jail1turn = 3;
+                        jail1 = 0;
 					}
 					dropButton.interactable = true;
 				}
@@ -419,7 +484,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure1Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure1Turn == 0)
+                {
+                    injure1Turn = 2;
                     injure1 = 0;
+                }
+                dropButton.interactable = true;
             }
             else {
 				GameControl.MovePlayer (1);
@@ -430,14 +499,17 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail2 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (2);
+                    GameControl.jail2turn = 3;
+                    jail2 = 0;
+                    GameControl.MovePlayer (2);
 					cam2 ();
 				} else {
 					GameControl.jail2turn--;
                     JailTurn.text = GameControl.jail2turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail2turn == 0) {
-						jail2 = 0;
+                        GameControl.jail2turn = 3;
+                        jail2 = 0;
 					}
 					dropButton.interactable = true;
 				}
@@ -448,7 +520,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure2Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure2Turn == 0)
+                {
+                    injure2Turn = 2;
                     injure2 = 0;
+                }
+                dropButton.interactable = true;
             }
             else {
 				GameControl.MovePlayer (2);
@@ -459,7 +535,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail3 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (3);
+                    GameControl.jail3turn = 3;
+                    jail3 = 0;
+                    GameControl.MovePlayer (3);
 					cam3 ();
 				} else {
 					GameControl.jail3turn--;
@@ -467,7 +545,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail3turn == 0) {
 						jail3 = 0;
-					}
+                        GameControl.jail3turn = 3;
+                    }
 					dropButton.interactable = true;
 				}
 			}
@@ -477,7 +556,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure3Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure3Turn == 0)
+                {
+                    injure3Turn = 2;
                     injure3 = 0;
+                }
+                dropButton.interactable = true;
             }
             else {
 				GameControl.MovePlayer (3);
@@ -488,7 +571,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail4 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (4);
+                    GameControl.jail4turn = 3;
+                    jail4 = 0;
+                    GameControl.MovePlayer (4);
 					cam4 ();
 				} else {
 					GameControl.jail4turn--;
@@ -496,7 +581,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail4turn == 0) {
 						jail4 = 0;
-					}
+                        GameControl.jail2turn = 3;
+                    }
 					dropButton.interactable = true;
 				}
 			}
@@ -506,7 +592,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure4Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure4Turn == 0)
+                {
+                    injure4Turn = 2;
                     injure4 = 0;
+                }
+                dropButton.interactable = true;
             }
             else {
 				GameControl.MovePlayer (4);
@@ -517,7 +607,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail5 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (5);
+                    GameControl.jail5turn = 3;
+                    jail5 = 0;
+                    GameControl.MovePlayer (5);
 					cam5 ();
 				} else {
 					GameControl.jail5turn--;
@@ -525,7 +617,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail5turn == 0) {
 						jail5 = 0;
-					}
+                        GameControl.jail5turn = 3;
+                    }
 					dropButton.interactable = true;
 				}
 			}
@@ -535,7 +628,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure5Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure5Turn == 0)
+                {
+                    injure5Turn = 2;
                     injure5 = 0;
+                }
+                dropButton.interactable = true;
             }
             else {
 				GameControl.MovePlayer (5);
@@ -546,7 +643,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail6 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (6);
+                    GameControl.jail6turn = 3;
+                    jail6 = 0;
+                    GameControl.MovePlayer (6);
 					cam6 ();
 					whosTurn = 0;
 				} else {
@@ -554,7 +653,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     JailTurn.text = GameControl.jail6turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail6turn == 0) {
-						jail6 = 0;
+                        GameControl.jail6turn = 3;
+                        jail6 = 0;
 					}
                     whosTurn = 0;
                     dropButton.interactable = true;
@@ -566,8 +666,12 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure6Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure6Turn == 0)
+                {
+                    injure6Turn = 2;
                     injure6 = 0;
+                }
                 whosTurn = 0;
+                dropButton.interactable = true;
             }
             else {
 				GameControl.MovePlayer (6);
@@ -586,6 +690,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail1turn = 3;
+                    jail1 = 0;
                     GameControl.MovePlayer(1);
                     cam1();
                 }
@@ -597,6 +703,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     if (GameControl.jail1turn == 0)
                     {
                         jail1 = 0;
+                        GameControl.jail1turn = 3;
                     }
                     dropButton.interactable = true;
                 }
@@ -607,7 +714,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure1Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure1Turn == 0)
+                {
+                    injure1Turn = 2;
                     injure1 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -621,6 +732,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail2turn = 3;
+                    jail2 = 0;
                     GameControl.MovePlayer(2);
                     cam2();
                 }
@@ -631,6 +744,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail2turn == 0)
                     {
+                        GameControl.jail2turn = 3;
                         jail2 = 0;
                     }
                     dropButton.interactable = true;
@@ -642,7 +756,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure2Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure2Turn == 0)
+                {
+                    injure2Turn = 2;
                     injure2 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -656,6 +774,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail3turn = 3;
+                    jail3 = 0;
                     GameControl.MovePlayer(3);
                     cam3();
                 }
@@ -667,6 +787,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     if (GameControl.jail3turn == 0)
                     {
                         jail3 = 0;
+                        GameControl.jail3turn = 3;
                     }
                     dropButton.interactable = true;
                 }
@@ -677,7 +798,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure3Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure3Turn == 0)
+                {
+                    injure3Turn = 2;
                     injure3 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -691,6 +816,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail4turn = 3;
+                    jail4 = 0;
                     GameControl.MovePlayer(4);
                     cam4();
                 }
@@ -701,6 +828,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail4turn == 0)
                     {
+                        GameControl.jail4turn = 3;
                         jail4 = 0;
                     }
                     dropButton.interactable = true;
@@ -712,7 +840,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure4Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure4Turn == 0)
+                {
+                    injure4Turn = 2;
                     injure4 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -726,6 +858,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail5turn = 3;
+                    jail5 = 0;
                     GameControl.MovePlayer(5);
                     cam5();
                 }
@@ -736,6 +870,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail5turn == 0)
                     {
+                        GameControl.jail5turn = 3;
                         jail5 = 0;
                     }
                     dropButton.interactable = true;
@@ -747,7 +882,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure5Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure5Turn == 0)
+                {
+                    injure5Turn = 2;
                     injure5 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -761,9 +900,10 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail6turn = 3;
+                    jail6 = 0;
                     GameControl.MovePlayer(6);
                     cam6();
-                    whosTurn = 0;
                 }
                 else
                 {
@@ -773,6 +913,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     if (GameControl.jail6turn == 0)
                     {
                         jail6 = 0;
+                        GameControl.jail6turn = 3;
                     }
                     whosTurn = 0;
                     dropButton.interactable = true;
@@ -784,7 +925,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure6Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure6Turn == 0)
+                {
+                    injure6Turn = 2;
                     injure6 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -796,7 +941,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail7 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (7);
+                    GameControl.jail7turn = 3;
+                    jail7 = 0;
+                    GameControl.MovePlayer (7);
 					cam7 ();
 					whosTurn = 0;
 				} else {
@@ -804,7 +951,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     JailTurn.text = GameControl.jail7turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail7turn == 0) {
-						jail7 = 0;
+                        GameControl.jail7turn = 3;
+                        jail7 = 0;
 					}
                     whosTurn = 0;
                     dropButton.interactable = true;
@@ -816,8 +964,12 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure7Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure7Turn == 0)
+                {
+                    injure7Turn = 2;
                     injure7 = 0;
+                }
                 whosTurn = 0;
+                dropButton.interactable = true;
             }
             else {
 				GameControl.MovePlayer (7);
@@ -835,6 +987,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail1turn = 3;
+                    jail1 = 0;
                     GameControl.MovePlayer(1);
                     cam1();
                 }
@@ -846,6 +1000,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     if (GameControl.jail1turn == 0)
                     {
                         jail1 = 0;
+                        GameControl.jail1turn = 3;
                     }
                     dropButton.interactable = true;
                 }
@@ -856,7 +1011,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure1Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure1Turn == 0)
+                {
+                    injure1Turn = 2;
                     injure1 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -870,6 +1029,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail2turn = 3;
+                    jail2 = 0;
                     GameControl.MovePlayer(2);
                     cam2();
                 }
@@ -880,6 +1041,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail2turn == 0)
                     {
+                        GameControl.jail2turn = 3;
                         jail2 = 0;
                     }
                     dropButton.interactable = true;
@@ -891,7 +1053,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure2Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure2Turn == 0)
+                {
+                    injure2Turn = 2;
                     injure2 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -905,6 +1071,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail3turn = 3;
+                    jail3 = 0;
                     GameControl.MovePlayer(3);
                     cam3();
                 }
@@ -916,6 +1084,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     if (GameControl.jail3turn == 0)
                     {
                         jail3 = 0;
+                        GameControl.jail3turn = 3;
                     }
                     dropButton.interactable = true;
                 }
@@ -926,7 +1095,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure3Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure3Turn == 0)
+                {
+                    injure3Turn = 2;
                     injure3 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -940,6 +1113,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail4turn = 3;
+                    jail4 = 0;
                     GameControl.MovePlayer(4);
                     cam4();
                 }
@@ -950,6 +1125,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail4turn == 0)
                     {
+                        GameControl.jail4turn = 3;
                         jail4 = 0;
                     }
                     dropButton.interactable = true;
@@ -961,7 +1137,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure4Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure4Turn == 0)
+                {
+                    injure4Turn = 2;
                     injure4 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -975,6 +1155,8 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail5turn = 3;
+                    jail5 = 0;
                     GameControl.MovePlayer(5);
                     cam5();
                 }
@@ -985,6 +1167,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail5turn == 0)
                     {
+                        GameControl.jail5turn = 3;
                         jail5 = 0;
                     }
                     dropButton.interactable = true;
@@ -996,7 +1179,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure5Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure5Turn == 0)
+                {
+                    injure5Turn = 2;
                     injure5 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -1010,9 +1197,10 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail6turn = 3;
+                    jail6 = 0;
                     GameControl.MovePlayer(6);
                     cam6();
-                    whosTurn = 0;
                 }
                 else
                 {
@@ -1021,6 +1209,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail6turn == 0)
                     {
+                        GameControl.jail6turn = 3;
                         jail6 = 0;
                     }
                     whosTurn = 0;
@@ -1033,7 +1222,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure6Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure6Turn == 0)
+                {
+                    injure6Turn = 2;
                     injure6 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -1047,9 +1240,10 @@ public class DiceNumberTextScript : MonoBehaviour {
             {
                 if (DiceNumberTextScript.dice1Number == 6)
                 {
+                    GameControl.jail7turn = 3;
+                    jail7 = 0;
                     GameControl.MovePlayer(7);
                     cam7();
-                    whosTurn = 0;
                 }
                 else
                 {
@@ -1058,6 +1252,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail7turn == 0)
                     {
+                        GameControl.jail7turn = 3;
                         jail7 = 0;
                     }
                     whosTurn = 0;
@@ -1070,7 +1265,11 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure7Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure7Turn == 0)
+                {
+                    injure7Turn = 2;
                     injure7 = 0;
+                }
+                dropButton.interactable = true;
             }
             else
             {
@@ -1082,7 +1281,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if (jail8 == 1) {
 				if (DiceNumberTextScript.dice1Number == 6) {
-					GameControl.MovePlayer (8);
+                    GameControl.jail8turn = 3;
+                    jail8 = 0;
+                    GameControl.MovePlayer (8);
 					cam8 ();
 					whosTurn = 0;
 				} else {
@@ -1091,7 +1292,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                     StartCoroutine(TemporarilyDeactivate(2));
                     if (GameControl.jail8turn == 0) {
 						jail8 = 0;
-					}
+                        GameControl.jail8turn = 3;
+                    }
                     whosTurn = 0;
                     dropButton.interactable = true;
 				}
@@ -1102,8 +1304,12 @@ public class DiceNumberTextScript : MonoBehaviour {
                 InjureTurn.text = injure8Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
                 if (injure8Turn == 0)
+                {
+                    injure8Turn = 2;
                     injure8 = 0;
+                }
                 whosTurn = 0;
+                dropButton.interactable = true;
             }
             else {
 				GameControl.MovePlayer(8);

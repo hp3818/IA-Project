@@ -416,7 +416,7 @@ public class FollowThePath : MonoBehaviour {
                 goToGo();
                 break;
         case 4:
-                chance.text = "負傷!!";
+                chance.text = "你受傷了!!";
                 StartCoroutine(TemporarilyDeactivate(2));
                 goToHospital();
                 break;
