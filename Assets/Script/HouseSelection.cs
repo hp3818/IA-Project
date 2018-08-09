@@ -9,7 +9,8 @@ public class HouseSelection : MonoBehaviour {
     public Camera[] camera;
     public Button buy, payMoney;
     public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost;
-	public static int sum1 = 500000, sum2 = 500000, sum3 = 500000, sum4 = 150000, sum5 = 150000, sum6 = 150000, sum7 = 150000, sum8 = 150000;
+	public static int sum1 = 500000, sum4 = 150000, sum5 = 150000, sum6 = 150000, sum7 = 150000, sum8= 150000;
+    public static int sum2, sum3;
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public Transform[] waypoints;
     public static int whosTurn, geter;
@@ -35,6 +36,29 @@ public class HouseSelection : MonoBehaviour {
 
 
     public static int reduce;
+
+    void Start()
+    {
+        player1Cost.text = "500000";
+
+        if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+        {
+            sum2 = 500000; sum3 = 150000;
+            player2Cost.text = "500000";
+            player3Cost.text = "150000";
+        }
+        if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
+        {
+            sum2 = 500000; sum3 = 50000;
+            player2Cost.text = "500000";
+            player3Cost.text = "500000";
+        }
+        player4Cost.text = "150000";
+        player5Cost.text = "150000";
+        player6Cost.text = "150000";
+        player7Cost.text = "150000";
+        player8Cost.text = "150000";
+    }
 
     public void Buy()
     {
