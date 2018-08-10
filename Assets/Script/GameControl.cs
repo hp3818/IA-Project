@@ -24,10 +24,10 @@ public class GameControl : MonoBehaviour {
 	public static int own;
 	public static int whoAreYou;
     public static int Go1 = 0, Go2 = 0, Go3 = 0, Go4 = 0, Go5 = 0, Go6 = 0, Go7 = 0, Go8 = 0;
-    
+   
     public static int whoTurn;
     public Button dropButton;
-    public static int numberOfPlayer;
+    public static int numberOfPlayer = 4;
     public Camera[] camera;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
@@ -145,58 +145,6 @@ public class GameControl : MonoBehaviour {
             buy.interactable = false;
         }
 
-        if (Go1 == 1 || Go2 == 1 || Go3 == 1 || Go4 == 1 || Go5 == 1 || Go6 == 1 || Go7 == 1 || Go8 == 1)
-        {
-            if (Go1 == 1)
-            {
-                HouseSelection.sum1 += 200000;
-                player1Cost.text = HouseSelection.sum1.ToString();
-                Go1 = 0;
-            }
-            if (Go2 == 1)
-            {
-                HouseSelection.sum2 += 100000;
-                player2Cost.text = HouseSelection.sum2.ToString();
-                Go2 = 0;
-            }
-            if (Go3 == 1)
-            {
-                HouseSelection.sum3 += 100000;
-                player3Cost.text = HouseSelection.sum3.ToString();
-                Go3 = 0;
-            }
-            if (Go4 == 1)
-            {
-                HouseSelection.sum4 += 50000;
-                player4Cost.text = HouseSelection.sum4.ToString();
-                Go4 = 0;
-            }
-            if (Go5 == 1)
-            {
-                HouseSelection.sum5 += 50000;
-                player5Cost.text = HouseSelection.sum5.ToString();
-                Go5 = 0;
-            }
-            if (Go6 == 1)
-            {
-                HouseSelection.sum6 += 50000;
-                player6Cost.text = HouseSelection.sum6.ToString();
-                Go6 = 0;
-            }
-            if (Go7 == 1)
-            {
-                HouseSelection.sum7 += 50000;
-                player7Cost.text = HouseSelection.sum7.ToString();
-                Go7 = 0;
-            }
-            if (Go8 == 1)
-            {
-                HouseSelection.sum8 += 50000;
-                player8Cost.text = HouseSelection.sum8.ToString();
-                Go8 = 0;
-            }
-        }
-
         if (player1.GetComponent<FollowThePath>().wayPointIndex > player1Waypoint + diceSide1Thrown + diceSide2Thrown + diceSide3Thrown - player1.GetComponent<FollowThePath>().Accept)
         {
             whoTurn = 1;
@@ -204,6 +152,13 @@ public class GameControl : MonoBehaviour {
             player1Waypoint = player1.GetComponent<FollowThePath>().wayPointIndex - 1;
             player1.GetComponent<FollowThePath>().Movement = 0;
             player1.GetComponent<FollowThePath>().Accept = 0;
+
+            if (player1.GetComponent<FollowThePath>().transform.position == waypoints[0].transform.position && Go1 == 1)
+            {
+                HouseSelection.sum1 += 200000;
+                player1Cost.text = HouseSelection.sum1.ToString();
+                Go1 = 0;
+            }
 
             if (player1.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {
@@ -1800,6 +1755,13 @@ public class GameControl : MonoBehaviour {
             player2Waypoint = player2.GetComponent<FollowThePath>().wayPointIndex - 1;
             player2.GetComponent<FollowThePath>().Movement = 0;
             player2.GetComponent<FollowThePath>().Accept = 0;
+
+            if (player2.GetComponent<FollowThePath>().transform.position == waypoints[0].transform.position && Go2 == 1)
+            {
+                HouseSelection.sum2 += 100000;
+                player2Cost.text = HouseSelection.sum2.ToString();
+                Go2 = 0;
+            }
 
             if (player2.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {
@@ -3527,6 +3489,22 @@ public class GameControl : MonoBehaviour {
             player3Waypoint = player3.GetComponent<FollowThePath>().wayPointIndex - 1;
             player3.GetComponent<FollowThePath>().Movement = 0;
             player3.GetComponent<FollowThePath>().Accept = 0;
+
+            if (player3.GetComponent<FollowThePath>().transform.position == waypoints[0].transform.position && Go3 == 1)
+            {
+                if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                {
+                    HouseSelection.sum3 += 50000;
+                    player3Cost.text = HouseSelection.sum3.ToString();
+                    Go3 = 0;
+                }
+                else
+                {
+                    HouseSelection.sum3 += 100000;
+                    player3Cost.text = HouseSelection.sum3.ToString();
+                    Go3 = 0;
+                }
+            }
 
             if (player3.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {
@@ -5262,6 +5240,13 @@ public class GameControl : MonoBehaviour {
             player4.GetComponent<FollowThePath>().Movement = 0;
             player4.GetComponent<FollowThePath>().Accept = 0;
 
+            if (player4.GetComponent<FollowThePath>().transform.position == waypoints[0].transform.position && Go4 == 1)
+            {
+                HouseSelection.sum4 += 50000;
+                player4Cost.text = HouseSelection.sum4.ToString();
+                Go4 = 0;
+            }
+
             if (player4.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {
                 detect = count1;
@@ -6781,6 +6766,13 @@ public class GameControl : MonoBehaviour {
             player5Waypoint = player5.GetComponent<FollowThePath>().wayPointIndex - 1;
             player5.GetComponent<FollowThePath>().Movement = 0;
             player5.GetComponent<FollowThePath>().Accept = 0;
+
+            if (player5.GetComponent<FollowThePath>().transform.position == waypoints[0].transform.position && Go5 == 1)
+            {
+                HouseSelection.sum5 += 50000;
+                player5Cost.text = HouseSelection.sum5.ToString();
+                Go5 = 0;
+            }
 
             if (player5.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {
@@ -8302,6 +8294,13 @@ public class GameControl : MonoBehaviour {
             player6.GetComponent<FollowThePath>().Movement = 0;
             player6.GetComponent<FollowThePath>().Accept = 0;
 
+            if (player6.GetComponent<FollowThePath>().transform.position == waypoints[0].transform.position && Go6 == 1)
+            {
+                HouseSelection.sum6 += 50000;
+                player6Cost.text = HouseSelection.sum6.ToString();
+                Go6 = 0;
+            }
+
             if (player6.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {
                 detect = count1;
@@ -9821,6 +9820,13 @@ public class GameControl : MonoBehaviour {
             player7.GetComponent<FollowThePath>().Movement = 0;
             player7.GetComponent<FollowThePath>().Accept = 0;
 
+            if (player7.GetComponent<FollowThePath>().transform.position == waypoints[0].transform.position && Go7 == 1)
+            {
+                HouseSelection.sum7 += 50000;
+                player7Cost.text = HouseSelection.sum7.ToString();
+                Go7 = 0;
+            }
+
             if (player7.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {
                 detect = count1;
@@ -11337,6 +11343,13 @@ public class GameControl : MonoBehaviour {
             player8Waypoint = player8.GetComponent<FollowThePath>().wayPointIndex - 1;
             player8.GetComponent<FollowThePath>().Movement = 0;
             player8.GetComponent<FollowThePath>().Accept = 0;
+
+            if (player8.GetComponent<FollowThePath>().transform.position == waypoints[0].transform.position && Go8 == 1)
+            {
+                HouseSelection.sum8 += 50000;
+                player8Cost.text = HouseSelection.sum8.ToString();
+                Go8 = 0;
+            }
 
             if (player8.GetComponent<FollowThePath>().transform.position == waypoints[1].transform.position)
             {

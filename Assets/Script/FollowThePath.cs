@@ -52,45 +52,80 @@ public class FollowThePath : MonoBehaviour {
 
             Movement++; //  Walk++
 
-            if (transform.position == waypoints[1].transform.position) 
+            if (GameControl.numberOfPlayer == 4)
             {
-                Go = 1;
-            }
-
-            if (transform.position == waypoints[0].transform.position && Go == 1) 
-            {
-                if (whosTurn == 1)
-                {
+                if (DiceNumberTextScript.whosTurn - 1 == 1)
                     GameControl.Go1 = 1;
-                }
-                if (whosTurn == 2)
-                {
+                if (DiceNumberTextScript.whosTurn - 1 == 2)
                     GameControl.Go2 = 1;
-                }
-                if (whosTurn == 3)
-                {
+                if (DiceNumberTextScript.whosTurn - 1 == 3)
                     GameControl.Go3 = 1;
-                }
-                if (whosTurn == 4)
-                {
+                if (DiceNumberTextScript.whosTurn + 3 == 4)
                     GameControl.Go4 = 1;
-                }
-                if (whosTurn == 5)
-                {
+            }
+            if (GameControl.numberOfPlayer == 5)
+            {
+                if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    GameControl.Go1 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    GameControl.Go2 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    GameControl.Go3 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    GameControl.Go4 = 1;
+                if (DiceNumberTextScript.whosTurn + 4 == 5)
                     GameControl.Go5 = 1;
-                }
-                if (whosTurn == 6)
-                {
+            }
+            if (GameControl.numberOfPlayer == 6)
+            {
+                if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    GameControl.Go1 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    GameControl.Go2 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    GameControl.Go3 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    GameControl.Go4 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    GameControl.Go5 = 1;
+                if (DiceNumberTextScript.whosTurn + 5 == 6)
                     GameControl.Go6 = 1;
-                }
-                if (whosTurn == 7)
-                {
+            }
+            if (GameControl.numberOfPlayer == 7)
+            {
+                if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    GameControl.Go1 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    GameControl.Go2 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    GameControl.Go3 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    GameControl.Go4 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    GameControl.Go5 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 6)
+                    GameControl.Go6 = 1;
+                if (DiceNumberTextScript.whosTurn + 6 == 7)
                     GameControl.Go7 = 1;
-                }
-                if (whosTurn == 8)
-                {
+            }
+            if (GameControl.numberOfPlayer == 8)
+            {
+                if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    GameControl.Go1 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    GameControl.Go2 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    GameControl.Go3 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    GameControl.Go4 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    GameControl.Go5 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 6)
+                    GameControl.Go6 = 1;
+                if (DiceNumberTextScript.whosTurn - 1 == 7)
+                    GameControl.Go7 = 1;
+                if (DiceNumberTextScript.whosTurn + 7 == 8)
                     GameControl.Go8 = 1;
-                }
             }
 
             if (transform.position == waypoints[57].transform.position)

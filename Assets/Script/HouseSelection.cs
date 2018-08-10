@@ -49,7 +49,7 @@ public class HouseSelection : MonoBehaviour {
         }
         if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
         {
-            sum2 = 500000; sum3 = 50000;
+            sum2 = 500000; sum3 = 500000;
             player2Cost.text = "500000";
             player3Cost.text = "500000";
         }
