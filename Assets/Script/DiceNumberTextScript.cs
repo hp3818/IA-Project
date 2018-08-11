@@ -16,6 +16,7 @@ public class DiceNumberTextScript : MonoBehaviour {
     public static GameObject ImageForJail;
     public static GameObject ImageForHospital;
     public Text InjureTurn;
+    public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost;
 
     Text text;
 	public static int dice1Number;
@@ -174,8 +175,29 @@ public class DiceNumberTextScript : MonoBehaviour {
             }
             else
             {
-                GameControl.MovePlayer(2);
-                cam2();
+                Debug.Log(Skill.luckydraw);
+                if (Skill.luckydraw == 1)
+                {
+                    if (dice1Number > 3)
+                    {
+                        HouseSelection.sum2 += 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    else if (dice1Number <= 3)
+                    {
+                        HouseSelection.sum2 -= 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    Skill.luckydraw = 0;
+                    whosTurn--;
+                    dropButton.interactable = true;
+                    GameControl.ImageForMid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
             }
         }
         else if (whosTurn == 3)
@@ -336,8 +358,28 @@ public class DiceNumberTextScript : MonoBehaviour {
             }
             else
             {
-                GameControl.MovePlayer(2);
-                cam2();
+                if (Skill.luckydraw == 1)
+                {
+                    if (dice1Number > 3)
+                    {
+                        HouseSelection.sum2 += 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    else if (dice1Number <= 3)
+                    {
+                        HouseSelection.sum2 -= 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    Skill.luckydraw = 0;
+                    whosTurn--;
+                    dropButton.interactable = true;
+                    GameControl.ImageForMid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
             }
         }
         else if (whosTurn == 3)
@@ -527,9 +569,29 @@ public class DiceNumberTextScript : MonoBehaviour {
                 dropButton.interactable = true;
             }
             else {
-				GameControl.MovePlayer (2);
-				cam2 ();
-			}
+                if (Skill.luckydraw == 1)
+                {
+                    if (dice1Number > 3)
+                    {
+                        HouseSelection.sum2 += 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    else if (dice1Number <= 3)
+                    {
+                        HouseSelection.sum2 -= 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    Skill.luckydraw = 0;
+                    whosTurn--;
+                    dropButton.interactable = true;
+                    GameControl.ImageForMid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
+            }
         }
         else if (whosTurn == 3)
         {
@@ -563,9 +625,29 @@ public class DiceNumberTextScript : MonoBehaviour {
                 dropButton.interactable = true;
             }
             else {
-				GameControl.MovePlayer (3);
-				cam3 ();
-			}
+                if (Skill.luckydraw == 1)
+                {
+                    if (dice1Number > 3)
+                    {
+                        HouseSelection.sum3 += 30000;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    else if (dice1Number <= 3)
+                    {
+                        HouseSelection.sum3 -= 30000;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    Skill.luckydraw = 0;
+                    whosTurn--;
+                    dropButton.interactable = true;
+                    GameControl.ImageForMid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    GameControl.MovePlayer(3);
+                    cam3();
+                }
+            }
         }
         else if (whosTurn == 4)
         {
@@ -764,8 +846,28 @@ public class DiceNumberTextScript : MonoBehaviour {
             }
             else
             {
-                GameControl.MovePlayer(2);
-                cam2();
+                if (Skill.luckydraw == 1)
+                {
+                    if (dice1Number > 3)
+                    {
+                        HouseSelection.sum2 += 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    else if (dice1Number <= 3)
+                    {
+                        HouseSelection.sum2 -= 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    Skill.luckydraw = 0;
+                    whosTurn--;
+                    dropButton.interactable = true;
+                    GameControl.ImageForMid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
             }
         }
         else if (whosTurn == 3)
@@ -806,8 +908,28 @@ public class DiceNumberTextScript : MonoBehaviour {
             }
             else
             {
-                GameControl.MovePlayer(3);
-                cam3();
+                if (Skill.luckydraw == 1)
+                {
+                    if (dice1Number > 3)
+                    {
+                        HouseSelection.sum3 += 30000;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    else if (dice1Number <= 3)
+                    {
+                        HouseSelection.sum3 -= 30000;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    Skill.luckydraw = 0;
+                    whosTurn--;
+                    dropButton.interactable = true;
+                    GameControl.ImageForMid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
             }
         }
         else if (whosTurn == 4)
@@ -1061,8 +1183,28 @@ public class DiceNumberTextScript : MonoBehaviour {
             }
             else
             {
-                GameControl.MovePlayer(2);
-                cam2();
+                if (Skill.luckydraw == 1)
+                {
+                    if (dice1Number > 3)
+                    {
+                        HouseSelection.sum2 += 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    else if (dice1Number <= 3)
+                    {
+                        HouseSelection.sum2 -= 30000;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    Skill.luckydraw = 0;
+                    whosTurn--;
+                    dropButton.interactable = true;
+                    GameControl.ImageForMid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
             }
         }
         else if (whosTurn == 3)
@@ -1103,8 +1245,28 @@ public class DiceNumberTextScript : MonoBehaviour {
             }
             else
             {
-                GameControl.MovePlayer(3);
-                cam3();
+                if (Skill.luckydraw == 1)
+                {
+                    if (dice1Number > 3)
+                    {
+                        HouseSelection.sum3 += 30000;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    else if (dice1Number <= 3)
+                    {
+                        HouseSelection.sum3 -= 30000;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    Skill.luckydraw = 0;
+                    whosTurn--;
+                    dropButton.interactable = true;
+                    GameControl.ImageForMid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
             }
         }
         else if (whosTurn == 4)
@@ -1443,213 +1605,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[8].enabled = true; //
 		FollowThePath.whosTurn = 8;
     }
-    /*
-    void Jail()
-    {
-        if (whosTurn + 1 == 2)
-        {
-            if (jail2 == 1)
-            {
-                GameControl.jail2turn--;
-                JailTurn.text = GameControl.jail2turn.ToString();
-                if(GameControl.jail2turn == 0)
-                {
-                    GameControl.jail2turn = 3;
-                    jail2 = 0;
-                }
-                whosTurn++;
-            }
-        }
 
-        if (whosTurn + 1 == 3)
-        {
-            if (jail3 == 1)
-            {
-                GameControl.jail3turn--;
-                JailTurn.text = GameControl.jail3turn.ToString();
-                whosTurn++;
-                if (GameControl.jail3turn == 0)
-                {
-                    GameControl.jail3turn = 3;
-                    jail3 = 0;
-                }
-            }
-        }
-
-        if (whosTurn + 1 == 4)
-        {
-            if (jail4 == 1)
-            {
-                GameControl.jail4turn--;
-                JailTurn.text = GameControl.jail4turn.ToString();
-                if (GameControl.jail4turn == 0)
-                {
-                    GameControl.jail4turn = 3;
-                    jail4 = 0;
-                }
-				if (MaxPeople == 4) {
-					whosTurn = 0;
-				} else {
-					whosTurn++;
-
-				} 
-            }
-        }
-
-        if (whosTurn + 1 == 5)
-        {
-            if (jail5 == 1)
-            {
-                GameControl.jail5turn--;
-                JailTurn.text = GameControl.jail5turn.ToString();
-                if (GameControl.jail5turn == 0)
-                {
-                    GameControl.jail5turn = 3;
-                    jail5 = 0;
-                }
-				if (MaxPeople == 5) {
-					whosTurn = 0;
-				} else {
-					whosTurn++;
-				}
-            }
-        }
-
-        if (whosTurn + 1 == 6)
-        {
-            if (jail6 == 1)
-            {
-                GameControl.jail6turn--;
-                JailTurn.text = GameControl.jail6turn.ToString();
-                if (GameControl.jail6turn == 0)
-                {
-                    GameControl.jail6turn = 3;
-                    jail6 = 0;
-                }
-				if (MaxPeople == 5) {
-					whosTurn = 0;
-				} else {
-					whosTurn++;
-				}
-            }
-        }
-
-        if (whosTurn + 1 == 7)
-        {
-            if (jail7 == 1)
-            {
-                GameControl.jail7turn--;
-                JailTurn.text = GameControl.jail7turn.ToString();
-                if (GameControl.jail7turn == 0)
-                {
-                    GameControl.jail7turn = 3;
-                    jail7 = 0;
-                }
-				if (MaxPeople == 6) {
-					whosTurn = 0;
-				} else {
-					whosTurn++;
-				}
-            }
-        }
-
-        if (whosTurn + 1 == 8)
-        {
-            if (jail8 == 1)
-            {
-                GameControl.jail8turn--;
-                JailTurn.text = GameControl.jail8turn.ToString();
-                if (GameControl.jail8turn == 0)
-                {
-                    GameControl.jail8turn = 3;
-                    jail8 = 0;
-                }
-				if (MaxPeople == 7) {
-					whosTurn = 1;
-				} else {
-					whosTurn = 0;
-				}
-            }
-        }
-
-        if (whosTurn -3 == 1 || whosTurn - 4 == 1 || whosTurn -5 == 1 || whosTurn -6 == 1 || whosTurn -7 == 1)
-        {
-            if(whosTurn == 4 && MaxPeople == 4)
-            {
-                if (jail1 == 1)
-                {
-                    GameControl.jail1turn--;
-                    JailTurn.text = GameControl.jail1turn.ToString();
-                    if (GameControl.jail1turn == 0)
-                    {
-                        GameControl.jail1turn = 3;
-                        jail1 = 0;
-					} 
-                    whosTurn = 1;
-                }
-            }
-            if (whosTurn == 5 && MaxPeople == 5)
-            {
-                if (jail1 == 1)
-                {
-                    GameControl.jail1turn--;
-                    JailTurn.text = GameControl.jail1turn.ToString();
-                    if (GameControl.jail1turn == 0)
-                    {
-                        GameControl.jail1turn = 3;
-                        jail1 = 0;
-                    }
-                    whosTurn = 1;
-                }
-            }
-            if (whosTurn == 6 && MaxPeople == 6)
-            {
-                if (jail1 == 1)
-                {
-                    GameControl.jail1turn--;
-                    JailTurn.text = GameControl.jail1turn.ToString();
-                    if (GameControl.jail1turn == 0)
-                    {
-                        GameControl.jail1turn = 3;
-                        jail1 = 0;
-                    }
-                    whosTurn = 1;
-                }
-            }
-            if (whosTurn == 7 && MaxPeople == 7)
-            {
-                if (jail1 == 1)
-                {
-                    GameControl.jail1turn--;
-                    JailTurn.text = GameControl.jail1turn.ToString();
-                    if (ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse == false && ImageForMid == false && ImageForRich == false)
-                    if (GameControl.jail1turn == 0)
-                    {
-                        GameControl.jail1turn = 3;
-                        jail1 = 0;
-                    }
-                    whosTurn = 1;
-                }
-            }
-            if (whosTurn == 7 && MaxPeople == 7)
-            {
-                if (jail1 == 1)
-                {
-                    GameControl.jail1turn--;
-                    JailTurn.text = GameControl.jail1turn.ToString();
-                    if (ImageForBuyHouse.activeSelf == false && ImageForBuyOtherHouse == false && ImageForMid == false && ImageForRich == false)
-                    if (GameControl.jail1turn == 0)
-                    {
-                        GameControl.jail1turn = 3;
-                        jail1 = 0;
-                    }
-                    whosTurn = 1;
-                }
-            }
-
-        }
-    }
-    */
     private IEnumerator TemporarilyDeactivate(float duration)
     {
         ImageForJail.gameObject.SetActive(true);

@@ -120,7 +120,7 @@ public class Dice : MonoBehaviour {
 						GameControl.diceSide3Thrown = 0;
 						accept = 1;
 					} else {
-						GameControl.ImageForMid.gameObject.SetActive(true);
+                        GameControl.ImageForMidSkill.gameObject.SetActive(true);
 					}
                     
                 }
@@ -177,7 +177,13 @@ public class Dice : MonoBehaviour {
 						GameControl.diceSide3Thrown = 0;
 						accept = 1;
 					} else {
-						GameControl.ImageForMid.gameObject.SetActive(true);
+                        if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                        {
+                            GameControl.ImageForRich.gameObject.SetActive(true);
+                        } else
+                        {
+                            GameControl.ImageForMidSkill.gameObject.SetActive(true);
+                        }
 					}
                 }
 

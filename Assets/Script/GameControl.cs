@@ -32,6 +32,7 @@ public class GameControl : MonoBehaviour {
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
 	public static GameObject ImageForBuyOtherHouse;
+    public static GameObject ImageForMidSkill;
 
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public GameObject ImageForJail;
@@ -67,6 +68,9 @@ public class GameControl : MonoBehaviour {
         ImageForRich = GameObject.Find("ImageForRicher");
         ImageForMid.gameObject.SetActive(false);
         ImageForRich.gameObject.SetActive(false);
+
+        ImageForMidSkill = GameObject.Find("ImageForMidSkill");
+        ImageForMidSkill.gameObject.SetActive(false);
 
         ImageForBuyHouse = GameObject.Find("ImageForBuyingHouse");
         ImageForBuyHouse.gameObject.SetActive(false);
