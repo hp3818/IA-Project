@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
@@ -24,7 +25,12 @@ public class GameControl : MonoBehaviour {
 	public static int own;
 	public static int whoAreYou;
     public static int Go1 = 0, Go2 = 0, Go3 = 0, Go4 = 0, Go5 = 0, Go6 = 0, Go7 = 0, Go8 = 0;
-   
+    public static int floor1 = 0, floor2 = 0, floor3 = 0, floor4 = 0, floor5 = 0, floor6 = 0, floor7 = 0, floor8 = 0, floor9 = 0, floor10 = 0,
+                                  floor11 = 0, floor12 = 0, floor13 = 0, floor14 = 0, floor15 = 0, floor16 = 0, floor17 = 0, floor18 = 0, floor19 = 0, floor20 = 0,
+                                  floor21 = 0, floor22 = 0, floor23 = 0, floor24 = 0, floor25 = 0, floor26 = 0, floor27 = 0, floor28 = 0, floor29 = 0, floor30 = 0,
+                                  floor31 = 0, floor32 = 0, floor33 = 0, floor34 = 0, floor35 = 0, floor36 = 0, floor37 = 0, floor38 = 0, floor39 = 0, floor40 = 0,
+                                  floor41 = 0, floor42;
+
     public static int whoTurn;
     public Button dropButton;
     public static int numberOfPlayer = 4;
@@ -50,9 +56,39 @@ public class GameControl : MonoBehaviour {
     public static int player7Waypoint = 0;
     public static int player8Waypoint = 0;
 
+    public GameObject Level1Building1, Level1Building2, Level1Building3, Level1Building4, Level1Building5, Level1Building7, Level1Building8, Level1Building9,
+                                         Level1Building11, Level1Building13, Level1Building14, Level1Building15, Level1Building16, Level1Building17, Level1Building19,
+                                         Level1Building20, Level1Building22, Level1Building23, Level1Building24, Level1Building26, Level1Building27, Level1Building28, Level1Building29,
+                                         Level1Building31, Level1Building32, Level1Building33, Level1Building34, Level1Building36, Level1Building37, Level1Building39, Level1Building40,
+                                         Level1Building42, Level1Building43, Level1Building44, Level1Building47, Level1Building48, Level1Building49,
+                                         Level1Building51, Level1Building52, Level1Building55, Level1Building56, Level1Building57;
+    public GameObject Level2Building1, Level2Building2, Level2Building3, Level2Building4, Level2Building5, Level2Building7, Level2Building8, Level2Building9,
+                                         Level2Building11, Level2Building13, Level2Building14, Level2Building15, Level2Building16, Level2Building17, Level2Building19,
+                                         Level2Building20, Level2Building22, Level2Building23, Level2Building24, Level2Building26, Level2Building27, Level2Building28, Level2Building29,
+                                         Level2Building31, Level2Building32, Level2Building33, Level2Building34, Level2Building36, Level2Building37, Level2Building39, Level2Building40,
+                                         Level2Building42, Level2Building43, Level2Building44, Level2Building47, Level2Building48, Level2Building49,
+                                         Level2Building51, Level2Building52, Level2Building55, Level2Building56, Level2Building57;
+    public GameObject Level3Building1, Level3Building2, Level3Building3, Level3Building4, Level3Building5, Level3Building7, Level3Building8, Level3Building9,
+                                         Level3Building11, Level3Building13, Level3Building14, Level3Building15, Level3Building16, Level3Building17, Level3Building19,
+                                         Level3Building20, Level3Building22, Level3Building23, Level3Building24, Level3Building26, Level3Building27, Level3Building28, Level3Building29,
+                                         Level3Building31, Level3Building32, Level3Building33, Level3Building34, Level3Building36, Level3Building37, Level3Building39, Level3Building40,
+                                         Level3Building42, Level3Building43, Level3Building44, Level3Building47, Level3Building48, Level3Building49,
+                                         Level3Building51, Level3Building52, Level3Building55, Level3Building56, Level3Building57;
+
+    public GameObject ImageForLucky1, ImageForX, ImageForLuck7, ImageForLuck8;
+    public static GameObject ImageForLuck5, ImageForLuck6;
+    public Text text2;
+    public static int X1 = 0, X2 = 0, X3 = 0, X4 = 0, X5 = 0, X6 = 0, X7 = 0, X8 = 0;
+
+
     void Start () {
 
         payMoney.interactable = false;
+
+        ImageForLuck5 = GameObject.Find("ImageForLuck5");
+        ImageForLuck5.gameObject.SetActive(false);
+        ImageForLuck6 = GameObject.Find("ImageForLuck6");
+        ImageForLuck6.gameObject.SetActive(false);
 
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
@@ -62,7 +98,6 @@ public class GameControl : MonoBehaviour {
         player6 = GameObject.Find("player6");
         player7 = GameObject.Find("player7");
         player8 = GameObject.Find("player8");
-        
 
         ImageForMid = GameObject.Find("ImageForMiddle");
         ImageForRich = GameObject.Find("ImageForRicher");
@@ -188,8 +223,11 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(1, Reduce, own);
-
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    } else
+                        X1 = 0;
                     if (own1 > 1)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
@@ -224,9 +262,13 @@ public class GameControl : MonoBehaviour {
 						Reduce = 15000;
 					else if (detect == 3)
 						Reduce = 20000;
-					ReduceSum (1, Reduce, own);
-
-					if (own2 > 1)
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
+                    if (own2 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -258,9 +300,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 15000;
 					else if (detect == 3)
 						Reduce = 20000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own3 > 1)
+                    if (own3 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -292,9 +339,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 15000;
 					else if (detect == 3)
 						Reduce = 20000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own4 > 1)
+                    if (own4 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -326,9 +378,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 15000;
 					else if (detect == 3)
 						Reduce = 20000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own5 > 1)
+                    if (own5 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -360,9 +417,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 15000;
 					else if (detect == 3)
 						Reduce = 20000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own6 > 1)
+                    if (own6 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -393,9 +455,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 15000;
 					else if (detect == 3)
 						Reduce = 20000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own7 > 1)
+                    if (own7 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -427,9 +494,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 21000;
 					else if (detect == 3)
 						Reduce = 27000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own8 > 1)
+                    if (own8 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -457,7 +529,12 @@ public class GameControl : MonoBehaviour {
 					own = own9;
 					if (detect == 1)
 						Reduce = 30000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -487,9 +564,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 21000;
 					else if (detect == 3)
 						Reduce = 27000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own10 > 1)
+                    if (own10 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -521,9 +603,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 21000;
 					else if (detect == 3)
 						Reduce = 27000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own11 > 1)
+                    if (own11 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -555,9 +642,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 21000;
 					else if (detect == 3)
 						Reduce = 27000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own12 > 1)
+                    if (own12 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -589,9 +681,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 21000;
 					else if (detect == 3)
 						Reduce = 27000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own13 > 1)
+                    if (own13 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -623,9 +720,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 21000;
 					else if (detect == 3)
 						Reduce = 27000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own14 > 1)
+                    if (own14 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -657,9 +759,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 21000;
 					else if (detect == 3)
 						Reduce = 27000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own15 > 1)
+                    if (own15 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -691,7 +798,12 @@ public class GameControl : MonoBehaviour {
 						Reduce = 27000;
 					else if (detect == 3)
 						Reduce = 34000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0; ;
 
 					if (own16 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -725,9 +837,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 27000;
 					else if (detect == 3)
 						Reduce = 34000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own17 > 1)
+                    if (own17 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -755,7 +872,12 @@ public class GameControl : MonoBehaviour {
 					own = own18;
 					if (detect == 1)
 						Reduce = 30000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -785,9 +907,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 27000;
 					else if (detect == 3)
 						Reduce = 34000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own19 > 1)
+                    if (own19 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -819,9 +946,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 27000;
 					else if (detect == 3)
 						Reduce = 34000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own20 > 1)
+                    if (own20 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -853,9 +985,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 27000;
 					else if (detect == 3)
 						Reduce = 34000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own21 > 1)
+                    if (own21 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -887,9 +1024,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 27000;
 					else if (detect == 3)
 						Reduce = 34000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own22 > 1)
+                    if (own22 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -921,9 +1063,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 27000;
 					else if (detect == 3)
 						Reduce = 34000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own23 > 1)
+                    if (own23 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -955,9 +1102,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 38500;
 					else if (detect == 3)
 						Reduce = 47000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own24 > 1)
+                    if (own24 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -989,9 +1141,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 38500;
 					else if (detect == 3)
 						Reduce = 47000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own25 > 1)
+                    if (own25 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1071,9 +1228,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 38500;
 					else if (detect == 3)
 						Reduce = 47000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own26 > 1)
+                    if (own26 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1105,9 +1267,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 38500;
 					else if (detect == 3)
 						Reduce = 47000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own27 > 1)
+                    if (own27 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1139,9 +1306,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 38500;
 					else if (detect == 3)
 						Reduce = 47000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own28 > 1)
+                    if (own28 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1173,9 +1345,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 38500;
 					else if (detect == 3)
 						Reduce = 47000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own29 > 1)
+                    if (own29 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1207,9 +1384,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 58500;
 					else if (detect == 3)
 						Reduce = 67000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own30 > 1)
+                    if (own30 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1241,9 +1423,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 58500;
 					else if (detect == 3)
 						Reduce = 67000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own31 > 1)
+                    if (own31 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1271,7 +1458,12 @@ public class GameControl : MonoBehaviour {
 					own = own32;
 					if (detect == 1)
 						Reduce = 30000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -1301,9 +1493,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 58500;
 					else if (detect == 3)
 						Reduce = 67000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own33 > 1)
+                    if (own33 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1335,9 +1532,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 58500;
 					else if (detect == 3)
 						Reduce = 67000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own34 > 1)
+                    if (own34 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1369,9 +1571,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 79000;
 					else if (detect == 3)
 						Reduce = 88000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own35 > 1)
+                    if (own35 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1403,9 +1610,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 79000;
 					else if (detect == 3)
 						Reduce = 88000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own36 > 1)
+                    if (own36 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1437,9 +1649,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 79000;
 					else if (detect == 3)
 						Reduce = 88000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own37 > 1)
+                    if (own37 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1471,9 +1688,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 79000;
 					else if (detect == 3)
 						Reduce = 88000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own38 > 1)
+                    if (own38 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1505,9 +1727,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 79000;
 					else if (detect == 3)
 						Reduce = 88000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own39 > 1)
+                    if (own39 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1539,8 +1766,13 @@ public class GameControl : MonoBehaviour {
 						Reduce = 94000;
 					else if (detect == 3)
 						Reduce = 108000;
-					ReduceSum (1, Reduce, own);
-					if (own40 > 1)
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
+                    if (own40 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1564,9 +1796,14 @@ public class GameControl : MonoBehaviour {
 					own = own41;
 					if (detect == 1)
 						Reduce = 30000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-                   dropButton.interactable = true;
+                    dropButton.interactable = true;
                    camMain();
                 }
             }
@@ -1597,9 +1834,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 94000;
 					else if (detect == 3)
 						Reduce = 108000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own42 > 1)
+                    if (own42 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1631,9 +1873,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 94000;
 					else if (detect == 3)
 						Reduce = 108000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own43 > 1)
+                    if (own43 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1665,9 +1912,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 110000;
 					else if (detect == 3)
 						Reduce = 120000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own44 > 1)
+                    if (own44 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1699,9 +1951,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 110000;
 					else if (detect == 3)
 						Reduce = 120000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own45 > 1)
+                    if (own45 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1733,9 +1990,14 @@ public class GameControl : MonoBehaviour {
 						Reduce = 110000;
 					else if (detect == 3)
 						Reduce = 110000;
-					ReduceSum (1, Reduce, own);
+                    if (X1 == 0)
+                    {
+                        ReduceSum(1, Reduce, own);
+                    }
+                    else
+                        X1 = 0;
 
-					if (own46 > 1)
+                    if (own46 > 1)
 						ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
                     {
@@ -1743,6 +2005,104 @@ public class GameControl : MonoBehaviour {
                         camMain();
                     }
                 }
+            }
+            else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            {
+                if (own1 == 1) floor1++;
+                if (own2 == 1) floor2++;
+                if (own3 == 1) floor3++;
+                if (own4 == 1) floor4++;
+                if (own5 == 1) floor5++;
+                if (own6 == 1) floor6++;
+                if (own7 == 1) floor7++;
+                if (own8 == 1) floor8++;
+                if (own10 == 1) floor9++;
+                if (own11 == 1) floor10++;
+                if (own12 == 1) floor11++;
+                if (own13 == 1) floor12++;
+                if (own14 == 1) floor13++;
+                if (own15 == 1) floor14++;
+                if (own16 == 1) floor15++;
+                if (own17 == 1) floor16++;
+                if (own19 == 1) floor17++;
+                if (own20 == 1) floor18++;
+                if (own21 == 1) floor19++;
+                if (own22 == 1) floor20++;
+                if (own23 == 1) floor21++;
+                if (own24 == 1) floor22++;
+                if (own25 == 1) floor23++;
+                if (own26 == 1) floor24++;
+                if (own27 == 1) floor25++;
+                if (own28 == 1) floor26++;
+                if (own29 == 1) floor27++;
+                if (own30 == 1) floor28++;
+                if (own31 == 1) floor29++;
+                if (own33 == 1) floor30++;
+                if (own34 == 1) floor31++;
+                if (own35 == 1) floor32++;
+                if (own36 == 1) floor33++;
+                if (own37 == 1) floor34++;
+                if (own38 == 1) floor35++;
+                if (own39 == 1) floor36++;
+                if (own40 == 1) floor37++;
+                if (own42 == 1) floor38++;
+                if (own43 == 1) floor39++;
+                if (own44 == 1) floor40++;
+                if (own45 == 1) floor41++;
+                if (own46 == 1) floor42++;
+                random();
+            }
+            else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
+            {
+                X1 = 1;
+                StartCoroutine(TemporarilyDeactivate2(2));
+            }
+            else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate5(2));
+                if (own1 == 1) floor1++;
+                if (own2 == 1) floor2++;
+                if (own3 == 1) floor3++;
+                if (own4 == 1) floor4++;
+                if (own5 == 1) floor5++;
+                if (own6 == 1) floor6++;
+                if (own7 == 1) floor7++;
+                if (own8 == 1) floor8++;
+                if (own10 == 1) floor9++;
+                if (own11 == 1) floor10++;
+                if (own12 == 1) floor11++;
+                if (own13 == 1) floor12++;
+                if (own14 == 1) floor13++;
+                if (own15 == 1) floor14++;
+                if (own16 == 1) floor15++;
+                if (own17 == 1) floor16++;
+                if (own19 == 1) floor17++;
+                if (own20 == 1) floor18++;
+                if (own21 == 1) floor19++;
+                if (own22 == 1) floor20++;
+                if (own23 == 1) floor21++;
+                if (own24 == 1) floor22++;
+                if (own25 == 1) floor23++;
+                if (own26 == 1) floor24++;
+                if (own27 == 1) floor25++;
+                if (own28 == 1) floor26++;
+                if (own29 == 1) floor27++;
+                if (own30 == 1) floor28++;
+                if (own31 == 1) floor29++;
+                if (own33 == 1) floor30++;
+                if (own34 == 1) floor31++;
+                if (own35 == 1) floor32++;
+                if (own36 == 1) floor33++;
+                if (own37 == 1) floor34++;
+                if (own38 == 1) floor35++;
+                if (own39 == 1) floor36++;
+                if (own40 == 1) floor37++;
+                if (own42 == 1) floor38++;
+                if (own43 == 1) floor39++;
+                if (own44 == 1) floor40++;
+                if (own45 == 1) floor41++;
+                if (own46 == 1) floor42++;
+                AllLevelUp();
             }
             else
             {
@@ -1793,7 +2153,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
                     if (own1 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
                     else
@@ -1829,7 +2194,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own2 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -1866,7 +2236,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own3 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -1903,7 +2278,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own4 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -1940,7 +2320,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own5 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -1977,7 +2362,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own6 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2014,7 +2404,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own7 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2051,7 +2446,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own8 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2084,7 +2484,12 @@ public class GameControl : MonoBehaviour {
                     own = own9;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -2116,7 +2521,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own10 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2153,7 +2563,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own11 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2190,7 +2605,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own12 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2227,7 +2647,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own13 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2264,7 +2689,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own14 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2301,7 +2731,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own15 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2338,7 +2773,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own16 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2375,7 +2815,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own17 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2408,7 +2853,12 @@ public class GameControl : MonoBehaviour {
                     own = own18;
                     if (detect == 1)
                         Reduce = 20000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -2441,7 +2891,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own19 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2478,7 +2933,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own20 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2515,7 +2975,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own21 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2552,7 +3017,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own22 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2589,7 +3059,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own23 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2626,7 +3101,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own24 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2663,7 +3143,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own25 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2747,7 +3232,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own26 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2784,7 +3274,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own27 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2817,7 +3312,12 @@ public class GameControl : MonoBehaviour {
                     own = own28;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own28 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2855,7 +3355,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own29 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2892,7 +3397,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own30 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2929,7 +3439,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own31 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -2962,7 +3477,12 @@ public class GameControl : MonoBehaviour {
                     own = own32;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -2995,7 +3515,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own33 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3032,7 +3557,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own34 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3069,7 +3599,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own35 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3106,7 +3641,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own36 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3143,7 +3683,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own37 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3180,7 +3725,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own38 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3217,7 +3767,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own39 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3254,7 +3809,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own40 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3283,7 +3843,12 @@ public class GameControl : MonoBehaviour {
                     own = own36;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
                     dropButton.interactable = true;
                     camMain();
                 
@@ -3320,7 +3885,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own42 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3357,7 +3927,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own43 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3394,7 +3969,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own44 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3431,7 +4011,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own45 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3468,7 +4053,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(2, Reduce, own);
+                    if (X2 == 0)
+                    {
+                        ReduceSum(2, Reduce, own);
+                    }
+                    else
+                        X2 = 0;
 
                     if (own46 >= 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3478,6 +4068,104 @@ public class GameControl : MonoBehaviour {
                         camMain();
                     }
                 }
+            }
+            else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            {
+                if (own1 == 2) floor1++;
+                if (own2 == 2) floor2++;
+                if (own3 == 2) floor3++;
+                if (own4 == 2) floor4++;
+                if (own5 == 2) floor5++;
+                if (own6 == 2) floor6++;
+                if (own7 == 2) floor7++;
+                if (own8 == 2) floor8++;
+                if (own10 == 2) floor9++;
+                if (own11 == 2) floor10++;
+                if (own12 == 2) floor11++;
+                if (own13 == 2) floor12++;
+                if (own14 == 2) floor13++;
+                if (own15 == 2) floor14++;
+                if (own16 == 2) floor15++;
+                if (own17 == 2) floor16++;
+                if (own19 == 2) floor17++;
+                if (own20 == 2) floor18++;
+                if (own21 == 2) floor19++;
+                if (own22 == 2) floor20++;
+                if (own23 == 2) floor21++;
+                if (own24 == 2) floor22++;
+                if (own25 == 2) floor23++;
+                if (own26 == 2) floor24++;
+                if (own27 == 2) floor25++;
+                if (own28 == 2) floor26++;
+                if (own29 == 2) floor27++;
+                if (own30 == 2) floor28++;
+                if (own31 == 2) floor29++;
+                if (own33 == 2) floor30++;
+                if (own34 == 2) floor31++;
+                if (own35 == 2) floor32++;
+                if (own36 == 2) floor33++;
+                if (own37 == 2) floor34++;
+                if (own38 == 2) floor35++;
+                if (own39 == 2) floor36++;
+                if (own40 == 2) floor37++;
+                if (own42 == 2) floor38++;
+                if (own43 == 2) floor39++;
+                if (own44 == 2) floor40++;
+                if (own45 == 2) floor41++;
+                if (own46 == 2) floor42++;
+                random2();
+            } 
+            else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
+            {
+                X2 = 1;
+                StartCoroutine(TemporarilyDeactivate2(2));
+            }
+            else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate5(2));
+                if (own1 == 2) floor1++;
+                if (own2 == 2) floor2++;
+                if (own3 == 2) floor3++;
+                if (own4 == 2) floor4++;
+                if (own5 == 2) floor5++;
+                if (own6 == 2) floor6++;
+                if (own7 == 2) floor7++;
+                if (own8 == 2) floor8++;
+                if (own10 == 2) floor9++;
+                if (own11 == 2) floor10++;
+                if (own12 == 2) floor11++;
+                if (own13 == 2) floor12++;
+                if (own14 == 2) floor13++;
+                if (own15 == 2) floor14++;
+                if (own16 == 2) floor15++;
+                if (own17 == 2) floor16++;
+                if (own19 == 2) floor17++;
+                if (own20 == 2) floor18++;
+                if (own21 == 2) floor19++;
+                if (own22 == 2) floor20++;
+                if (own23 == 2) floor21++;
+                if (own24 == 2) floor22++;
+                if (own25 == 2) floor23++;
+                if (own26 == 2) floor24++;
+                if (own27 == 2) floor25++;
+                if (own28 == 2) floor26++;
+                if (own29 == 2) floor27++;
+                if (own30 == 2) floor28++;
+                if (own31 == 2) floor29++;
+                if (own33 == 2) floor30++;
+                if (own34 == 2) floor31++;
+                if (own35 == 2) floor32++;
+                if (own36 == 2) floor33++;
+                if (own37 == 2) floor34++;
+                if (own38 == 2) floor35++;
+                if (own39 == 2) floor36++;
+                if (own40 == 2) floor37++;
+                if (own42 == 2) floor38++;
+                if (own43 == 2) floor39++;
+                if (own44 == 2) floor40++;
+                if (own45 == 2) floor41++;
+                if (own46 == 2) floor42++;
+                AllLevelUp();
             }
             else
             {
@@ -3536,7 +4224,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own1 >= 3 || own1 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3573,7 +4266,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own2 >= 3 || own2 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3610,7 +4308,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own3 >= 3 || own3 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3647,7 +4350,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own4 >= 3 || own4 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3684,7 +4392,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own5 >= 3 || own5 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3721,7 +4434,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own6 >= 3 || own6 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3758,7 +4476,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own7 >= 3 || own7 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3795,7 +4518,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own8 >= 3 || own8 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3828,7 +4556,12 @@ public class GameControl : MonoBehaviour {
                     own = own9;
                     if (detect == 1)
                         Reduce = 35000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -3861,7 +4594,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own10 >= 3 || own10 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3898,7 +4636,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own11 >= 3 || own11 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3935,7 +4678,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own12 >= 3 || own12 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -3972,7 +4720,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own13 >= 3 || own13 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4009,7 +4762,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own14 >= 3 || own14 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4046,7 +4804,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own15 >= 3 || own15 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4083,7 +4846,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own16 >= 3 || own16 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4120,7 +4888,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own17 >= 3 || own17 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4153,7 +4926,12 @@ public class GameControl : MonoBehaviour {
                     own = own18;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -4187,7 +4965,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own19 >= 3 || own19 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4224,7 +5007,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own20 >= 3 || own20 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4261,7 +5049,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own21 >= 3 || own21 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4298,7 +5091,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own22 >= 3 || own22 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4335,7 +5133,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own23 >= 3 || own23 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4372,7 +5175,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own24 >= 3 || own24 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4409,7 +5217,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own25 >= 3 || own25 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4493,7 +5306,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own26 >=3 || own26 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4530,7 +5348,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own27 >= 3 || own27 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4567,7 +5390,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own28 >= 3 || own29 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4604,7 +5432,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own29 >= 3 || own29 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4641,7 +5474,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own30 >= 3 || own30 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4678,7 +5516,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own31 >= 3 || own31 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4711,9 +5554,14 @@ public class GameControl : MonoBehaviour {
                     own = own32;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
-                        dropButton.interactable = true;
+                    dropButton.interactable = true;
                         camMain();
                
                 }
@@ -4744,7 +5592,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own33 >= 3 || own33 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4781,7 +5634,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own34 >=3 || own34 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4818,7 +5676,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own35 >= 3 || own35 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4855,7 +5718,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own36 >=3 || own36 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4892,7 +5760,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own37 >= 3 || own37 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4929,7 +5802,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own38 >= 3 || own38 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -4966,7 +5844,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own39 >= 3 || own39 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -5003,7 +5886,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own40 >= 3 || own40 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -5032,7 +5920,12 @@ public class GameControl : MonoBehaviour {
                     own = own41;
                     if (detect == 1)
                         Reduce = 85000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     dropButton.interactable = true;
                     camMain();
@@ -5069,7 +5962,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own42 >= 3 || own42 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -5107,7 +6005,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own43 >= 3 || own43 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -5144,7 +6047,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own44 >= 3 || own44 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -5181,7 +6089,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own45 >= 3 || own45 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -5218,7 +6131,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(3, Reduce, own);
+                    if (X3 == 0)
+                    {
+                        ReduceSum(3, Reduce, own);
+                    }
+                    else
+                        X3 = 0;
 
                     if (own46 >= 3 || own46 == 2)
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
@@ -5228,6 +6146,105 @@ public class GameControl : MonoBehaviour {
                         camMain();
                     }
                 }
+            }
+            else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            {
+                if (own1 == 3) floor1++;
+                if (own2 == 3) floor2++;
+                if (own3 == 3) floor3++;
+                if (own4 == 3) floor4++;
+                if (own5 == 3) floor5++;
+                if (own6 == 3) floor6++;
+                if (own7 == 3) floor7++;
+                if (own8 == 3) floor8++;
+                if (own10 == 3) floor9++;
+                if (own11 == 3) floor10++;
+                if (own12 == 3) floor11++;
+                if (own13 == 3) floor12++;
+                if (own14 == 3) floor13++;
+                if (own15 == 3) floor14++;
+                if (own16 == 3) floor15++;
+                if (own17 == 3) floor16++;
+                if (own19 == 3) floor17++;
+                if (own20 == 3) floor18++;
+                if (own21 == 3) floor19++;
+                if (own22 == 3) floor20++;
+                if (own23 == 3) floor21++;
+                if (own24 == 3) floor22++;
+                if (own25 == 3) floor23++;
+                if (own26 == 3) floor24++;
+                if (own27 == 3) floor25++;
+                if (own28 == 3) floor26++;
+                if (own29 == 3) floor27++;
+                if (own30 == 3) floor28++;
+                if (own31 == 3) floor29++;
+                if (own33 == 3) floor30++;
+                if (own34 == 3) floor31++;
+                if (own35 == 3) floor32++;
+                if (own36 == 3) floor33++;
+                if (own37 == 3) floor34++;
+                if (own38 == 3) floor35++;
+                if (own39 == 3) floor36++;
+                if (own40 == 3) floor37++;
+                if (own42 == 3) floor38++;
+                if (own43 == 3) floor39++;
+                if (own44 == 3) floor40++;
+                if (own45 == 3) floor41++;
+                if (own46 == 3) floor42++;
+                random3();
+            }
+            else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
+            {
+                X3 = 1;
+                StartCoroutine(TemporarilyDeactivate2(2));
+            }
+            else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate5(2));
+                if (own1 == 3) floor1++;
+                if (own2 == 3) floor2++;
+                if (own3 == 3) floor3++;
+                if (own4 == 3) floor4++;
+                if (own5 == 3) floor5++;
+                if (own6 == 3) floor6++;
+                if (own7 == 3) floor7++;
+                if (own8 == 3) floor8++;
+                if (own10 == 3) floor9++;
+                if (own11 == 3) floor10++;
+                if (own12 == 3) floor11++;
+                if (own13 == 3) floor12++;
+                if (own14 == 3) floor13++;
+                if (own15 == 3) floor14++;
+                if (own16 == 3) floor15++;
+                if (own17 == 3) floor16++;
+                if (own19 == 3) floor17++;
+                if (own20 == 3) floor18++;
+                if (own21 == 3) floor19++;
+                if (own22 == 3) floor20++;
+                if (own23 == 3) floor21++;
+                if (own24 == 3) floor22++;
+                if (own25 == 3) floor23++;
+                if (own26 == 3) floor24++;
+                if (own27 == 3) floor25++;
+                if (own28 == 3) floor26++;
+                if (own29 == 3) floor27++;
+                if (own30 == 3) floor28++;
+                if (own31 == 3) floor29++;
+                if (own33 == 3) floor30++;
+                if (own34 == 3) floor31++;
+                if (own35 == 3) floor32++;
+                if (own36 == 3) floor33++;
+                if (own37 == 3) floor34++;
+                if (own38 == 3) floor35++;
+                if (own39 == 3) floor36++;
+                if (own40 == 3) floor37++;
+                if (own42 == 3) floor38++;
+                if (own43 == 3) floor39++;
+                if (own44 == 3) floor40++;
+                if (own45 == 3) floor41++;
+                if (own46 == 3) floor42++;
+                random3();
+                AllLevelUp();
             }
             else
             {
@@ -5277,7 +6294,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5309,7 +6331,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5341,7 +6368,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5373,7 +6405,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5405,7 +6442,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5437,7 +6479,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5469,7 +6516,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5501,7 +6553,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5529,7 +6586,12 @@ public class GameControl : MonoBehaviour {
                     own = own9;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5561,7 +6623,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5593,7 +6660,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5625,7 +6697,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5657,7 +6734,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5689,7 +6771,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5721,7 +6808,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5753,7 +6845,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5785,7 +6882,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3 || own17 == 4)
                         Reduce = 34000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5813,7 +6915,12 @@ public class GameControl : MonoBehaviour {
                     own = own18;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5845,7 +6952,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5877,7 +6989,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5909,7 +7026,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5940,7 +7062,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -5972,7 +7099,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6004,7 +7136,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6036,7 +7173,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6116,7 +7258,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6148,7 +7295,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6180,7 +7332,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6212,7 +7369,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6244,7 +7406,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6276,7 +7443,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6304,7 +7476,12 @@ public class GameControl : MonoBehaviour {
                     own = own32;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
 
@@ -6337,7 +7514,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6369,7 +7551,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6401,7 +7588,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6433,7 +7625,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6465,7 +7662,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6497,7 +7699,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6529,7 +7736,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
 
@@ -6562,7 +7774,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6586,7 +7803,12 @@ public class GameControl : MonoBehaviour {
                     own = own41;
                     if (detect == 1)
                         Reduce = 35000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6622,7 +7844,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
 
@@ -6655,7 +7882,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6687,7 +7919,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 112000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6719,7 +7956,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6751,10 +7993,113 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(4, Reduce, own);
+                    if (X4 == 0)
+                    {
+                        ReduceSum(4, Reduce, own);
+                    }
+                    else
+                        X4 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
+            }
+            else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            {
+                if (own1 == 4) floor1++;
+                if (own2 == 4) floor2++;
+                if (own3 == 4) floor3++;
+                if (own4 == 4) floor4++;
+                if (own5 == 4) floor5++;
+                if (own6 == 4) floor6++;
+                if (own7 == 4) floor7++;
+                if (own8 == 4) floor8++;
+                if (own10 == 4) floor9++;
+                if (own11 == 4) floor10++;
+                if (own12 == 4) floor11++;
+                if (own13 == 4) floor12++;
+                if (own14 == 4) floor13++;
+                if (own15 == 4) floor14++;
+                if (own16 == 4) floor15++;
+                if (own17 == 4) floor16++;
+                if (own19 == 4) floor17++;
+                if (own20 == 4) floor18++;
+                if (own21 == 4) floor19++;
+                if (own22 == 4) floor20++;
+                if (own23 == 4) floor21++;
+                if (own24 == 4) floor22++;
+                if (own25 == 4) floor23++;
+                if (own26 == 4) floor24++;
+                if (own27 == 4) floor25++;
+                if (own28 == 4) floor26++;
+                if (own29 == 4) floor27++;
+                if (own30 == 4) floor28++;
+                if (own31 == 4) floor29++;
+                if (own33 == 4) floor30++;
+                if (own34 == 4) floor31++;
+                if (own35 == 4) floor32++;
+                if (own36 == 4) floor33++;
+                if (own37 == 4) floor34++;
+                if (own38 == 4) floor35++;
+                if (own39 == 4) floor36++;
+                if (own40 == 4) floor37++;
+                if (own42 == 4) floor38++;
+                if (own43 == 4) floor39++;
+                if (own44 == 4) floor40++;
+                if (own45 == 4) floor41++;
+                if (own46 == 4) floor42++;
+                random4();
+            }
+            else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
+            {
+                X4 = 1;
+                StartCoroutine(TemporarilyDeactivate2(2));
+            }
+            else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate5(2));
+                if (own1 == 4) floor1++;
+                if (own2 == 4) floor2++;
+                if (own3 == 4) floor3++;
+                if (own4 == 4) floor4++;
+                if (own5 == 4) floor5++;
+                if (own6 == 4) floor6++;
+                if (own7 == 4) floor7++;
+                if (own8 == 4) floor8++;
+                if (own10 == 4) floor9++;
+                if (own11 == 4) floor10++;
+                if (own12 == 4) floor11++;
+                if (own13 == 4) floor12++;
+                if (own14 == 4) floor13++;
+                if (own15 == 4) floor14++;
+                if (own16 == 4) floor15++;
+                if (own17 == 4) floor16++;
+                if (own19 == 4) floor17++;
+                if (own20 == 4) floor18++;
+                if (own21 == 4) floor19++;
+                if (own22 == 4) floor20++;
+                if (own23 == 4) floor21++;
+                if (own24 == 4) floor22++;
+                if (own25 == 4) floor23++;
+                if (own26 == 4) floor24++;
+                if (own27 == 4) floor25++;
+                if (own28 == 4) floor26++;
+                if (own29 == 4) floor27++;
+                if (own30 == 4) floor28++;
+                if (own31 == 4) floor29++;
+                if (own33 == 4) floor30++;
+                if (own34 == 4) floor31++;
+                if (own35 == 4) floor32++;
+                if (own36 == 4) floor33++;
+                if (own37 == 4) floor34++;
+                if (own38 == 4) floor35++;
+                if (own39 == 4) floor36++;
+                if (own40 == 4) floor37++;
+                if (own42 == 4) floor38++;
+                if (own43 == 4) floor39++;
+                if (own44 == 4) floor40++;
+                if (own45 == 4) floor41++;
+                if (own46 == 4) floor42++;
+                AllLevelUp();
             }
             else
             {
@@ -6804,7 +8149,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6836,7 +8186,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6868,7 +8223,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6900,7 +8260,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6932,7 +8297,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6964,7 +8334,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -6996,7 +8371,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7028,7 +8408,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7056,7 +8441,12 @@ public class GameControl : MonoBehaviour {
                     own = own9;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7088,7 +8478,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7120,7 +8515,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7152,7 +8552,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7184,7 +8589,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7216,7 +8626,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7248,7 +8663,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7280,7 +8700,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7312,7 +8737,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7340,7 +8770,12 @@ public class GameControl : MonoBehaviour {
                     own = own19;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7372,7 +8807,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7404,7 +8844,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7436,7 +8881,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7467,7 +8917,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7499,7 +8954,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7531,7 +8991,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7563,7 +9028,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7641,7 +9111,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7677,7 +9152,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7709,7 +9189,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7741,7 +9226,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7773,7 +9263,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
 
@@ -7806,7 +9301,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7831,7 +9331,12 @@ public class GameControl : MonoBehaviour {
                     own = own30;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7863,7 +9368,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7895,7 +9405,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7927,7 +9442,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7959,7 +9479,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -7991,7 +9516,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8023,7 +9553,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
 
@@ -8056,7 +9591,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8088,7 +9628,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8112,7 +9657,12 @@ public class GameControl : MonoBehaviour {
                     own = own41;
                     if (detect == 1)
                         Reduce = 35000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8148,7 +9698,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8180,7 +9735,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8212,7 +9772,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8244,7 +9809,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8276,10 +9846,113 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(5, Reduce, own);
+                    if (X5 == 0)
+                    {
+                        ReduceSum(5, Reduce, own);
+                    }
+                    else
+                        X5 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
+            }
+            else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            {
+                if (own1 == 5) floor1++;
+                if (own2 == 5) floor2++;
+                if (own3 == 5) floor3++;
+                if (own4 == 5) floor4++;
+                if (own5 == 5) floor5++;
+                if (own6 == 5) floor6++;
+                if (own7 == 5) floor7++;
+                if (own8 == 5) floor8++;
+                if (own10 == 5) floor9++;
+                if (own11 == 5) floor10++;
+                if (own12 == 5) floor11++;
+                if (own13 == 5) floor12++;
+                if (own14 == 5) floor13++;
+                if (own15 == 5) floor14++;
+                if (own16 == 5) floor15++;
+                if (own17 == 5) floor16++;
+                if (own19 == 5) floor17++;
+                if (own20 == 5) floor18++;
+                if (own21 == 5) floor19++;
+                if (own22 == 5) floor20++;
+                if (own23 == 5) floor21++;
+                if (own24 == 5) floor22++;
+                if (own25 == 5) floor23++;
+                if (own26 == 5) floor24++;
+                if (own27 == 5) floor25++;
+                if (own28 == 5) floor26++;
+                if (own29 == 5) floor27++;
+                if (own30 == 5) floor28++;
+                if (own31 == 5) floor29++;
+                if (own33 == 5) floor30++;
+                if (own34 == 5) floor31++;
+                if (own35 == 5) floor32++;
+                if (own36 == 5) floor33++;
+                if (own37 == 5) floor34++;
+                if (own38 == 5) floor35++;
+                if (own39 == 5) floor36++;
+                if (own40 == 5) floor37++;
+                if (own42 == 5) floor38++;
+                if (own43 == 5) floor39++;
+                if (own44 == 5) floor40++;
+                if (own45 == 5) floor41++;
+                if (own46 == 5) floor42++;
+                random5();
+            }
+            else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
+            {
+                X5 = 1;
+                StartCoroutine(TemporarilyDeactivate2(2));
+            }
+            else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate5(2));
+                if (own1 == 5) floor1++;
+                if (own2 == 5) floor2++;
+                if (own3 == 5) floor3++;
+                if (own4 == 5) floor4++;
+                if (own5 == 5) floor5++;
+                if (own6 == 5) floor6++;
+                if (own7 == 5) floor7++;
+                if (own8 == 5) floor8++;
+                if (own10 == 5) floor9++;
+                if (own11 == 5) floor10++;
+                if (own12 == 5) floor11++;
+                if (own13 == 5) floor12++;
+                if (own14 == 5) floor13++;
+                if (own15 == 5) floor14++;
+                if (own16 == 5) floor15++;
+                if (own17 == 5) floor16++;
+                if (own19 == 5) floor17++;
+                if (own20 == 5) floor18++;
+                if (own21 == 5) floor19++;
+                if (own22 == 5) floor20++;
+                if (own23 == 5) floor21++;
+                if (own24 == 5) floor22++;
+                if (own25 == 5) floor23++;
+                if (own26 == 5) floor24++;
+                if (own27 == 5) floor25++;
+                if (own28 == 5) floor26++;
+                if (own29 == 5) floor27++;
+                if (own30 == 5) floor28++;
+                if (own31 == 5) floor29++;
+                if (own33 == 5) floor30++;
+                if (own34 == 5) floor31++;
+                if (own35 == 5) floor32++;
+                if (own36 == 5) floor33++;
+                if (own37 == 5) floor34++;
+                if (own38 == 5) floor35++;
+                if (own39 == 5) floor36++;
+                if (own40 == 5) floor37++;
+                if (own42 == 5) floor38++;
+                if (own43 == 5) floor39++;
+                if (own44 == 5) floor40++;
+                if (own45 == 5) floor41++;
+                if (own46 == 5) floor42++;
+                AllLevelUp();
             }
             else
             {
@@ -8331,7 +10004,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8363,7 +10041,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8395,7 +10078,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8427,7 +10115,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
 
@@ -8460,7 +10153,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
 
@@ -8493,7 +10191,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8525,7 +10228,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8557,7 +10265,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8585,7 +10298,12 @@ public class GameControl : MonoBehaviour {
                     own = own9;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8617,7 +10335,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8649,7 +10372,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8681,7 +10409,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8713,7 +10446,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8745,7 +10483,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8777,7 +10520,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8809,7 +10557,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8841,7 +10594,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8869,7 +10627,12 @@ public class GameControl : MonoBehaviour {
                     own = own18;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8901,7 +10664,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8933,7 +10701,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8965,7 +10738,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -8997,7 +10775,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9029,7 +10812,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9061,7 +10849,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9093,7 +10886,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9172,7 +10970,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9204,7 +11007,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9236,7 +11044,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9268,7 +11081,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9300,7 +11118,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9332,7 +11155,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9360,7 +11188,12 @@ public class GameControl : MonoBehaviour {
                     own = own32;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9392,7 +11225,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9424,7 +11262,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9456,7 +11299,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9488,7 +11336,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9520,7 +11373,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9552,7 +11410,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9584,7 +11447,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9616,7 +11484,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9640,7 +11513,12 @@ public class GameControl : MonoBehaviour {
                     own = own41;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9676,7 +11554,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9708,7 +11591,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9740,7 +11628,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9772,7 +11665,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9804,10 +11702,113 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(6, Reduce, own);
+                    if (X6 == 0)
+                    {
+                        ReduceSum(6, Reduce, own);
+                    }
+                    else
+                        X6 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
+            }
+            else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            {
+                if (own1 == 6) floor1++;
+                if (own2 == 6) floor2++;
+                if (own3 == 6) floor3++;
+                if (own4 == 6) floor4++;
+                if (own5 == 6) floor5++;
+                if (own6 == 6) floor6++;
+                if (own7 == 6) floor7++;
+                if (own8 == 6) floor8++;
+                if (own10 == 6) floor9++;
+                if (own11 == 6) floor10++;
+                if (own12 == 6) floor11++;
+                if (own13 == 6) floor12++;
+                if (own14 == 6) floor13++;
+                if (own15 == 6) floor14++;
+                if (own16 == 6) floor15++;
+                if (own17 == 6) floor16++;
+                if (own19 == 6) floor17++;
+                if (own20 == 6) floor18++;
+                if (own21 == 6) floor19++;
+                if (own22 == 6) floor20++;
+                if (own23 == 6) floor21++;
+                if (own24 == 6) floor22++;
+                if (own25 == 6) floor23++;
+                if (own26 == 6) floor24++;
+                if (own27 == 6) floor25++;
+                if (own28 == 6) floor26++;
+                if (own29 == 6) floor27++;
+                if (own30 == 6) floor28++;
+                if (own31 == 6) floor29++;
+                if (own33 == 6) floor30++;
+                if (own34 == 6) floor31++;
+                if (own35 == 6) floor32++;
+                if (own36 == 6) floor33++;
+                if (own37 == 6) floor34++;
+                if (own38 == 6) floor35++;
+                if (own39 == 6) floor36++;
+                if (own40 == 6) floor37++;
+                if (own42 == 6) floor38++;
+                if (own43 == 6) floor39++;
+                if (own44 == 6) floor40++;
+                if (own45 == 6) floor41++;
+                if (own46 == 6) floor42++;
+                random6();
+            }
+            else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
+            {
+                X6 = 1;
+                StartCoroutine(TemporarilyDeactivate2(2));
+            }
+            else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate5(2));
+                if (own1 == 6) floor1++;
+                if (own2 == 6) floor2++;
+                if (own3 == 6) floor3++;
+                if (own4 == 6) floor4++;
+                if (own5 == 6) floor5++;
+                if (own6 == 6) floor6++;
+                if (own7 == 6) floor7++;
+                if (own8 == 6) floor8++;
+                if (own10 == 6) floor9++;
+                if (own11 == 6) floor10++;
+                if (own12 == 6) floor11++;
+                if (own13 == 6) floor12++;
+                if (own14 == 6) floor13++;
+                if (own15 == 6) floor14++;
+                if (own16 == 6) floor15++;
+                if (own17 == 6) floor16++;
+                if (own19 == 6) floor17++;
+                if (own20 == 6) floor18++;
+                if (own21 == 6) floor19++;
+                if (own22 == 6) floor20++;
+                if (own23 == 6) floor21++;
+                if (own24 == 6) floor22++;
+                if (own25 == 6) floor23++;
+                if (own26 == 6) floor24++;
+                if (own27 == 6) floor25++;
+                if (own28 == 6) floor26++;
+                if (own29 == 6) floor27++;
+                if (own30 == 6) floor28++;
+                if (own31 == 6) floor29++;
+                if (own33 == 6) floor30++;
+                if (own34 == 6) floor31++;
+                if (own35 == 6) floor32++;
+                if (own36 == 6) floor33++;
+                if (own37 == 6) floor34++;
+                if (own38 == 6) floor35++;
+                if (own39 == 6) floor36++;
+                if (own40 == 6) floor37++;
+                if (own42 == 6) floor38++;
+                if (own43 == 6) floor39++;
+                if (own44 == 6) floor40++;
+                if (own45 == 6) floor41++;
+                if (own46 == 6) floor42++;
+                AllLevelUp();
             }
             else
             {
@@ -9857,7 +11858,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9889,7 +11895,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9921,7 +11932,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9953,7 +11969,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -9985,7 +12006,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10017,7 +12043,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10049,7 +12080,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10081,7 +12117,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10109,7 +12150,12 @@ public class GameControl : MonoBehaviour {
                     own = own9;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10141,7 +12187,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10173,7 +12224,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10205,7 +12261,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10237,7 +12298,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10269,7 +12335,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10301,7 +12372,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10333,7 +12409,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10365,7 +12446,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10393,7 +12479,12 @@ public class GameControl : MonoBehaviour {
                     own = own18;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10425,7 +12516,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10457,7 +12553,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10489,7 +12590,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10521,7 +12627,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10553,7 +12664,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10585,7 +12701,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10617,7 +12738,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10695,7 +12821,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10727,7 +12858,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10759,7 +12895,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10791,7 +12932,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10823,7 +12969,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10855,7 +13006,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10883,7 +13039,12 @@ public class GameControl : MonoBehaviour {
                     own = own32;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10915,7 +13076,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10947,7 +13113,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -10979,7 +13150,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11043,7 +13219,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11075,7 +13256,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11107,7 +13293,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11139,7 +13330,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11163,7 +13359,12 @@ public class GameControl : MonoBehaviour {
                     own = own41;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11199,7 +13400,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11231,7 +13437,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11263,7 +13474,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11295,7 +13511,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11327,10 +13548,113 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(7, Reduce, own);
+                    if (X7 == 0)
+                    {
+                        ReduceSum(7, Reduce, own);
+                    }
+                    else
+                        X7 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
+            }
+            else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            {
+                if (own1 == 7) floor1++;
+                if (own2 == 7) floor2++;
+                if (own3 == 7) floor3++;
+                if (own4 == 7) floor4++;
+                if (own5 == 7) floor5++;
+                if (own6 == 7) floor6++;
+                if (own7 == 7) floor7++;
+                if (own8 == 7) floor8++;
+                if (own10 == 7) floor9++;
+                if (own11 == 7) floor10++;
+                if (own12 == 7) floor11++;
+                if (own13 == 7) floor12++;
+                if (own14 == 7) floor13++;
+                if (own15 == 7) floor14++;
+                if (own16 == 7) floor15++;
+                if (own17 == 7) floor16++;
+                if (own19 == 7) floor17++;
+                if (own20 == 7) floor18++;
+                if (own21 == 7) floor19++;
+                if (own22 == 7) floor20++;
+                if (own23 == 7) floor21++;
+                if (own24 == 7) floor22++;
+                if (own25 == 7) floor23++;
+                if (own26 == 7) floor24++;
+                if (own27 == 7) floor25++;
+                if (own28 == 7) floor26++;
+                if (own29 == 7) floor27++;
+                if (own30 == 7) floor28++;
+                if (own31 == 7) floor29++;
+                if (own33 == 7) floor30++;
+                if (own34 == 7) floor31++;
+                if (own35 == 7) floor32++;
+                if (own36 == 7) floor33++;
+                if (own37 == 7) floor34++;
+                if (own38 == 7) floor35++;
+                if (own39 == 7) floor36++;
+                if (own40 == 7) floor37++;
+                if (own42 == 7) floor38++;
+                if (own43 == 7) floor39++;
+                if (own44 == 7) floor40++;
+                if (own45 == 7) floor41++;
+                if (own46 == 7) floor42++;
+                random7();
+            }
+            else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
+            {
+                X7 = 1;
+                StartCoroutine(TemporarilyDeactivate2(2));
+            }
+            else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate5(2));
+                if (own1 == 7) floor1++;
+                if (own2 == 7) floor2++;
+                if (own3 == 7) floor3++;
+                if (own4 == 7) floor4++;
+                if (own5 == 7) floor5++;
+                if (own6 == 7) floor6++;
+                if (own7 == 7) floor7++;
+                if (own8 == 7) floor8++;
+                if (own10 == 7) floor9++;
+                if (own11 == 7) floor10++;
+                if (own12 == 7) floor11++;
+                if (own13 == 7) floor12++;
+                if (own14 == 7) floor13++;
+                if (own15 == 7) floor14++;
+                if (own16 == 7) floor15++;
+                if (own17 == 7) floor16++;
+                if (own19 == 7) floor17++;
+                if (own20 == 7) floor18++;
+                if (own21 == 7) floor19++;
+                if (own22 == 7) floor20++;
+                if (own23 == 7) floor21++;
+                if (own24 == 7) floor22++;
+                if (own25 == 7) floor23++;
+                if (own26 == 7) floor24++;
+                if (own27 == 7) floor25++;
+                if (own28 == 7) floor26++;
+                if (own29 == 7) floor27++;
+                if (own30 == 7) floor28++;
+                if (own31 == 7) floor29++;
+                if (own33 == 7) floor30++;
+                if (own34 == 7) floor31++;
+                if (own35 == 7) floor32++;
+                if (own36 == 7) floor33++;
+                if (own37 == 7) floor34++;
+                if (own38 == 7) floor35++;
+                if (own39 == 7) floor36++;
+                if (own40 == 7) floor37++;
+                if (own42 == 7) floor38++;
+                if (own43 == 7) floor39++;
+                if (own44 == 7) floor40++;
+                if (own45 == 7) floor41++;
+                if (own46 == 7) floor42++;
+                AllLevelUp();
             }
             else
             {
@@ -11381,7 +13705,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11413,7 +13742,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11445,7 +13779,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11477,7 +13816,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11509,7 +13853,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11541,7 +13890,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11573,7 +13927,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 15000;
                     else if (detect == 3)
                         Reduce = 20000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11605,7 +13964,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11633,7 +13997,12 @@ public class GameControl : MonoBehaviour {
                     own = own9;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11665,7 +14034,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11697,7 +14071,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11729,7 +14108,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11761,7 +14145,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11793,7 +14182,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11825,7 +14219,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 21000;
                     else if (detect == 3)
                         Reduce = 27000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11857,7 +14256,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11889,7 +14293,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11917,7 +14326,12 @@ public class GameControl : MonoBehaviour {
                     own = own18;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11949,7 +14363,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -11981,7 +14400,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12013,7 +14437,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12044,7 +14473,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12076,7 +14510,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 27000;
                     else if (detect == 3)
                         Reduce = 34000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12108,7 +14547,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12140,7 +14584,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12219,7 +14668,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12251,7 +14705,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12283,7 +14742,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12315,7 +14779,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 38500;
                     else if (detect == 3)
                         Reduce = 47000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12347,7 +14816,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12379,7 +14853,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12407,7 +14886,12 @@ public class GameControl : MonoBehaviour {
                     own = own32;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12439,7 +14923,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12471,7 +14960,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 58500;
                     else if (detect == 3)
                         Reduce = 67000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12503,7 +14997,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12535,7 +15034,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12567,7 +15071,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12599,7 +15108,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12631,7 +15145,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 79000;
                     else if (detect == 3)
                         Reduce = 88000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12663,7 +15182,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12687,7 +15211,12 @@ public class GameControl : MonoBehaviour {
                     own = own41;
                     if (detect == 1)
                         Reduce = 30000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12723,7 +15252,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12755,7 +15289,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 94000;
                     else if (detect == 3)
                         Reduce = 108000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12787,7 +15326,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12819,7 +15363,12 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
@@ -12851,11 +15400,161 @@ public class GameControl : MonoBehaviour {
                         Reduce = 110000;
                     else if (detect == 3)
                         Reduce = 120000;
-                    ReduceSum(8, Reduce, own);
+                    if (X8 == 0)
+                    {
+                        ReduceSum(8, Reduce, own);
+                    }
+                    else
+                        X8 = 0;
                     dropButton.interactable = true;
                     camMain();
                 }
-            }   
+            }
+            else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            {
+                if (own1 == 8) floor1++;
+                if (own2 == 8) floor2++;
+                if (own3 == 8) floor3++;
+                if (own4 == 8) floor4++;
+                if (own5 == 8) floor5++;
+                if (own6 == 8) floor6++;
+                if (own7 == 8) floor7++;
+                if (own8 == 8) floor8++;
+                if (own10 == 8) floor9++;
+                if (own11 == 8) floor10++;
+                if (own12 == 8) floor11++;
+                if (own13 == 8) floor12++;
+                if (own14 == 8) floor13++;
+                if (own15 == 8) floor14++;
+                if (own16 == 8) floor15++;
+                if (own17 == 8) floor16++;
+                if (own19 == 8) floor17++;
+                if (own20 == 8) floor18++;
+                if (own21 == 8) floor19++;
+                if (own22 == 8) floor20++;
+                if (own23 == 8) floor21++;
+                if (own24 == 8) floor22++;
+                if (own25 == 8) floor23++;
+                if (own26 == 8) floor24++;
+                if (own27 == 8) floor25++;
+                if (own28 == 8) floor26++;
+                if (own29 == 8) floor27++;
+                if (own30 == 8) floor28++;
+                if (own31 == 8) floor29++;
+                if (own33 == 8) floor30++;
+                if (own34 == 8) floor31++;
+                if (own35 == 8) floor32++;
+                if (own36 == 8) floor33++;
+                if (own37 == 8) floor34++;
+                if (own38 == 8) floor35++;
+                if (own39 == 8) floor36++;
+                if (own40 == 8) floor37++;
+                if (own42 == 8) floor38++;
+                if (own43 == 8) floor39++;
+                if (own44 == 8) floor40++;
+                if (own45 == 8) floor41++;
+                if (own46 == 8) floor42++;
+                random8();
+            }
+            else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
+            {
+                X8 = 1;
+                StartCoroutine(TemporarilyDeactivate2(2));
+            }
+            else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate5(2));
+                if (own1 == 8) floor1++;
+                if (own2 == 8) floor2++;
+                if (own3 == 8) floor3++;
+                if (own4 == 8) floor4++;
+                if (own5 == 8) floor5++;
+                if (own6 == 8) floor6++;
+                if (own7 == 8) floor7++;
+                if (own8 == 8) floor8++;
+                if (own10 == 8) floor9++;
+                if (own11 == 8) floor10++;
+                if (own12 == 8) floor11++;
+                if (own13 == 8) floor12++;
+                if (own14 == 8) floor13++;
+                if (own15 == 8) floor14++;
+                if (own16 == 8) floor15++;
+                if (own17 == 8) floor16++;
+                if (own19 == 8) floor17++;
+                if (own20 == 8) floor18++;
+                if (own21 == 8) floor19++;
+                if (own22 == 8) floor20++;
+                if (own23 == 8) floor21++;
+                if (own24 == 8) floor22++;
+                if (own25 == 8) floor23++;
+                if (own26 == 8) floor24++;
+                if (own27 == 8) floor25++;
+                if (own28 == 8) floor26++;
+                if (own29 == 8) floor27++;
+                if (own30 == 8) floor28++;
+                if (own31 == 8) floor29++;
+                if (own33 == 8) floor30++;
+                if (own34 == 8) floor31++;
+                if (own35 == 8) floor32++;
+                if (own36 == 8) floor33++;
+                if (own37 == 8) floor34++;
+                if (own38 == 8) floor35++;
+                if (own39 == 8) floor36++;
+                if (own40 == 8) floor37++;
+                if (own42 == 8) floor38++;
+                if (own43 == 8) floor39++;
+                if (own44 == 8) floor40++;
+                if (own45 == 8) floor41++;
+                if (own46 == 8) floor42++;
+                AllLevelUp();
+            }
+            else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
+            {
+                StartCoroutine(TemporarilyDeactivate6(2));
+                if (own1 == 8) floor1++;
+                if (own2 == 8) floor2++;
+                if (own3 == 8) floor3++;
+                if (own4 == 8) floor4++;
+                if (own5 == 8) floor5++;
+                if (own6 == 8) floor6++;
+                if (own7 == 8) floor7++;
+                if (own8 == 8) floor8++;
+                if (own10 == 8) floor9++;
+                if (own11 == 8) floor10++;
+                if (own12 == 8) floor11++;
+                if (own13 == 8) floor12++;
+                if (own14 == 8) floor13++;
+                if (own15 == 8) floor14++;
+                if (own16 == 8) floor15++;
+                if (own17 == 8) floor16++;
+                if (own19 == 8) floor17++;
+                if (own20 == 8) floor18++;
+                if (own21 == 8) floor19++;
+                if (own22 == 8) floor20++;
+                if (own23 == 8) floor21++;
+                if (own24 == 8) floor22++;
+                if (own25 == 8) floor23++;
+                if (own26 == 8) floor24++;
+                if (own27 == 8) floor25++;
+                if (own28 == 8) floor26++;
+                if (own29 == 8) floor27++;
+                if (own30 == 8) floor28++;
+                if (own31 == 8) floor29++;
+                if (own33 == 8) floor30++;
+                if (own34 == 8) floor31++;
+                if (own35 == 8) floor32++;
+                if (own36 == 8) floor33++;
+                if (own37 == 8) floor34++;
+                if (own38 == 8) floor35++;
+                if (own39 == 8) floor36++;
+                if (own40 == 8) floor37++;
+                if (own42 == 8) floor38++;
+                if (own43 == 8) floor39++;
+                if (own44 == 8) floor40++;
+                if (own45 == 8) floor41++;
+                if (own46 == 8) floor42++;
+                random2Building();
+            }
             else
             {
                 dropButton.interactable = true;
@@ -13140,5 +15839,17086 @@ public class GameControl : MonoBehaviour {
 
         }
 	}
+
+    void random()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        do
+        {
+            rangeRadomNum = Random.Range(1, 42);
+        } while (rangeRadomNum == getRangeNum);
+
+        getRangeNum = rangeRadomNum;
+        if (rangeRadomNum == 1) 
+            if (floor1 != 1) random();
+            else {
+                text2.text = "紅1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count1 == 1)
+                {
+                    count1++;
+                    Level1Building1.gameObject.SetActive(false);
+                    Level2Building1.gameObject.SetActive(true);
+                } else if (count1 == 2)
+                {
+                    count1++;
+                    Level2Building1.gameObject.SetActive(false);
+                    Level3Building1.gameObject.SetActive(true);
+                }
+                floor1 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 2)
+            if (floor2 != 1) random();
+            else
+            {
+                text2.text = "紅2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count2 == 1)
+                {
+                    count2++;
+                    Level1Building2.gameObject.SetActive(false);
+                    Level2Building2.gameObject.SetActive(true);
+                }
+                else if (count2 == 2)
+                {
+                    count2++;
+                    Level2Building2.gameObject.SetActive(false);
+                    Level3Building2.gameObject.SetActive(true);
+                }
+                floor2 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 3)
+            if (floor3 != 1) random();
+            else
+            {
+                text2.text = "紅3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count3 == 1)
+                {
+                    count3++;
+                    Level1Building3.gameObject.SetActive(false);
+                    Level2Building3.gameObject.SetActive(true);
+                }
+                else if (count3 == 2)
+                {
+                    count3++;
+                    Level2Building3.gameObject.SetActive(false);
+                    Level3Building3.gameObject.SetActive(true);
+                }
+                floor3 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 4)
+            if (floor4 != 1) random();
+            else
+            {
+                text2.text = "紅4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count4 == 1)
+                {
+                    count4++;
+                    Level1Building4.gameObject.SetActive(false);
+                    Level2Building4.gameObject.SetActive(true);
+                }
+                else if (count4 == 2)
+                {
+                    count4++;
+                    Level2Building4.gameObject.SetActive(false);
+                    Level3Building4.gameObject.SetActive(true);
+                }
+                floor4 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 5)
+            if (floor5 != 1) random();
+            else
+            {
+                text2.text = "紅5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count5 == 1)
+                {
+                    count5++;
+                    Level1Building5.gameObject.SetActive(false);
+                    Level2Building5.gameObject.SetActive(true);
+                }
+                else if (count5 == 2)
+                {
+                    count5++;
+                    Level2Building5.gameObject.SetActive(false);
+                    Level3Building5.gameObject.SetActive(true);
+                }
+                floor5 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 6)
+            if (floor6 != 1) random();
+            else
+            {
+                text2.text = "紅6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count6 == 1)
+                {
+                    count6++;
+                    Level1Building7.gameObject.SetActive(false);
+                    Level2Building7.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count6++;
+                    Level2Building7.gameObject.SetActive(false);
+                    Level3Building7.gameObject.SetActive(true);
+                }
+                floor6 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 7)
+            if (floor7 != 1) random();
+            else
+            {
+                text2.text = "紅7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count7 == 1)
+                {
+                    count7++;
+                    Level1Building8.gameObject.SetActive(false);
+                    Level2Building8.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count7++;
+                    Level2Building8.gameObject.SetActive(false);
+                    Level3Building8.gameObject.SetActive(true);
+                }
+                floor7 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 8)
+            if (floor8 != 1) random();
+            else
+            {
+                text2.text = "橙1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count8 == 1)
+                {
+                    count8++;
+                    Level1Building9.gameObject.SetActive(false);
+                    Level2Building9.gameObject.SetActive(true);
+                }
+                else if (count8 == 2)
+                {
+                    count8++;
+                    Level2Building9.gameObject.SetActive(false);
+                    Level3Building9.gameObject.SetActive(true);
+                }
+                floor8 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 9)
+            if (floor9 != 1) random();
+            else
+            {
+                text2.text = "橙2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count10 == 1)
+                {
+                    count10++;
+                    Level1Building11.gameObject.SetActive(false);
+                    Level2Building11.gameObject.SetActive(true);
+                }
+                else if (count10 == 2)
+                {
+                    count10++;
+                    Level2Building11.gameObject.SetActive(false);
+                    Level3Building11.gameObject.SetActive(true);
+                }
+                floor9 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 10)
+            if (floor10 != 1) random();
+            else
+            {
+                text2.text = "橙3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count11 == 1)
+                {
+                    count11++;
+                    Level1Building13.gameObject.SetActive(false);
+                    Level2Building13.gameObject.SetActive(true);
+                }
+                else if (count11 == 2)
+                {
+                    count11++;
+                    Level2Building13.gameObject.SetActive(false);
+                    Level3Building13.gameObject.SetActive(true);
+                }
+                floor10 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 11)
+            if (floor11 != 1) random();
+            else
+            {
+                text2.text = "橙4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count12 == 1)
+                {
+                    count12++;
+                    Level1Building14.gameObject.SetActive(false);
+                    Level2Building14.gameObject.SetActive(true);
+                }
+                else if (count12 == 2)
+                {
+                    count12++;
+                    Level2Building14.gameObject.SetActive(false);
+                    Level3Building14.gameObject.SetActive(true);
+                }
+                floor11 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 12)
+            if (floor12 != 1) random();
+            else
+            {
+                text2.text = "橙5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count13 == 1)
+                {
+                    count13++;
+                    Level1Building15.gameObject.SetActive(false);
+                    Level2Building15.gameObject.SetActive(true);
+                }
+                else if (count13 == 2)
+                {
+                    count13++;
+                    Level2Building15.gameObject.SetActive(false);
+                    Level3Building15.gameObject.SetActive(true);
+                }
+                floor12 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 13)
+            if (floor13 != 1) random();
+            else
+            {
+                text2.text = "橙6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count14 == 1)
+                {
+                    count14++;
+                    Level1Building16.gameObject.SetActive(false);
+                    Level2Building16.gameObject.SetActive(true);
+                }
+                else if (count14 == 2)
+                {
+                    count14++;
+                    Level2Building16.gameObject.SetActive(false);
+                    Level3Building16.gameObject.SetActive(true);
+                }
+                floor13 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 14)
+            if (floor14 != 1) random();
+            else
+            {
+                text2.text = "橙7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count15 == 1)
+                {
+                    count15++;
+                    Level1Building17.gameObject.SetActive(false);
+                    Level2Building17.gameObject.SetActive(true);
+                }
+                else if (count15 == 2)
+                {
+                    count15++;
+                    Level2Building17.gameObject.SetActive(false);
+                    Level3Building17.gameObject.SetActive(true);
+                }
+                floor14 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 15)
+            if (floor15 != 1) random();
+            else
+            {
+                text2.text = "黃1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count16++;
+                    Level1Building19.gameObject.SetActive(false);
+                    Level2Building19.gameObject.SetActive(true);
+                }
+                else if (count16 == 2)
+                {
+                    count16++;
+                    Level2Building19.gameObject.SetActive(false);
+                    Level3Building19.gameObject.SetActive(true);
+                }
+                floor15 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 16)
+            if (floor16 != 1) random();
+            else
+            {
+                text2.text = "黃2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count17++;
+                    Level1Building20.gameObject.SetActive(false);
+                    Level2Building20.gameObject.SetActive(true);
+                }
+                else if (count17 == 2)
+                {
+                    count17++;
+                    Level2Building20.gameObject.SetActive(false);
+                    Level3Building20.gameObject.SetActive(true);
+                }
+                floor16 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 17)
+            if (floor17 != 1) random();
+            else
+            {
+                text2.text = "黃3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count19 == 1)
+                {
+                    count19++;
+                    Level1Building22.gameObject.SetActive(false);
+                    Level2Building22.gameObject.SetActive(true);
+                }
+                else if (count19 == 2)
+                {
+                    count19++;
+                    Level2Building22.gameObject.SetActive(false);
+                    Level3Building22.gameObject.SetActive(true);
+                }
+                floor17 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 18)
+            if (floor17 != 1) random();
+            else
+            {
+                text2.text = "黃4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count20 == 1)
+                {
+                    count20++;
+                    Level1Building23.gameObject.SetActive(false);
+                    Level2Building23.gameObject.SetActive(true);
+                }
+                else if (count20 == 2)
+                {
+                    count20++;
+                    Level2Building23.gameObject.SetActive(false);
+                    Level3Building23.gameObject.SetActive(true);
+                }
+                floor18 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 19)
+            if (floor19 != 1) random();
+            else
+            {
+                text2.text = "黃5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count21 == 1)
+                {
+                    count21++;
+                    Level1Building24.gameObject.SetActive(false);
+                    Level2Building24.gameObject.SetActive(true);
+                }
+                else if (count21 == 2)
+                {
+                    count21++;
+                    Level2Building24.gameObject.SetActive(false);
+                    Level3Building24.gameObject.SetActive(true);
+                }
+                floor19 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 20)
+            if (floor20 != 1) random();
+            else
+            {
+                text2.text = "黃6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count22 == 1)
+                {
+                    count22++;
+                    Level1Building26.gameObject.SetActive(false);
+                    Level2Building26.gameObject.SetActive(true);
+                }
+                else if (count22 == 2)
+                {
+                    count22++;
+                    Level2Building26.gameObject.SetActive(false);
+                    Level3Building26.gameObject.SetActive(true);
+                }
+                floor20 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 21)
+            if (floor21 != 1) random();
+            else
+            {
+                text2.text = "黃7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count23 == 1)
+                {
+                    count23++;
+                    Level1Building27.gameObject.SetActive(false);
+                    Level2Building27.gameObject.SetActive(true);
+                }
+                else if (count23 == 2)
+                {
+                    count23++;
+                    Level2Building27.gameObject.SetActive(false);
+                    Level3Building27.gameObject.SetActive(true);
+                }
+                floor21 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 22)
+            if (floor22 != 1) random();
+            else
+            {
+                text2.text = "綠1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count24 == 1)
+                {
+                    count24++;
+                    Level1Building28.gameObject.SetActive(false);
+                    Level2Building28.gameObject.SetActive(true);
+                }
+                else if (count24 == 2)
+                {
+                    count24++;
+                    Level2Building28.gameObject.SetActive(false);
+                    Level3Building28.gameObject.SetActive(true);
+                }
+                floor22 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 23)
+            if (floor23 != 1) random();
+            else
+            {
+                text2.text = "綠2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count25 == 1)
+                {
+                    count25++;
+                    Level1Building29.gameObject.SetActive(false);
+                    Level2Building29.gameObject.SetActive(true);
+                }
+                else if (count25 == 2)
+                {
+                    count25++;
+                    Level2Building29.gameObject.SetActive(false);
+                    Level3Building29.gameObject.SetActive(true);
+                }
+                floor23 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 24)
+            if (floor24 != 1) random();
+            else
+            {
+                text2.text = "綠3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count26 == 1)
+                {
+                    count26++;
+                    Level1Building31.gameObject.SetActive(false);
+                    Level2Building31.gameObject.SetActive(true);
+                }
+                else if (count26 == 2)
+                {
+                    count26++;
+                    Level2Building31.gameObject.SetActive(false);
+                    Level3Building31.gameObject.SetActive(true);
+                }
+                floor24 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 25)
+            if (floor25 != 1) random();
+            else
+            {
+                text2.text = "綠4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count27 == 1)
+                {
+                    count27++;
+                    Level1Building32.gameObject.SetActive(false);
+                    Level2Building32.gameObject.SetActive(true);
+                }
+                else if (count27 == 2)
+                {
+                    count27++;
+                    Level2Building32.gameObject.SetActive(false);
+                    Level3Building32.gameObject.SetActive(true);
+                }
+                floor25 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 26)
+            if (floor26 != 1) random();
+            else
+            {
+                text2.text = "綠5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count28 == 1)
+                {
+                    count28++;
+                    Level1Building33.gameObject.SetActive(false);
+                    Level2Building33.gameObject.SetActive(true);
+                }
+                else if (count28 == 2)
+                {
+                    count28++;
+                    Level2Building33.gameObject.SetActive(false);
+                    Level3Building33.gameObject.SetActive(true);
+                }
+                floor26 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 27)
+            if (floor27 != 1) random();
+            else
+            {
+                text2.text = "綠6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count29 == 1)
+                {
+                    count29++;
+                    Level1Building34.gameObject.SetActive(false);
+                    Level2Building34.gameObject.SetActive(true);
+                }
+                else if (count29 == 2)
+                {
+                    count29++;
+                    Level2Building34.gameObject.SetActive(false);
+                    Level3Building34.gameObject.SetActive(true);
+                }
+                floor27 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 28)
+            if (floor28 != 1) random();
+            else
+            {
+                text2.text = "藍1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count30 == 1)
+                {
+                    count30++;
+                    Level1Building36.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count30 == 2)
+                {
+                    count30++;
+                    Level2Building36.gameObject.SetActive(false);
+                    Level3Building36.gameObject.SetActive(true);
+                }
+                floor28 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 29)
+            if (floor29 != 1) random();
+            else
+            {
+                text2.text = "藍2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count31 == 1)
+                {
+                    count31++;
+                    Level1Building37.gameObject.SetActive(false);
+                    Level2Building37.gameObject.SetActive(true);
+                }
+                else if (count31 == 2)
+                {
+                    count31++;
+                    Level2Building37.gameObject.SetActive(false);
+                    Level3Building37.gameObject.SetActive(true);
+                }
+                floor29 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 30)
+            if (floor30 != 1) random();
+            else
+            {
+                text2.text = "藍3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count33 == 1)
+                {
+                    count33++;
+                    Level1Building39.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count33 == 2)
+                {
+                    count33++;
+                    Level2Building39.gameObject.SetActive(false);
+                    Level3Building39.gameObject.SetActive(true);
+                }
+                floor30 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 31)
+            if (floor31 != 1) random();
+            else
+            {
+                text2.text = "藍4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count34 == 1)
+                {
+                    count34++;
+                    Level1Building40.gameObject.SetActive(false);
+                    Level2Building40.gameObject.SetActive(true);
+                }
+                else if (count34 == 2)
+                {
+                    count34++;
+                    Level2Building40.gameObject.SetActive(false);
+                    Level3Building40.gameObject.SetActive(true);
+                }
+                floor31 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 32)
+            if (floor32 != 1) random();
+            else
+            {
+                text2.text = "紫1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count35 == 1)
+                {
+                    count35++;
+                    Level1Building42.gameObject.SetActive(false);
+                    Level2Building42.gameObject.SetActive(true);
+                }
+                else if (count35 == 2)
+                {
+                    count35++;
+                    Level2Building42.gameObject.SetActive(false);
+                    Level3Building42.gameObject.SetActive(true);
+                }
+                floor32 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 33)
+            if (floor33 != 1) random();
+            else
+            {
+                text2.text = "紫2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count36 == 1)
+                {
+                    count36++;
+                    Level1Building43.gameObject.SetActive(false);
+                    Level2Building43.gameObject.SetActive(true);
+                }
+                else if (count36 == 2)
+                {
+                    count36++;
+                    Level2Building43.gameObject.SetActive(false);
+                    Level3Building43.gameObject.SetActive(true);
+                }
+                floor33 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 34)
+            if (floor34 != 1) random();
+            else
+            {
+                text2.text = "紫3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count37++;
+                    Level1Building44.gameObject.SetActive(false);
+                    Level2Building44.gameObject.SetActive(true);
+                }
+                else if (count38== 2)
+                {
+                    count37++;
+                    Level2Building44.gameObject.SetActive(false);
+                    Level3Building44.gameObject.SetActive(true);
+                }
+                floor34 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 35)
+            if (floor35 != 1) random();
+            else
+            {
+                text2.text = "紫4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count38++;
+                    Level1Building47.gameObject.SetActive(false);
+                    Level2Building47.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count38++;
+                    Level2Building47.gameObject.SetActive(false);
+                    Level3Building47.gameObject.SetActive(true);
+                }
+                floor35 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 36)
+            if (floor36 != 1) random();
+            else
+            {
+                text2.text = "紫5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count39 == 1)
+                {
+                    count39++;
+                    Level1Building48.gameObject.SetActive(false);
+                    Level2Building48.gameObject.SetActive(true);
+                }
+                else if (count39 == 2)
+                {
+                    count39++;
+                    Level2Building48.gameObject.SetActive(false);
+                    Level3Building48.gameObject.SetActive(true);
+                }
+                floor36 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 37)
+            if (floor37 != 1) random();
+            else
+            {
+                text2.text = "啡1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count40 == 1)
+                {
+                    count40++;
+                    Level1Building49.gameObject.SetActive(false);
+                    Level2Building49.gameObject.SetActive(true);
+                }
+                else if (count40 == 2)
+                {
+                    count40++;
+                    Level2Building49.gameObject.SetActive(false);
+                    Level3Building49.gameObject.SetActive(true);
+                }
+                floor37 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 38)
+            if (floor38 != 1) random();
+            else
+            {
+                text2.text = "啡2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count42 == 1)
+                {
+                    count42++;
+                    Level1Building51.gameObject.SetActive(false);
+                    Level2Building51.gameObject.SetActive(true);
+                }
+                else if (count42 == 2)
+                {
+                    floor38 = 0;
+                    count42++;
+                    Level2Building51.gameObject.SetActive(false);
+                    Level3Building51.gameObject.SetActive(true);
+                }
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 39)
+            if (floor39 != 1) random();
+            else
+            {
+                text2.text = "啡3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count43 == 1)
+                {
+                    count43++;
+                    Level1Building52.gameObject.SetActive(false);
+                    Level2Building52.gameObject.SetActive(true);
+                }
+                else if (count43 == 2)
+                {
+                    count43++;
+                    Level2Building52.gameObject.SetActive(false);
+                    Level3Building52.gameObject.SetActive(true);
+                }
+                floor39 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 40)
+            if (floor40 != 1) random();
+            else
+            {
+                text2.text = "黑1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count44 == 1)
+                {
+                    count44++;
+                    Level1Building55.gameObject.SetActive(false);
+                    Level2Building55.gameObject.SetActive(true);
+                }
+                else if (count44 == 2)
+                {
+                    count40++;
+                    Level2Building55.gameObject.SetActive(false);
+                    Level3Building55.gameObject.SetActive(true);
+                }
+                floor40 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 41)
+            if (floor42 != 1) random();
+            else
+            {
+                text2.text = "黑2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count45 == 1)
+                {
+                    count45++;
+                    Level1Building56.gameObject.SetActive(false);
+                    Level2Building56.gameObject.SetActive(true);
+                }
+                else if (count45 == 2)
+                {
+                    count45++;
+                    Level2Building56.gameObject.SetActive(false);
+                    Level3Building56.gameObject.SetActive(true);
+                }
+                floor41 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 42)
+            if (floor42 != 1) random();
+            else
+            {
+                text2.text = "黑3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count46 == 1)
+                {
+                    count46++;
+                    Level1Building57.gameObject.SetActive(false);
+                    Level2Building57.gameObject.SetActive(true);
+                }
+                else if (count46 == 2)
+                {
+                    count46++;
+                    Level2Building57.gameObject.SetActive(false);
+                    Level3Building57.gameObject.SetActive(true);
+                }
+                floor42 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+
+    }
+
+    void random2()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        do
+        {
+            rangeRadomNum = Random.Range(1, 42);
+        } while (rangeRadomNum == getRangeNum);
+
+        getRangeNum = rangeRadomNum;
+        if (rangeRadomNum == 1)
+            if (floor1 != 2) random2();
+            else
+            {
+                text2.text = "紅1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count1 == 1)
+                {
+                    count1++;
+                    Level1Building1.gameObject.SetActive(false);
+                    Level2Building1.gameObject.SetActive(true);
+                }
+                else if (count1 == 2)
+                {
+                    count1++;
+                    Level2Building1.gameObject.SetActive(false);
+                    Level3Building1.gameObject.SetActive(true);
+                }
+                floor1 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 2)
+            if (floor2 != 2) random2();
+            else
+            {
+                text2.text = "紅2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count2 == 1)
+                {
+                    count2++;
+                    Level1Building2.gameObject.SetActive(false);
+                    Level2Building2.gameObject.SetActive(true);
+                }
+                else if (count2 == 2)
+                {
+                    count2++;
+                    Level2Building2.gameObject.SetActive(false);
+                    Level3Building2.gameObject.SetActive(true);
+                }
+                floor2 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 3)
+            if (floor3 != 2) random2();
+            else
+            {
+                text2.text = "紅3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count3 == 1)
+                {
+                    count3++;
+                    Level1Building3.gameObject.SetActive(false);
+                    Level2Building3.gameObject.SetActive(true);
+                }
+                else if (count3 == 2)
+                {
+                    count3++;
+                    Level2Building3.gameObject.SetActive(false);
+                    Level3Building3.gameObject.SetActive(true);
+                }
+                floor3 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 4)
+            if (floor4 != 2) random2();
+            else
+            {
+                text2.text = "紅4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count4 == 1)
+                {
+                    count4++;
+                    Level1Building4.gameObject.SetActive(false);
+                    Level2Building4.gameObject.SetActive(true);
+                }
+                else if (count4 == 2)
+                {
+                    count4++;
+                    Level2Building4.gameObject.SetActive(false);
+                    Level3Building4.gameObject.SetActive(true);
+                }
+                floor4 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 5)
+            if (floor5 != 2) random2();
+            else
+            {
+                text2.text = "紅5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count5 == 1)
+                {
+                    count5++;
+                    Level1Building5.gameObject.SetActive(false);
+                    Level2Building5.gameObject.SetActive(true);
+                }
+                else if (count5 == 2)
+                {
+                    count5++;
+                    Level2Building5.gameObject.SetActive(false);
+                    Level3Building5.gameObject.SetActive(true);
+                }
+                floor5 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 6)
+            if (floor6 != 2) random2();
+            else
+            {
+                text2.text = "紅6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count6 == 1)
+                {
+                    count6++;
+                    Level1Building7.gameObject.SetActive(false);
+                    Level2Building7.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count6++;
+                    Level2Building7.gameObject.SetActive(false);
+                    Level3Building7.gameObject.SetActive(true);
+                }
+                floor6 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 7)
+            if (floor7 != 2) random2();
+            else
+            {
+                text2.text = "紅7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count7 == 1)
+                {
+                    count7++;
+                    Level1Building8.gameObject.SetActive(false);
+                    Level2Building8.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count7++;
+                    Level2Building8.gameObject.SetActive(false);
+                    Level3Building8.gameObject.SetActive(true);
+                }
+                floor7 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 8)
+            if (floor8 != 2) random2();
+            else
+            {
+                text2.text = "橙1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count8 == 1)
+                {
+                    count8++;
+                    Level1Building9.gameObject.SetActive(false);
+                    Level2Building9.gameObject.SetActive(true);
+                }
+                else if (count8 == 2)
+                {
+                    count8++;
+                    Level2Building9.gameObject.SetActive(false);
+                    Level3Building9.gameObject.SetActive(true);
+                }
+                floor8 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 9)
+            if (floor9 != 2) random2();
+            else
+            {
+                text2.text = "橙2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count10 == 1)
+                {
+                    count10++;
+                    Level1Building11.gameObject.SetActive(false);
+                    Level2Building11.gameObject.SetActive(true);
+                }
+                else if (count10 == 2)
+                {
+                    count10++;
+                    Level2Building11.gameObject.SetActive(false);
+                    Level3Building11.gameObject.SetActive(true);
+                }
+                floor9 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 10)
+            if (floor10 != 2) random2();
+            else
+            {
+                text2.text = "橙3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count11 == 1)
+                {
+                    count11++;
+                    Level1Building13.gameObject.SetActive(false);
+                    Level2Building13.gameObject.SetActive(true);
+                }
+                else if (count11 == 2)
+                {
+                    count11++;
+                    Level2Building13.gameObject.SetActive(false);
+                    Level3Building13.gameObject.SetActive(true);
+                }
+                floor10 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 11)
+            if (floor11 != 2) random2();
+            else
+            {
+                text2.text = "橙4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count12 == 1)
+                {
+                    count12++;
+                    Level1Building14.gameObject.SetActive(false);
+                    Level2Building14.gameObject.SetActive(true);
+                }
+                else if (count12 == 2)
+                {
+                    count12++;
+                    Level2Building14.gameObject.SetActive(false);
+                    Level3Building14.gameObject.SetActive(true);
+                }
+                floor11 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 12)
+            if (floor12 != 2) random2();
+            else
+            {
+                text2.text = "橙5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count13 == 1)
+                {
+                    count13++;
+                    Level1Building15.gameObject.SetActive(false);
+                    Level2Building15.gameObject.SetActive(true);
+                }
+                else if (count13 == 2)
+                {
+                    count13++;
+                    Level2Building15.gameObject.SetActive(false);
+                    Level3Building15.gameObject.SetActive(true);
+                }
+                floor12 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 13)
+            if (floor13 != 2) random2();
+            else
+            {
+                text2.text = "橙6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count14 == 1)
+                {
+                    count14++;
+                    Level1Building16.gameObject.SetActive(false);
+                    Level2Building16.gameObject.SetActive(true);
+                }
+                else if (count14 == 2)
+                {
+                    count14++;
+                    Level2Building16.gameObject.SetActive(false);
+                    Level3Building16.gameObject.SetActive(true);
+                }
+                floor13 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 14)
+            if (floor14 != 2) random2();
+            else
+            {
+                text2.text = "橙7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count15 == 1)
+                {
+                    count15++;
+                    Level1Building17.gameObject.SetActive(false);
+                    Level2Building17.gameObject.SetActive(true);
+                }
+                else if (count15 == 2)
+                {
+                    count15++;
+                    Level2Building17.gameObject.SetActive(false);
+                    Level3Building17.gameObject.SetActive(true);
+                }
+                floor14 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 15)
+            if (floor15 != 2) random2();
+            else
+            {
+                text2.text = "黃1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count16++;
+                    Level1Building19.gameObject.SetActive(false);
+                    Level2Building19.gameObject.SetActive(true);
+                }
+                else if (count16 == 2)
+                {
+                    count16++;
+                    Level2Building19.gameObject.SetActive(false);
+                    Level3Building19.gameObject.SetActive(true);
+                }
+                floor15 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 16)
+            if (floor16 != 2) random2();
+            else
+            {
+                text2.text = "黃2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count17++;
+                    Level1Building20.gameObject.SetActive(false);
+                    Level2Building20.gameObject.SetActive(true);
+                }
+                else if (count17 == 2)
+                {
+                    count17++;
+                    Level2Building20.gameObject.SetActive(false);
+                    Level3Building20.gameObject.SetActive(true);
+                }
+                floor16 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 17)
+            if (floor17 != 2) random2();
+            else
+            {
+                text2.text = "黃3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count19 == 1)
+                {
+                    count19++;
+                    Level1Building22.gameObject.SetActive(false);
+                    Level2Building22.gameObject.SetActive(true);
+                }
+                else if (count19 == 2)
+                {
+                    count19++;
+                    Level2Building22.gameObject.SetActive(false);
+                    Level3Building22.gameObject.SetActive(true);
+                }
+                floor17 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 18)
+            if (floor17 != 2) random2();
+            else
+            {
+                text2.text = "黃4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count20 == 1)
+                {
+                    count20++;
+                    Level1Building23.gameObject.SetActive(false);
+                    Level2Building23.gameObject.SetActive(true);
+                }
+                else if (count20 == 2)
+                {
+                    count20++;
+                    Level2Building23.gameObject.SetActive(false);
+                    Level3Building23.gameObject.SetActive(true);
+                }
+                floor18 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 19)
+            if (floor19 != 2) random2();
+            else
+            {
+                text2.text = "黃5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count21 == 1)
+                {
+                    count21++;
+                    Level1Building24.gameObject.SetActive(false);
+                    Level2Building24.gameObject.SetActive(true);
+                }
+                else if (count21 == 2)
+                {
+                    count21++;
+                    Level2Building24.gameObject.SetActive(false);
+                    Level3Building24.gameObject.SetActive(true);
+                }
+                floor19 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 20)
+            if (floor20 != 2) random2();
+            else
+            {
+                text2.text = "黃6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count22 == 1)
+                {
+                    count22++;
+                    Level1Building26.gameObject.SetActive(false);
+                    Level2Building26.gameObject.SetActive(true);
+                }
+                else if (count22 == 2)
+                {
+                    count22++;
+                    Level2Building26.gameObject.SetActive(false);
+                    Level3Building26.gameObject.SetActive(true);
+                }
+                floor20 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 21)
+            if (floor21 != 2) random2();
+            else
+            {
+                text2.text = "黃7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count23 == 1)
+                {
+                    count23++;
+                    Level1Building27.gameObject.SetActive(false);
+                    Level2Building27.gameObject.SetActive(true);
+                }
+                else if (count23 == 2)
+                {
+                    count23++;
+                    Level2Building27.gameObject.SetActive(false);
+                    Level3Building27.gameObject.SetActive(true);
+                }
+                floor21 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 22)
+            if (floor22 != 2) random2();
+            else
+            {
+                text2.text = "綠1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count24 == 1)
+                {
+                    count24++;
+                    Level1Building28.gameObject.SetActive(false);
+                    Level2Building28.gameObject.SetActive(true);
+                }
+                else if (count24 == 2)
+                {
+                    count24++;
+                    Level2Building28.gameObject.SetActive(false);
+                    Level3Building28.gameObject.SetActive(true);
+                }
+                floor22 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 23)
+            if (floor23 != 2) random2();
+            else
+            {
+                text2.text = "綠2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count25 == 1)
+                {
+                    count25++;
+                    Level1Building29.gameObject.SetActive(false);
+                    Level2Building29.gameObject.SetActive(true);
+                }
+                else if (count25 == 2)
+                {
+                    count25++;
+                    Level2Building29.gameObject.SetActive(false);
+                    Level3Building29.gameObject.SetActive(true);
+                }
+                floor23 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 24)
+            if (floor24 != 2) random2();
+            else
+            {
+                text2.text = "綠3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count26 == 1)
+                {
+                    count26++;
+                    Level1Building31.gameObject.SetActive(false);
+                    Level2Building31.gameObject.SetActive(true);
+                }
+                else if (count26 == 2)
+                {
+                    count26++;
+                    Level2Building31.gameObject.SetActive(false);
+                    Level3Building31.gameObject.SetActive(true);
+                }
+                floor24 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 25)
+            if (floor25 != 2) random2();
+            else
+            {
+                text2.text = "綠4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count27 == 1)
+                {
+                    count27++;
+                    Level1Building32.gameObject.SetActive(false);
+                    Level2Building32.gameObject.SetActive(true);
+                }
+                else if (count27 == 2)
+                {
+                    count27++;
+                    Level2Building32.gameObject.SetActive(false);
+                    Level3Building32.gameObject.SetActive(true);
+                }
+                floor25 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 26)
+            if (floor26 != 2) random2();
+            else
+            {
+                text2.text = "綠5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count28 == 1)
+                {
+                    count28++;
+                    Level1Building33.gameObject.SetActive(false);
+                    Level2Building33.gameObject.SetActive(true);
+                }
+                else if (count28 == 2)
+                {
+                    count28++;
+                    Level2Building33.gameObject.SetActive(false);
+                    Level3Building33.gameObject.SetActive(true);
+                }
+                floor26 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 27)
+            if (floor27 != 2) random2();
+            else
+            {
+                text2.text = "綠6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count29 == 1)
+                {
+                    count29++;
+                    Level1Building34.gameObject.SetActive(false);
+                    Level2Building34.gameObject.SetActive(true);
+                }
+                else if (count29 == 2)
+                {
+                    count29++;
+                    Level2Building34.gameObject.SetActive(false);
+                    Level3Building34.gameObject.SetActive(true);
+                }
+                floor27 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 28)
+            if (floor28 != 2) random2();
+            else
+            {
+                text2.text = "藍1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count30 == 1)
+                {
+                    count30++;
+                    Level1Building36.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count30 == 2)
+                {
+                    count30++;
+                    Level2Building36.gameObject.SetActive(false);
+                    Level3Building36.gameObject.SetActive(true);
+                }
+                floor28 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 29)
+            if (floor29 != 2) random2();
+            else
+            {
+                text2.text = "藍2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count31 == 1)
+                {
+                    count31++;
+                    Level1Building37.gameObject.SetActive(false);
+                    Level2Building37.gameObject.SetActive(true);
+                }
+                else if (count31 == 2)
+                {
+                    count31++;
+                    Level2Building37.gameObject.SetActive(false);
+                    Level3Building37.gameObject.SetActive(true);
+                }
+                floor29 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 30)
+            if (floor30 != 2) random2();
+            else
+            {
+                text2.text = "藍3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count33 == 1)
+                {
+                    count33++;
+                    Level1Building39.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count33 == 2)
+                {
+                    count33++;
+                    Level2Building39.gameObject.SetActive(false);
+                    Level3Building39.gameObject.SetActive(true);
+                }
+                floor30 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 31)
+            if (floor31 != 2) random2();
+            else
+            {
+                text2.text = "藍4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count34 == 1)
+                {
+                    count34++;
+                    Level1Building40.gameObject.SetActive(false);
+                    Level2Building40.gameObject.SetActive(true);
+                }
+                else if (count34 == 2)
+                {
+                    count34++;
+                    Level2Building40.gameObject.SetActive(false);
+                    Level3Building40.gameObject.SetActive(true);
+                }
+                floor31 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 32)
+            if (floor32 != 2) random2();
+            else
+            {
+                text2.text = "紫1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count35 == 1)
+                {
+                    count35++;
+                    Level1Building42.gameObject.SetActive(false);
+                    Level2Building42.gameObject.SetActive(true);
+                }
+                else if (count35 == 2)
+                {
+                    count35++;
+                    Level2Building42.gameObject.SetActive(false);
+                    Level3Building42.gameObject.SetActive(true);
+                }
+                floor32 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 33)
+            if (floor33 != 2) random2();
+            else
+            {
+                text2.text = "紫2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count36 == 1)
+                {
+                    count36++;
+                    Level1Building43.gameObject.SetActive(false);
+                    Level2Building43.gameObject.SetActive(true);
+                }
+                else if (count36 == 2)
+                {
+                    count36++;
+                    Level2Building43.gameObject.SetActive(false);
+                    Level3Building43.gameObject.SetActive(true);
+                }
+                floor33 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 34)
+            if (floor34 != 2) random2();
+            else
+            {
+                text2.text = "紫3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count37++;
+                    Level1Building44.gameObject.SetActive(false);
+                    Level2Building44.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count37++;
+                    Level2Building44.gameObject.SetActive(false);
+                    Level3Building44.gameObject.SetActive(true);
+                }
+                floor34 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 35)
+            if (floor35 != 2) random2();
+            else
+            {
+                text2.text = "紫4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count38++;
+                    Level1Building47.gameObject.SetActive(false);
+                    Level2Building47.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count38++;
+                    Level2Building47.gameObject.SetActive(false);
+                    Level3Building47.gameObject.SetActive(true);
+                }
+                floor35 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 36)
+            if (floor36 != 2) random2();
+            else
+            {
+                text2.text = "紫5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count39 == 1)
+                {
+                    count39++;
+                    Level1Building48.gameObject.SetActive(false);
+                    Level2Building48.gameObject.SetActive(true);
+                }
+                else if (count39 == 2)
+                {
+                    count39++;
+                    Level2Building48.gameObject.SetActive(false);
+                    Level3Building48.gameObject.SetActive(true);
+                }
+                floor36 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 37)
+            if (floor37 != 2) random2();
+            else
+            {
+                text2.text = "啡1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count40 == 1)
+                {
+                    count40++;
+                    Level1Building49.gameObject.SetActive(false);
+                    Level2Building49.gameObject.SetActive(true);
+                }
+                else if (count40 == 2)
+                {
+                    count40++;
+                    Level2Building49.gameObject.SetActive(false);
+                    Level3Building49.gameObject.SetActive(true);
+                }
+                floor37 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 38)
+            if (floor38 != 2) random2();
+            else
+            {
+                text2.text = "啡2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count42 == 1)
+                {
+                    count42++;
+                    Level1Building51.gameObject.SetActive(false);
+                    Level2Building51.gameObject.SetActive(true);
+                }
+                else if (count42 == 2)
+                {
+                    floor38 = 0;
+                    count42++;
+                    Level2Building51.gameObject.SetActive(false);
+                    Level3Building51.gameObject.SetActive(true);
+                }
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 39)
+            if (floor39 != 2) random2();
+            else
+            {
+                text2.text = "啡3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count43 == 1)
+                {
+                    count43++;
+                    Level1Building52.gameObject.SetActive(false);
+                    Level2Building52.gameObject.SetActive(true);
+                }
+                else if (count43 == 2)
+                {
+                    count43++;
+                    Level2Building52.gameObject.SetActive(false);
+                    Level3Building52.gameObject.SetActive(true);
+                }
+                floor39 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 40)
+            if (floor40 != 2) random2();
+            else
+            {
+                text2.text = "黑1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count44 == 1)
+                {
+                    count44++;
+                    Level1Building55.gameObject.SetActive(false);
+                    Level2Building55.gameObject.SetActive(true);
+                }
+                else if (count44 == 2)
+                {
+                    count40++;
+                    Level2Building55.gameObject.SetActive(false);
+                    Level3Building55.gameObject.SetActive(true);
+                }
+                floor40 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 41)
+            if (floor42 != 2) random2();
+            else
+            {
+                text2.text = "黑2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count45 == 1)
+                {
+                    count45++;
+                    Level1Building56.gameObject.SetActive(false);
+                    Level2Building56.gameObject.SetActive(true);
+                }
+                else if (count45 == 2)
+                {
+                    count45++;
+                    Level2Building56.gameObject.SetActive(false);
+                    Level3Building56.gameObject.SetActive(true);
+                }
+                floor41 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 42)
+            if (floor42 != 2) random2();
+            else
+            {
+                text2.text = "黑3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count46 == 1)
+                {
+                    count46++;
+                    Level1Building57.gameObject.SetActive(false);
+                    Level2Building57.gameObject.SetActive(true);
+                }
+                else if (count46 == 2)
+                {
+                    count46++;
+                    Level2Building57.gameObject.SetActive(false);
+                    Level3Building57.gameObject.SetActive(true);
+                }
+                floor42 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+
+    }
+
+    void random3()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        do
+        {
+            rangeRadomNum = Random.Range(1, 42);
+        } while (rangeRadomNum == getRangeNum);
+
+        getRangeNum = rangeRadomNum;
+        if (rangeRadomNum == 1)
+            if (floor1 != 3) random3();
+            else
+            {
+                text2.text = "紅1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count1 == 1)
+                {
+                    count1++;
+                    Level1Building1.gameObject.SetActive(false);
+                    Level2Building1.gameObject.SetActive(true);
+                }
+                else if (count1 == 2)
+                {
+                    count1++;
+                    Level2Building1.gameObject.SetActive(false);
+                    Level3Building1.gameObject.SetActive(true);
+                }
+                floor1 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 2)
+            if (floor2 != 3) random3();
+            else
+            {
+                text2.text = "紅2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count2 == 1)
+                {
+                    count2++;
+                    Level1Building2.gameObject.SetActive(false);
+                    Level2Building2.gameObject.SetActive(true);
+                }
+                else if (count2 == 2)
+                {
+                    count2++;
+                    Level2Building2.gameObject.SetActive(false);
+                    Level3Building2.gameObject.SetActive(true);
+                }
+                floor2 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 3)
+            if (floor3 != 3) random3();
+            else
+            {
+                text2.text = "紅3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count3 == 1)
+                {
+                    count3++;
+                    Level1Building3.gameObject.SetActive(false);
+                    Level2Building3.gameObject.SetActive(true);
+                }
+                else if (count3 == 2)
+                {
+                    count3++;
+                    Level2Building3.gameObject.SetActive(false);
+                    Level3Building3.gameObject.SetActive(true);
+                }
+                floor3 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 4)
+            if (floor4 != 3) random3();
+            else
+            {
+                text2.text = "紅4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count4 == 1)
+                {
+                    count4++;
+                    Level1Building4.gameObject.SetActive(false);
+                    Level2Building4.gameObject.SetActive(true);
+                }
+                else if (count4 == 2)
+                {
+                    count4++;
+                    Level2Building4.gameObject.SetActive(false);
+                    Level3Building4.gameObject.SetActive(true);
+                }
+                floor4 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 5)
+            if (floor5 != 3) random3();
+            else
+            {
+                text2.text = "紅5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count5 == 1)
+                {
+                    count5++;
+                    Level1Building5.gameObject.SetActive(false);
+                    Level2Building5.gameObject.SetActive(true);
+                }
+                else if (count5 == 2)
+                {
+                    count5++;
+                    Level2Building5.gameObject.SetActive(false);
+                    Level3Building5.gameObject.SetActive(true);
+                }
+                floor5 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 6)
+            if (floor6 != 3) random3();
+            else
+            {
+                text2.text = "紅6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count6 == 1)
+                {
+                    count6++;
+                    Level1Building7.gameObject.SetActive(false);
+                    Level2Building7.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count6++;
+                    Level2Building7.gameObject.SetActive(false);
+                    Level3Building7.gameObject.SetActive(true);
+                }
+                floor6 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 7)
+            if (floor7 != 3) random3();
+            else
+            {
+                text2.text = "紅7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count7 == 1)
+                {
+                    count7++;
+                    Level1Building8.gameObject.SetActive(false);
+                    Level2Building8.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count7++;
+                    Level2Building8.gameObject.SetActive(false);
+                    Level3Building8.gameObject.SetActive(true);
+                }
+                floor7 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 8)
+            if (floor8 != 3) random3();
+            else
+            {
+                text2.text = "橙1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count8 == 1)
+                {
+                    count8++;
+                    Level1Building9.gameObject.SetActive(false);
+                    Level2Building9.gameObject.SetActive(true);
+                }
+                else if (count8 == 2)
+                {
+                    count8++;
+                    Level2Building9.gameObject.SetActive(false);
+                    Level3Building9.gameObject.SetActive(true);
+                }
+                floor8 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 9)
+            if (floor9 != 3) random3();
+            else
+            {
+                text2.text = "橙2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count10 == 1)
+                {
+                    count10++;
+                    Level1Building11.gameObject.SetActive(false);
+                    Level2Building11.gameObject.SetActive(true);
+                }
+                else if (count10 == 2)
+                {
+                    count10++;
+                    Level2Building11.gameObject.SetActive(false);
+                    Level3Building11.gameObject.SetActive(true);
+                }
+                floor9 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 10)
+            if (floor10 != 3) random3();
+            else
+            {
+                text2.text = "橙3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count11 == 1)
+                {
+                    count11++;
+                    Level1Building13.gameObject.SetActive(false);
+                    Level2Building13.gameObject.SetActive(true);
+                }
+                else if (count11 == 2)
+                {
+                    count11++;
+                    Level2Building13.gameObject.SetActive(false);
+                    Level3Building13.gameObject.SetActive(true);
+                }
+                floor10 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 11)
+            if (floor11 != 3) random3();
+            else
+            {
+                text2.text = "橙4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count12 == 1)
+                {
+                    count12++;
+                    Level1Building14.gameObject.SetActive(false);
+                    Level2Building14.gameObject.SetActive(true);
+                }
+                else if (count12 == 2)
+                {
+                    count12++;
+                    Level2Building14.gameObject.SetActive(false);
+                    Level3Building14.gameObject.SetActive(true);
+                }
+                floor11 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 12)
+            if (floor12 != 3) random3();
+            else
+            {
+                text2.text = "橙5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count13 == 1)
+                {
+                    count13++;
+                    Level1Building15.gameObject.SetActive(false);
+                    Level2Building15.gameObject.SetActive(true);
+                }
+                else if (count13 == 2)
+                {
+                    count13++;
+                    Level2Building15.gameObject.SetActive(false);
+                    Level3Building15.gameObject.SetActive(true);
+                }
+                floor12 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 13)
+            if (floor13 != 3) random3();
+            else
+            {
+                text2.text = "橙6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count14 == 1)
+                {
+                    count14++;
+                    Level1Building16.gameObject.SetActive(false);
+                    Level2Building16.gameObject.SetActive(true);
+                }
+                else if (count14 == 2)
+                {
+                    count14++;
+                    Level2Building16.gameObject.SetActive(false);
+                    Level3Building16.gameObject.SetActive(true);
+                }
+                floor13 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 14)
+            if (floor14 != 3) random3();
+            else
+            {
+                text2.text = "橙7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count15 == 1)
+                {
+                    count15++;
+                    Level1Building17.gameObject.SetActive(false);
+                    Level2Building17.gameObject.SetActive(true);
+                }
+                else if (count15 == 2)
+                {
+                    count15++;
+                    Level2Building17.gameObject.SetActive(false);
+                    Level3Building17.gameObject.SetActive(true);
+                }
+                floor14 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 15)
+            if (floor15 != 3) random3();
+            else
+            {
+                text2.text = "黃1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count16++;
+                    Level1Building19.gameObject.SetActive(false);
+                    Level2Building19.gameObject.SetActive(true);
+                }
+                else if (count16 == 2)
+                {
+                    count16++;
+                    Level2Building19.gameObject.SetActive(false);
+                    Level3Building19.gameObject.SetActive(true);
+                }
+                floor15 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 16)
+            if (floor16 != 3) random3();
+            else
+            {
+                text2.text = "黃2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count17++;
+                    Level1Building20.gameObject.SetActive(false);
+                    Level2Building20.gameObject.SetActive(true);
+                }
+                else if (count17 == 2)
+                {
+                    count17++;
+                    Level2Building20.gameObject.SetActive(false);
+                    Level3Building20.gameObject.SetActive(true);
+                }
+                floor16 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 17)
+            if (floor17 != 3) random3();
+            else
+            {
+                text2.text = "黃3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count19 == 1)
+                {
+                    count19++;
+                    Level1Building22.gameObject.SetActive(false);
+                    Level2Building22.gameObject.SetActive(true);
+                }
+                else if (count19 == 2)
+                {
+                    count19++;
+                    Level2Building22.gameObject.SetActive(false);
+                    Level3Building22.gameObject.SetActive(true);
+                }
+                floor17 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 18)
+            if (floor17 != 3) random3();
+            else
+            {
+                text2.text = "黃4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count20 == 1)
+                {
+                    count20++;
+                    Level1Building23.gameObject.SetActive(false);
+                    Level2Building23.gameObject.SetActive(true);
+                }
+                else if (count20 == 2)
+                {
+                    count20++;
+                    Level2Building23.gameObject.SetActive(false);
+                    Level3Building23.gameObject.SetActive(true);
+                }
+                floor18 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 19)
+            if (floor19 != 3) random3();
+            else
+            {
+                text2.text = "黃5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count21 == 1)
+                {
+                    count21++;
+                    Level1Building24.gameObject.SetActive(false);
+                    Level2Building24.gameObject.SetActive(true);
+                }
+                else if (count21 == 2)
+                {
+                    count21++;
+                    Level2Building24.gameObject.SetActive(false);
+                    Level3Building24.gameObject.SetActive(true);
+                }
+                floor19 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 20)
+            if (floor20 != 3) random3();
+            else
+            {
+                text2.text = "黃6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count22 == 1)
+                {
+                    count22++;
+                    Level1Building26.gameObject.SetActive(false);
+                    Level2Building26.gameObject.SetActive(true);
+                }
+                else if (count22 == 2)
+                {
+                    count22++;
+                    Level2Building26.gameObject.SetActive(false);
+                    Level3Building26.gameObject.SetActive(true);
+                }
+                floor20 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 21)
+            if (floor21 != 3) random3();
+            else
+            {
+                text2.text = "黃7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count23 == 1)
+                {
+                    count23++;
+                    Level1Building27.gameObject.SetActive(false);
+                    Level2Building27.gameObject.SetActive(true);
+                }
+                else if (count23 == 2)
+                {
+                    count23++;
+                    Level2Building27.gameObject.SetActive(false);
+                    Level3Building27.gameObject.SetActive(true);
+                }
+                floor21 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 22)
+            if (floor22 != 3) random3();
+            else
+            {
+                text2.text = "綠1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count24 == 1)
+                {
+                    count24++;
+                    Level1Building28.gameObject.SetActive(false);
+                    Level2Building28.gameObject.SetActive(true);
+                }
+                else if (count24 == 2)
+                {
+                    count24++;
+                    Level2Building28.gameObject.SetActive(false);
+                    Level3Building28.gameObject.SetActive(true);
+                }
+                floor22 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 23)
+            if (floor23 != 3) random3();
+            else
+            {
+                text2.text = "綠2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count25 == 1)
+                {
+                    count25++;
+                    Level1Building29.gameObject.SetActive(false);
+                    Level2Building29.gameObject.SetActive(true);
+                }
+                else if (count25 == 2)
+                {
+                    count25++;
+                    Level2Building29.gameObject.SetActive(false);
+                    Level3Building29.gameObject.SetActive(true);
+                }
+                floor23 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 24)
+            if (floor24 != 3) random3();
+            else
+            {
+                text2.text = "綠3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count26 == 1)
+                {
+                    count26++;
+                    Level1Building31.gameObject.SetActive(false);
+                    Level2Building31.gameObject.SetActive(true);
+                }
+                else if (count26 == 2)
+                {
+                    count26++;
+                    Level2Building31.gameObject.SetActive(false);
+                    Level3Building31.gameObject.SetActive(true);
+                }
+                floor24 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 25)
+            if (floor25 != 3) random3();
+            else
+            {
+                text2.text = "綠4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count27 == 1)
+                {
+                    count27++;
+                    Level1Building32.gameObject.SetActive(false);
+                    Level2Building32.gameObject.SetActive(true);
+                }
+                else if (count27 == 2)
+                {
+                    count27++;
+                    Level2Building32.gameObject.SetActive(false);
+                    Level3Building32.gameObject.SetActive(true);
+                }
+                floor25 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 26)
+            if (floor26 != 3) random3();
+            else
+            {
+                text2.text = "綠5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count28 == 1)
+                {
+                    count28++;
+                    Level1Building33.gameObject.SetActive(false);
+                    Level2Building33.gameObject.SetActive(true);
+                }
+                else if (count28 == 2)
+                {
+                    count28++;
+                    Level2Building33.gameObject.SetActive(false);
+                    Level3Building33.gameObject.SetActive(true);
+                }
+                floor26 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 27)
+            if (floor27 != 3) random3();
+            else
+            {
+                text2.text = "綠6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count29 == 1)
+                {
+                    count29++;
+                    Level1Building34.gameObject.SetActive(false);
+                    Level2Building34.gameObject.SetActive(true);
+                }
+                else if (count29 == 2)
+                {
+                    count29++;
+                    Level2Building34.gameObject.SetActive(false);
+                    Level3Building34.gameObject.SetActive(true);
+                }
+                floor27 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 28)
+            if (floor28 != 3) random3();
+            else
+            {
+                text2.text = "藍1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count30 == 1)
+                {
+                    count30++;
+                    Level1Building36.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count30 == 2)
+                {
+                    count30++;
+                    Level2Building36.gameObject.SetActive(false);
+                    Level3Building36.gameObject.SetActive(true);
+                }
+                floor28 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 29)
+            if (floor29 != 3) random3();
+            else
+            {
+                text2.text = "藍2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count31 == 1)
+                {
+                    count31++;
+                    Level1Building37.gameObject.SetActive(false);
+                    Level2Building37.gameObject.SetActive(true);
+                }
+                else if (count31 == 2)
+                {
+                    count31++;
+                    Level2Building37.gameObject.SetActive(false);
+                    Level3Building37.gameObject.SetActive(true);
+                }
+                floor29 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 30)
+            if (floor30 != 3) random3();
+            else
+            {
+                text2.text = "藍3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count33 == 1)
+                {
+                    count33++;
+                    Level1Building39.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count33 == 2)
+                {
+                    count33++;
+                    Level2Building39.gameObject.SetActive(false);
+                    Level3Building39.gameObject.SetActive(true);
+                }
+                floor30 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 31)
+            if (floor31 != 3) random3();
+            else
+            {
+                text2.text = "藍4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count34 == 1)
+                {
+                    count34++;
+                    Level1Building40.gameObject.SetActive(false);
+                    Level2Building40.gameObject.SetActive(true);
+                }
+                else if (count34 == 2)
+                {
+                    count34++;
+                    Level2Building40.gameObject.SetActive(false);
+                    Level3Building40.gameObject.SetActive(true);
+                }
+                floor31 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 32)
+            if (floor32 != 3) random3();
+            else
+            {
+                text2.text = "紫1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count35 == 1)
+                {
+                    count35++;
+                    Level1Building42.gameObject.SetActive(false);
+                    Level2Building42.gameObject.SetActive(true);
+                }
+                else if (count35 == 2)
+                {
+                    count35++;
+                    Level2Building42.gameObject.SetActive(false);
+                    Level3Building42.gameObject.SetActive(true);
+                }
+                floor32 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 33)
+            if (floor33 != 3) random3();
+            else
+            {
+                text2.text = "紫2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count36 == 1)
+                {
+                    count36++;
+                    Level1Building43.gameObject.SetActive(false);
+                    Level2Building43.gameObject.SetActive(true);
+                }
+                else if (count36 == 2)
+                {
+                    count36++;
+                    Level2Building43.gameObject.SetActive(false);
+                    Level3Building43.gameObject.SetActive(true);
+                }
+                floor33 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 34)
+            if (floor34 != 3) random3();
+            else
+            {
+                text2.text = "紫3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count37++;
+                    Level1Building44.gameObject.SetActive(false);
+                    Level2Building44.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count37++;
+                    Level2Building44.gameObject.SetActive(false);
+                    Level3Building44.gameObject.SetActive(true);
+                }
+                floor34 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 35)
+            if (floor35 != 3) random3();
+            else
+            {
+                text2.text = "紫4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count38++;
+                    Level1Building47.gameObject.SetActive(false);
+                    Level2Building47.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count38++;
+                    Level2Building47.gameObject.SetActive(false);
+                    Level3Building47.gameObject.SetActive(true);
+                }
+                floor35 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 36)
+            if (floor36 != 3) random3();
+            else
+            {
+                text2.text = "紫5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count39 == 1)
+                {
+                    count39++;
+                    Level1Building48.gameObject.SetActive(false);
+                    Level2Building48.gameObject.SetActive(true);
+                }
+                else if (count39 == 2)
+                {
+                    count39++;
+                    Level2Building48.gameObject.SetActive(false);
+                    Level3Building48.gameObject.SetActive(true);
+                }
+                floor36 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 37)
+            if (floor37 != 3) random3();
+            else
+            {
+                text2.text = "啡1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count40 == 1)
+                {
+                    count40++;
+                    Level1Building49.gameObject.SetActive(false);
+                    Level2Building49.gameObject.SetActive(true);
+                }
+                else if (count40 == 2)
+                {
+                    count40++;
+                    Level2Building49.gameObject.SetActive(false);
+                    Level3Building49.gameObject.SetActive(true);
+                }
+                floor37 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 38)
+            if (floor38 != 3) random3();
+            else
+            {
+                text2.text = "啡2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count42 == 1)
+                {
+                    count42++;
+                    Level1Building51.gameObject.SetActive(false);
+                    Level2Building51.gameObject.SetActive(true);
+                }
+                else if (count42 == 2)
+                {
+                    floor38 = 0;
+                    count42++;
+                    Level2Building51.gameObject.SetActive(false);
+                    Level3Building51.gameObject.SetActive(true);
+                }
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 39)
+            if (floor39 != 3) random3();
+            else
+            {
+                text2.text = "啡3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count43 == 1)
+                {
+                    count43++;
+                    Level1Building52.gameObject.SetActive(false);
+                    Level2Building52.gameObject.SetActive(true);
+                }
+                else if (count43 == 2)
+                {
+                    count43++;
+                    Level2Building52.gameObject.SetActive(false);
+                    Level3Building52.gameObject.SetActive(true);
+                }
+                floor39 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 40)
+            if (floor40 != 3) random3();
+            else
+            {
+                text2.text = "黑1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count44 == 1)
+                {
+                    count44++;
+                    Level1Building55.gameObject.SetActive(false);
+                    Level2Building55.gameObject.SetActive(true);
+                }
+                else if (count44 == 2)
+                {
+                    count40++;
+                    Level2Building55.gameObject.SetActive(false);
+                    Level3Building55.gameObject.SetActive(true);
+                }
+                floor40 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 41)
+            if (floor42 != 3) random3();
+            else
+            {
+                text2.text = "黑2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count45 == 1)
+                {
+                    count45++;
+                    Level1Building56.gameObject.SetActive(false);
+                    Level2Building56.gameObject.SetActive(true);
+                }
+                else if (count45 == 2)
+                {
+                    count45++;
+                    Level2Building56.gameObject.SetActive(false);
+                    Level3Building56.gameObject.SetActive(true);
+                }
+                floor41 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 42)
+            if (floor42 != 3) random3();
+            else
+            {
+                text2.text = "黑3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count46 == 1)
+                {
+                    count46++;
+                    Level1Building57.gameObject.SetActive(false);
+                    Level2Building57.gameObject.SetActive(true);
+                }
+                else if (count46 == 2)
+                {
+                    count46++;
+                    Level2Building57.gameObject.SetActive(false);
+                    Level3Building57.gameObject.SetActive(true);
+                }
+                floor42 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+
+    }
+
+    void random4()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        do
+        {
+            rangeRadomNum = Random.Range(1, 42);
+        } while (rangeRadomNum == getRangeNum);
+
+        getRangeNum = rangeRadomNum;
+        if (rangeRadomNum == 1)
+            if (floor1 != 4) random4();
+            else
+            {
+                text2.text = "紅1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count1 == 1)
+                {
+                    count1++;
+                    Level1Building1.gameObject.SetActive(false);
+                    Level2Building1.gameObject.SetActive(true);
+                }
+                else if (count1 == 2)
+                {
+                    count1++;
+                    Level2Building1.gameObject.SetActive(false);
+                    Level3Building1.gameObject.SetActive(true);
+                }
+                floor1 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 2)
+            if (floor2 != 4) random4();
+            else
+            {
+                text2.text = "紅2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count2 == 1)
+                {
+                    count2++;
+                    Level1Building2.gameObject.SetActive(false);
+                    Level2Building2.gameObject.SetActive(true);
+                }
+                else if (count2 == 2)
+                {
+                    count2++;
+                    Level2Building2.gameObject.SetActive(false);
+                    Level3Building2.gameObject.SetActive(true);
+                }
+                floor2 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 3)
+            if (floor3 != 4) random4();
+            else
+            {
+                text2.text = "紅3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count3 == 1)
+                {
+                    count3++;
+                    Level1Building3.gameObject.SetActive(false);
+                    Level2Building3.gameObject.SetActive(true);
+                }
+                else if (count3 == 2)
+                {
+                    count3++;
+                    Level2Building3.gameObject.SetActive(false);
+                    Level3Building3.gameObject.SetActive(true);
+                }
+                floor3 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 4)
+            if (floor4 != 4) random4();
+            else
+            {
+                text2.text = "紅4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count4 == 1)
+                {
+                    count4++;
+                    Level1Building4.gameObject.SetActive(false);
+                    Level2Building4.gameObject.SetActive(true);
+                }
+                else if (count4 == 2)
+                {
+                    count4++;
+                    Level2Building4.gameObject.SetActive(false);
+                    Level3Building4.gameObject.SetActive(true);
+                }
+                floor4 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 5)
+            if (floor5 != 4) random4();
+            else
+            {
+                text2.text = "紅5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count5 == 1)
+                {
+                    count5++;
+                    Level1Building5.gameObject.SetActive(false);
+                    Level2Building5.gameObject.SetActive(true);
+                }
+                else if (count5 == 2)
+                {
+                    count5++;
+                    Level2Building5.gameObject.SetActive(false);
+                    Level3Building5.gameObject.SetActive(true);
+                }
+                floor5 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 6)
+            if (floor6 != 4) random4();
+            else
+            {
+                text2.text = "紅6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count6 == 1)
+                {
+                    count6++;
+                    Level1Building7.gameObject.SetActive(false);
+                    Level2Building7.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count6++;
+                    Level2Building7.gameObject.SetActive(false);
+                    Level3Building7.gameObject.SetActive(true);
+                }
+                floor6 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 7)
+            if (floor7 != 4) random4();
+            else
+            {
+                text2.text = "紅7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count7 == 1)
+                {
+                    count7++;
+                    Level1Building8.gameObject.SetActive(false);
+                    Level2Building8.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count7++;
+                    Level2Building8.gameObject.SetActive(false);
+                    Level3Building8.gameObject.SetActive(true);
+                }
+                floor7 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 8)
+            if (floor8 != 4) random4();
+            else
+            {
+                text2.text = "橙1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count8 == 1)
+                {
+                    count8++;
+                    Level1Building9.gameObject.SetActive(false);
+                    Level2Building9.gameObject.SetActive(true);
+                }
+                else if (count8 == 2)
+                {
+                    count8++;
+                    Level2Building9.gameObject.SetActive(false);
+                    Level3Building9.gameObject.SetActive(true);
+                }
+                floor8 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 9)
+            if (floor9 != 4) random4();
+            else
+            {
+                text2.text = "橙2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count10 == 1)
+                {
+                    count10++;
+                    Level1Building11.gameObject.SetActive(false);
+                    Level2Building11.gameObject.SetActive(true);
+                }
+                else if (count10 == 2)
+                {
+                    count10++;
+                    Level2Building11.gameObject.SetActive(false);
+                    Level3Building11.gameObject.SetActive(true);
+                }
+                floor9 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 10)
+            if (floor10 != 4) random4();
+            else
+            {
+                text2.text = "橙3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count11 == 1)
+                {
+                    count11++;
+                    Level1Building13.gameObject.SetActive(false);
+                    Level2Building13.gameObject.SetActive(true);
+                }
+                else if (count11 == 2)
+                {
+                    count11++;
+                    Level2Building13.gameObject.SetActive(false);
+                    Level3Building13.gameObject.SetActive(true);
+                }
+                floor10 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 11)
+            if (floor11 != 4) random4();
+            else
+            {
+                text2.text = "橙4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count12 == 1)
+                {
+                    count12++;
+                    Level1Building14.gameObject.SetActive(false);
+                    Level2Building14.gameObject.SetActive(true);
+                }
+                else if (count12 == 2)
+                {
+                    count12++;
+                    Level2Building14.gameObject.SetActive(false);
+                    Level3Building14.gameObject.SetActive(true);
+                }
+                floor11 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 12)
+            if (floor12 != 4) random4();
+            else
+            {
+                text2.text = "橙5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count13 == 1)
+                {
+                    count13++;
+                    Level1Building15.gameObject.SetActive(false);
+                    Level2Building15.gameObject.SetActive(true);
+                }
+                else if (count13 == 2)
+                {
+                    count13++;
+                    Level2Building15.gameObject.SetActive(false);
+                    Level3Building15.gameObject.SetActive(true);
+                }
+                floor12 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 13)
+            if (floor13 != 4) random4();
+            else
+            {
+                text2.text = "橙6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count14 == 1)
+                {
+                    count14++;
+                    Level1Building16.gameObject.SetActive(false);
+                    Level2Building16.gameObject.SetActive(true);
+                }
+                else if (count14 == 2)
+                {
+                    count14++;
+                    Level2Building16.gameObject.SetActive(false);
+                    Level3Building16.gameObject.SetActive(true);
+                }
+                floor13 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 14)
+            if (floor14 != 4) random4();
+            else
+            {
+                text2.text = "橙7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count15 == 1)
+                {
+                    count15++;
+                    Level1Building17.gameObject.SetActive(false);
+                    Level2Building17.gameObject.SetActive(true);
+                }
+                else if (count15 == 2)
+                {
+                    count15++;
+                    Level2Building17.gameObject.SetActive(false);
+                    Level3Building17.gameObject.SetActive(true);
+                }
+                floor14 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 15)
+            if (floor15 != 4) random4();
+            else
+            {
+                text2.text = "黃1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count16++;
+                    Level1Building19.gameObject.SetActive(false);
+                    Level2Building19.gameObject.SetActive(true);
+                }
+                else if (count16 == 2)
+                {
+                    count16++;
+                    Level2Building19.gameObject.SetActive(false);
+                    Level3Building19.gameObject.SetActive(true);
+                }
+                floor15 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 16)
+            if (floor16 != 4) random4();
+            else
+            {
+                text2.text = "黃2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count17++;
+                    Level1Building20.gameObject.SetActive(false);
+                    Level2Building20.gameObject.SetActive(true);
+                }
+                else if (count17 == 2)
+                {
+                    count17++;
+                    Level2Building20.gameObject.SetActive(false);
+                    Level3Building20.gameObject.SetActive(true);
+                }
+                floor16 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 17)
+            if (floor17 != 4) random4();
+            else
+            {
+                text2.text = "黃3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count19 == 1)
+                {
+                    count19++;
+                    Level1Building22.gameObject.SetActive(false);
+                    Level2Building22.gameObject.SetActive(true);
+                }
+                else if (count19 == 2)
+                {
+                    count19++;
+                    Level2Building22.gameObject.SetActive(false);
+                    Level3Building22.gameObject.SetActive(true);
+                }
+                floor17 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 18)
+            if (floor17 != 4) random4();
+            else
+            {
+                text2.text = "黃4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count20 == 1)
+                {
+                    count20++;
+                    Level1Building23.gameObject.SetActive(false);
+                    Level2Building23.gameObject.SetActive(true);
+                }
+                else if (count20 == 2)
+                {
+                    count20++;
+                    Level2Building23.gameObject.SetActive(false);
+                    Level3Building23.gameObject.SetActive(true);
+                }
+                floor18 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 19)
+            if (floor19 != 4) random4();
+            else
+            {
+                text2.text = "黃5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count21 == 1)
+                {
+                    count21++;
+                    Level1Building24.gameObject.SetActive(false);
+                    Level2Building24.gameObject.SetActive(true);
+                }
+                else if (count21 == 2)
+                {
+                    count21++;
+                    Level2Building24.gameObject.SetActive(false);
+                    Level3Building24.gameObject.SetActive(true);
+                }
+                floor19 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 20)
+            if (floor20 != 4) random4();
+            else
+            {
+                text2.text = "黃6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count22 == 1)
+                {
+                    count22++;
+                    Level1Building26.gameObject.SetActive(false);
+                    Level2Building26.gameObject.SetActive(true);
+                }
+                else if (count22 == 2)
+                {
+                    count22++;
+                    Level2Building26.gameObject.SetActive(false);
+                    Level3Building26.gameObject.SetActive(true);
+                }
+                floor20 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 21)
+            if (floor21 != 4) random4();
+            else
+            {
+                text2.text = "黃7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count23 == 1)
+                {
+                    count23++;
+                    Level1Building27.gameObject.SetActive(false);
+                    Level2Building27.gameObject.SetActive(true);
+                }
+                else if (count23 == 2)
+                {
+                    count23++;
+                    Level2Building27.gameObject.SetActive(false);
+                    Level3Building27.gameObject.SetActive(true);
+                }
+                floor21 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 22)
+            if (floor22 != 4) random4();
+            else
+            {
+                text2.text = "綠1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count24 == 1)
+                {
+                    count24++;
+                    Level1Building28.gameObject.SetActive(false);
+                    Level2Building28.gameObject.SetActive(true);
+                }
+                else if (count24 == 2)
+                {
+                    count24++;
+                    Level2Building28.gameObject.SetActive(false);
+                    Level3Building28.gameObject.SetActive(true);
+                }
+                floor22 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 23)
+            if (floor23 != 4) random4();
+            else
+            {
+                text2.text = "綠2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count25 == 1)
+                {
+                    count25++;
+                    Level1Building29.gameObject.SetActive(false);
+                    Level2Building29.gameObject.SetActive(true);
+                }
+                else if (count25 == 2)
+                {
+                    count25++;
+                    Level2Building29.gameObject.SetActive(false);
+                    Level3Building29.gameObject.SetActive(true);
+                }
+                floor23 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 24)
+            if (floor24 != 4) random4();
+            else
+            {
+                text2.text = "綠3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count26 == 1)
+                {
+                    count26++;
+                    Level1Building31.gameObject.SetActive(false);
+                    Level2Building31.gameObject.SetActive(true);
+                }
+                else if (count26 == 2)
+                {
+                    count26++;
+                    Level2Building31.gameObject.SetActive(false);
+                    Level3Building31.gameObject.SetActive(true);
+                }
+                floor24 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 25)
+            if (floor25 != 4) random4();
+            else
+            {
+                text2.text = "綠4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count27 == 1)
+                {
+                    count27++;
+                    Level1Building32.gameObject.SetActive(false);
+                    Level2Building32.gameObject.SetActive(true);
+                }
+                else if (count27 == 2)
+                {
+                    count27++;
+                    Level2Building32.gameObject.SetActive(false);
+                    Level3Building32.gameObject.SetActive(true);
+                }
+                floor25 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 26)
+            if (floor26 != 4) random4();
+            else
+            {
+                text2.text = "綠5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count28 == 1)
+                {
+                    count28++;
+                    Level1Building33.gameObject.SetActive(false);
+                    Level2Building33.gameObject.SetActive(true);
+                }
+                else if (count28 == 2)
+                {
+                    count28++;
+                    Level2Building33.gameObject.SetActive(false);
+                    Level3Building33.gameObject.SetActive(true);
+                }
+                floor26 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 27)
+            if (floor27 != 4) random4();
+            else
+            {
+                text2.text = "綠6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count29 == 1)
+                {
+                    count29++;
+                    Level1Building34.gameObject.SetActive(false);
+                    Level2Building34.gameObject.SetActive(true);
+                }
+                else if (count29 == 2)
+                {
+                    count29++;
+                    Level2Building34.gameObject.SetActive(false);
+                    Level3Building34.gameObject.SetActive(true);
+                }
+                floor27 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 28)
+            if (floor28 != 4) random4();
+            else
+            {
+                text2.text = "藍1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count30 == 1)
+                {
+                    count30++;
+                    Level1Building36.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count30 == 2)
+                {
+                    count30++;
+                    Level2Building36.gameObject.SetActive(false);
+                    Level3Building36.gameObject.SetActive(true);
+                }
+                floor28 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 29)
+            if (floor29 != 4) random4();
+            else
+            {
+                text2.text = "藍2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count31 == 1)
+                {
+                    count31++;
+                    Level1Building37.gameObject.SetActive(false);
+                    Level2Building37.gameObject.SetActive(true);
+                }
+                else if (count31 == 2)
+                {
+                    count31++;
+                    Level2Building37.gameObject.SetActive(false);
+                    Level3Building37.gameObject.SetActive(true);
+                }
+                floor29 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 30)
+            if (floor30 != 4) random4();
+            else
+            {
+                text2.text = "藍3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count33 == 1)
+                {
+                    count33++;
+                    Level1Building39.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count33 == 2)
+                {
+                    count33++;
+                    Level2Building39.gameObject.SetActive(false);
+                    Level3Building39.gameObject.SetActive(true);
+                }
+                floor30 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 31)
+            if (floor31 != 4) random4();
+            else
+            {
+                text2.text = "藍4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count34 == 1)
+                {
+                    count34++;
+                    Level1Building40.gameObject.SetActive(false);
+                    Level2Building40.gameObject.SetActive(true);
+                }
+                else if (count34 == 2)
+                {
+                    count34++;
+                    Level2Building40.gameObject.SetActive(false);
+                    Level3Building40.gameObject.SetActive(true);
+                }
+                floor31 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 32)
+            if (floor32 != 4) random4();
+            else
+            {
+                text2.text = "紫1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count35 == 1)
+                {
+                    count35++;
+                    Level1Building42.gameObject.SetActive(false);
+                    Level2Building42.gameObject.SetActive(true);
+                }
+                else if (count35 == 2)
+                {
+                    count35++;
+                    Level2Building42.gameObject.SetActive(false);
+                    Level3Building42.gameObject.SetActive(true);
+                }
+                floor32 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 33)
+            if (floor33 != 4) random4();
+            else
+            {
+                text2.text = "紫2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count36 == 1)
+                {
+                    count36++;
+                    Level1Building43.gameObject.SetActive(false);
+                    Level2Building43.gameObject.SetActive(true);
+                }
+                else if (count36 == 2)
+                {
+                    count36++;
+                    Level2Building43.gameObject.SetActive(false);
+                    Level3Building43.gameObject.SetActive(true);
+                }
+                floor33 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 34)
+            if (floor34 != 4) random4();
+            else
+            {
+                text2.text = "紫3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count37++;
+                    Level1Building44.gameObject.SetActive(false);
+                    Level2Building44.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count37++;
+                    Level2Building44.gameObject.SetActive(false);
+                    Level3Building44.gameObject.SetActive(true);
+                }
+                floor34 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 35)
+            if (floor35 != 4) random4();
+            else
+            {
+                text2.text = "紫4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count38++;
+                    Level1Building47.gameObject.SetActive(false);
+                    Level2Building47.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count38++;
+                    Level2Building47.gameObject.SetActive(false);
+                    Level3Building47.gameObject.SetActive(true);
+                }
+                floor35 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 36)
+            if (floor36 != 4) random4();
+            else
+            {
+                text2.text = "紫5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count39 == 1)
+                {
+                    count39++;
+                    Level1Building48.gameObject.SetActive(false);
+                    Level2Building48.gameObject.SetActive(true);
+                }
+                else if (count39 == 2)
+                {
+                    count39++;
+                    Level2Building48.gameObject.SetActive(false);
+                    Level3Building48.gameObject.SetActive(true);
+                }
+                floor36 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 37)
+            if (floor37 != 4) random4();
+            else
+            {
+                text2.text = "啡1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count40 == 1)
+                {
+                    count40++;
+                    Level1Building49.gameObject.SetActive(false);
+                    Level2Building49.gameObject.SetActive(true);
+                }
+                else if (count40 == 2)
+                {
+                    count40++;
+                    Level2Building49.gameObject.SetActive(false);
+                    Level3Building49.gameObject.SetActive(true);
+                }
+                floor37 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 38)
+            if (floor38 != 4) random4();
+            else
+            {
+                text2.text = "啡2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count42 == 1)
+                {
+                    count42++;
+                    Level1Building51.gameObject.SetActive(false);
+                    Level2Building51.gameObject.SetActive(true);
+                }
+                else if (count42 == 2)
+                {
+                    floor38 = 0;
+                    count42++;
+                    Level2Building51.gameObject.SetActive(false);
+                    Level3Building51.gameObject.SetActive(true);
+                }
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 39)
+            if (floor39 != 4) random4();
+            else
+            {
+                text2.text = "啡3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count43 == 1)
+                {
+                    count43++;
+                    Level1Building52.gameObject.SetActive(false);
+                    Level2Building52.gameObject.SetActive(true);
+                }
+                else if (count43 == 2)
+                {
+                    count43++;
+                    Level2Building52.gameObject.SetActive(false);
+                    Level3Building52.gameObject.SetActive(true);
+                }
+                floor39 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 40)
+            if (floor40 != 4) random4();
+            else
+            {
+                text2.text = "黑1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count44 == 1)
+                {
+                    count44++;
+                    Level1Building55.gameObject.SetActive(false);
+                    Level2Building55.gameObject.SetActive(true);
+                }
+                else if (count44 == 2)
+                {
+                    count40++;
+                    Level2Building55.gameObject.SetActive(false);
+                    Level3Building55.gameObject.SetActive(true);
+                }
+                floor40 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 41)
+            if (floor42 != 4) random4();
+            else
+            {
+                text2.text = "黑2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count45 == 1)
+                {
+                    count45++;
+                    Level1Building56.gameObject.SetActive(false);
+                    Level2Building56.gameObject.SetActive(true);
+                }
+                else if (count45 == 2)
+                {
+                    count45++;
+                    Level2Building56.gameObject.SetActive(false);
+                    Level3Building56.gameObject.SetActive(true);
+                }
+                floor41 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 42)
+            if (floor42 != 4) random4();
+            else
+            {
+                text2.text = "黑3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count46 == 1)
+                {
+                    count46++;
+                    Level1Building57.gameObject.SetActive(false);
+                    Level2Building57.gameObject.SetActive(true);
+                }
+                else if (count46 == 2)
+                {
+                    count46++;
+                    Level2Building57.gameObject.SetActive(false);
+                    Level3Building57.gameObject.SetActive(true);
+                }
+                floor42 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+
+    }
+
+    void random5()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        do
+        {
+            rangeRadomNum = Random.Range(1, 42);
+        } while (rangeRadomNum == getRangeNum);
+
+        getRangeNum = rangeRadomNum;
+        if (rangeRadomNum == 1)
+            if (floor1 != 5) random5();
+            else
+            {
+                text2.text = "紅1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count1 == 1)
+                {
+                    count1++;
+                    Level1Building1.gameObject.SetActive(false);
+                    Level2Building1.gameObject.SetActive(true);
+                }
+                else if (count1 == 2)
+                {
+                    count1++;
+                    Level2Building1.gameObject.SetActive(false);
+                    Level3Building1.gameObject.SetActive(true);
+                }
+                floor1 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 2)
+            if (floor2 != 5) random5();
+            else
+            {
+                text2.text = "紅2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count2 == 1)
+                {
+                    count2++;
+                    Level1Building2.gameObject.SetActive(false);
+                    Level2Building2.gameObject.SetActive(true);
+                }
+                else if (count2 == 2)
+                {
+                    count2++;
+                    Level2Building2.gameObject.SetActive(false);
+                    Level3Building2.gameObject.SetActive(true);
+                }
+                floor2 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 3)
+            if (floor3 != 5) random5();
+            else
+            {
+                text2.text = "紅3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count3 == 1)
+                {
+                    count3++;
+                    Level1Building3.gameObject.SetActive(false);
+                    Level2Building3.gameObject.SetActive(true);
+                }
+                else if (count3 == 2)
+                {
+                    count3++;
+                    Level2Building3.gameObject.SetActive(false);
+                    Level3Building3.gameObject.SetActive(true);
+                }
+                floor3 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 4)
+            if (floor4 != 5) random5();
+            else
+            {
+                text2.text = "紅4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count4 == 1)
+                {
+                    count4++;
+                    Level1Building4.gameObject.SetActive(false);
+                    Level2Building4.gameObject.SetActive(true);
+                }
+                else if (count4 == 2)
+                {
+                    count4++;
+                    Level2Building4.gameObject.SetActive(false);
+                    Level3Building4.gameObject.SetActive(true);
+                }
+                floor4 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 5)
+            if (floor5 != 5) random5();
+            else
+            {
+                text2.text = "紅5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count5 == 1)
+                {
+                    count5++;
+                    Level1Building5.gameObject.SetActive(false);
+                    Level2Building5.gameObject.SetActive(true);
+                }
+                else if (count5 == 2)
+                {
+                    count5++;
+                    Level2Building5.gameObject.SetActive(false);
+                    Level3Building5.gameObject.SetActive(true);
+                }
+                floor5 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 6)
+            if (floor6 != 5) random5();
+            else
+            {
+                text2.text = "紅6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count6 == 1)
+                {
+                    count6++;
+                    Level1Building7.gameObject.SetActive(false);
+                    Level2Building7.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count6++;
+                    Level2Building7.gameObject.SetActive(false);
+                    Level3Building7.gameObject.SetActive(true);
+                }
+                floor6 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 7)
+            if (floor7 != 5) random5();
+            else
+            {
+                text2.text = "紅7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count7 == 1)
+                {
+                    count7++;
+                    Level1Building8.gameObject.SetActive(false);
+                    Level2Building8.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count7++;
+                    Level2Building8.gameObject.SetActive(false);
+                    Level3Building8.gameObject.SetActive(true);
+                }
+                floor7 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 8)
+            if (floor8 != 5) random5();
+            else
+            {
+                text2.text = "橙1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count8 == 1)
+                {
+                    count8++;
+                    Level1Building9.gameObject.SetActive(false);
+                    Level2Building9.gameObject.SetActive(true);
+                }
+                else if (count8 == 2)
+                {
+                    count8++;
+                    Level2Building9.gameObject.SetActive(false);
+                    Level3Building9.gameObject.SetActive(true);
+                }
+                floor8 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 9)
+            if (floor9 != 5) random5();
+            else
+            {
+                text2.text = "橙2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count10 == 1)
+                {
+                    count10++;
+                    Level1Building11.gameObject.SetActive(false);
+                    Level2Building11.gameObject.SetActive(true);
+                }
+                else if (count10 == 2)
+                {
+                    count10++;
+                    Level2Building11.gameObject.SetActive(false);
+                    Level3Building11.gameObject.SetActive(true);
+                }
+                floor9 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 10)
+            if (floor10 != 5) random5();
+            else
+            {
+                text2.text = "橙3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count11 == 1)
+                {
+                    count11++;
+                    Level1Building13.gameObject.SetActive(false);
+                    Level2Building13.gameObject.SetActive(true);
+                }
+                else if (count11 == 2)
+                {
+                    count11++;
+                    Level2Building13.gameObject.SetActive(false);
+                    Level3Building13.gameObject.SetActive(true);
+                }
+                floor10 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 11)
+            if (floor11 != 5) random5();
+            else
+            {
+                text2.text = "橙4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count12 == 1)
+                {
+                    count12++;
+                    Level1Building14.gameObject.SetActive(false);
+                    Level2Building14.gameObject.SetActive(true);
+                }
+                else if (count12 == 2)
+                {
+                    count12++;
+                    Level2Building14.gameObject.SetActive(false);
+                    Level3Building14.gameObject.SetActive(true);
+                }
+                floor11 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 12)
+            if (floor12 != 5) random5();
+            else
+            {
+                text2.text = "橙5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count13 == 1)
+                {
+                    count13++;
+                    Level1Building15.gameObject.SetActive(false);
+                    Level2Building15.gameObject.SetActive(true);
+                }
+                else if (count13 == 2)
+                {
+                    count13++;
+                    Level2Building15.gameObject.SetActive(false);
+                    Level3Building15.gameObject.SetActive(true);
+                }
+                floor12 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 13)
+            if (floor13 != 5) random5();
+            else
+            {
+                text2.text = "橙6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count14 == 1)
+                {
+                    count14++;
+                    Level1Building16.gameObject.SetActive(false);
+                    Level2Building16.gameObject.SetActive(true);
+                }
+                else if (count14 == 2)
+                {
+                    count14++;
+                    Level2Building16.gameObject.SetActive(false);
+                    Level3Building16.gameObject.SetActive(true);
+                }
+                floor13 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 14)
+            if (floor14 != 5) random5();
+            else
+            {
+                text2.text = "橙7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count15 == 1)
+                {
+                    count15++;
+                    Level1Building17.gameObject.SetActive(false);
+                    Level2Building17.gameObject.SetActive(true);
+                }
+                else if (count15 == 2)
+                {
+                    count15++;
+                    Level2Building17.gameObject.SetActive(false);
+                    Level3Building17.gameObject.SetActive(true);
+                }
+                floor14 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 15)
+            if (floor15 != 5) random5();
+            else
+            {
+                text2.text = "黃1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count16++;
+                    Level1Building19.gameObject.SetActive(false);
+                    Level2Building19.gameObject.SetActive(true);
+                }
+                else if (count16 == 2)
+                {
+                    count16++;
+                    Level2Building19.gameObject.SetActive(false);
+                    Level3Building19.gameObject.SetActive(true);
+                }
+                floor15 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 16)
+            if (floor16 != 5) random5();
+            else
+            {
+                text2.text = "黃2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count17++;
+                    Level1Building20.gameObject.SetActive(false);
+                    Level2Building20.gameObject.SetActive(true);
+                }
+                else if (count17 == 2)
+                {
+                    count17++;
+                    Level2Building20.gameObject.SetActive(false);
+                    Level3Building20.gameObject.SetActive(true);
+                }
+                floor16 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 17)
+            if (floor17 != 5) random5();
+            else
+            {
+                text2.text = "黃3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count19 == 1)
+                {
+                    count19++;
+                    Level1Building22.gameObject.SetActive(false);
+                    Level2Building22.gameObject.SetActive(true);
+                }
+                else if (count19 == 2)
+                {
+                    count19++;
+                    Level2Building22.gameObject.SetActive(false);
+                    Level3Building22.gameObject.SetActive(true);
+                }
+                floor17 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 18)
+            if (floor17 != 5) random5();
+            else
+            {
+                text2.text = "黃4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count20 == 1)
+                {
+                    count20++;
+                    Level1Building23.gameObject.SetActive(false);
+                    Level2Building23.gameObject.SetActive(true);
+                }
+                else if (count20 == 2)
+                {
+                    count20++;
+                    Level2Building23.gameObject.SetActive(false);
+                    Level3Building23.gameObject.SetActive(true);
+                }
+                floor18 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 19)
+            if (floor19 != 5) random5();
+            else
+            {
+                text2.text = "黃5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count21 == 1)
+                {
+                    count21++;
+                    Level1Building24.gameObject.SetActive(false);
+                    Level2Building24.gameObject.SetActive(true);
+                }
+                else if (count21 == 2)
+                {
+                    count21++;
+                    Level2Building24.gameObject.SetActive(false);
+                    Level3Building24.gameObject.SetActive(true);
+                }
+                floor19 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 20)
+            if (floor20 != 5) random5();
+            else
+            {
+                text2.text = "黃6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count22 == 1)
+                {
+                    count22++;
+                    Level1Building26.gameObject.SetActive(false);
+                    Level2Building26.gameObject.SetActive(true);
+                }
+                else if (count22 == 2)
+                {
+                    count22++;
+                    Level2Building26.gameObject.SetActive(false);
+                    Level3Building26.gameObject.SetActive(true);
+                }
+                floor20 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 21)
+            if (floor21 != 5) random5();
+            else
+            {
+                text2.text = "黃7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count23 == 1)
+                {
+                    count23++;
+                    Level1Building27.gameObject.SetActive(false);
+                    Level2Building27.gameObject.SetActive(true);
+                }
+                else if (count23 == 2)
+                {
+                    count23++;
+                    Level2Building27.gameObject.SetActive(false);
+                    Level3Building27.gameObject.SetActive(true);
+                }
+                floor21 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 22)
+            if (floor22 != 5) random5();
+            else
+            {
+                text2.text = "綠1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count24 == 1)
+                {
+                    count24++;
+                    Level1Building28.gameObject.SetActive(false);
+                    Level2Building28.gameObject.SetActive(true);
+                }
+                else if (count24 == 2)
+                {
+                    count24++;
+                    Level2Building28.gameObject.SetActive(false);
+                    Level3Building28.gameObject.SetActive(true);
+                }
+                floor22 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 23)
+            if (floor23 != 5) random5();
+            else
+            {
+                text2.text = "綠2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count25 == 1)
+                {
+                    count25++;
+                    Level1Building29.gameObject.SetActive(false);
+                    Level2Building29.gameObject.SetActive(true);
+                }
+                else if (count25 == 2)
+                {
+                    count25++;
+                    Level2Building29.gameObject.SetActive(false);
+                    Level3Building29.gameObject.SetActive(true);
+                }
+                floor23 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 24)
+            if (floor24 != 5) random5();
+            else
+            {
+                text2.text = "綠3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count26 == 1)
+                {
+                    count26++;
+                    Level1Building31.gameObject.SetActive(false);
+                    Level2Building31.gameObject.SetActive(true);
+                }
+                else if (count26 == 2)
+                {
+                    count26++;
+                    Level2Building31.gameObject.SetActive(false);
+                    Level3Building31.gameObject.SetActive(true);
+                }
+                floor24 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 25)
+            if (floor25 != 5) random5();
+            else
+            {
+                text2.text = "綠4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count27 == 1)
+                {
+                    count27++;
+                    Level1Building32.gameObject.SetActive(false);
+                    Level2Building32.gameObject.SetActive(true);
+                }
+                else if (count27 == 2)
+                {
+                    count27++;
+                    Level2Building32.gameObject.SetActive(false);
+                    Level3Building32.gameObject.SetActive(true);
+                }
+                floor25 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 26)
+            if (floor26 != 5) random5();
+            else
+            {
+                text2.text = "綠5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count28 == 1)
+                {
+                    count28++;
+                    Level1Building33.gameObject.SetActive(false);
+                    Level2Building33.gameObject.SetActive(true);
+                }
+                else if (count28 == 2)
+                {
+                    count28++;
+                    Level2Building33.gameObject.SetActive(false);
+                    Level3Building33.gameObject.SetActive(true);
+                }
+                floor26 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 27)
+            if (floor27 != 5) random5();
+            else
+            {
+                text2.text = "綠6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count29 == 1)
+                {
+                    count29++;
+                    Level1Building34.gameObject.SetActive(false);
+                    Level2Building34.gameObject.SetActive(true);
+                }
+                else if (count29 == 2)
+                {
+                    count29++;
+                    Level2Building34.gameObject.SetActive(false);
+                    Level3Building34.gameObject.SetActive(true);
+                }
+                floor27 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 28)
+            if (floor28 != 5) random5();
+            else
+            {
+                text2.text = "藍1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count30 == 1)
+                {
+                    count30++;
+                    Level1Building36.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count30 == 2)
+                {
+                    count30++;
+                    Level2Building36.gameObject.SetActive(false);
+                    Level3Building36.gameObject.SetActive(true);
+                }
+                floor28 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 29)
+            if (floor29 != 5) random5();
+            else
+            {
+                text2.text = "藍2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count31 == 1)
+                {
+                    count31++;
+                    Level1Building37.gameObject.SetActive(false);
+                    Level2Building37.gameObject.SetActive(true);
+                }
+                else if (count31 == 2)
+                {
+                    count31++;
+                    Level2Building37.gameObject.SetActive(false);
+                    Level3Building37.gameObject.SetActive(true);
+                }
+                floor29 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 30)
+            if (floor30 != 5) random5();
+            else
+            {
+                text2.text = "藍3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count33 == 1)
+                {
+                    count33++;
+                    Level1Building39.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count33 == 2)
+                {
+                    count33++;
+                    Level2Building39.gameObject.SetActive(false);
+                    Level3Building39.gameObject.SetActive(true);
+                }
+                floor30 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 31)
+            if (floor31 != 5) random5();
+            else
+            {
+                text2.text = "藍4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count34 == 1)
+                {
+                    count34++;
+                    Level1Building40.gameObject.SetActive(false);
+                    Level2Building40.gameObject.SetActive(true);
+                }
+                else if (count34 == 2)
+                {
+                    count34++;
+                    Level2Building40.gameObject.SetActive(false);
+                    Level3Building40.gameObject.SetActive(true);
+                }
+                floor31 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 32)
+            if (floor32 != 5) random5();
+            else
+            {
+                text2.text = "紫1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count35 == 1)
+                {
+                    count35++;
+                    Level1Building42.gameObject.SetActive(false);
+                    Level2Building42.gameObject.SetActive(true);
+                }
+                else if (count35 == 2)
+                {
+                    count35++;
+                    Level2Building42.gameObject.SetActive(false);
+                    Level3Building42.gameObject.SetActive(true);
+                }
+                floor32 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 33)
+            if (floor33 != 5) random5();
+            else
+            {
+                text2.text = "紫2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count36 == 1)
+                {
+                    count36++;
+                    Level1Building43.gameObject.SetActive(false);
+                    Level2Building43.gameObject.SetActive(true);
+                }
+                else if (count36 == 2)
+                {
+                    count36++;
+                    Level2Building43.gameObject.SetActive(false);
+                    Level3Building43.gameObject.SetActive(true);
+                }
+                floor33 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 34)
+            if (floor34 != 5) random5();
+            else
+            {
+                text2.text = "紫3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count37++;
+                    Level1Building44.gameObject.SetActive(false);
+                    Level2Building44.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count37++;
+                    Level2Building44.gameObject.SetActive(false);
+                    Level3Building44.gameObject.SetActive(true);
+                }
+                floor34 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 35)
+            if (floor35 != 5) random5();
+            else
+            {
+                text2.text = "紫4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count38++;
+                    Level1Building47.gameObject.SetActive(false);
+                    Level2Building47.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count38++;
+                    Level2Building47.gameObject.SetActive(false);
+                    Level3Building47.gameObject.SetActive(true);
+                }
+                floor35 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 36)
+            if (floor36 != 5) random5();
+            else
+            {
+                text2.text = "紫5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count39 == 1)
+                {
+                    count39++;
+                    Level1Building48.gameObject.SetActive(false);
+                    Level2Building48.gameObject.SetActive(true);
+                }
+                else if (count39 == 2)
+                {
+                    count39++;
+                    Level2Building48.gameObject.SetActive(false);
+                    Level3Building48.gameObject.SetActive(true);
+                }
+                floor36 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 37)
+            if (floor37 != 5) random5();
+            else
+            {
+                text2.text = "啡1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count40 == 1)
+                {
+                    count40++;
+                    Level1Building49.gameObject.SetActive(false);
+                    Level2Building49.gameObject.SetActive(true);
+                }
+                else if (count40 == 2)
+                {
+                    count40++;
+                    Level2Building49.gameObject.SetActive(false);
+                    Level3Building49.gameObject.SetActive(true);
+                }
+                floor37 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 38)
+            if (floor38 != 5) random5();
+            else
+            {
+                text2.text = "啡2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count42 == 1)
+                {
+                    count42++;
+                    Level1Building51.gameObject.SetActive(false);
+                    Level2Building51.gameObject.SetActive(true);
+                }
+                else if (count42 == 2)
+                {
+                    floor38 = 0;
+                    count42++;
+                    Level2Building51.gameObject.SetActive(false);
+                    Level3Building51.gameObject.SetActive(true);
+                }
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 39)
+            if (floor39 != 5) random5();
+            else
+            {
+                text2.text = "啡3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count43 == 1)
+                {
+                    count43++;
+                    Level1Building52.gameObject.SetActive(false);
+                    Level2Building52.gameObject.SetActive(true);
+                }
+                else if (count43 == 2)
+                {
+                    count43++;
+                    Level2Building52.gameObject.SetActive(false);
+                    Level3Building52.gameObject.SetActive(true);
+                }
+                floor39 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 40)
+            if (floor40 != 5) random5();
+            else
+            {
+                text2.text = "黑1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count44 == 1)
+                {
+                    count44++;
+                    Level1Building55.gameObject.SetActive(false);
+                    Level2Building55.gameObject.SetActive(true);
+                }
+                else if (count44 == 2)
+                {
+                    count40++;
+                    Level2Building55.gameObject.SetActive(false);
+                    Level3Building55.gameObject.SetActive(true);
+                }
+                floor40 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 41)
+            if (floor42 != 5) random5();
+            else
+            {
+                text2.text = "黑2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count45 == 1)
+                {
+                    count45++;
+                    Level1Building56.gameObject.SetActive(false);
+                    Level2Building56.gameObject.SetActive(true);
+                }
+                else if (count45 == 2)
+                {
+                    count45++;
+                    Level2Building56.gameObject.SetActive(false);
+                    Level3Building56.gameObject.SetActive(true);
+                }
+                floor41 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 42)
+            if (floor42 != 5) random5();
+            else
+            {
+                text2.text = "黑3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count46 == 1)
+                {
+                    count46++;
+                    Level1Building57.gameObject.SetActive(false);
+                    Level2Building57.gameObject.SetActive(true);
+                }
+                else if (count46 == 2)
+                {
+                    count46++;
+                    Level2Building57.gameObject.SetActive(false);
+                    Level3Building57.gameObject.SetActive(true);
+                }
+                floor42 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+
+    }
+
+    void random6()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        do
+        {
+            rangeRadomNum = Random.Range(1, 42);
+        } while (rangeRadomNum == getRangeNum);
+
+        getRangeNum = rangeRadomNum;
+        if (rangeRadomNum == 1)
+            if (floor1 != 6) random6();
+            else
+            {
+                text2.text = "紅1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count1 == 1)
+                {
+                    count1++;
+                    Level1Building1.gameObject.SetActive(false);
+                    Level2Building1.gameObject.SetActive(true);
+                }
+                else if (count1 == 2)
+                {
+                    count1++;
+                    Level2Building1.gameObject.SetActive(false);
+                    Level3Building1.gameObject.SetActive(true);
+                }
+                floor1 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 2)
+            if (floor2 != 6) random6();
+            else
+            {
+                text2.text = "紅2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count2 == 1)
+                {
+                    count2++;
+                    Level1Building2.gameObject.SetActive(false);
+                    Level2Building2.gameObject.SetActive(true);
+                }
+                else if (count2 == 2)
+                {
+                    count2++;
+                    Level2Building2.gameObject.SetActive(false);
+                    Level3Building2.gameObject.SetActive(true);
+                }
+                floor2 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 3)
+            if (floor3 != 6) random6();
+            else
+            {
+                text2.text = "紅3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count3 == 1)
+                {
+                    count3++;
+                    Level1Building3.gameObject.SetActive(false);
+                    Level2Building3.gameObject.SetActive(true);
+                }
+                else if (count3 == 2)
+                {
+                    count3++;
+                    Level2Building3.gameObject.SetActive(false);
+                    Level3Building3.gameObject.SetActive(true);
+                }
+                floor3 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 4)
+            if (floor4 != 6) random6();
+            else
+            {
+                text2.text = "紅4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count4 == 1)
+                {
+                    count4++;
+                    Level1Building4.gameObject.SetActive(false);
+                    Level2Building4.gameObject.SetActive(true);
+                }
+                else if (count4 == 2)
+                {
+                    count4++;
+                    Level2Building4.gameObject.SetActive(false);
+                    Level3Building4.gameObject.SetActive(true);
+                }
+                floor4 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 5)
+            if (floor5 != 6) random6();
+            else
+            {
+                text2.text = "紅5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count5 == 1)
+                {
+                    count5++;
+                    Level1Building5.gameObject.SetActive(false);
+                    Level2Building5.gameObject.SetActive(true);
+                }
+                else if (count5 == 2)
+                {
+                    count5++;
+                    Level2Building5.gameObject.SetActive(false);
+                    Level3Building5.gameObject.SetActive(true);
+                }
+                floor5 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 6)
+            if (floor6 != 6) random6();
+            else
+            {
+                text2.text = "紅6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count6 == 1)
+                {
+                    count6++;
+                    Level1Building7.gameObject.SetActive(false);
+                    Level2Building7.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count6++;
+                    Level2Building7.gameObject.SetActive(false);
+                    Level3Building7.gameObject.SetActive(true);
+                }
+                floor6 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 7)
+            if (floor7 != 6) random6();
+            else
+            {
+                text2.text = "紅7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count7 == 1)
+                {
+                    count7++;
+                    Level1Building8.gameObject.SetActive(false);
+                    Level2Building8.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count7++;
+                    Level2Building8.gameObject.SetActive(false);
+                    Level3Building8.gameObject.SetActive(true);
+                }
+                floor7 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 8)
+            if (floor8 != 6) random6();
+            else
+            {
+                text2.text = "橙1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count8 == 1)
+                {
+                    count8++;
+                    Level1Building9.gameObject.SetActive(false);
+                    Level2Building9.gameObject.SetActive(true);
+                }
+                else if (count8 == 2)
+                {
+                    count8++;
+                    Level2Building9.gameObject.SetActive(false);
+                    Level3Building9.gameObject.SetActive(true);
+                }
+                floor8 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 9)
+            if (floor9 != 6) random6();
+            else
+            {
+                text2.text = "橙2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count10 == 1)
+                {
+                    count10++;
+                    Level1Building11.gameObject.SetActive(false);
+                    Level2Building11.gameObject.SetActive(true);
+                }
+                else if (count10 == 2)
+                {
+                    count10++;
+                    Level2Building11.gameObject.SetActive(false);
+                    Level3Building11.gameObject.SetActive(true);
+                }
+                floor9 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 10)
+            if (floor10 != 6) random6();
+            else
+            {
+                text2.text = "橙3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count11 == 1)
+                {
+                    count11++;
+                    Level1Building13.gameObject.SetActive(false);
+                    Level2Building13.gameObject.SetActive(true);
+                }
+                else if (count11 == 2)
+                {
+                    count11++;
+                    Level2Building13.gameObject.SetActive(false);
+                    Level3Building13.gameObject.SetActive(true);
+                }
+                floor10 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 11)
+            if (floor11 != 6) random6();
+            else
+            {
+                text2.text = "橙4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count12 == 1)
+                {
+                    count12++;
+                    Level1Building14.gameObject.SetActive(false);
+                    Level2Building14.gameObject.SetActive(true);
+                }
+                else if (count12 == 2)
+                {
+                    count12++;
+                    Level2Building14.gameObject.SetActive(false);
+                    Level3Building14.gameObject.SetActive(true);
+                }
+                floor11 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 12)
+            if (floor12 != 6) random6();
+            else
+            {
+                text2.text = "橙5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count13 == 1)
+                {
+                    count13++;
+                    Level1Building15.gameObject.SetActive(false);
+                    Level2Building15.gameObject.SetActive(true);
+                }
+                else if (count13 == 2)
+                {
+                    count13++;
+                    Level2Building15.gameObject.SetActive(false);
+                    Level3Building15.gameObject.SetActive(true);
+                }
+                floor12 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 13)
+            if (floor13 != 6) random6();
+            else
+            {
+                text2.text = "橙6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count14 == 1)
+                {
+                    count14++;
+                    Level1Building16.gameObject.SetActive(false);
+                    Level2Building16.gameObject.SetActive(true);
+                }
+                else if (count14 == 2)
+                {
+                    count14++;
+                    Level2Building16.gameObject.SetActive(false);
+                    Level3Building16.gameObject.SetActive(true);
+                }
+                floor13 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 14)
+            if (floor14 != 6) random6();
+            else
+            {
+                text2.text = "橙7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count15 == 1)
+                {
+                    count15++;
+                    Level1Building17.gameObject.SetActive(false);
+                    Level2Building17.gameObject.SetActive(true);
+                }
+                else if (count15 == 2)
+                {
+                    count15++;
+                    Level2Building17.gameObject.SetActive(false);
+                    Level3Building17.gameObject.SetActive(true);
+                }
+                floor14 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 15)
+            if (floor15 != 6) random6();
+            else
+            {
+                text2.text = "黃1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count16++;
+                    Level1Building19.gameObject.SetActive(false);
+                    Level2Building19.gameObject.SetActive(true);
+                }
+                else if (count16 == 2)
+                {
+                    count16++;
+                    Level2Building19.gameObject.SetActive(false);
+                    Level3Building19.gameObject.SetActive(true);
+                }
+                floor15 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 16)
+            if (floor16 != 6) random6();
+            else
+            {
+                text2.text = "黃2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count17++;
+                    Level1Building20.gameObject.SetActive(false);
+                    Level2Building20.gameObject.SetActive(true);
+                }
+                else if (count17 == 2)
+                {
+                    count17++;
+                    Level2Building20.gameObject.SetActive(false);
+                    Level3Building20.gameObject.SetActive(true);
+                }
+                floor16 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 17)
+            if (floor17 != 6) random6();
+            else
+            {
+                text2.text = "黃3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count19 == 1)
+                {
+                    count19++;
+                    Level1Building22.gameObject.SetActive(false);
+                    Level2Building22.gameObject.SetActive(true);
+                }
+                else if (count19 == 2)
+                {
+                    count19++;
+                    Level2Building22.gameObject.SetActive(false);
+                    Level3Building22.gameObject.SetActive(true);
+                }
+                floor17 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 18)
+            if (floor17 != 6) random6();
+            else
+            {
+                text2.text = "黃4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count20 == 1)
+                {
+                    count20++;
+                    Level1Building23.gameObject.SetActive(false);
+                    Level2Building23.gameObject.SetActive(true);
+                }
+                else if (count20 == 2)
+                {
+                    count20++;
+                    Level2Building23.gameObject.SetActive(false);
+                    Level3Building23.gameObject.SetActive(true);
+                }
+                floor18 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 19)
+            if (floor19 != 6) random6();
+            else
+            {
+                text2.text = "黃5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count21 == 1)
+                {
+                    count21++;
+                    Level1Building24.gameObject.SetActive(false);
+                    Level2Building24.gameObject.SetActive(true);
+                }
+                else if (count21 == 2)
+                {
+                    count21++;
+                    Level2Building24.gameObject.SetActive(false);
+                    Level3Building24.gameObject.SetActive(true);
+                }
+                floor19 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 20)
+            if (floor20 != 6) random6();
+            else
+            {
+                text2.text = "黃6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count22 == 1)
+                {
+                    count22++;
+                    Level1Building26.gameObject.SetActive(false);
+                    Level2Building26.gameObject.SetActive(true);
+                }
+                else if (count22 == 2)
+                {
+                    count22++;
+                    Level2Building26.gameObject.SetActive(false);
+                    Level3Building26.gameObject.SetActive(true);
+                }
+                floor20 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 21)
+            if (floor21 != 6) random6();
+            else
+            {
+                text2.text = "黃7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count23 == 1)
+                {
+                    count23++;
+                    Level1Building27.gameObject.SetActive(false);
+                    Level2Building27.gameObject.SetActive(true);
+                }
+                else if (count23 == 2)
+                {
+                    count23++;
+                    Level2Building27.gameObject.SetActive(false);
+                    Level3Building27.gameObject.SetActive(true);
+                }
+                floor21 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 22)
+            if (floor22 != 6) random6();
+            else
+            {
+                text2.text = "綠1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count24 == 1)
+                {
+                    count24++;
+                    Level1Building28.gameObject.SetActive(false);
+                    Level2Building28.gameObject.SetActive(true);
+                }
+                else if (count24 == 2)
+                {
+                    count24++;
+                    Level2Building28.gameObject.SetActive(false);
+                    Level3Building28.gameObject.SetActive(true);
+                }
+                floor22 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 23)
+            if (floor23 != 6) random6();
+            else
+            {
+                text2.text = "綠2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count25 == 1)
+                {
+                    count25++;
+                    Level1Building29.gameObject.SetActive(false);
+                    Level2Building29.gameObject.SetActive(true);
+                }
+                else if (count25 == 2)
+                {
+                    count25++;
+                    Level2Building29.gameObject.SetActive(false);
+                    Level3Building29.gameObject.SetActive(true);
+                }
+                floor23 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 24)
+            if (floor24 != 6) random6();
+            else
+            {
+                text2.text = "綠3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count26 == 1)
+                {
+                    count26++;
+                    Level1Building31.gameObject.SetActive(false);
+                    Level2Building31.gameObject.SetActive(true);
+                }
+                else if (count26 == 2)
+                {
+                    count26++;
+                    Level2Building31.gameObject.SetActive(false);
+                    Level3Building31.gameObject.SetActive(true);
+                }
+                floor24 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 25)
+            if (floor25 != 6) random6();
+            else
+            {
+                text2.text = "綠4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count27 == 1)
+                {
+                    count27++;
+                    Level1Building32.gameObject.SetActive(false);
+                    Level2Building32.gameObject.SetActive(true);
+                }
+                else if (count27 == 2)
+                {
+                    count27++;
+                    Level2Building32.gameObject.SetActive(false);
+                    Level3Building32.gameObject.SetActive(true);
+                }
+                floor25 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 26)
+            if (floor26 != 6) random6();
+            else
+            {
+                text2.text = "綠5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count28 == 1)
+                {
+                    count28++;
+                    Level1Building33.gameObject.SetActive(false);
+                    Level2Building33.gameObject.SetActive(true);
+                }
+                else if (count28 == 2)
+                {
+                    count28++;
+                    Level2Building33.gameObject.SetActive(false);
+                    Level3Building33.gameObject.SetActive(true);
+                }
+                floor26 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 27)
+            if (floor27 != 6) random6();
+            else
+            {
+                text2.text = "綠6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count29 == 1)
+                {
+                    count29++;
+                    Level1Building34.gameObject.SetActive(false);
+                    Level2Building34.gameObject.SetActive(true);
+                }
+                else if (count29 == 2)
+                {
+                    count29++;
+                    Level2Building34.gameObject.SetActive(false);
+                    Level3Building34.gameObject.SetActive(true);
+                }
+                floor27 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 28)
+            if (floor28 != 6) random6();
+            else
+            {
+                text2.text = "藍1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count30 == 1)
+                {
+                    count30++;
+                    Level1Building36.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count30 == 2)
+                {
+                    count30++;
+                    Level2Building36.gameObject.SetActive(false);
+                    Level3Building36.gameObject.SetActive(true);
+                }
+                floor28 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 29)
+            if (floor29 != 6) random6();
+            else
+            {
+                text2.text = "藍2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count31 == 1)
+                {
+                    count31++;
+                    Level1Building37.gameObject.SetActive(false);
+                    Level2Building37.gameObject.SetActive(true);
+                }
+                else if (count31 == 2)
+                {
+                    count31++;
+                    Level2Building37.gameObject.SetActive(false);
+                    Level3Building37.gameObject.SetActive(true);
+                }
+                floor29 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 30)
+            if (floor30 != 6) random6();
+            else
+            {
+                text2.text = "藍3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count33 == 1)
+                {
+                    count33++;
+                    Level1Building39.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count33 == 2)
+                {
+                    count33++;
+                    Level2Building39.gameObject.SetActive(false);
+                    Level3Building39.gameObject.SetActive(true);
+                }
+                floor30 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 31)
+            if (floor31 != 6) random6();
+            else
+            {
+                text2.text = "藍4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count34 == 1)
+                {
+                    count34++;
+                    Level1Building40.gameObject.SetActive(false);
+                    Level2Building40.gameObject.SetActive(true);
+                }
+                else if (count34 == 2)
+                {
+                    count34++;
+                    Level2Building40.gameObject.SetActive(false);
+                    Level3Building40.gameObject.SetActive(true);
+                }
+                floor31 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 32)
+            if (floor32 != 6) random6();
+            else
+            {
+                text2.text = "紫1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count35 == 1)
+                {
+                    count35++;
+                    Level1Building42.gameObject.SetActive(false);
+                    Level2Building42.gameObject.SetActive(true);
+                }
+                else if (count35 == 2)
+                {
+                    count35++;
+                    Level2Building42.gameObject.SetActive(false);
+                    Level3Building42.gameObject.SetActive(true);
+                }
+                floor32 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 33)
+            if (floor33 != 6) random6();
+            else
+            {
+                text2.text = "紫2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count36 == 1)
+                {
+                    count36++;
+                    Level1Building43.gameObject.SetActive(false);
+                    Level2Building43.gameObject.SetActive(true);
+                }
+                else if (count36 == 2)
+                {
+                    count36++;
+                    Level2Building43.gameObject.SetActive(false);
+                    Level3Building43.gameObject.SetActive(true);
+                }
+                floor33 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 34)
+            if (floor34 != 6) random6();
+            else
+            {
+                text2.text = "紫3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count37++;
+                    Level1Building44.gameObject.SetActive(false);
+                    Level2Building44.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count37++;
+                    Level2Building44.gameObject.SetActive(false);
+                    Level3Building44.gameObject.SetActive(true);
+                }
+                floor34 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 35)
+            if (floor35 != 6) random6();
+            else
+            {
+                text2.text = "紫4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count38++;
+                    Level1Building47.gameObject.SetActive(false);
+                    Level2Building47.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count38++;
+                    Level2Building47.gameObject.SetActive(false);
+                    Level3Building47.gameObject.SetActive(true);
+                }
+                floor35 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 36)
+            if (floor36 !=6 ) random6();
+            else
+            {
+                text2.text = "紫5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count39 == 1)
+                {
+                    count39++;
+                    Level1Building48.gameObject.SetActive(false);
+                    Level2Building48.gameObject.SetActive(true);
+                }
+                else if (count39 == 2)
+                {
+                    count39++;
+                    Level2Building48.gameObject.SetActive(false);
+                    Level3Building48.gameObject.SetActive(true);
+                }
+                floor36 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 37)
+            if (floor37 != 6) random6();
+            else
+            {
+                text2.text = "啡1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count40 == 1)
+                {
+                    count40++;
+                    Level1Building49.gameObject.SetActive(false);
+                    Level2Building49.gameObject.SetActive(true);
+                }
+                else if (count40 == 2)
+                {
+                    count40++;
+                    Level2Building49.gameObject.SetActive(false);
+                    Level3Building49.gameObject.SetActive(true);
+                }
+                floor37 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 38)
+            if (floor38 != 6) random6();
+            else
+            {
+                text2.text = "啡2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count42 == 1)
+                {
+                    count42++;
+                    Level1Building51.gameObject.SetActive(false);
+                    Level2Building51.gameObject.SetActive(true);
+                }
+                else if (count42 == 2)
+                {
+                    floor38 = 0;
+                    count42++;
+                    Level2Building51.gameObject.SetActive(false);
+                    Level3Building51.gameObject.SetActive(true);
+                }
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 39)
+            if (floor39 != 6) random6();
+            else
+            {
+                text2.text = "啡3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count43 == 1)
+                {
+                    count43++;
+                    Level1Building52.gameObject.SetActive(false);
+                    Level2Building52.gameObject.SetActive(true);
+                }
+                else if (count43 == 2)
+                {
+                    count43++;
+                    Level2Building52.gameObject.SetActive(false);
+                    Level3Building52.gameObject.SetActive(true);
+                }
+                floor39 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 40)
+            if (floor40 != 6) random6();
+            else
+            {
+                text2.text = "黑1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count44 == 1)
+                {
+                    count44++;
+                    Level1Building55.gameObject.SetActive(false);
+                    Level2Building55.gameObject.SetActive(true);
+                }
+                else if (count44 == 2)
+                {
+                    count40++;
+                    Level2Building55.gameObject.SetActive(false);
+                    Level3Building55.gameObject.SetActive(true);
+                }
+                floor40 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 41)
+            if (floor42 != 6) random6();
+            else
+            {
+                text2.text = "黑2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count45 == 1)
+                {
+                    count45++;
+                    Level1Building56.gameObject.SetActive(false);
+                    Level2Building56.gameObject.SetActive(true);
+                }
+                else if (count45 == 2)
+                {
+                    count45++;
+                    Level2Building56.gameObject.SetActive(false);
+                    Level3Building56.gameObject.SetActive(true);
+                }
+                floor41 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 42)
+            if (floor42 != 6) random6();
+            else
+            {
+                text2.text = "黑3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count46 == 1)
+                {
+                    count46++;
+                    Level1Building57.gameObject.SetActive(false);
+                    Level2Building57.gameObject.SetActive(true);
+                }
+                else if (count46 == 2)
+                {
+                    count46++;
+                    Level2Building57.gameObject.SetActive(false);
+                    Level3Building57.gameObject.SetActive(true);
+                }
+                floor42 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+
+    }
+
+    void random7()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        do
+        {
+            rangeRadomNum = Random.Range(1, 42);
+        } while (rangeRadomNum == getRangeNum);
+
+        getRangeNum = rangeRadomNum;
+        if (rangeRadomNum == 1)
+            if (floor1 != 7) random7();
+            else
+            {
+                text2.text = "紅1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count1 == 1)
+                {
+                    count1++;
+                    Level1Building1.gameObject.SetActive(false);
+                    Level2Building1.gameObject.SetActive(true);
+                }
+                else if (count1 == 2)
+                {
+                    count1++;
+                    Level2Building1.gameObject.SetActive(false);
+                    Level3Building1.gameObject.SetActive(true);
+                }
+                floor1 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 2)
+            if (floor2 != 7) random7();
+            else
+            {
+                text2.text = "紅2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count2 == 1)
+                {
+                    count2++;
+                    Level1Building2.gameObject.SetActive(false);
+                    Level2Building2.gameObject.SetActive(true);
+                }
+                else if (count2 == 2)
+                {
+                    count2++;
+                    Level2Building2.gameObject.SetActive(false);
+                    Level3Building2.gameObject.SetActive(true);
+                }
+                floor2 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 3)
+            if (floor3 != 7) random7(); 
+            else
+            {
+                text2.text = "紅3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count3 == 1)
+                {
+                    count3++;
+                    Level1Building3.gameObject.SetActive(false);
+                    Level2Building3.gameObject.SetActive(true);
+                }
+                else if (count3 == 2)
+                {
+                    count3++;
+                    Level2Building3.gameObject.SetActive(false);
+                    Level3Building3.gameObject.SetActive(true);
+                }
+                floor3 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 4)
+            if (floor4 != 7) random7();
+            else
+            {
+                text2.text = "紅4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count4 == 1)
+                {
+                    count4++;
+                    Level1Building4.gameObject.SetActive(false);
+                    Level2Building4.gameObject.SetActive(true);
+                }
+                else if (count4 == 2)
+                {
+                    count4++;
+                    Level2Building4.gameObject.SetActive(false);
+                    Level3Building4.gameObject.SetActive(true);
+                }
+                floor4 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 5)
+            if (floor5 != 7) random7();
+            else
+            {
+                text2.text = "紅5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count5 == 1)
+                {
+                    count5++;
+                    Level1Building5.gameObject.SetActive(false);
+                    Level2Building5.gameObject.SetActive(true);
+                }
+                else if (count5 == 2)
+                {
+                    count5++;
+                    Level2Building5.gameObject.SetActive(false);
+                    Level3Building5.gameObject.SetActive(true);
+                }
+                floor5 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 6)
+            if (floor6 != 7) random7();
+            else
+            {
+                text2.text = "紅6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count6 == 1)
+                {
+                    count6++;
+                    Level1Building7.gameObject.SetActive(false);
+                    Level2Building7.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count6++;
+                    Level2Building7.gameObject.SetActive(false);
+                    Level3Building7.gameObject.SetActive(true);
+                }
+                floor6 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 7)
+            if (floor7 != 7) random7();
+            else
+            {
+                text2.text = "紅7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count7 == 1)
+                {
+                    count7++;
+                    Level1Building8.gameObject.SetActive(false);
+                    Level2Building8.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count7++;
+                    Level2Building8.gameObject.SetActive(false);
+                    Level3Building8.gameObject.SetActive(true);
+                }
+                floor7 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 8)
+            if (floor8 != 7) random7();
+            else
+            {
+                text2.text = "橙1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count8 == 1)
+                {
+                    count8++;
+                    Level1Building9.gameObject.SetActive(false);
+                    Level2Building9.gameObject.SetActive(true);
+                }
+                else if (count8 == 2)
+                {
+                    count8++;
+                    Level2Building9.gameObject.SetActive(false);
+                    Level3Building9.gameObject.SetActive(true);
+                }
+                floor8 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 9)
+            if (floor9 != 7) random7();
+            else
+            {
+                text2.text = "橙2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count10 == 1)
+                {
+                    count10++;
+                    Level1Building11.gameObject.SetActive(false);
+                    Level2Building11.gameObject.SetActive(true);
+                }
+                else if (count10 == 2)
+                {
+                    count10++;
+                    Level2Building11.gameObject.SetActive(false);
+                    Level3Building11.gameObject.SetActive(true);
+                }
+                floor9 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 10)
+            if (floor10 != 7) random7();
+            else
+            {
+                text2.text = "橙3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count11 == 1)
+                {
+                    count11++;
+                    Level1Building13.gameObject.SetActive(false);
+                    Level2Building13.gameObject.SetActive(true);
+                }
+                else if (count11 == 2)
+                {
+                    count11++;
+                    Level2Building13.gameObject.SetActive(false);
+                    Level3Building13.gameObject.SetActive(true);
+                }
+                floor10 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 11)
+            if (floor11 != 7) random7();
+            else
+            {
+                text2.text = "橙4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count12 == 1)
+                {
+                    count12++;
+                    Level1Building14.gameObject.SetActive(false);
+                    Level2Building14.gameObject.SetActive(true);
+                }
+                else if (count12 == 2)
+                {
+                    count12++;
+                    Level2Building14.gameObject.SetActive(false);
+                    Level3Building14.gameObject.SetActive(true);
+                }
+                floor11 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 12)
+            if (floor12 != 7) random7();
+            else
+            {
+                text2.text = "橙5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count13 == 1)
+                {
+                    count13++;
+                    Level1Building15.gameObject.SetActive(false);
+                    Level2Building15.gameObject.SetActive(true);
+                }
+                else if (count13 == 2)
+                {
+                    count13++;
+                    Level2Building15.gameObject.SetActive(false);
+                    Level3Building15.gameObject.SetActive(true);
+                }
+                floor12 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 13)
+            if (floor13 != 7) random7();
+            else
+            {
+                text2.text = "橙6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count14 == 1)
+                {
+                    count14++;
+                    Level1Building16.gameObject.SetActive(false);
+                    Level2Building16.gameObject.SetActive(true);
+                }
+                else if (count14 == 2)
+                {
+                    count14++;
+                    Level2Building16.gameObject.SetActive(false);
+                    Level3Building16.gameObject.SetActive(true);
+                }
+                floor13 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 14)
+            if (floor14 != 7) random7();
+            else
+            {
+                text2.text = "橙7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count15 == 1)
+                {
+                    count15++;
+                    Level1Building17.gameObject.SetActive(false);
+                    Level2Building17.gameObject.SetActive(true);
+                }
+                else if (count15 == 2)
+                {
+                    count15++;
+                    Level2Building17.gameObject.SetActive(false);
+                    Level3Building17.gameObject.SetActive(true);
+                }
+                floor14 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 15)
+            if (floor15 != 7) random7();
+            else
+            {
+                text2.text = "黃1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count16++;
+                    Level1Building19.gameObject.SetActive(false);
+                    Level2Building19.gameObject.SetActive(true);
+                }
+                else if (count16 == 2)
+                {
+                    count16++;
+                    Level2Building19.gameObject.SetActive(false);
+                    Level3Building19.gameObject.SetActive(true);
+                }
+                floor15 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 16)
+            if (floor16 != 7) random7();
+            else
+            {
+                text2.text = "黃2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count17++;
+                    Level1Building20.gameObject.SetActive(false);
+                    Level2Building20.gameObject.SetActive(true);
+                }
+                else if (count17 == 2)
+                {
+                    count17++;
+                    Level2Building20.gameObject.SetActive(false);
+                    Level3Building20.gameObject.SetActive(true);
+                }
+                floor16 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 17)
+            if (floor17 != 7) random7();
+            else
+            {
+                text2.text = "黃3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count19 == 1)
+                {
+                    count19++;
+                    Level1Building22.gameObject.SetActive(false);
+                    Level2Building22.gameObject.SetActive(true);
+                }
+                else if (count19 == 2)
+                {
+                    count19++;
+                    Level2Building22.gameObject.SetActive(false);
+                    Level3Building22.gameObject.SetActive(true);
+                }
+                floor17 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 18)
+            if (floor17 != 7) random7();
+            else
+            {
+                text2.text = "黃4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count20 == 1)
+                {
+                    count20++;
+                    Level1Building23.gameObject.SetActive(false);
+                    Level2Building23.gameObject.SetActive(true);
+                }
+                else if (count20 == 2)
+                {
+                    count20++;
+                    Level2Building23.gameObject.SetActive(false);
+                    Level3Building23.gameObject.SetActive(true);
+                }
+                floor18 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 19)
+            if (floor19 != 7) random7();
+            else
+            {
+                text2.text = "黃5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count21 == 1)
+                {
+                    count21++;
+                    Level1Building24.gameObject.SetActive(false);
+                    Level2Building24.gameObject.SetActive(true);
+                }
+                else if (count21 == 2)
+                {
+                    count21++;
+                    Level2Building24.gameObject.SetActive(false);
+                    Level3Building24.gameObject.SetActive(true);
+                }
+                floor19 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 20)
+            if (floor20 != 7) random7();
+            else
+            {
+                text2.text = "黃6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count22 == 1)
+                {
+                    count22++;
+                    Level1Building26.gameObject.SetActive(false);
+                    Level2Building26.gameObject.SetActive(true);
+                }
+                else if (count22 == 2)
+                {
+                    count22++;
+                    Level2Building26.gameObject.SetActive(false);
+                    Level3Building26.gameObject.SetActive(true);
+                }
+                floor20 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 21)
+            if (floor21 != 7) random7();
+            else
+            {
+                text2.text = "黃7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count23 == 1)
+                {
+                    count23++;
+                    Level1Building27.gameObject.SetActive(false);
+                    Level2Building27.gameObject.SetActive(true);
+                }
+                else if (count23 == 2)
+                {
+                    count23++;
+                    Level2Building27.gameObject.SetActive(false);
+                    Level3Building27.gameObject.SetActive(true);
+                }
+                floor21 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 22)
+            if (floor22 != 7) random7();
+            else
+            {
+                text2.text = "綠1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count24 == 1)
+                {
+                    count24++;
+                    Level1Building28.gameObject.SetActive(false);
+                    Level2Building28.gameObject.SetActive(true);
+                }
+                else if (count24 == 2)
+                {
+                    count24++;
+                    Level2Building28.gameObject.SetActive(false);
+                    Level3Building28.gameObject.SetActive(true);
+                }
+                floor22 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 23)
+            if (floor23 != 7) random7();
+            else
+            {
+                text2.text = "綠2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count25 == 1)
+                {
+                    count25++;
+                    Level1Building29.gameObject.SetActive(false);
+                    Level2Building29.gameObject.SetActive(true);
+                }
+                else if (count25 == 2)
+                {
+                    count25++;
+                    Level2Building29.gameObject.SetActive(false);
+                    Level3Building29.gameObject.SetActive(true);
+                }
+                floor23 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 24)
+            if (floor24 != 7) random7();
+            else
+            {
+                text2.text = "綠3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count26 == 1)
+                {
+                    count26++;
+                    Level1Building31.gameObject.SetActive(false);
+                    Level2Building31.gameObject.SetActive(true);
+                }
+                else if (count26 == 2)
+                {
+                    count26++;
+                    Level2Building31.gameObject.SetActive(false);
+                    Level3Building31.gameObject.SetActive(true);
+                }
+                floor24 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 25)
+            if (floor25 != 7) random7();
+            else
+            {
+                text2.text = "綠4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count27 == 1)
+                {
+                    count27++;
+                    Level1Building32.gameObject.SetActive(false);
+                    Level2Building32.gameObject.SetActive(true);
+                }
+                else if (count27 == 2)
+                {
+                    count27++;
+                    Level2Building32.gameObject.SetActive(false);
+                    Level3Building32.gameObject.SetActive(true);
+                }
+                floor25 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 26)
+            if (floor26 != 7) random7();
+            else
+            {
+                text2.text = "綠5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count28 == 1)
+                {
+                    count28++;
+                    Level1Building33.gameObject.SetActive(false);
+                    Level2Building33.gameObject.SetActive(true);
+                }
+                else if (count28 == 2)
+                {
+                    count28++;
+                    Level2Building33.gameObject.SetActive(false);
+                    Level3Building33.gameObject.SetActive(true);
+                }
+                floor26 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 27)
+            if (floor27 != 7) random7();
+            else
+            {
+                text2.text = "綠6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count29 == 1)
+                {
+                    count29++;
+                    Level1Building34.gameObject.SetActive(false);
+                    Level2Building34.gameObject.SetActive(true);
+                }
+                else if (count29 == 2)
+                {
+                    count29++;
+                    Level2Building34.gameObject.SetActive(false);
+                    Level3Building34.gameObject.SetActive(true);
+                }
+                floor27 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 28)
+            if (floor28 != 7) random7();
+            else
+            {
+                text2.text = "藍1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count30 == 1)
+                {
+                    count30++;
+                    Level1Building36.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count30 == 2)
+                {
+                    count30++;
+                    Level2Building36.gameObject.SetActive(false);
+                    Level3Building36.gameObject.SetActive(true);
+                }
+                floor28 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 29)
+            if (floor29 != 7) random7();
+            else
+            {
+                text2.text = "藍2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count31 == 1)
+                {
+                    count31++;
+                    Level1Building37.gameObject.SetActive(false);
+                    Level2Building37.gameObject.SetActive(true);
+                }
+                else if (count31 == 2)
+                {
+                    count31++;
+                    Level2Building37.gameObject.SetActive(false);
+                    Level3Building37.gameObject.SetActive(true);
+                }
+                floor29 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 30)
+            if (floor30 != 7) random7();
+            else
+            {
+                text2.text = "藍3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count33 == 1)
+                {
+                    count33++;
+                    Level1Building39.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count33 == 2)
+                {
+                    count33++;
+                    Level2Building39.gameObject.SetActive(false);
+                    Level3Building39.gameObject.SetActive(true);
+                }
+                floor30 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 31)
+            if (floor31 != 7) random7();
+            else
+            {
+                text2.text = "藍4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count34 == 1)
+                {
+                    count34++;
+                    Level1Building40.gameObject.SetActive(false);
+                    Level2Building40.gameObject.SetActive(true);
+                }
+                else if (count34 == 2)
+                {
+                    count34++;
+                    Level2Building40.gameObject.SetActive(false);
+                    Level3Building40.gameObject.SetActive(true);
+                }
+                floor31 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 32)
+            if (floor32 != 7) random7();
+            else
+            {
+                text2.text = "紫1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count35 == 1)
+                {
+                    count35++;
+                    Level1Building42.gameObject.SetActive(false);
+                    Level2Building42.gameObject.SetActive(true);
+                }
+                else if (count35 == 2)
+                {
+                    count35++;
+                    Level2Building42.gameObject.SetActive(false);
+                    Level3Building42.gameObject.SetActive(true);
+                }
+                floor32 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 33)
+            if (floor33 != 7) random7();
+            else
+            {
+                text2.text = "紫2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count36 == 1)
+                {
+                    count36++;
+                    Level1Building43.gameObject.SetActive(false);
+                    Level2Building43.gameObject.SetActive(true);
+                }
+                else if (count36 == 2)
+                {
+                    count36++;
+                    Level2Building43.gameObject.SetActive(false);
+                    Level3Building43.gameObject.SetActive(true);
+                }
+                floor33 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 34)
+            if (floor34 != 7) random7();
+            else
+            {
+                text2.text = "紫3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count37++;
+                    Level1Building44.gameObject.SetActive(false);
+                    Level2Building44.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count37++;
+                    Level2Building44.gameObject.SetActive(false);
+                    Level3Building44.gameObject.SetActive(true);
+                }
+                floor34 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 35)
+            if (floor35 != 7) random7();
+            else
+            {
+                text2.text = "紫4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count38++;
+                    Level1Building47.gameObject.SetActive(false);
+                    Level2Building47.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count38++;
+                    Level2Building47.gameObject.SetActive(false);
+                    Level3Building47.gameObject.SetActive(true);
+                }
+                floor35 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 36)
+            if (floor36 != 7) random7();
+            else
+            {
+                text2.text = "紫5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count39 == 1)
+                {
+                    count39++;
+                    Level1Building48.gameObject.SetActive(false);
+                    Level2Building48.gameObject.SetActive(true);
+                }
+                else if (count39 == 2)
+                {
+                    count39++;
+                    Level2Building48.gameObject.SetActive(false);
+                    Level3Building48.gameObject.SetActive(true);
+                }
+                floor36 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 37)
+            if (floor37 != 7) random7();
+            else
+            {
+                text2.text = "啡1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count40 == 1)
+                {
+                    count40++;
+                    Level1Building49.gameObject.SetActive(false);
+                    Level2Building49.gameObject.SetActive(true);
+                }
+                else if (count40 == 2)
+                {
+                    count40++;
+                    Level2Building49.gameObject.SetActive(false);
+                    Level3Building49.gameObject.SetActive(true);
+                }
+                floor37 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 38)
+            if (floor38 != 7) random7();
+            else
+            {
+                text2.text = "啡2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count42 == 1)
+                {
+                    count42++;
+                    Level1Building51.gameObject.SetActive(false);
+                    Level2Building51.gameObject.SetActive(true);
+                }
+                else if (count42 == 2)
+                {
+                    floor38 = 0;
+                    count42++;
+                    Level2Building51.gameObject.SetActive(false);
+                    Level3Building51.gameObject.SetActive(true);
+                }
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 39)
+            if (floor39 != 7) random7();
+            else
+            {
+                text2.text = "啡3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count43 == 1)
+                {
+                    count43++;
+                    Level1Building52.gameObject.SetActive(false);
+                    Level2Building52.gameObject.SetActive(true);
+                }
+                else if (count43 == 2)
+                {
+                    count43++;
+                    Level2Building52.gameObject.SetActive(false);
+                    Level3Building52.gameObject.SetActive(true);
+                }
+                floor39 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 40)
+            if (floor40 != 7) random7();
+            else
+            {
+                text2.text = "黑1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count44 == 1)
+                {
+                    count44++;
+                    Level1Building55.gameObject.SetActive(false);
+                    Level2Building55.gameObject.SetActive(true);
+                }
+                else if (count44 == 2)
+                {
+                    count40++;
+                    Level2Building55.gameObject.SetActive(false);
+                    Level3Building55.gameObject.SetActive(true);
+                }
+                floor40 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 41)
+            if (floor42 != 7) random7();
+            else
+            {
+                text2.text = "黑2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count45 == 1)
+                {
+                    count45++;
+                    Level1Building56.gameObject.SetActive(false);
+                    Level2Building56.gameObject.SetActive(true);
+                }
+                else if (count45 == 2)
+                {
+                    count45++;
+                    Level2Building56.gameObject.SetActive(false);
+                    Level3Building56.gameObject.SetActive(true);
+                }
+                floor41 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 42)
+            if (floor42 != 7) random7();
+            else
+            {
+                text2.text = "黑3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count46 == 1)
+                {
+                    count46++;
+                    Level1Building57.gameObject.SetActive(false);
+                    Level2Building57.gameObject.SetActive(true);
+                }
+                else if (count46 == 2)
+                {
+                    count46++;
+                    Level2Building57.gameObject.SetActive(false);
+                    Level3Building57.gameObject.SetActive(true);
+                }
+                floor42 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+
+    }
+
+    void random8()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        do
+        {
+            rangeRadomNum = Random.Range(1, 42);
+        } while (rangeRadomNum == getRangeNum);
+
+        getRangeNum = rangeRadomNum;
+        if (rangeRadomNum == 1)
+            if (floor1 != 8) random8();
+            else
+            {
+                text2.text = "紅1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count1 == 1)
+                {
+                    count1++;
+                    Level1Building1.gameObject.SetActive(false);
+                    Level2Building1.gameObject.SetActive(true);
+                }
+                else if (count1 == 2)
+                {
+                    count1++;
+                    Level2Building1.gameObject.SetActive(false);
+                    Level3Building1.gameObject.SetActive(true);
+                }
+                floor1 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 2)
+            if (floor2 != 8) random8();
+            else
+            {
+                text2.text = "紅2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count2 == 1)
+                {
+                    count2++;
+                    Level1Building2.gameObject.SetActive(false);
+                    Level2Building2.gameObject.SetActive(true);
+                }
+                else if (count2 == 2)
+                {
+                    count2++;
+                    Level2Building2.gameObject.SetActive(false);
+                    Level3Building2.gameObject.SetActive(true);
+                }
+                floor2 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 3)
+            if (floor3 != 8) random8();
+            else
+            {
+                text2.text = "紅3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count3 == 1)
+                {
+                    count3++;
+                    Level1Building3.gameObject.SetActive(false);
+                    Level2Building3.gameObject.SetActive(true);
+                }
+                else if (count3 == 2)
+                {
+                    count3++;
+                    Level2Building3.gameObject.SetActive(false);
+                    Level3Building3.gameObject.SetActive(true);
+                }
+                floor3 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 4)
+            if (floor4 != 8) random8();
+            else
+            {
+                text2.text = "紅4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count4 == 1)
+                {
+                    count4++;
+                    Level1Building4.gameObject.SetActive(false);
+                    Level2Building4.gameObject.SetActive(true);
+                }
+                else if (count4 == 2)
+                {
+                    count4++;
+                    Level2Building4.gameObject.SetActive(false);
+                    Level3Building4.gameObject.SetActive(true);
+                }
+                floor4 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 5)
+            if (floor5 != 8) random8();
+            else
+            {
+                text2.text = "紅5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count5 == 1)
+                {
+                    count5++;
+                    Level1Building5.gameObject.SetActive(false);
+                    Level2Building5.gameObject.SetActive(true);
+                }
+                else if (count5 == 2)
+                {
+                    count5++;
+                    Level2Building5.gameObject.SetActive(false);
+                    Level3Building5.gameObject.SetActive(true);
+                }
+                floor5 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 6)
+            if (floor6 != 8) random8();
+            else
+            {
+                text2.text = "紅6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count6 == 1)
+                {
+                    count6++;
+                    Level1Building7.gameObject.SetActive(false);
+                    Level2Building7.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count6++;
+                    Level2Building7.gameObject.SetActive(false);
+                    Level3Building7.gameObject.SetActive(true);
+                }
+                floor6 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 7)
+            if (floor7 != 8) random8();
+            else
+            {
+                text2.text = "紅7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count7 == 1)
+                {
+                    count7++;
+                    Level1Building8.gameObject.SetActive(false);
+                    Level2Building8.gameObject.SetActive(true);
+                }
+                else if (count6 == 2)
+                {
+                    count7++;
+                    Level2Building8.gameObject.SetActive(false);
+                    Level3Building8.gameObject.SetActive(true);
+                }
+                floor7 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 8)
+            if (floor8 != 8) random8();
+            else
+            {
+                text2.text = "橙1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count8 == 1)
+                {
+                    count8++;
+                    Level1Building9.gameObject.SetActive(false);
+                    Level2Building9.gameObject.SetActive(true);
+                }
+                else if (count8 == 2)
+                {
+                    count8++;
+                    Level2Building9.gameObject.SetActive(false);
+                    Level3Building9.gameObject.SetActive(true);
+                }
+                floor8 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 9)
+            if (floor9 != 8) random8();
+            else
+            {
+                text2.text = "橙2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count10 == 1)
+                {
+                    count10++;
+                    Level1Building11.gameObject.SetActive(false);
+                    Level2Building11.gameObject.SetActive(true);
+                }
+                else if (count10 == 2)
+                {
+                    count10++;
+                    Level2Building11.gameObject.SetActive(false);
+                    Level3Building11.gameObject.SetActive(true);
+                }
+                floor9 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 10)
+            if (floor10 != 8) random8();
+            else
+            {
+                text2.text = "橙3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count11 == 1)
+                {
+                    count11++;
+                    Level1Building13.gameObject.SetActive(false);
+                    Level2Building13.gameObject.SetActive(true);
+                }
+                else if (count11 == 2)
+                {
+                    count11++;
+                    Level2Building13.gameObject.SetActive(false);
+                    Level3Building13.gameObject.SetActive(true);
+                }
+                floor10 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 11)
+            if (floor11 != 8) random8();
+            else
+            {
+                text2.text = "橙4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count12 == 1)
+                {
+                    count12++;
+                    Level1Building14.gameObject.SetActive(false);
+                    Level2Building14.gameObject.SetActive(true);
+                }
+                else if (count12 == 2)
+                {
+                    count12++;
+                    Level2Building14.gameObject.SetActive(false);
+                    Level3Building14.gameObject.SetActive(true);
+                }
+                floor11 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 12)
+            if (floor12 != 8) random8();
+            else
+            {
+                text2.text = "橙5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count13 == 1)
+                {
+                    count13++;
+                    Level1Building15.gameObject.SetActive(false);
+                    Level2Building15.gameObject.SetActive(true);
+                }
+                else if (count13 == 2)
+                {
+                    count13++;
+                    Level2Building15.gameObject.SetActive(false);
+                    Level3Building15.gameObject.SetActive(true);
+                }
+                floor12 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 13)
+            if (floor13 != 8) random8();
+            else
+            {
+                text2.text = "橙6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count14 == 1)
+                {
+                    count14++;
+                    Level1Building16.gameObject.SetActive(false);
+                    Level2Building16.gameObject.SetActive(true);
+                }
+                else if (count14 == 2)
+                {
+                    count14++;
+                    Level2Building16.gameObject.SetActive(false);
+                    Level3Building16.gameObject.SetActive(true);
+                }
+                floor13 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 14)
+            if (floor14 != 8) random8();
+            else
+            {
+                text2.text = "橙7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count15 == 1)
+                {
+                    count15++;
+                    Level1Building17.gameObject.SetActive(false);
+                    Level2Building17.gameObject.SetActive(true);
+                }
+                else if (count15 == 2)
+                {
+                    count15++;
+                    Level2Building17.gameObject.SetActive(false);
+                    Level3Building17.gameObject.SetActive(true);
+                }
+                floor14 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 15)
+            if (floor15 != 8) random8();
+            else
+            {
+                text2.text = "黃1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count16++;
+                    Level1Building19.gameObject.SetActive(false);
+                    Level2Building19.gameObject.SetActive(true);
+                }
+                else if (count16 == 2)
+                {
+                    count16++;
+                    Level2Building19.gameObject.SetActive(false);
+                    Level3Building19.gameObject.SetActive(true);
+                }
+                floor15 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 16)
+            if (floor16 != 8) random8();
+            else
+            {
+                text2.text = "黃2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count16 == 1)
+                {
+                    count17++;
+                    Level1Building20.gameObject.SetActive(false);
+                    Level2Building20.gameObject.SetActive(true);
+                }
+                else if (count17 == 2)
+                {
+                    count17++;
+                    Level2Building20.gameObject.SetActive(false);
+                    Level3Building20.gameObject.SetActive(true);
+                }
+                floor16 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 17)
+            if (floor17 != 8) random8();
+            else
+            {
+                text2.text = "黃3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count19 == 1)
+                {
+                    count19++;
+                    Level1Building22.gameObject.SetActive(false);
+                    Level2Building22.gameObject.SetActive(true);
+                }
+                else if (count19 == 2)
+                {
+                    count19++;
+                    Level2Building22.gameObject.SetActive(false);
+                    Level3Building22.gameObject.SetActive(true);
+                }
+                floor17 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 18)
+            if (floor17 != 8) random8();
+            else
+            {
+                text2.text = "黃4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count20 == 1)
+                {
+                    count20++;
+                    Level1Building23.gameObject.SetActive(false);
+                    Level2Building23.gameObject.SetActive(true);
+                }
+                else if (count20 == 2)
+                {
+                    count20++;
+                    Level2Building23.gameObject.SetActive(false);
+                    Level3Building23.gameObject.SetActive(true);
+                }
+                floor18 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 19)
+            if (floor19 != 8) random8();
+            else
+            {
+                text2.text = "黃5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count21 == 1)
+                {
+                    count21++;
+                    Level1Building24.gameObject.SetActive(false);
+                    Level2Building24.gameObject.SetActive(true);
+                }
+                else if (count21 == 2)
+                {
+                    count21++;
+                    Level2Building24.gameObject.SetActive(false);
+                    Level3Building24.gameObject.SetActive(true);
+                }
+                floor19 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 20)
+            if (floor20 != 8) random8();
+            else
+            {
+                text2.text = "黃6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count22 == 1)
+                {
+                    count22++;
+                    Level1Building26.gameObject.SetActive(false);
+                    Level2Building26.gameObject.SetActive(true);
+                }
+                else if (count22 == 2)
+                {
+                    count22++;
+                    Level2Building26.gameObject.SetActive(false);
+                    Level3Building26.gameObject.SetActive(true);
+                }
+                floor20 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 21)
+            if (floor21 != 8) random8();
+            else
+            {
+                text2.text = "黃7";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count23 == 1)
+                {
+                    count23++;
+                    Level1Building27.gameObject.SetActive(false);
+                    Level2Building27.gameObject.SetActive(true);
+                }
+                else if (count23 == 2)
+                {
+                    count23++;
+                    Level2Building27.gameObject.SetActive(false);
+                    Level3Building27.gameObject.SetActive(true);
+                }
+                floor21 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 22)
+            if (floor22 != 8) random8();
+            else
+            {
+                text2.text = "綠1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count24 == 1)
+                {
+                    count24++;
+                    Level1Building28.gameObject.SetActive(false);
+                    Level2Building28.gameObject.SetActive(true);
+                }
+                else if (count24 == 2)
+                {
+                    count24++;
+                    Level2Building28.gameObject.SetActive(false);
+                    Level3Building28.gameObject.SetActive(true);
+                }
+                floor22 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 23)
+            if (floor23 != 8) random8();
+            else
+            {
+                text2.text = "綠2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count25 == 1)
+                {
+                    count25++;
+                    Level1Building29.gameObject.SetActive(false);
+                    Level2Building29.gameObject.SetActive(true);
+                }
+                else if (count25 == 2)
+                {
+                    count25++;
+                    Level2Building29.gameObject.SetActive(false);
+                    Level3Building29.gameObject.SetActive(true);
+                }
+                floor23 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 24)
+            if (floor24 != 8) random8();
+            else
+            {
+                text2.text = "綠3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count26 == 1)
+                {
+                    count26++;
+                    Level1Building31.gameObject.SetActive(false);
+                    Level2Building31.gameObject.SetActive(true);
+                }
+                else if (count26 == 2)
+                {
+                    count26++;
+                    Level2Building31.gameObject.SetActive(false);
+                    Level3Building31.gameObject.SetActive(true);
+                }
+                floor24 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 25)
+            if (floor25 != 8) random8();
+            else
+            {
+                text2.text = "綠4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count27 == 1)
+                {
+                    count27++;
+                    Level1Building32.gameObject.SetActive(false);
+                    Level2Building32.gameObject.SetActive(true);
+                }
+                else if (count27 == 2)
+                {
+                    count27++;
+                    Level2Building32.gameObject.SetActive(false);
+                    Level3Building32.gameObject.SetActive(true);
+                }
+                floor25 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 26)
+            if (floor26 != 8) random8();
+            else
+            {
+                text2.text = "綠5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count28 == 1)
+                {
+                    count28++;
+                    Level1Building33.gameObject.SetActive(false);
+                    Level2Building33.gameObject.SetActive(true);
+                }
+                else if (count28 == 2)
+                {
+                    count28++;
+                    Level2Building33.gameObject.SetActive(false);
+                    Level3Building33.gameObject.SetActive(true);
+                }
+                floor26 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 27)
+            if (floor27 != 8) random8();
+            else
+            {
+                text2.text = "綠6";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count29 == 1)
+                {
+                    count29++;
+                    Level1Building34.gameObject.SetActive(false);
+                    Level2Building34.gameObject.SetActive(true);
+                }
+                else if (count29 == 2)
+                {
+                    count29++;
+                    Level2Building34.gameObject.SetActive(false);
+                    Level3Building34.gameObject.SetActive(true);
+                }
+                floor27 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 28)
+            if (floor28 != 8) random8();
+            else
+            {
+                text2.text = "藍1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count30 == 1)
+                {
+                    count30++;
+                    Level1Building36.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count30 == 2)
+                {
+                    count30++;
+                    Level2Building36.gameObject.SetActive(false);
+                    Level3Building36.gameObject.SetActive(true);
+                }
+                floor28 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 29)
+            if (floor29 != 8) random8();
+            else
+            {
+                text2.text = "藍2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count31 == 1)
+                {
+                    count31++;
+                    Level1Building37.gameObject.SetActive(false);
+                    Level2Building37.gameObject.SetActive(true);
+                }
+                else if (count31 == 2)
+                {
+                    count31++;
+                    Level2Building37.gameObject.SetActive(false);
+                    Level3Building37.gameObject.SetActive(true);
+                }
+                floor29 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 30)
+            if (floor30 != 8) random8();
+            else
+            {
+                text2.text = "藍3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count33 == 1)
+                {
+                    count33++;
+                    Level1Building39.gameObject.SetActive(false);
+                    Level2Building36.gameObject.SetActive(true);
+                }
+                else if (count33 == 2)
+                {
+                    count33++;
+                    Level2Building39.gameObject.SetActive(false);
+                    Level3Building39.gameObject.SetActive(true);
+                }
+                floor30 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 31)
+            if (floor31 != 8) random8();
+            else
+            {
+                text2.text = "藍4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count34 == 1)
+                {
+                    count34++;
+                    Level1Building40.gameObject.SetActive(false);
+                    Level2Building40.gameObject.SetActive(true);
+                }
+                else if (count34 == 2)
+                {
+                    count34++;
+                    Level2Building40.gameObject.SetActive(false);
+                    Level3Building40.gameObject.SetActive(true);
+                }
+                floor31 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 32)
+            if (floor32 != 8) random8();
+            else
+            {
+                text2.text = "紫1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count35 == 1)
+                {
+                    count35++;
+                    Level1Building42.gameObject.SetActive(false);
+                    Level2Building42.gameObject.SetActive(true);
+                }
+                else if (count35 == 2)
+                {
+                    count35++;
+                    Level2Building42.gameObject.SetActive(false);
+                    Level3Building42.gameObject.SetActive(true);
+                }
+                floor32 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 33)
+            if (floor33 != 8) random8();
+            else
+            {
+                text2.text = "紫2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count36 == 1)
+                {
+                    count36++;
+                    Level1Building43.gameObject.SetActive(false);
+                    Level2Building43.gameObject.SetActive(true);
+                }
+                else if (count36 == 2)
+                {
+                    count36++;
+                    Level2Building43.gameObject.SetActive(false);
+                    Level3Building43.gameObject.SetActive(true);
+                }
+                floor33 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 34)
+            if (floor34 != 8) random8();
+            else
+            {
+                text2.text = "紫3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count37++;
+                    Level1Building44.gameObject.SetActive(false);
+                    Level2Building44.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count37++;
+                    Level2Building44.gameObject.SetActive(false);
+                    Level3Building44.gameObject.SetActive(true);
+                }
+                floor34 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 35)
+            if (floor35 != 8) random8();
+            else
+            {
+                text2.text = "紫4";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count38 == 1)
+                {
+                    count38++;
+                    Level1Building47.gameObject.SetActive(false);
+                    Level2Building47.gameObject.SetActive(true);
+                }
+                else if (count38 == 2)
+                {
+                    count38++;
+                    Level2Building47.gameObject.SetActive(false);
+                    Level3Building47.gameObject.SetActive(true);
+                }
+                floor35 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 36)
+            if (floor36 != 8) random8();
+            else
+            {
+                text2.text = "紫5";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count39 == 1)
+                {
+                    count39++;
+                    Level1Building48.gameObject.SetActive(false);
+                    Level2Building48.gameObject.SetActive(true);
+                }
+                else if (count39 == 2)
+                {
+                    count39++;
+                    Level2Building48.gameObject.SetActive(false);
+                    Level3Building48.gameObject.SetActive(true);
+                }
+                floor36 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 37)
+            if (floor37 != 8) random8();
+            else
+            {
+                text2.text = "啡1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count40 == 1)
+                {
+                    count40++;
+                    Level1Building49.gameObject.SetActive(false);
+                    Level2Building49.gameObject.SetActive(true);
+                }
+                else if (count40 == 2)
+                {
+                    count40++;
+                    Level2Building49.gameObject.SetActive(false);
+                    Level3Building49.gameObject.SetActive(true);
+                }
+                floor37 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 38)
+            if (floor38 != 8) random8();
+            else
+            {
+                text2.text = "啡2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count42 == 1)
+                {
+                    count42++;
+                    Level1Building51.gameObject.SetActive(false);
+                    Level2Building51.gameObject.SetActive(true);
+                }
+                else if (count42 == 2)
+                {
+                    floor38 = 0;
+                    count42++;
+                    Level2Building51.gameObject.SetActive(false);
+                    Level3Building51.gameObject.SetActive(true);
+                }
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 39)
+            if (floor39 != 8) random8();
+            else
+            {
+                text2.text = "啡3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count43 == 1)
+                {
+                    count43++;
+                    Level1Building52.gameObject.SetActive(false);
+                    Level2Building52.gameObject.SetActive(true);
+                }
+                else if (count43 == 2)
+                {
+                    count43++;
+                    Level2Building52.gameObject.SetActive(false);
+                    Level3Building52.gameObject.SetActive(true);
+                }
+                floor39 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 40)
+            if (floor40 != 8) random8();
+            else
+            {
+                text2.text = "黑1";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count44 == 1)
+                {
+                    count44++;
+                    Level1Building55.gameObject.SetActive(false);
+                    Level2Building55.gameObject.SetActive(true);
+                }
+                else if (count44 == 2)
+                {
+                    count40++;
+                    Level2Building55.gameObject.SetActive(false);
+                    Level3Building55.gameObject.SetActive(true);
+                }
+                floor40 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 41)
+            if (floor42 != 8) random8();
+            else
+            {
+                text2.text = "黑2";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count45 == 1)
+                {
+                    count45++;
+                    Level1Building56.gameObject.SetActive(false);
+                    Level2Building56.gameObject.SetActive(true);
+                }
+                else if (count45 == 2)
+                {
+                    count45++;
+                    Level2Building56.gameObject.SetActive(false);
+                    Level3Building56.gameObject.SetActive(true);
+                }
+                floor41 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+        if (rangeRadomNum == 42)
+            if (floor42 != 8) random8();
+            else
+            {
+                text2.text = "黑3";
+                StartCoroutine(TemporarilyDeactivate(2));
+                if (count46 == 1)
+                {
+                    count46++;
+                    Level1Building57.gameObject.SetActive(false);
+                    Level2Building57.gameObject.SetActive(true);
+                }
+                else if (count46 == 2)
+                {
+                    count46++;
+                    Level2Building57.gameObject.SetActive(false);
+                    Level3Building57.gameObject.SetActive(true);
+                }
+                floor42 = 0;
+                dropButton.interactable = true;
+                camMain();
+            }
+
+    }
+
+    void AllLevelUp()
+    {
+        if (whoTurn == 1)
+        {
+            if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                || floor41 == 1 || floor42 == 1)
+            {
+                if (floor1 == 1) {
+                    if (count1 == 1)
+                    {
+                        count1++;
+                        Level1Building1.gameObject.SetActive(false);
+                        Level2Building1.gameObject.SetActive(true);
+                    }
+                    else if (count1 == 2)
+                    {
+                        count1++;
+                        Level2Building1.gameObject.SetActive(false);
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    floor1 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor2 == 1)
+                {
+                    if (count2 == 1)
+                    {
+                        count2++;
+                        Level1Building2.gameObject.SetActive(false);
+                        Level2Building2.gameObject.SetActive(true);
+                    }
+                    else if (count2 == 2)
+                    {
+                        count2++;
+                        Level2Building2.gameObject.SetActive(false);
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    floor2 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor3 == 1)
+                {
+                    if (count3 == 1)
+                    {
+                        count3++;
+                        Level1Building3.gameObject.SetActive(false);
+                        Level2Building3.gameObject.SetActive(true);
+                    }
+                    else if (count3 == 2)
+                    {
+                        count3++;
+                        Level2Building3.gameObject.SetActive(false);
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    floor3 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor4 == 1)
+                {
+                    if (count4 == 1)
+                    {
+                        count4++;
+                        Level1Building4.gameObject.SetActive(false);
+                        Level2Building4.gameObject.SetActive(true);
+                    }
+                    else if (count4 == 2)
+                    {
+                        count4++;
+                        Level2Building4.gameObject.SetActive(false);
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    floor4 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor5 == 1)
+                {
+                    if (count5 == 1)
+                    {
+                        count5++;
+                        Level1Building5.gameObject.SetActive(false);
+                        Level2Building5.gameObject.SetActive(true);
+                    }
+                    else if (count5 == 2)
+                    {
+                        count5++;
+                        Level2Building5.gameObject.SetActive(false);
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    floor5 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor6 == 1)
+                {
+                    if (count6 == 1)
+                    {
+                        count6++;
+                        Level1Building7.gameObject.SetActive(false);
+                        Level2Building7.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count6++;
+                        Level2Building7.gameObject.SetActive(false);
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    floor6 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor7 == 1)
+                {
+                    if (count7 == 1)
+                    {
+                        count7++;
+                        Level1Building8.gameObject.SetActive(false);
+                        Level2Building8.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count7++;
+                        Level2Building8.gameObject.SetActive(false);
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    floor7 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor8 == 1)
+                {
+                    if (count8 == 1)
+                    {
+                        count8++;
+                        Level1Building9.gameObject.SetActive(false);
+                        Level2Building9.gameObject.SetActive(true);
+                    }
+                    else if (count8 == 2)
+                    {
+                        count8++;
+                        Level2Building9.gameObject.SetActive(false);
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    floor8 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor9 == 1)
+                {
+                    if (count10 == 1)
+                    {
+                        count10++;
+                        Level1Building11.gameObject.SetActive(false);
+                        Level2Building11.gameObject.SetActive(true);
+                    }
+                    else if (count10 == 2)
+                    {
+                        count10++;
+                        Level2Building11.gameObject.SetActive(false);
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    floor9 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor10 == 1)
+                {
+                    if (count11 == 1)
+                    {
+                        count11++;
+                        Level1Building13.gameObject.SetActive(false);
+                        Level2Building13.gameObject.SetActive(true);
+                    }
+                    else if (count11 == 2)
+                    {
+                        count11++;
+                        Level2Building13.gameObject.SetActive(false);
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    floor10 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor11 == 1)
+                {
+                    if (count12 == 1)
+                    {
+                        count12++;
+                        Level1Building14.gameObject.SetActive(false);
+                        Level2Building14.gameObject.SetActive(true);
+                    }
+                    else if (count12 == 2)
+                    {
+                        count12++;
+                        Level2Building14.gameObject.SetActive(false);
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    floor11 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor12 == 1)
+                {
+                    if (count13 == 1)
+                    {
+                        count13++;
+                        Level1Building15.gameObject.SetActive(false);
+                        Level2Building15.gameObject.SetActive(true);
+                    }
+                    else if (count13 == 2)
+                    {
+                        count13++;
+                        Level2Building15.gameObject.SetActive(false);
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    floor12 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor13 == 1)
+                {
+                    if (count14 == 1)
+                    {
+                        count14++;
+                        Level1Building16.gameObject.SetActive(false);
+                        Level2Building16.gameObject.SetActive(true);
+                    }
+                    else if (count14 == 2)
+                    {
+                        count14++;
+                        Level2Building16.gameObject.SetActive(false);
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    floor13 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor14 == 1)
+                {
+                    if (count15 == 1)
+                    {
+                        count15++;
+                        Level1Building17.gameObject.SetActive(false);
+                        Level2Building17.gameObject.SetActive(true);
+                    }
+                    else if (count15 == 2)
+                    {
+                        count15++;
+                        Level2Building17.gameObject.SetActive(false);
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    floor14 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor15 == 1)
+                {
+                    if (count16 == 1)
+                    {
+                        count16++;
+                        Level1Building19.gameObject.SetActive(false);
+                        Level2Building19.gameObject.SetActive(true);
+                    }
+                    else if (count16 == 2)
+                    {
+                        count16++;
+                        Level2Building19.gameObject.SetActive(false);
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    floor15 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor16 == 1)
+                {
+                    if (count16 == 1)
+                    {
+                        count17++;
+                        Level1Building20.gameObject.SetActive(false);
+                        Level2Building20.gameObject.SetActive(true);
+                    }
+                    else if (count17 == 2)
+                    {
+                        count17++;
+                        Level2Building20.gameObject.SetActive(false);
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    floor16 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor17 == 1)
+                {
+                    if (count19 == 1)
+                    {
+                        count19++;
+                        Level1Building22.gameObject.SetActive(false);
+                        Level2Building22.gameObject.SetActive(true);
+                    }
+                    else if (count19 == 2)
+                    {
+                        count19++;
+                        Level2Building22.gameObject.SetActive(false);
+                        Level3Building22.gameObject.SetActive(true);
+                    }
+                    floor17 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor18 == 1)
+                {
+                    if (count20 == 1)
+                    {
+                        count20++;
+                        Level1Building23.gameObject.SetActive(false);
+                        Level2Building23.gameObject.SetActive(true);
+                    }
+                    else if (count20 == 2)
+                    {
+                        count20++;
+                        Level2Building23.gameObject.SetActive(false);
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    floor18 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor19 == 1)
+                {
+                    if (count21 == 1)
+                    {
+                        count21++;
+                        Level1Building24.gameObject.SetActive(false);
+                        Level2Building24.gameObject.SetActive(true);
+                    }
+                    else if (count21 == 2)
+                    {
+                        count21++;
+                        Level2Building24.gameObject.SetActive(false);
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    floor19 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor20 == 1)
+                {
+                    if (count22 == 1)
+                    {
+                        count22++;
+                        Level1Building26.gameObject.SetActive(false);
+                        Level2Building26.gameObject.SetActive(true);
+                    }
+                    else if (count22 == 2)
+                    {
+                        count22++;
+                        Level2Building26.gameObject.SetActive(false);
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    floor20 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor21 == 1)
+                {
+                    if (count23 == 1)
+                    {
+                        count23++;
+                        Level1Building27.gameObject.SetActive(false);
+                        Level2Building27.gameObject.SetActive(true);
+                    }
+                    else if (count23 == 2)
+                    {
+                        count23++;
+                        Level2Building27.gameObject.SetActive(false);
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    floor21 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor22 == 1)
+                {
+                    if (count24 == 1)
+                    {
+                        count24++;
+                        Level1Building28.gameObject.SetActive(false);
+                        Level2Building28.gameObject.SetActive(true);
+                    }
+                    else if (count24 == 2)
+                    {
+                        count24++;
+                        Level2Building28.gameObject.SetActive(false);
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    floor22 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor23 == 1)
+                {
+                    if (count25 == 1)
+                    {
+                        count25++;
+                        Level1Building29.gameObject.SetActive(false);
+                        Level2Building29.gameObject.SetActive(true);
+                    }
+                    else if (count25 == 2)
+                    {
+                        count25++;
+                        Level2Building29.gameObject.SetActive(false);
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    floor23 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor24 == 1)
+                {
+                    if (count26 == 1)
+                    {
+                        count26++;
+                        Level1Building31.gameObject.SetActive(false);
+                        Level2Building31.gameObject.SetActive(true);
+                    }
+                    else if (count26 == 2)
+                    {
+                        count26++;
+                        Level2Building31.gameObject.SetActive(false);
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    floor24 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor25 == 1)
+                {
+                    if (count27 == 1)
+                    {
+                        count27++;
+                        Level1Building32.gameObject.SetActive(false);
+                        Level2Building32.gameObject.SetActive(true);
+                    }
+                    else if (count27 == 2)
+                    {
+                        count27++;
+                        Level2Building32.gameObject.SetActive(false);
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    floor25 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor26 == 1)
+                {
+                    if (count28 == 1)
+                    {
+                        count28++;
+                        Level1Building33.gameObject.SetActive(false);
+                        Level2Building33.gameObject.SetActive(true);
+                    }
+                    else if (count28 == 2)
+                    {
+                        count28++;
+                        Level2Building33.gameObject.SetActive(false);
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    floor26 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor27 == 1)
+                {
+                    if (count29 == 1)
+                    {
+                        count29++;
+                        Level1Building34.gameObject.SetActive(false);
+                        Level2Building34.gameObject.SetActive(true);
+                    }
+                    else if (count29 == 2)
+                    {
+                        count29++;
+                        Level2Building34.gameObject.SetActive(false);
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    floor27 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor28 == 1)
+                {
+                    if (count30 == 1)
+                    {
+                        count30++;
+                        Level1Building36.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count30 == 2)
+                    {
+                        count30++;
+                        Level2Building36.gameObject.SetActive(false);
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    floor28 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor29 == 1)
+                {
+                    if (count31 == 1)
+                    {
+                        count31++;
+                        Level1Building37.gameObject.SetActive(false);
+                        Level2Building37.gameObject.SetActive(true);
+                    }
+                    else if (count31 == 2)
+                    {
+                        count31++;
+                        Level2Building37.gameObject.SetActive(false);
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    floor29 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor30 == 1)
+                {
+                    if (count33 == 1)
+                    {
+                        count33++;
+                        Level1Building39.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count33 == 2)
+                    {
+                        count33++;
+                        Level2Building39.gameObject.SetActive(false);
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    floor30 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor31 == 1)
+                {
+                    if (count34 == 1)
+                    {
+                        count34++;
+                        Level1Building40.gameObject.SetActive(false);
+                        Level2Building40.gameObject.SetActive(true);
+                    }
+                    else if (count34 == 2)
+                    {
+                        count34++;
+                        Level2Building40.gameObject.SetActive(false);
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    floor31 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor32 == 1)
+                {
+                    if (count35 == 1)
+                    {
+                        count35++;
+                        Level1Building42.gameObject.SetActive(false);
+                        Level2Building42.gameObject.SetActive(true);
+                    }
+                    else if (count35 == 2)
+                    {
+                        count35++;
+                        Level2Building42.gameObject.SetActive(false);
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    floor32 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor33 == 1)
+                {
+                    if (count36 == 1)
+                    {
+                        count36++;
+                        Level1Building43.gameObject.SetActive(false);
+                        Level2Building43.gameObject.SetActive(true);
+                    }
+                    else if (count36 == 2)
+                    {
+                        count36++;
+                        Level2Building43.gameObject.SetActive(false);
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    floor33 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor34 == 1)
+                {
+                    if (count38 == 1)
+                    {
+                        count37++;
+                        Level1Building44.gameObject.SetActive(false);
+                        Level2Building44.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count37++;
+                        Level2Building44.gameObject.SetActive(false);
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    floor34 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor35 == 1)
+                {
+                    if (count38 == 1)
+                    {
+                        count38++;
+                        Level1Building47.gameObject.SetActive(false);
+                        Level2Building47.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count38++;
+                        Level2Building47.gameObject.SetActive(false);
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    floor35 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor36 == 1)
+                {
+                    if (count39 == 1)
+                    {
+                        count39++;
+                        Level1Building48.gameObject.SetActive(false);
+                        Level2Building48.gameObject.SetActive(true);
+                    }
+                    else if (count39 == 2)
+                    {
+                        count39++;
+                        Level2Building48.gameObject.SetActive(false);
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    floor36 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor37 == 1)
+                {
+                    if (count40 == 1)
+                    {
+                        count40++;
+                        Level1Building49.gameObject.SetActive(false);
+                        Level2Building49.gameObject.SetActive(true);
+                    }
+                    else if (count40 == 2)
+                    {
+                        count40++;
+                        Level2Building49.gameObject.SetActive(false);
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    floor37 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor38 == 1)
+                {
+                    if (count42 == 1)
+                    {
+                        count42++;
+                        Level1Building51.gameObject.SetActive(false);
+                        Level2Building51.gameObject.SetActive(true);
+                    }
+                    else if (count42 == 2)
+                    {
+                        floor38 = 0;
+                        count42++;
+                        Level2Building51.gameObject.SetActive(false);
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor39 == 1)
+                {
+                    if (count43 == 1)
+                    {
+                        count43++;
+                        Level1Building52.gameObject.SetActive(false);
+                        Level2Building52.gameObject.SetActive(true);
+                    }
+                    else if (count43 == 2)
+                    {
+                        count43++;
+                        Level2Building52.gameObject.SetActive(false);
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    floor39 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor40 == 1)
+                {
+                    if (count44 == 1)
+                    {
+                        count44++;
+                        Level1Building55.gameObject.SetActive(false);
+                        Level2Building55.gameObject.SetActive(true);
+                    }
+                    else if (count44 == 2)
+                    {
+                        count40++;
+                        Level2Building55.gameObject.SetActive(false);
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    floor40 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor41 == 1)
+                {
+                    if (count45 == 1)
+                    {
+                        count45++;
+                        Level1Building56.gameObject.SetActive(false);
+                        Level2Building56.gameObject.SetActive(true);
+                    }
+                    else if (count45 == 2)
+                    {
+                        count45++;
+                        Level2Building56.gameObject.SetActive(false);
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    floor41 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor42 == 1)
+                {
+                    if (count46 == 1)
+                    {
+                        count46++;
+                        Level1Building57.gameObject.SetActive(false);
+                        Level2Building57.gameObject.SetActive(true);
+                    }
+                    else if (count46 == 2)
+                    {
+                        count46++;
+                        Level2Building57.gameObject.SetActive(false);
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    floor42 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+            }
+        }
+        if (whoTurn == 2)
+        {
+            if (floor1 == 2 || floor2 == 2 || floor3 == 2 || floor4 == 2 || floor5 == 2 || floor6 == 2 || floor7 == 2 || floor8 == 2 || floor9 == 2 || floor10 == 2
+                || floor11 == 2 || floor12 == 2 || floor13 == 2 || floor14 == 2 || floor15 == 2 || floor16 == 2 || floor17 == 2 || floor18 == 2 || floor19 == 2 || floor20 == 2
+                || floor21 == 2 || floor22 == 2 || floor23 == 2 || floor24 == 2 || floor25 == 2 || floor26 == 2 || floor27 == 2 || floor28 == 2 || floor29 == 2 || floor30 == 2
+                || floor31 == 2 || floor32 == 2 || floor33 == 2 || floor34 == 2 || floor35 == 2 || floor36 == 2 || floor37 == 2 || floor38 == 2 || floor39 == 2 || floor40 == 2
+                || floor41 == 2 || floor42 == 2)
+            {
+                if (floor1 == 2)
+                {
+                    if (count1 == 1)
+                    {
+                        count1++;
+                        Level1Building1.gameObject.SetActive(false);
+                        Level2Building1.gameObject.SetActive(true);
+                    }
+                    else if (count1 == 2)
+                    {
+                        count1++;
+                        Level2Building1.gameObject.SetActive(false);
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    floor1 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor2 == 2)
+                {
+                    if (count2 == 1)
+                    {
+                        count2++;
+                        Level1Building2.gameObject.SetActive(false);
+                        Level2Building2.gameObject.SetActive(true);
+                    }
+                    else if (count2 == 2)
+                    {
+                        count2++;
+                        Level2Building2.gameObject.SetActive(false);
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    floor2 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor3 == 2)
+                {
+                    if (count3 == 1)
+                    {
+                        count3++;
+                        Level1Building3.gameObject.SetActive(false);
+                        Level2Building3.gameObject.SetActive(true);
+                    }
+                    else if (count3 == 2)
+                    {
+                        count3++;
+                        Level2Building3.gameObject.SetActive(false);
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    floor3 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor4 == 2)
+                {
+                    if (count4 == 1)
+                    {
+                        count4++;
+                        Level1Building4.gameObject.SetActive(false);
+                        Level2Building4.gameObject.SetActive(true);
+                    }
+                    else if (count4 == 2)
+                    {
+                        count4++;
+                        Level2Building4.gameObject.SetActive(false);
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    floor4 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor5 == 2)
+                {
+                    if (count5 == 1)
+                    {
+                        count5++;
+                        Level1Building5.gameObject.SetActive(false);
+                        Level2Building5.gameObject.SetActive(true);
+                    }
+                    else if (count5 == 2)
+                    {
+                        count5++;
+                        Level2Building5.gameObject.SetActive(false);
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    floor5 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor6 == 2)
+                {
+                    if (count6 == 1)
+                    {
+                        count6++;
+                        Level1Building7.gameObject.SetActive(false);
+                        Level2Building7.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count6++;
+                        Level2Building7.gameObject.SetActive(false);
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    floor6 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor7 == 2)
+                {
+                    if (count7 == 1)
+                    {
+                        count7++;
+                        Level1Building8.gameObject.SetActive(false);
+                        Level2Building8.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count7++;
+                        Level2Building8.gameObject.SetActive(false);
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    floor7 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor8 == 2)
+                {
+                    if (count8 == 1)
+                    {
+                        count8++;
+                        Level1Building9.gameObject.SetActive(false);
+                        Level2Building9.gameObject.SetActive(true);
+                    }
+                    else if (count8 == 2)
+                    {
+                        count8++;
+                        Level2Building9.gameObject.SetActive(false);
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    floor8 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor9 == 2)
+                {
+                    if (count10 == 1)
+                    {
+                        count10++;
+                        Level1Building11.gameObject.SetActive(false);
+                        Level2Building11.gameObject.SetActive(true);
+                    }
+                    else if (count10 == 2)
+                    {
+                        count10++;
+                        Level2Building11.gameObject.SetActive(false);
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    floor9 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor10 == 2)
+                {
+                    if (count11 == 1)
+                    {
+                        count11++;
+                        Level1Building13.gameObject.SetActive(false);
+                        Level2Building13.gameObject.SetActive(true);
+                    }
+                    else if (count11 == 2)
+                    {
+                        count11++;
+                        Level2Building13.gameObject.SetActive(false);
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    floor10 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor11 == 2)
+                {
+                    if (count12 == 1)
+                    {
+                        count12++;
+                        Level1Building14.gameObject.SetActive(false);
+                        Level2Building14.gameObject.SetActive(true);
+                    }
+                    else if (count12 == 2)
+                    {
+                        count12++;
+                        Level2Building14.gameObject.SetActive(false);
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    floor11 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor12 == 2)
+                {
+                    if (count13 == 1)
+                    {
+                        count13++;
+                        Level1Building15.gameObject.SetActive(false);
+                        Level2Building15.gameObject.SetActive(true);
+                    }
+                    else if (count13 == 2)
+                    {
+                        count13++;
+                        Level2Building15.gameObject.SetActive(false);
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    floor12 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor13 == 2)
+                {
+                    if (count14 == 1)
+                    {
+                        count14++;
+                        Level1Building16.gameObject.SetActive(false);
+                        Level2Building16.gameObject.SetActive(true);
+                    }
+                    else if (count14 == 2)
+                    {
+                        count14++;
+                        Level2Building16.gameObject.SetActive(false);
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    floor13 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor14 == 2)
+                {
+                    if (count15 == 1)
+                    {
+                        count15++;
+                        Level1Building17.gameObject.SetActive(false);
+                        Level2Building17.gameObject.SetActive(true);
+                    }
+                    else if (count15 == 2)
+                    {
+                        count15++;
+                        Level2Building17.gameObject.SetActive(false);
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    floor14 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor15 == 2)
+                {
+                    if (count16 == 1)
+                    {
+                        count16++;
+                        Level1Building19.gameObject.SetActive(false);
+                        Level2Building19.gameObject.SetActive(true);
+                    }
+                    else if (count16 == 2)
+                    {
+                        count16++;
+                        Level2Building19.gameObject.SetActive(false);
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    floor15 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor16 == 2)
+                {
+                    if (count16 == 1)
+                    {
+                        count17++;
+                        Level1Building20.gameObject.SetActive(false);
+                        Level2Building20.gameObject.SetActive(true);
+                    }
+                    else if (count17 == 2)
+                    {
+                        count17++;
+                        Level2Building20.gameObject.SetActive(false);
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    floor16 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor17 == 2)
+                {
+                    if (count19 == 1)
+                    {
+                        count19++;
+                        Level1Building22.gameObject.SetActive(false);
+                        Level2Building22.gameObject.SetActive(true);
+                    }
+                    else if (count19 == 2)
+                    {
+                        count19++;
+                        Level2Building22.gameObject.SetActive(false);
+                        Level3Building22.gameObject.SetActive(true);
+                    }
+                    floor17 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor18 == 2)
+                {
+                    if (count20 == 1)
+                    {
+                        count20++;
+                        Level1Building23.gameObject.SetActive(false);
+                        Level2Building23.gameObject.SetActive(true);
+                    }
+                    else if (count20 == 2)
+                    {
+                        count20++;
+                        Level2Building23.gameObject.SetActive(false);
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    floor18 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor19 == 2)
+                {
+                    if (count21 == 1)
+                    {
+                        count21++;
+                        Level1Building24.gameObject.SetActive(false);
+                        Level2Building24.gameObject.SetActive(true);
+                    }
+                    else if (count21 == 2)
+                    {
+                        count21++;
+                        Level2Building24.gameObject.SetActive(false);
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    floor19 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor20 == 2)
+                {
+                    if (count22 == 1)
+                    {
+                        count22++;
+                        Level1Building26.gameObject.SetActive(false);
+                        Level2Building26.gameObject.SetActive(true);
+                    }
+                    else if (count22 == 2)
+                    {
+                        count22++;
+                        Level2Building26.gameObject.SetActive(false);
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    floor20 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor21 == 2)
+                {
+                    if (count23 == 1)
+                    {
+                        count23++;
+                        Level1Building27.gameObject.SetActive(false);
+                        Level2Building27.gameObject.SetActive(true);
+                    }
+                    else if (count23 == 2)
+                    {
+                        count23++;
+                        Level2Building27.gameObject.SetActive(false);
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    floor21 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor22 == 2)
+                {
+                    if (count24 == 1)
+                    {
+                        count24++;
+                        Level1Building28.gameObject.SetActive(false);
+                        Level2Building28.gameObject.SetActive(true);
+                    }
+                    else if (count24 == 2)
+                    {
+                        count24++;
+                        Level2Building28.gameObject.SetActive(false);
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    floor22 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor23 == 2)
+                {
+                    if (count25 == 1)
+                    {
+                        count25++;
+                        Level1Building29.gameObject.SetActive(false);
+                        Level2Building29.gameObject.SetActive(true);
+                    }
+                    else if (count25 == 2)
+                    {
+                        count25++;
+                        Level2Building29.gameObject.SetActive(false);
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    floor23 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor24 == 2)
+                {
+                    if (count26 == 1)
+                    {
+                        count26++;
+                        Level1Building31.gameObject.SetActive(false);
+                        Level2Building31.gameObject.SetActive(true);
+                    }
+                    else if (count26 == 2)
+                    {
+                        count26++;
+                        Level2Building31.gameObject.SetActive(false);
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    floor24 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor25 == 2)
+                {
+                    if (count27 == 1)
+                    {
+                        count27++;
+                        Level1Building32.gameObject.SetActive(false);
+                        Level2Building32.gameObject.SetActive(true);
+                    }
+                    else if (count27 == 2)
+                    {
+                        count27++;
+                        Level2Building32.gameObject.SetActive(false);
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    floor25 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor26 == 2)
+                {
+                    if (count28 == 1)
+                    {
+                        count28++;
+                        Level1Building33.gameObject.SetActive(false);
+                        Level2Building33.gameObject.SetActive(true);
+                    }
+                    else if (count28 == 2)
+                    {
+                        count28++;
+                        Level2Building33.gameObject.SetActive(false);
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    floor26 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor27 == 2)
+                {
+                    if (count29 == 1)
+                    {
+                        count29++;
+                        Level1Building34.gameObject.SetActive(false);
+                        Level2Building34.gameObject.SetActive(true);
+                    }
+                    else if (count29 == 2)
+                    {
+                        count29++;
+                        Level2Building34.gameObject.SetActive(false);
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    floor27 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor28 == 2)
+                {
+                    if (count30 == 1)
+                    {
+                        count30++;
+                        Level1Building36.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count30 == 2)
+                    {
+                        count30++;
+                        Level2Building36.gameObject.SetActive(false);
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    floor28 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor29 == 2)
+                {
+                    if (count31 == 1)
+                    {
+                        count31++;
+                        Level1Building37.gameObject.SetActive(false);
+                        Level2Building37.gameObject.SetActive(true);
+                    }
+                    else if (count31 == 2)
+                    {
+                        count31++;
+                        Level2Building37.gameObject.SetActive(false);
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    floor29 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor30 == 2)
+                {
+                    if (count33 == 1)
+                    {
+                        count33++;
+                        Level1Building39.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count33 == 2)
+                    {
+                        count33++;
+                        Level2Building39.gameObject.SetActive(false);
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    floor30 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor31 == 2)
+                {
+                    if (count34 == 1)
+                    {
+                        count34++;
+                        Level1Building40.gameObject.SetActive(false);
+                        Level2Building40.gameObject.SetActive(true);
+                    }
+                    else if (count34 == 2)
+                    {
+                        count34++;
+                        Level2Building40.gameObject.SetActive(false);
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    floor31 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor32 == 2)
+                {
+                    if (count35 == 1)
+                    {
+                        count35++;
+                        Level1Building42.gameObject.SetActive(false);
+                        Level2Building42.gameObject.SetActive(true);
+                    }
+                    else if (count35 == 2)
+                    {
+                        count35++;
+                        Level2Building42.gameObject.SetActive(false);
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    floor32 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor33 == 2)
+                {
+                    if (count36 == 1)
+                    {
+                        count36++;
+                        Level1Building43.gameObject.SetActive(false);
+                        Level2Building43.gameObject.SetActive(true);
+                    }
+                    else if (count36 == 2)
+                    {
+                        count36++;
+                        Level2Building43.gameObject.SetActive(false);
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    floor33 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor34 == 2)
+                {
+                    if (count38 == 1)
+                    {
+                        count37++;
+                        Level1Building44.gameObject.SetActive(false);
+                        Level2Building44.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count37++;
+                        Level2Building44.gameObject.SetActive(false);
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    floor34 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor35 == 2)
+                {
+                    if (count38 == 1)
+                    {
+                        count38++;
+                        Level1Building47.gameObject.SetActive(false);
+                        Level2Building47.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count38++;
+                        Level2Building47.gameObject.SetActive(false);
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    floor35 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor36 == 2)
+                {
+                    if (count39 == 1)
+                    {
+                        count39++;
+                        Level1Building48.gameObject.SetActive(false);
+                        Level2Building48.gameObject.SetActive(true);
+                    }
+                    else if (count39 == 2)
+                    {
+                        count39++;
+                        Level2Building48.gameObject.SetActive(false);
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    floor36 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor37 == 2)
+                {
+                    if (count40 == 1)
+                    {
+                        count40++;
+                        Level1Building49.gameObject.SetActive(false);
+                        Level2Building49.gameObject.SetActive(true);
+                    }
+                    else if (count40 == 2)
+                    {
+                        count40++;
+                        Level2Building49.gameObject.SetActive(false);
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    floor37 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor38 == 2)
+                {
+                    if (count42 == 1)
+                    {
+                        count42++;
+                        Level1Building51.gameObject.SetActive(false);
+                        Level2Building51.gameObject.SetActive(true);
+                    }
+                    else if (count42 == 2)
+                    {
+                        floor38 = 0;
+                        count42++;
+                        Level2Building51.gameObject.SetActive(false);
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor39 == 2)
+                {
+                    if (count43 == 1)
+                    {
+                        count43++;
+                        Level1Building52.gameObject.SetActive(false);
+                        Level2Building52.gameObject.SetActive(true);
+                    }
+                    else if (count43 == 2)
+                    {
+                        count43++;
+                        Level2Building52.gameObject.SetActive(false);
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    floor39 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor40 == 2)
+                {
+                    if (count44 == 1)
+                    {
+                        count44++;
+                        Level1Building55.gameObject.SetActive(false);
+                        Level2Building55.gameObject.SetActive(true);
+                    }
+                    else if (count44 == 2)
+                    {
+                        count40++;
+                        Level2Building55.gameObject.SetActive(false);
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    floor40 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor41 == 2)
+                {
+                    if (count45 == 1)
+                    {
+                        count45++;
+                        Level1Building56.gameObject.SetActive(false);
+                        Level2Building56.gameObject.SetActive(true);
+                    }
+                    else if (count45 == 2)
+                    {
+                        count45++;
+                        Level2Building56.gameObject.SetActive(false);
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    floor41 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor42 == 2)
+                {
+                    if (count46 == 1)
+                    {
+                        count46++;
+                        Level1Building57.gameObject.SetActive(false);
+                        Level2Building57.gameObject.SetActive(true);
+                    }
+                    else if (count46 == 2)
+                    {
+                        count46++;
+                        Level2Building57.gameObject.SetActive(false);
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    floor42 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+            }
+        }
+        if (whoTurn == 3)
+        {
+            if (floor1 == 3 || floor2 == 3 || floor3 == 3 || floor4 == 3 || floor5 == 3 || floor6 == 3 || floor7 == 3 || floor8 == 3 || floor9 == 3 || floor10 == 3
+                || floor11 == 3 || floor12 == 3 || floor13 == 3 || floor14 == 3 || floor15 == 3 || floor16 == 3 || floor17 == 3 || floor18 == 3 || floor19 == 3| floor20 == 3
+                || floor21 == 3 || floor22 == 3 || floor23 == 3 || floor24 == 3 || floor25 == 3 || floor26 == 3 || floor27 == 3 || floor28 == 3 || floor29 == 3 || floor30 == 3
+                || floor31 == 3 || floor32 == 3 || floor33 == 3 || floor34 == 3 || floor35 == 3 || floor36 == 3 || floor37 == 3 || floor38 == 3 || floor39 == 3 || floor40 == 3
+                || floor41 == 3 || floor42 == 3)
+            {
+                if (floor1 == 3)
+                {
+                    if (count1 == 1)
+                    {
+                        count1++;
+                        Level1Building1.gameObject.SetActive(false);
+                        Level2Building1.gameObject.SetActive(true);
+                    }
+                    else if (count1 == 2)
+                    {
+                        count1++;
+                        Level2Building1.gameObject.SetActive(false);
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    floor1 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor2 == 3)
+                {
+                    if (count2 == 1)
+                    {
+                        count2++;
+                        Level1Building2.gameObject.SetActive(false);
+                        Level2Building2.gameObject.SetActive(true);
+                    }
+                    else if (count2 == 2)
+                    {
+                        count2++;
+                        Level2Building2.gameObject.SetActive(false);
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    floor2 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor3 == 3)
+                {
+                    if (count3 == 1)
+                    {
+                        count3++;
+                        Level1Building3.gameObject.SetActive(false);
+                        Level2Building3.gameObject.SetActive(true);
+                    }
+                    else if (count3 == 2)
+                    {
+                        count3++;
+                        Level2Building3.gameObject.SetActive(false);
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    floor3 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor4 == 3)
+                {
+                    if (count4 == 1)
+                    {
+                        count4++;
+                        Level1Building4.gameObject.SetActive(false);
+                        Level2Building4.gameObject.SetActive(true);
+                    }
+                    else if (count4 == 2)
+                    {
+                        count4++;
+                        Level2Building4.gameObject.SetActive(false);
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    floor4 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor5 == 3)
+                {
+                    if (count5 == 1)
+                    {
+                        count5++;
+                        Level1Building5.gameObject.SetActive(false);
+                        Level2Building5.gameObject.SetActive(true);
+                    }
+                    else if (count5 == 2)
+                    {
+                        count5++;
+                        Level2Building5.gameObject.SetActive(false);
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    floor5 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor6 == 3)
+                {
+                    if (count6 == 1)
+                    {
+                        count6++;
+                        Level1Building7.gameObject.SetActive(false);
+                        Level2Building7.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count6++;
+                        Level2Building7.gameObject.SetActive(false);
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    floor6 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor7 == 3)
+                {
+                    if (count7 == 1)
+                    {
+                        count7++;
+                        Level1Building8.gameObject.SetActive(false);
+                        Level2Building8.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count7++;
+                        Level2Building8.gameObject.SetActive(false);
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    floor7 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor8 == 3)
+                {
+                    if (count8 == 1)
+                    {
+                        count8++;
+                        Level1Building9.gameObject.SetActive(false);
+                        Level2Building9.gameObject.SetActive(true);
+                    }
+                    else if (count8 == 2)
+                    {
+                        count8++;
+                        Level2Building9.gameObject.SetActive(false);
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    floor8 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor9 == 3)
+                {
+                    if (count10 == 1)
+                    {
+                        count10++;
+                        Level1Building11.gameObject.SetActive(false);
+                        Level2Building11.gameObject.SetActive(true);
+                    }
+                    else if (count10 == 2)
+                    {
+                        count10++;
+                        Level2Building11.gameObject.SetActive(false);
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    floor9 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor10 == 3)
+                {
+                    if (count11 == 1)
+                    {
+                        count11++;
+                        Level1Building13.gameObject.SetActive(false);
+                        Level2Building13.gameObject.SetActive(true);
+                    }
+                    else if (count11 == 2)
+                    {
+                        count11++;
+                        Level2Building13.gameObject.SetActive(false);
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    floor10 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor11 == 3)
+                {
+                    if (count12 == 1)
+                    {
+                        count12++;
+                        Level1Building14.gameObject.SetActive(false);
+                        Level2Building14.gameObject.SetActive(true);
+                    }
+                    else if (count12 == 2)
+                    {
+                        count12++;
+                        Level2Building14.gameObject.SetActive(false);
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    floor11 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor12 == 3)
+                {
+                    if (count13 == 1)
+                    {
+                        count13++;
+                        Level1Building15.gameObject.SetActive(false);
+                        Level2Building15.gameObject.SetActive(true);
+                    }
+                    else if (count13 == 2)
+                    {
+                        count13++;
+                        Level2Building15.gameObject.SetActive(false);
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    floor12 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor13 == 3)
+                {
+                    if (count14 == 1)
+                    {
+                        count14++;
+                        Level1Building16.gameObject.SetActive(false);
+                        Level2Building16.gameObject.SetActive(true);
+                    }
+                    else if (count14 == 2)
+                    {
+                        count14++;
+                        Level2Building16.gameObject.SetActive(false);
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    floor13 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor14 == 3)
+                {
+                    if (count15 == 1)
+                    {
+                        count15++;
+                        Level1Building17.gameObject.SetActive(false);
+                        Level2Building17.gameObject.SetActive(true);
+                    }
+                    else if (count15 == 2)
+                    {
+                        count15++;
+                        Level2Building17.gameObject.SetActive(false);
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    floor14 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor15 == 3)
+                {
+                    if (count16 == 1)
+                    {
+                        count16++;
+                        Level1Building19.gameObject.SetActive(false);
+                        Level2Building19.gameObject.SetActive(true);
+                    }
+                    else if (count16 == 2)
+                    {
+                        count16++;
+                        Level2Building19.gameObject.SetActive(false);
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    floor15 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor16 == 3)
+                {
+                    if (count16 == 1)
+                    {
+                        count17++;
+                        Level1Building20.gameObject.SetActive(false);
+                        Level2Building20.gameObject.SetActive(true);
+                    }
+                    else if (count17 == 2)
+                    {
+                        count17++;
+                        Level2Building20.gameObject.SetActive(false);
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    floor16 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor17 == 3)
+                {
+                    if (count19 == 1)
+                    {
+                        count19++;
+                        Level1Building22.gameObject.SetActive(false);
+                        Level2Building22.gameObject.SetActive(true);
+                    }
+                    else if (count19 == 2)
+                    {
+                        count19++;
+                        Level2Building22.gameObject.SetActive(false);
+                        Level3Building22.gameObject.SetActive(true);
+                    }
+                    floor17 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor18 == 3)
+                {
+                    if (count20 == 1)
+                    {
+                        count20++;
+                        Level1Building23.gameObject.SetActive(false);
+                        Level2Building23.gameObject.SetActive(true);
+                    }
+                    else if (count20 == 2)
+                    {
+                        count20++;
+                        Level2Building23.gameObject.SetActive(false);
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    floor18 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor19 == 3)
+                {
+                    if (count21 == 1)
+                    {
+                        count21++;
+                        Level1Building24.gameObject.SetActive(false);
+                        Level2Building24.gameObject.SetActive(true);
+                    }
+                    else if (count21 == 2)
+                    {
+                        count21++;
+                        Level2Building24.gameObject.SetActive(false);
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    floor19 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor20 == 3)
+                {
+                    if (count22 == 1)
+                    {
+                        count22++;
+                        Level1Building26.gameObject.SetActive(false);
+                        Level2Building26.gameObject.SetActive(true);
+                    }
+                    else if (count22 == 2)
+                    {
+                        count22++;
+                        Level2Building26.gameObject.SetActive(false);
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    floor20 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor21 == 3)
+                {
+                    if (count23 == 1)
+                    {
+                        count23++;
+                        Level1Building27.gameObject.SetActive(false);
+                        Level2Building27.gameObject.SetActive(true);
+                    }
+                    else if (count23 == 2)
+                    {
+                        count23++;
+                        Level2Building27.gameObject.SetActive(false);
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    floor21 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor22 == 3)
+                {
+                    if (count24 == 1)
+                    {
+                        count24++;
+                        Level1Building28.gameObject.SetActive(false);
+                        Level2Building28.gameObject.SetActive(true);
+                    }
+                    else if (count24 == 2)
+                    {
+                        count24++;
+                        Level2Building28.gameObject.SetActive(false);
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    floor22 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor23 == 3)
+                {
+                    if (count25 == 1)
+                    {
+                        count25++;
+                        Level1Building29.gameObject.SetActive(false);
+                        Level2Building29.gameObject.SetActive(true);
+                    }
+                    else if (count25 == 2)
+                    {
+                        count25++;
+                        Level2Building29.gameObject.SetActive(false);
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    floor23 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor24 == 3)
+                {
+                    if (count26 == 1)
+                    {
+                        count26++;
+                        Level1Building31.gameObject.SetActive(false);
+                        Level2Building31.gameObject.SetActive(true);
+                    }
+                    else if (count26 == 2)
+                    {
+                        count26++;
+                        Level2Building31.gameObject.SetActive(false);
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    floor24 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor25 == 3)
+                {
+                    if (count27 == 1)
+                    {
+                        count27++;
+                        Level1Building32.gameObject.SetActive(false);
+                        Level2Building32.gameObject.SetActive(true);
+                    }
+                    else if (count27 == 2)
+                    {
+                        count27++;
+                        Level2Building32.gameObject.SetActive(false);
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    floor25 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor26 == 3)
+                {
+                    if (count28 == 1)
+                    {
+                        count28++;
+                        Level1Building33.gameObject.SetActive(false);
+                        Level2Building33.gameObject.SetActive(true);
+                    }
+                    else if (count28 == 2)
+                    {
+                        count28++;
+                        Level2Building33.gameObject.SetActive(false);
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    floor26 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor27 == 3)
+                {
+                    if (count29 == 1)
+                    {
+                        count29++;
+                        Level1Building34.gameObject.SetActive(false);
+                        Level2Building34.gameObject.SetActive(true);
+                    }
+                    else if (count29 == 2)
+                    {
+                        count29++;
+                        Level2Building34.gameObject.SetActive(false);
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    floor27 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor28 == 3)
+                {
+                    if (count30 == 1)
+                    {
+                        count30++;
+                        Level1Building36.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count30 == 2)
+                    {
+                        count30++;
+                        Level2Building36.gameObject.SetActive(false);
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    floor28 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor29 == 3)
+                {
+                    if (count31 == 1)
+                    {
+                        count31++;
+                        Level1Building37.gameObject.SetActive(false);
+                        Level2Building37.gameObject.SetActive(true);
+                    }
+                    else if (count31 == 2)
+                    {
+                        count31++;
+                        Level2Building37.gameObject.SetActive(false);
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    floor29 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor30 == 3)
+                {
+                    if (count33 == 1)
+                    {
+                        count33++;
+                        Level1Building39.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count33 == 2)
+                    {
+                        count33++;
+                        Level2Building39.gameObject.SetActive(false);
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    floor30 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor31 == 3)
+                {
+                    if (count34 == 1)
+                    {
+                        count34++;
+                        Level1Building40.gameObject.SetActive(false);
+                        Level2Building40.gameObject.SetActive(true);
+                    }
+                    else if (count34 == 2)
+                    {
+                        count34++;
+                        Level2Building40.gameObject.SetActive(false);
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    floor31 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor32 == 3)
+                {
+                    if (count35 == 1)
+                    {
+                        count35++;
+                        Level1Building42.gameObject.SetActive(false);
+                        Level2Building42.gameObject.SetActive(true);
+                    }
+                    else if (count35 == 2)
+                    {
+                        count35++;
+                        Level2Building42.gameObject.SetActive(false);
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    floor32 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor33 == 3)
+                {
+                    if (count36 == 1)
+                    {
+                        count36++;
+                        Level1Building43.gameObject.SetActive(false);
+                        Level2Building43.gameObject.SetActive(true);
+                    }
+                    else if (count36 == 2)
+                    {
+                        count36++;
+                        Level2Building43.gameObject.SetActive(false);
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    floor33 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor34 == 3)
+                {
+                    if (count38 == 1)
+                    {
+                        count37++;
+                        Level1Building44.gameObject.SetActive(false);
+                        Level2Building44.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count37++;
+                        Level2Building44.gameObject.SetActive(false);
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    floor34 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor35 == 3)
+                {
+                    if (count38 == 1)
+                    {
+                        count38++;
+                        Level1Building47.gameObject.SetActive(false);
+                        Level2Building47.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count38++;
+                        Level2Building47.gameObject.SetActive(false);
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    floor35 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor36 == 3)
+                {
+                    if (count39 == 1)
+                    {
+                        count39++;
+                        Level1Building48.gameObject.SetActive(false);
+                        Level2Building48.gameObject.SetActive(true);
+                    }
+                    else if (count39 == 2)
+                    {
+                        count39++;
+                        Level2Building48.gameObject.SetActive(false);
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    floor36 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor37 == 3)
+                {
+                    if (count40 == 1)
+                    {
+                        count40++;
+                        Level1Building49.gameObject.SetActive(false);
+                        Level2Building49.gameObject.SetActive(true);
+                    }
+                    else if (count40 == 2)
+                    {
+                        count40++;
+                        Level2Building49.gameObject.SetActive(false);
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    floor37 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor38 == 3)
+                {
+                    if (count42 == 1)
+                    {
+                        count42++;
+                        Level1Building51.gameObject.SetActive(false);
+                        Level2Building51.gameObject.SetActive(true);
+                    }
+                    else if (count42 == 2)
+                    {
+                        floor38 = 0;
+                        count42++;
+                        Level2Building51.gameObject.SetActive(false);
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor39 == 3)
+                {
+                    if (count43 == 1)
+                    {
+                        count43++;
+                        Level1Building52.gameObject.SetActive(false);
+                        Level2Building52.gameObject.SetActive(true);
+                    }
+                    else if (count43 == 2)
+                    {
+                        count43++;
+                        Level2Building52.gameObject.SetActive(false);
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    floor39 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor40 == 3)
+                {
+                    if (count44 == 1)
+                    {
+                        count44++;
+                        Level1Building55.gameObject.SetActive(false);
+                        Level2Building55.gameObject.SetActive(true);
+                    }
+                    else if (count44 == 2)
+                    {
+                        count40++;
+                        Level2Building55.gameObject.SetActive(false);
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    floor40 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor41 == 3)
+                {
+                    if (count45 == 1)
+                    {
+                        count45++;
+                        Level1Building56.gameObject.SetActive(false);
+                        Level2Building56.gameObject.SetActive(true);
+                    }
+                    else if (count45 == 2)
+                    {
+                        count45++;
+                        Level2Building56.gameObject.SetActive(false);
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    floor41 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor42 == 3)
+                {
+                    if (count46 == 1)
+                    {
+                        count46++;
+                        Level1Building57.gameObject.SetActive(false);
+                        Level2Building57.gameObject.SetActive(true);
+                    }
+                    else if (count46 == 2)
+                    {
+                        count46++;
+                        Level2Building57.gameObject.SetActive(false);
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    floor42 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+            }
+        }
+        if (whoTurn == 4)
+        {
+            if (floor1 == 4 || floor2 == 4 || floor3 == 4 || floor4 == 4 || floor5 == 4 || floor6 == 4 || floor7 == 4 || floor8 == 4 || floor9 == 4 || floor10 == 4
+                || floor11 == 4 || floor12 == 4 || floor13 == 4 || floor14 == 4 || floor15 == 4 || floor16 == 4 || floor17 == 4 || floor18 == 4 || floor19 == 4 | floor20 == 4
+                || floor21 == 4 || floor22 == 4 || floor23 == 4 || floor24 == 4 || floor25 == 4 || floor26 == 4 || floor27 == 4 || floor28 == 4 || floor29 == 4 || floor30 == 4
+                || floor31 == 4 || floor32 == 4 || floor33 == 4 || floor34 == 4 || floor35 == 4 || floor36 == 4 || floor37 == 4 || floor38 == 4 || floor39 == 4 || floor40 == 4
+                || floor41 == 4 || floor42 == 4)
+            {
+                if (floor1 == 4)
+                {
+                    if (count1 == 1)
+                    {
+                        count1++;
+                        Level1Building1.gameObject.SetActive(false);
+                        Level2Building1.gameObject.SetActive(true);
+                    }
+                    else if (count1 == 2)
+                    {
+                        count1++;
+                        Level2Building1.gameObject.SetActive(false);
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    floor1 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor2 == 4)
+                {
+                    if (count2 == 1)
+                    {
+                        count2++;
+                        Level1Building2.gameObject.SetActive(false);
+                        Level2Building2.gameObject.SetActive(true);
+                    }
+                    else if (count2 == 2)
+                    {
+                        count2++;
+                        Level2Building2.gameObject.SetActive(false);
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    floor2 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor3 == 4)
+                {
+                    if (count3 == 1)
+                    {
+                        count3++;
+                        Level1Building3.gameObject.SetActive(false);
+                        Level2Building3.gameObject.SetActive(true);
+                    }
+                    else if (count3 == 2)
+                    {
+                        count3++;
+                        Level2Building3.gameObject.SetActive(false);
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    floor3 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor4 == 4)
+                {
+                    if (count4 == 1)
+                    {
+                        count4++;
+                        Level1Building4.gameObject.SetActive(false);
+                        Level2Building4.gameObject.SetActive(true);
+                    }
+                    else if (count4 == 2)
+                    {
+                        count4++;
+                        Level2Building4.gameObject.SetActive(false);
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    floor4 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor5 == 4)
+                {
+                    if (count5 == 1)
+                    {
+                        count5++;
+                        Level1Building5.gameObject.SetActive(false);
+                        Level2Building5.gameObject.SetActive(true);
+                    }
+                    else if (count5 == 2)
+                    {
+                        count5++;
+                        Level2Building5.gameObject.SetActive(false);
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    floor5 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor6 == 4)
+                {
+                    if (count6 == 1)
+                    {
+                        count6++;
+                        Level1Building7.gameObject.SetActive(false);
+                        Level2Building7.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count6++;
+                        Level2Building7.gameObject.SetActive(false);
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    floor6 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor7 == 4)
+                {
+                    if (count7 == 1)
+                    {
+                        count7++;
+                        Level1Building8.gameObject.SetActive(false);
+                        Level2Building8.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count7++;
+                        Level2Building8.gameObject.SetActive(false);
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    floor7 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor8 == 4)
+                {
+                    if (count8 == 1)
+                    {
+                        count8++;
+                        Level1Building9.gameObject.SetActive(false);
+                        Level2Building9.gameObject.SetActive(true);
+                    }
+                    else if (count8 == 2)
+                    {
+                        count8++;
+                        Level2Building9.gameObject.SetActive(false);
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    floor8 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor9 == 4)
+                {
+                    if (count10 == 1)
+                    {
+                        count10++;
+                        Level1Building11.gameObject.SetActive(false);
+                        Level2Building11.gameObject.SetActive(true);
+                    }
+                    else if (count10 == 2)
+                    {
+                        count10++;
+                        Level2Building11.gameObject.SetActive(false);
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    floor9 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor10 == 4)
+                {
+                    if (count11 == 1)
+                    {
+                        count11++;
+                        Level1Building13.gameObject.SetActive(false);
+                        Level2Building13.gameObject.SetActive(true);
+                    }
+                    else if (count11 == 2)
+                    {
+                        count11++;
+                        Level2Building13.gameObject.SetActive(false);
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    floor10 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor11 == 4)
+                {
+                    if (count12 == 1)
+                    {
+                        count12++;
+                        Level1Building14.gameObject.SetActive(false);
+                        Level2Building14.gameObject.SetActive(true);
+                    }
+                    else if (count12 == 2)
+                    {
+                        count12++;
+                        Level2Building14.gameObject.SetActive(false);
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    floor11 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor12 == 4)
+                {
+                    if (count13 == 1)
+                    {
+                        count13++;
+                        Level1Building15.gameObject.SetActive(false);
+                        Level2Building15.gameObject.SetActive(true);
+                    }
+                    else if (count13 == 2)
+                    {
+                        count13++;
+                        Level2Building15.gameObject.SetActive(false);
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    floor12 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor13 == 4)
+                {
+                    if (count14 == 1)
+                    {
+                        count14++;
+                        Level1Building16.gameObject.SetActive(false);
+                        Level2Building16.gameObject.SetActive(true);
+                    }
+                    else if (count14 == 2)
+                    {
+                        count14++;
+                        Level2Building16.gameObject.SetActive(false);
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    floor13 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor14 == 4)
+                {
+                    if (count15 == 1)
+                    {
+                        count15++;
+                        Level1Building17.gameObject.SetActive(false);
+                        Level2Building17.gameObject.SetActive(true);
+                    }
+                    else if (count15 == 2)
+                    {
+                        count15++;
+                        Level2Building17.gameObject.SetActive(false);
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    floor14 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor15 == 4)
+                {
+                    if (count16 == 1)
+                    {
+                        count16++;
+                        Level1Building19.gameObject.SetActive(false);
+                        Level2Building19.gameObject.SetActive(true);
+                    }
+                    else if (count16 == 2)
+                    {
+                        count16++;
+                        Level2Building19.gameObject.SetActive(false);
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    floor15 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor16 == 4)
+                {
+                    if (count16 == 1)
+                    {
+                        count17++;
+                        Level1Building20.gameObject.SetActive(false);
+                        Level2Building20.gameObject.SetActive(true);
+                    }
+                    else if (count17 == 2)
+                    {
+                        count17++;
+                        Level2Building20.gameObject.SetActive(false);
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    floor16 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor17 == 4)
+                {
+                    if (count19 == 1)
+                    {
+                        count19++;
+                        Level1Building22.gameObject.SetActive(false);
+                        Level2Building22.gameObject.SetActive(true);
+                    }
+                    else if (count19 == 2)
+                    {
+                        count19++;
+                        Level2Building22.gameObject.SetActive(false);
+                        Level3Building22.gameObject.SetActive(true);
+                    }
+                    floor17 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor18 == 4)
+                {
+                    if (count20 == 1)
+                    {
+                        count20++;
+                        Level1Building23.gameObject.SetActive(false);
+                        Level2Building23.gameObject.SetActive(true);
+                    }
+                    else if (count20 == 2)
+                    {
+                        count20++;
+                        Level2Building23.gameObject.SetActive(false);
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    floor18 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor19 == 4)
+                {
+                    if (count21 == 1)
+                    {
+                        count21++;
+                        Level1Building24.gameObject.SetActive(false);
+                        Level2Building24.gameObject.SetActive(true);
+                    }
+                    else if (count21 == 2)
+                    {
+                        count21++;
+                        Level2Building24.gameObject.SetActive(false);
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    floor19 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor20 == 4)
+                {
+                    if (count22 == 1)
+                    {
+                        count22++;
+                        Level1Building26.gameObject.SetActive(false);
+                        Level2Building26.gameObject.SetActive(true);
+                    }
+                    else if (count22 == 2)
+                    {
+                        count22++;
+                        Level2Building26.gameObject.SetActive(false);
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    floor20 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor21 == 4)
+                {
+                    if (count23 == 1)
+                    {
+                        count23++;
+                        Level1Building27.gameObject.SetActive(false);
+                        Level2Building27.gameObject.SetActive(true);
+                    }
+                    else if (count23 == 2)
+                    {
+                        count23++;
+                        Level2Building27.gameObject.SetActive(false);
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    floor21 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor22 == 4)
+                {
+                    if (count24 == 1)
+                    {
+                        count24++;
+                        Level1Building28.gameObject.SetActive(false);
+                        Level2Building28.gameObject.SetActive(true);
+                    }
+                    else if (count24 == 2)
+                    {
+                        count24++;
+                        Level2Building28.gameObject.SetActive(false);
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    floor22 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor23 == 4)
+                {
+                    if (count25 == 1)
+                    {
+                        count25++;
+                        Level1Building29.gameObject.SetActive(false);
+                        Level2Building29.gameObject.SetActive(true);
+                    }
+                    else if (count25 == 2)
+                    {
+                        count25++;
+                        Level2Building29.gameObject.SetActive(false);
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    floor23 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor24 == 4)
+                {
+                    if (count26 == 1)
+                    {
+                        count26++;
+                        Level1Building31.gameObject.SetActive(false);
+                        Level2Building31.gameObject.SetActive(true);
+                    }
+                    else if (count26 == 2)
+                    {
+                        count26++;
+                        Level2Building31.gameObject.SetActive(false);
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    floor24 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor25 == 4)
+                {
+                    if (count27 == 1)
+                    {
+                        count27++;
+                        Level1Building32.gameObject.SetActive(false);
+                        Level2Building32.gameObject.SetActive(true);
+                    }
+                    else if (count27 == 2)
+                    {
+                        count27++;
+                        Level2Building32.gameObject.SetActive(false);
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    floor25 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor26 == 4)
+                {
+                    if (count28 == 1)
+                    {
+                        count28++;
+                        Level1Building33.gameObject.SetActive(false);
+                        Level2Building33.gameObject.SetActive(true);
+                    }
+                    else if (count28 == 2)
+                    {
+                        count28++;
+                        Level2Building33.gameObject.SetActive(false);
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    floor26 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor27 == 4)
+                {
+                    if (count29 == 1)
+                    {
+                        count29++;
+                        Level1Building34.gameObject.SetActive(false);
+                        Level2Building34.gameObject.SetActive(true);
+                    }
+                    else if (count29 == 2)
+                    {
+                        count29++;
+                        Level2Building34.gameObject.SetActive(false);
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    floor27 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor28 == 4)
+                {
+                    if (count30 == 1)
+                    {
+                        count30++;
+                        Level1Building36.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count30 == 2)
+                    {
+                        count30++;
+                        Level2Building36.gameObject.SetActive(false);
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    floor28 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor29 == 4)
+                {
+                    if (count31 == 1)
+                    {
+                        count31++;
+                        Level1Building37.gameObject.SetActive(false);
+                        Level2Building37.gameObject.SetActive(true);
+                    }
+                    else if (count31 == 2)
+                    {
+                        count31++;
+                        Level2Building37.gameObject.SetActive(false);
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    floor29 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor30 == 4)
+                {
+                    if (count33 == 1)
+                    {
+                        count33++;
+                        Level1Building39.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count33 == 2)
+                    {
+                        count33++;
+                        Level2Building39.gameObject.SetActive(false);
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    floor30 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor31 == 4)
+                {
+                    if (count34 == 1)
+                    {
+                        count34++;
+                        Level1Building40.gameObject.SetActive(false);
+                        Level2Building40.gameObject.SetActive(true);
+                    }
+                    else if (count34 == 2)
+                    {
+                        count34++;
+                        Level2Building40.gameObject.SetActive(false);
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    floor31 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor32 == 4)
+                {
+                    if (count35 == 1)
+                    {
+                        count35++;
+                        Level1Building42.gameObject.SetActive(false);
+                        Level2Building42.gameObject.SetActive(true);
+                    }
+                    else if (count35 == 2)
+                    {
+                        count35++;
+                        Level2Building42.gameObject.SetActive(false);
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    floor32 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor33 == 4)
+                {
+                    if (count36 == 1)
+                    {
+                        count36++;
+                        Level1Building43.gameObject.SetActive(false);
+                        Level2Building43.gameObject.SetActive(true);
+                    }
+                    else if (count36 == 2)
+                    {
+                        count36++;
+                        Level2Building43.gameObject.SetActive(false);
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    floor33 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor34 == 4)
+                {
+                    if (count38 == 1)
+                    {
+                        count37++;
+                        Level1Building44.gameObject.SetActive(false);
+                        Level2Building44.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count37++;
+                        Level2Building44.gameObject.SetActive(false);
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    floor34 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor35 == 4)
+                {
+                    if (count38 == 1)
+                    {
+                        count38++;
+                        Level1Building47.gameObject.SetActive(false);
+                        Level2Building47.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count38++;
+                        Level2Building47.gameObject.SetActive(false);
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    floor35 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor36 == 4)
+                {
+                    if (count39 == 1)
+                    {
+                        count39++;
+                        Level1Building48.gameObject.SetActive(false);
+                        Level2Building48.gameObject.SetActive(true);
+                    }
+                    else if (count39 == 2)
+                    {
+                        count39++;
+                        Level2Building48.gameObject.SetActive(false);
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    floor36 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor37 == 4)
+                {
+                    if (count40 == 1)
+                    {
+                        count40++;
+                        Level1Building49.gameObject.SetActive(false);
+                        Level2Building49.gameObject.SetActive(true);
+                    }
+                    else if (count40 == 2)
+                    {
+                        count40++;
+                        Level2Building49.gameObject.SetActive(false);
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    floor37 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor38 == 4)
+                {
+                    if (count42 == 1)
+                    {
+                        count42++;
+                        Level1Building51.gameObject.SetActive(false);
+                        Level2Building51.gameObject.SetActive(true);
+                    }
+                    else if (count42 == 2)
+                    {
+                        floor38 = 0;
+                        count42++;
+                        Level2Building51.gameObject.SetActive(false);
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor39 == 4)
+                {
+                    if (count43 == 1)
+                    {
+                        count43++;
+                        Level1Building52.gameObject.SetActive(false);
+                        Level2Building52.gameObject.SetActive(true);
+                    }
+                    else if (count43 == 2)
+                    {
+                        count43++;
+                        Level2Building52.gameObject.SetActive(false);
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    floor39 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor40 == 4)
+                {
+                    if (count44 == 1)
+                    {
+                        count44++;
+                        Level1Building55.gameObject.SetActive(false);
+                        Level2Building55.gameObject.SetActive(true);
+                    }
+                    else if (count44 == 2)
+                    {
+                        count40++;
+                        Level2Building55.gameObject.SetActive(false);
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    floor40 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor41 == 4)
+                {
+                    if (count45 == 1)
+                    {
+                        count45++;
+                        Level1Building56.gameObject.SetActive(false);
+                        Level2Building56.gameObject.SetActive(true);
+                    }
+                    else if (count45 == 2)
+                    {
+                        count45++;
+                        Level2Building56.gameObject.SetActive(false);
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    floor41 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor42 == 4)
+                {
+                    if (count46 == 1)
+                    {
+                        count46++;
+                        Level1Building57.gameObject.SetActive(false);
+                        Level2Building57.gameObject.SetActive(true);
+                    }
+                    else if (count46 == 2)
+                    {
+                        count46++;
+                        Level2Building57.gameObject.SetActive(false);
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    floor42 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+            }
+        }
+        if (whoTurn == 5)
+        {
+            if (floor1 == 5 || floor2 == 5 || floor3 == 5 || floor4 == 5 || floor5 == 5 || floor6 == 5 || floor7 == 5 || floor8 == 5 || floor9 == 5 || floor10 == 5
+                || floor11 == 5 || floor12 == 5 || floor13 == 5 || floor14 == 5 || floor15 == 5 || floor16 == 5 || floor17 == 5 || floor18 == 5 || floor19 == 5 | floor20 == 5
+                || floor21 == 5 || floor22 == 5 || floor23 == 5 || floor24 == 5 || floor25 == 5 || floor26 == 5 || floor27 == 5 || floor28 == 5 || floor29 == 5 || floor30 == 5
+                || floor31 == 5 || floor32 == 5 || floor33 == 5 || floor34 == 5 || floor35 == 5 || floor36 == 5 || floor37 == 5 || floor38 == 5 || floor39 == 5 || floor40 == 5
+                || floor41 == 5 || floor42 == 5)
+            {
+                if (floor1 == 5)
+                {
+                    if (count1 == 1)
+                    {
+                        count1++;
+                        Level1Building1.gameObject.SetActive(false);
+                        Level2Building1.gameObject.SetActive(true);
+                    }
+                    else if (count1 == 2)
+                    {
+                        count1++;
+                        Level2Building1.gameObject.SetActive(false);
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    floor1 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor2 == 5)
+                {
+                    if (count2 == 1)
+                    {
+                        count2++;
+                        Level1Building2.gameObject.SetActive(false);
+                        Level2Building2.gameObject.SetActive(true);
+                    }
+                    else if (count2 == 2)
+                    {
+                        count2++;
+                        Level2Building2.gameObject.SetActive(false);
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    floor2 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor3 == 5)
+                {
+                    if (count3 == 1)
+                    {
+                        count3++;
+                        Level1Building3.gameObject.SetActive(false);
+                        Level2Building3.gameObject.SetActive(true);
+                    }
+                    else if (count3 == 2)
+                    {
+                        count3++;
+                        Level2Building3.gameObject.SetActive(false);
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    floor3 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor4 == 5)
+                {
+                    if (count4 == 1)
+                    {
+                        count4++;
+                        Level1Building4.gameObject.SetActive(false);
+                        Level2Building4.gameObject.SetActive(true);
+                    }
+                    else if (count4 == 2)
+                    {
+                        count4++;
+                        Level2Building4.gameObject.SetActive(false);
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    floor4 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor5 == 5)
+                {
+                    if (count5 == 1)
+                    {
+                        count5++;
+                        Level1Building5.gameObject.SetActive(false);
+                        Level2Building5.gameObject.SetActive(true);
+                    }
+                    else if (count5 == 2)
+                    {
+                        count5++;
+                        Level2Building5.gameObject.SetActive(false);
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    floor5 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor6 == 5)
+                {
+                    if (count6 == 1)
+                    {
+                        count6++;
+                        Level1Building7.gameObject.SetActive(false);
+                        Level2Building7.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count6++;
+                        Level2Building7.gameObject.SetActive(false);
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    floor6 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor7 == 5)
+                {
+                    if (count7 == 1)
+                    {
+                        count7++;
+                        Level1Building8.gameObject.SetActive(false);
+                        Level2Building8.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count7++;
+                        Level2Building8.gameObject.SetActive(false);
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    floor7 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor8 == 5)
+                {
+                    if (count8 == 1)
+                    {
+                        count8++;
+                        Level1Building9.gameObject.SetActive(false);
+                        Level2Building9.gameObject.SetActive(true);
+                    }
+                    else if (count8 == 2)
+                    {
+                        count8++;
+                        Level2Building9.gameObject.SetActive(false);
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    floor8 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor9 == 5)
+                {
+                    if (count10 == 1)
+                    {
+                        count10++;
+                        Level1Building11.gameObject.SetActive(false);
+                        Level2Building11.gameObject.SetActive(true);
+                    }
+                    else if (count10 == 2)
+                    {
+                        count10++;
+                        Level2Building11.gameObject.SetActive(false);
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    floor9 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor10 == 5)
+                {
+                    if (count11 == 1)
+                    {
+                        count11++;
+                        Level1Building13.gameObject.SetActive(false);
+                        Level2Building13.gameObject.SetActive(true);
+                    }
+                    else if (count11 == 2)
+                    {
+                        count11++;
+                        Level2Building13.gameObject.SetActive(false);
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    floor10 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor11 == 5)
+                {
+                    if (count12 == 1)
+                    {
+                        count12++;
+                        Level1Building14.gameObject.SetActive(false);
+                        Level2Building14.gameObject.SetActive(true);
+                    }
+                    else if (count12 == 2)
+                    {
+                        count12++;
+                        Level2Building14.gameObject.SetActive(false);
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    floor11 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor12 == 5)
+                {
+                    if (count13 == 1)
+                    {
+                        count13++;
+                        Level1Building15.gameObject.SetActive(false);
+                        Level2Building15.gameObject.SetActive(true);
+                    }
+                    else if (count13 == 2)
+                    {
+                        count13++;
+                        Level2Building15.gameObject.SetActive(false);
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    floor12 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor13 == 5)
+                {
+                    if (count14 == 1)
+                    {
+                        count14++;
+                        Level1Building16.gameObject.SetActive(false);
+                        Level2Building16.gameObject.SetActive(true);
+                    }
+                    else if (count14 == 2)
+                    {
+                        count14++;
+                        Level2Building16.gameObject.SetActive(false);
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    floor13 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor14 == 5)
+                {
+                    if (count15 == 1)
+                    {
+                        count15++;
+                        Level1Building17.gameObject.SetActive(false);
+                        Level2Building17.gameObject.SetActive(true);
+                    }
+                    else if (count15 == 2)
+                    {
+                        count15++;
+                        Level2Building17.gameObject.SetActive(false);
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    floor14 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor15 == 5)
+                {
+                    if (count16 == 1)
+                    {
+                        count16++;
+                        Level1Building19.gameObject.SetActive(false);
+                        Level2Building19.gameObject.SetActive(true);
+                    }
+                    else if (count16 == 2)
+                    {
+                        count16++;
+                        Level2Building19.gameObject.SetActive(false);
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    floor15 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor16 == 5)
+                {
+                    if (count16 == 1)
+                    {
+                        count17++;
+                        Level1Building20.gameObject.SetActive(false);
+                        Level2Building20.gameObject.SetActive(true);
+                    }
+                    else if (count17 == 2)
+                    {
+                        count17++;
+                        Level2Building20.gameObject.SetActive(false);
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    floor16 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor17 == 5)
+                {
+                    if (count19 == 1)
+                    {
+                        count19++;
+                        Level1Building22.gameObject.SetActive(false);
+                        Level2Building22.gameObject.SetActive(true);
+                    }
+                    else if (count19 == 2)
+                    {
+                        count19++;
+                        Level2Building22.gameObject.SetActive(false);
+                        Level3Building22.gameObject.SetActive(true);
+                    }
+                    floor17 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor18 == 5)
+                {
+                    if (count20 == 1)
+                    {
+                        count20++;
+                        Level1Building23.gameObject.SetActive(false);
+                        Level2Building23.gameObject.SetActive(true);
+                    }
+                    else if (count20 == 2)
+                    {
+                        count20++;
+                        Level2Building23.gameObject.SetActive(false);
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    floor18 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor19 == 5)
+                {
+                    if (count21 == 1)
+                    {
+                        count21++;
+                        Level1Building24.gameObject.SetActive(false);
+                        Level2Building24.gameObject.SetActive(true);
+                    }
+                    else if (count21 == 2)
+                    {
+                        count21++;
+                        Level2Building24.gameObject.SetActive(false);
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    floor19 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor20 == 5)
+                {
+                    if (count22 == 1)
+                    {
+                        count22++;
+                        Level1Building26.gameObject.SetActive(false);
+                        Level2Building26.gameObject.SetActive(true);
+                    }
+                    else if (count22 == 2)
+                    {
+                        count22++;
+                        Level2Building26.gameObject.SetActive(false);
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    floor20 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor21 == 5)
+                {
+                    if (count23 == 1)
+                    {
+                        count23++;
+                        Level1Building27.gameObject.SetActive(false);
+                        Level2Building27.gameObject.SetActive(true);
+                    }
+                    else if (count23 == 2)
+                    {
+                        count23++;
+                        Level2Building27.gameObject.SetActive(false);
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    floor21 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor22 == 5)
+                {
+                    if (count24 == 1)
+                    {
+                        count24++;
+                        Level1Building28.gameObject.SetActive(false);
+                        Level2Building28.gameObject.SetActive(true);
+                    }
+                    else if (count24 == 2)
+                    {
+                        count24++;
+                        Level2Building28.gameObject.SetActive(false);
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    floor22 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor23 == 5)
+                {
+                    if (count25 == 1)
+                    {
+                        count25++;
+                        Level1Building29.gameObject.SetActive(false);
+                        Level2Building29.gameObject.SetActive(true);
+                    }
+                    else if (count25 == 2)
+                    {
+                        count25++;
+                        Level2Building29.gameObject.SetActive(false);
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    floor23 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor24 == 5)
+                {
+                    if (count26 == 1)
+                    {
+                        count26++;
+                        Level1Building31.gameObject.SetActive(false);
+                        Level2Building31.gameObject.SetActive(true);
+                    }
+                    else if (count26 == 2)
+                    {
+                        count26++;
+                        Level2Building31.gameObject.SetActive(false);
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    floor24 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor25 == 5)
+                {
+                    if (count27 == 1)
+                    {
+                        count27++;
+                        Level1Building32.gameObject.SetActive(false);
+                        Level2Building32.gameObject.SetActive(true);
+                    }
+                    else if (count27 == 2)
+                    {
+                        count27++;
+                        Level2Building32.gameObject.SetActive(false);
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    floor25 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor26 == 5)
+                {
+                    if (count28 == 1)
+                    {
+                        count28++;
+                        Level1Building33.gameObject.SetActive(false);
+                        Level2Building33.gameObject.SetActive(true);
+                    }
+                    else if (count28 == 2)
+                    {
+                        count28++;
+                        Level2Building33.gameObject.SetActive(false);
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    floor26 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor27 == 5)
+                {
+                    if (count29 == 1)
+                    {
+                        count29++;
+                        Level1Building34.gameObject.SetActive(false);
+                        Level2Building34.gameObject.SetActive(true);
+                    }
+                    else if (count29 == 2)
+                    {
+                        count29++;
+                        Level2Building34.gameObject.SetActive(false);
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    floor27 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor28 == 5)
+                {
+                    if (count30 == 1)
+                    {
+                        count30++;
+                        Level1Building36.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count30 == 2)
+                    {
+                        count30++;
+                        Level2Building36.gameObject.SetActive(false);
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    floor28 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor29 == 5)
+                {
+                    if (count31 == 1)
+                    {
+                        count31++;
+                        Level1Building37.gameObject.SetActive(false);
+                        Level2Building37.gameObject.SetActive(true);
+                    }
+                    else if (count31 == 2)
+                    {
+                        count31++;
+                        Level2Building37.gameObject.SetActive(false);
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    floor29 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor30 == 5)
+                {
+                    if (count33 == 1)
+                    {
+                        count33++;
+                        Level1Building39.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count33 == 2)
+                    {
+                        count33++;
+                        Level2Building39.gameObject.SetActive(false);
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    floor30 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor31 == 5)
+                {
+                    if (count34 == 1)
+                    {
+                        count34++;
+                        Level1Building40.gameObject.SetActive(false);
+                        Level2Building40.gameObject.SetActive(true);
+                    }
+                    else if (count34 == 2)
+                    {
+                        count34++;
+                        Level2Building40.gameObject.SetActive(false);
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    floor31 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor32 == 5)
+                {
+                    if (count35 == 1)
+                    {
+                        count35++;
+                        Level1Building42.gameObject.SetActive(false);
+                        Level2Building42.gameObject.SetActive(true);
+                    }
+                    else if (count35 == 2)
+                    {
+                        count35++;
+                        Level2Building42.gameObject.SetActive(false);
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    floor32 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor33 == 5)
+                {
+                    if (count36 == 1)
+                    {
+                        count36++;
+                        Level1Building43.gameObject.SetActive(false);
+                        Level2Building43.gameObject.SetActive(true);
+                    }
+                    else if (count36 == 2)
+                    {
+                        count36++;
+                        Level2Building43.gameObject.SetActive(false);
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    floor33 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor34 == 5)
+                {
+                    if (count38 == 1)
+                    {
+                        count37++;
+                        Level1Building44.gameObject.SetActive(false);
+                        Level2Building44.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count37++;
+                        Level2Building44.gameObject.SetActive(false);
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    floor34 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor35 == 5)
+                {
+                    if (count38 == 1)
+                    {
+                        count38++;
+                        Level1Building47.gameObject.SetActive(false);
+                        Level2Building47.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count38++;
+                        Level2Building47.gameObject.SetActive(false);
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    floor35 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor36 == 5)
+                {
+                    if (count39 == 1)
+                    {
+                        count39++;
+                        Level1Building48.gameObject.SetActive(false);
+                        Level2Building48.gameObject.SetActive(true);
+                    }
+                    else if (count39 == 2)
+                    {
+                        count39++;
+                        Level2Building48.gameObject.SetActive(false);
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    floor36 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor37 == 5)
+                {
+                    if (count40 == 1)
+                    {
+                        count40++;
+                        Level1Building49.gameObject.SetActive(false);
+                        Level2Building49.gameObject.SetActive(true);
+                    }
+                    else if (count40 == 2)
+                    {
+                        count40++;
+                        Level2Building49.gameObject.SetActive(false);
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    floor37 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor38 == 5)
+                {
+                    if (count42 == 1)
+                    {
+                        count42++;
+                        Level1Building51.gameObject.SetActive(false);
+                        Level2Building51.gameObject.SetActive(true);
+                    }
+                    else if (count42 == 2)
+                    {
+                        floor38 = 0;
+                        count42++;
+                        Level2Building51.gameObject.SetActive(false);
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor39 == 5)
+                {
+                    if (count43 == 1)
+                    {
+                        count43++;
+                        Level1Building52.gameObject.SetActive(false);
+                        Level2Building52.gameObject.SetActive(true);
+                    }
+                    else if (count43 == 2)
+                    {
+                        count43++;
+                        Level2Building52.gameObject.SetActive(false);
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    floor39 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor40 == 5)
+                {
+                    if (count44 == 1)
+                    {
+                        count44++;
+                        Level1Building55.gameObject.SetActive(false);
+                        Level2Building55.gameObject.SetActive(true);
+                    }
+                    else if (count44 == 2)
+                    {
+                        count40++;
+                        Level2Building55.gameObject.SetActive(false);
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    floor40 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor41 == 5)
+                {
+                    if (count45 == 1)
+                    {
+                        count45++;
+                        Level1Building56.gameObject.SetActive(false);
+                        Level2Building56.gameObject.SetActive(true);
+                    }
+                    else if (count45 == 2)
+                    {
+                        count45++;
+                        Level2Building56.gameObject.SetActive(false);
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    floor41 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor42 == 5)
+                {
+                    if (count46 == 1)
+                    {
+                        count46++;
+                        Level1Building57.gameObject.SetActive(false);
+                        Level2Building57.gameObject.SetActive(true);
+                    }
+                    else if (count46 == 2)
+                    {
+                        count46++;
+                        Level2Building57.gameObject.SetActive(false);
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    floor42 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+            }
+        }
+        if (whoTurn == 6)
+        {
+            if (floor1 == 6 || floor2 == 6 || floor3 == 6 || floor4 == 6 || floor5 == 6 || floor6 == 6 || floor7 == 6 || floor8 == 6 || floor9 == 6 || floor10 == 6
+                || floor11 == 6 || floor12 == 6 || floor13 == 6 || floor14 == 6 || floor15 == 6 || floor16 == 6 || floor17 == 6 || floor18 == 6 || floor19 == 6 | floor20 == 6
+                || floor21 == 6 || floor22 == 6 || floor23 == 6 || floor24 == 6 || floor25 == 6 || floor26 == 6 || floor27 == 6 || floor28 == 6 || floor29 == 6 || floor30 == 6
+                || floor31 == 6 || floor32 == 6 || floor33 == 6 || floor34 == 6 || floor35 == 6 || floor36 == 6 || floor37 == 6 || floor38 == 6 || floor39 == 6 || floor40 == 6
+                || floor41 == 6 || floor42 == 6)
+            {
+                if (floor1 == 6)
+                {
+                    if (count1 == 1)
+                    {
+                        count1++;
+                        Level1Building1.gameObject.SetActive(false);
+                        Level2Building1.gameObject.SetActive(true);
+                    }
+                    else if (count1 == 2)
+                    {
+                        count1++;
+                        Level2Building1.gameObject.SetActive(false);
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    floor1 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor2 == 6)
+                {
+                    if (count2 == 1)
+                    {
+                        count2++;
+                        Level1Building2.gameObject.SetActive(false);
+                        Level2Building2.gameObject.SetActive(true);
+                    }
+                    else if (count2 == 2)
+                    {
+                        count2++;
+                        Level2Building2.gameObject.SetActive(false);
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    floor2 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor3 == 6)
+                {
+                    if (count3 == 1)
+                    {
+                        count3++;
+                        Level1Building3.gameObject.SetActive(false);
+                        Level2Building3.gameObject.SetActive(true);
+                    }
+                    else if (count3 == 2)
+                    {
+                        count3++;
+                        Level2Building3.gameObject.SetActive(false);
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    floor3 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor4 == 6)
+                {
+                    if (count4 == 1)
+                    {
+                        count4++;
+                        Level1Building4.gameObject.SetActive(false);
+                        Level2Building4.gameObject.SetActive(true);
+                    }
+                    else if (count4 == 2)
+                    {
+                        count4++;
+                        Level2Building4.gameObject.SetActive(false);
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    floor4 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor5 == 6)
+                {
+                    if (count5 == 1)
+                    {
+                        count5++;
+                        Level1Building5.gameObject.SetActive(false);
+                        Level2Building5.gameObject.SetActive(true);
+                    }
+                    else if (count5 == 2)
+                    {
+                        count5++;
+                        Level2Building5.gameObject.SetActive(false);
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    floor5 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor6 == 6)
+                {
+                    if (count6 == 1)
+                    {
+                        count6++;
+                        Level1Building7.gameObject.SetActive(false);
+                        Level2Building7.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count6++;
+                        Level2Building7.gameObject.SetActive(false);
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    floor6 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor7 == 6)
+                {
+                    if (count7 == 1)
+                    {
+                        count7++;
+                        Level1Building8.gameObject.SetActive(false);
+                        Level2Building8.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count7++;
+                        Level2Building8.gameObject.SetActive(false);
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    floor7 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor8 == 6)
+                {
+                    if (count8 == 1)
+                    {
+                        count8++;
+                        Level1Building9.gameObject.SetActive(false);
+                        Level2Building9.gameObject.SetActive(true);
+                    }
+                    else if (count8 == 2)
+                    {
+                        count8++;
+                        Level2Building9.gameObject.SetActive(false);
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    floor8 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor9 == 6)
+                {
+                    if (count10 == 1)
+                    {
+                        count10++;
+                        Level1Building11.gameObject.SetActive(false);
+                        Level2Building11.gameObject.SetActive(true);
+                    }
+                    else if (count10 == 2)
+                    {
+                        count10++;
+                        Level2Building11.gameObject.SetActive(false);
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    floor9 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor10 == 6)
+                {
+                    if (count11 == 1)
+                    {
+                        count11++;
+                        Level1Building13.gameObject.SetActive(false);
+                        Level2Building13.gameObject.SetActive(true);
+                    }
+                    else if (count11 == 2)
+                    {
+                        count11++;
+                        Level2Building13.gameObject.SetActive(false);
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    floor10 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor11 == 6)
+                {
+                    if (count12 == 1)
+                    {
+                        count12++;
+                        Level1Building14.gameObject.SetActive(false);
+                        Level2Building14.gameObject.SetActive(true);
+                    }
+                    else if (count12 == 2)
+                    {
+                        count12++;
+                        Level2Building14.gameObject.SetActive(false);
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    floor11 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor12 == 6)
+                {
+                    if (count13 == 1)
+                    {
+                        count13++;
+                        Level1Building15.gameObject.SetActive(false);
+                        Level2Building15.gameObject.SetActive(true);
+                    }
+                    else if (count13 == 2)
+                    {
+                        count13++;
+                        Level2Building15.gameObject.SetActive(false);
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    floor12 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor13 == 6)
+                {
+                    if (count14 == 1)
+                    {
+                        count14++;
+                        Level1Building16.gameObject.SetActive(false);
+                        Level2Building16.gameObject.SetActive(true);
+                    }
+                    else if (count14 == 2)
+                    {
+                        count14++;
+                        Level2Building16.gameObject.SetActive(false);
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    floor13 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor14 == 6)
+                {
+                    if (count15 == 1)
+                    {
+                        count15++;
+                        Level1Building17.gameObject.SetActive(false);
+                        Level2Building17.gameObject.SetActive(true);
+                    }
+                    else if (count15 == 2)
+                    {
+                        count15++;
+                        Level2Building17.gameObject.SetActive(false);
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    floor14 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor15 == 6)
+                {
+                    if (count16 == 1)
+                    {
+                        count16++;
+                        Level1Building19.gameObject.SetActive(false);
+                        Level2Building19.gameObject.SetActive(true);
+                    }
+                    else if (count16 == 2)
+                    {
+                        count16++;
+                        Level2Building19.gameObject.SetActive(false);
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    floor15 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor16 == 6)
+                {
+                    if (count16 == 1)
+                    {
+                        count17++;
+                        Level1Building20.gameObject.SetActive(false);
+                        Level2Building20.gameObject.SetActive(true);
+                    }
+                    else if (count17 == 2)
+                    {
+                        count17++;
+                        Level2Building20.gameObject.SetActive(false);
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    floor16 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor17 == 6)
+                {
+                    if (count19 == 1)
+                    {
+                        count19++;
+                        Level1Building22.gameObject.SetActive(false);
+                        Level2Building22.gameObject.SetActive(true);
+                    }
+                    else if (count19 == 2)
+                    {
+                        count19++;
+                        Level2Building22.gameObject.SetActive(false);
+                        Level3Building22.gameObject.SetActive(true);
+                    }
+                    floor17 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor18 == 6)
+                {
+                    if (count20 == 1)
+                    {
+                        count20++;
+                        Level1Building23.gameObject.SetActive(false);
+                        Level2Building23.gameObject.SetActive(true);
+                    }
+                    else if (count20 == 2)
+                    {
+                        count20++;
+                        Level2Building23.gameObject.SetActive(false);
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    floor18 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor19 == 6)
+                {
+                    if (count21 == 1)
+                    {
+                        count21++;
+                        Level1Building24.gameObject.SetActive(false);
+                        Level2Building24.gameObject.SetActive(true);
+                    }
+                    else if (count21 == 2)
+                    {
+                        count21++;
+                        Level2Building24.gameObject.SetActive(false);
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    floor19 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor20 == 6)
+                {
+                    if (count22 == 1)
+                    {
+                        count22++;
+                        Level1Building26.gameObject.SetActive(false);
+                        Level2Building26.gameObject.SetActive(true);
+                    }
+                    else if (count22 == 2)
+                    {
+                        count22++;
+                        Level2Building26.gameObject.SetActive(false);
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    floor20 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor21 == 6)
+                {
+                    if (count23 == 1)
+                    {
+                        count23++;
+                        Level1Building27.gameObject.SetActive(false);
+                        Level2Building27.gameObject.SetActive(true);
+                    }
+                    else if (count23 == 2)
+                    {
+                        count23++;
+                        Level2Building27.gameObject.SetActive(false);
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    floor21 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor22 == 6)
+                {
+                    if (count24 == 1)
+                    {
+                        count24++;
+                        Level1Building28.gameObject.SetActive(false);
+                        Level2Building28.gameObject.SetActive(true);
+                    }
+                    else if (count24 == 2)
+                    {
+                        count24++;
+                        Level2Building28.gameObject.SetActive(false);
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    floor22 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor23 == 6)
+                {
+                    if (count25 == 1)
+                    {
+                        count25++;
+                        Level1Building29.gameObject.SetActive(false);
+                        Level2Building29.gameObject.SetActive(true);
+                    }
+                    else if (count25 == 2)
+                    {
+                        count25++;
+                        Level2Building29.gameObject.SetActive(false);
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    floor23 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor24 == 6)
+                {
+                    if (count26 == 1)
+                    {
+                        count26++;
+                        Level1Building31.gameObject.SetActive(false);
+                        Level2Building31.gameObject.SetActive(true);
+                    }
+                    else if (count26 == 2)
+                    {
+                        count26++;
+                        Level2Building31.gameObject.SetActive(false);
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    floor24 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor25 == 6)
+                {
+                    if (count27 == 1)
+                    {
+                        count27++;
+                        Level1Building32.gameObject.SetActive(false);
+                        Level2Building32.gameObject.SetActive(true);
+                    }
+                    else if (count27 == 2)
+                    {
+                        count27++;
+                        Level2Building32.gameObject.SetActive(false);
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    floor25 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor26 == 6)
+                {
+                    if (count28 == 1)
+                    {
+                        count28++;
+                        Level1Building33.gameObject.SetActive(false);
+                        Level2Building33.gameObject.SetActive(true);
+                    }
+                    else if (count28 == 2)
+                    {
+                        count28++;
+                        Level2Building33.gameObject.SetActive(false);
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    floor26 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor27 == 6)
+                {
+                    if (count29 == 1)
+                    {
+                        count29++;
+                        Level1Building34.gameObject.SetActive(false);
+                        Level2Building34.gameObject.SetActive(true);
+                    }
+                    else if (count29 == 2)
+                    {
+                        count29++;
+                        Level2Building34.gameObject.SetActive(false);
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    floor27 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor28 == 6)
+                {
+                    if (count30 == 1)
+                    {
+                        count30++;
+                        Level1Building36.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count30 == 2)
+                    {
+                        count30++;
+                        Level2Building36.gameObject.SetActive(false);
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    floor28 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor29 == 6)
+                {
+                    if (count31 == 1)
+                    {
+                        count31++;
+                        Level1Building37.gameObject.SetActive(false);
+                        Level2Building37.gameObject.SetActive(true);
+                    }
+                    else if (count31 == 2)
+                    {
+                        count31++;
+                        Level2Building37.gameObject.SetActive(false);
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    floor29 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor30 == 6)
+                {
+                    if (count33 == 1)
+                    {
+                        count33++;
+                        Level1Building39.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count33 == 2)
+                    {
+                        count33++;
+                        Level2Building39.gameObject.SetActive(false);
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    floor30 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor31 == 6)
+                {
+                    if (count34 == 1)
+                    {
+                        count34++;
+                        Level1Building40.gameObject.SetActive(false);
+                        Level2Building40.gameObject.SetActive(true);
+                    }
+                    else if (count34 == 2)
+                    {
+                        count34++;
+                        Level2Building40.gameObject.SetActive(false);
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    floor31 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor32 == 6)
+                {
+                    if (count35 == 1)
+                    {
+                        count35++;
+                        Level1Building42.gameObject.SetActive(false);
+                        Level2Building42.gameObject.SetActive(true);
+                    }
+                    else if (count35 == 2)
+                    {
+                        count35++;
+                        Level2Building42.gameObject.SetActive(false);
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    floor32 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor33 == 6)
+                {
+                    if (count36 == 1)
+                    {
+                        count36++;
+                        Level1Building43.gameObject.SetActive(false);
+                        Level2Building43.gameObject.SetActive(true);
+                    }
+                    else if (count36 == 2)
+                    {
+                        count36++;
+                        Level2Building43.gameObject.SetActive(false);
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    floor33 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor34 == 6)
+                {
+                    if (count38 == 1)
+                    {
+                        count37++;
+                        Level1Building44.gameObject.SetActive(false);
+                        Level2Building44.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count37++;
+                        Level2Building44.gameObject.SetActive(false);
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    floor34 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor35 == 6)
+                {
+                    if (count38 == 1)
+                    {
+                        count38++;
+                        Level1Building47.gameObject.SetActive(false);
+                        Level2Building47.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count38++;
+                        Level2Building47.gameObject.SetActive(false);
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    floor35 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor36 == 6)
+                {
+                    if (count39 == 1)
+                    {
+                        count39++;
+                        Level1Building48.gameObject.SetActive(false);
+                        Level2Building48.gameObject.SetActive(true);
+                    }
+                    else if (count39 == 2)
+                    {
+                        count39++;
+                        Level2Building48.gameObject.SetActive(false);
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    floor36 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor37 == 6)
+                {
+                    if (count40 == 1)
+                    {
+                        count40++;
+                        Level1Building49.gameObject.SetActive(false);
+                        Level2Building49.gameObject.SetActive(true);
+                    }
+                    else if (count40 == 2)
+                    {
+                        count40++;
+                        Level2Building49.gameObject.SetActive(false);
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    floor37 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor38 == 6)
+                {
+                    if (count42 == 1)
+                    {
+                        count42++;
+                        Level1Building51.gameObject.SetActive(false);
+                        Level2Building51.gameObject.SetActive(true);
+                    }
+                    else if (count42 == 2)
+                    {
+                        floor38 = 0;
+                        count42++;
+                        Level2Building51.gameObject.SetActive(false);
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor39 == 6)
+                {
+                    if (count43 == 1)
+                    {
+                        count43++;
+                        Level1Building52.gameObject.SetActive(false);
+                        Level2Building52.gameObject.SetActive(true);
+                    }
+                    else if (count43 == 2)
+                    {
+                        count43++;
+                        Level2Building52.gameObject.SetActive(false);
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    floor39 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor40 == 6)
+                {
+                    if (count44 == 1)
+                    {
+                        count44++;
+                        Level1Building55.gameObject.SetActive(false);
+                        Level2Building55.gameObject.SetActive(true);
+                    }
+                    else if (count44 == 2)
+                    {
+                        count40++;
+                        Level2Building55.gameObject.SetActive(false);
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    floor40 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor41 == 6)
+                {
+                    if (count45 == 1)
+                    {
+                        count45++;
+                        Level1Building56.gameObject.SetActive(false);
+                        Level2Building56.gameObject.SetActive(true);
+                    }
+                    else if (count45 == 2)
+                    {
+                        count45++;
+                        Level2Building56.gameObject.SetActive(false);
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    floor41 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor42 == 6)
+                {
+                    if (count46 == 1)
+                    {
+                        count46++;
+                        Level1Building57.gameObject.SetActive(false);
+                        Level2Building57.gameObject.SetActive(true);
+                    }
+                    else if (count46 == 2)
+                    {
+                        count46++;
+                        Level2Building57.gameObject.SetActive(false);
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    floor42 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+            }
+        }
+        if (whoTurn == 7)
+        {
+            if (floor1 == 7 || floor2 == 7 || floor3 == 7 || floor4 == 7 || floor5 == 7 || floor6 == 7 || floor7 == 7 || floor8 == 7 || floor9 == 7 || floor10 == 7
+                || floor11 == 7 || floor12 == 7 || floor13 == 7 || floor14 == 7 || floor15 == 7 || floor16 == 7 || floor17 == 7 || floor18 == 7 || floor19 == 7 | floor20 == 7
+                || floor21 == 7 || floor22 == 7 || floor23 == 7 || floor24 == 7 || floor25 == 7 || floor26 == 7 || floor27 == 7 || floor28 == 7 || floor29 == 7 || floor30 == 7
+                || floor31 == 7 || floor32 == 7 || floor33 == 7 || floor34 == 7 || floor35 == 7 || floor36 == 7 || floor37 == 7 || floor38 == 7 || floor39 == 7 || floor40 == 7
+                || floor41 == 7 || floor42 == 7)
+            {
+                if (floor1 == 7)
+                {
+                    if (count1 == 1)
+                    {
+                        count1++;
+                        Level1Building1.gameObject.SetActive(false);
+                        Level2Building1.gameObject.SetActive(true);
+                    }
+                    else if (count1 == 2)
+                    {
+                        count1++;
+                        Level2Building1.gameObject.SetActive(false);
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    floor1 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor2 == 7)
+                {
+                    if (count2 == 1)
+                    {
+                        count2++;
+                        Level1Building2.gameObject.SetActive(false);
+                        Level2Building2.gameObject.SetActive(true);
+                    }
+                    else if (count2 == 2)
+                    {
+                        count2++;
+                        Level2Building2.gameObject.SetActive(false);
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    floor2 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor3 == 7)
+                {
+                    if (count3 == 1)
+                    {
+                        count3++;
+                        Level1Building3.gameObject.SetActive(false);
+                        Level2Building3.gameObject.SetActive(true);
+                    }
+                    else if (count3 == 2)
+                    {
+                        count3++;
+                        Level2Building3.gameObject.SetActive(false);
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    floor3 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor4 == 7)
+                {
+                    if (count4 == 1)
+                    {
+                        count4++;
+                        Level1Building4.gameObject.SetActive(false);
+                        Level2Building4.gameObject.SetActive(true);
+                    }
+                    else if (count4 == 2)
+                    {
+                        count4++;
+                        Level2Building4.gameObject.SetActive(false);
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    floor4 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor5 == 7)
+                {
+                    if (count5 == 1)
+                    {
+                        count5++;
+                        Level1Building5.gameObject.SetActive(false);
+                        Level2Building5.gameObject.SetActive(true);
+                    }
+                    else if (count5 == 2)
+                    {
+                        count5++;
+                        Level2Building5.gameObject.SetActive(false);
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    floor5 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor6 == 7)
+                {
+                    if (count6 == 1)
+                    {
+                        count6++;
+                        Level1Building7.gameObject.SetActive(false);
+                        Level2Building7.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count6++;
+                        Level2Building7.gameObject.SetActive(false);
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    floor6 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor7 == 7)
+                {
+                    if (count7 == 1)
+                    {
+                        count7++;
+                        Level1Building8.gameObject.SetActive(false);
+                        Level2Building8.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count7++;
+                        Level2Building8.gameObject.SetActive(false);
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    floor7 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor8 == 7)
+                {
+                    if (count8 == 1)
+                    {
+                        count8++;
+                        Level1Building9.gameObject.SetActive(false);
+                        Level2Building9.gameObject.SetActive(true);
+                    }
+                    else if (count8 == 2)
+                    {
+                        count8++;
+                        Level2Building9.gameObject.SetActive(false);
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    floor8 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor9 == 7)
+                {
+                    if (count10 == 1)
+                    {
+                        count10++;
+                        Level1Building11.gameObject.SetActive(false);
+                        Level2Building11.gameObject.SetActive(true);
+                    }
+                    else if (count10 == 2)
+                    {
+                        count10++;
+                        Level2Building11.gameObject.SetActive(false);
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    floor9 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor10 == 7)
+                {
+                    if (count11 == 1)
+                    {
+                        count11++;
+                        Level1Building13.gameObject.SetActive(false);
+                        Level2Building13.gameObject.SetActive(true);
+                    }
+                    else if (count11 == 2)
+                    {
+                        count11++;
+                        Level2Building13.gameObject.SetActive(false);
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    floor10 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor11 == 7)
+                {
+                    if (count12 == 1)
+                    {
+                        count12++;
+                        Level1Building14.gameObject.SetActive(false);
+                        Level2Building14.gameObject.SetActive(true);
+                    }
+                    else if (count12 == 2)
+                    {
+                        count12++;
+                        Level2Building14.gameObject.SetActive(false);
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    floor11 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor12 == 7)
+                {
+                    if (count13 == 1)
+                    {
+                        count13++;
+                        Level1Building15.gameObject.SetActive(false);
+                        Level2Building15.gameObject.SetActive(true);
+                    }
+                    else if (count13 == 2)
+                    {
+                        count13++;
+                        Level2Building15.gameObject.SetActive(false);
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    floor12 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor13 == 7)
+                {
+                    if (count14 == 1)
+                    {
+                        count14++;
+                        Level1Building16.gameObject.SetActive(false);
+                        Level2Building16.gameObject.SetActive(true);
+                    }
+                    else if (count14 == 2)
+                    {
+                        count14++;
+                        Level2Building16.gameObject.SetActive(false);
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    floor13 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor14 == 7)
+                {
+                    if (count15 == 1)
+                    {
+                        count15++;
+                        Level1Building17.gameObject.SetActive(false);
+                        Level2Building17.gameObject.SetActive(true);
+                    }
+                    else if (count15 == 2)
+                    {
+                        count15++;
+                        Level2Building17.gameObject.SetActive(false);
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    floor14 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor15 == 7)
+                {
+                    if (count16 == 1)
+                    {
+                        count16++;
+                        Level1Building19.gameObject.SetActive(false);
+                        Level2Building19.gameObject.SetActive(true);
+                    }
+                    else if (count16 == 2)
+                    {
+                        count16++;
+                        Level2Building19.gameObject.SetActive(false);
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    floor15 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor16 == 7)
+                {
+                    if (count16 == 1)
+                    {
+                        count17++;
+                        Level1Building20.gameObject.SetActive(false);
+                        Level2Building20.gameObject.SetActive(true);
+                    }
+                    else if (count17 == 2)
+                    {
+                        count17++;
+                        Level2Building20.gameObject.SetActive(false);
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    floor16 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor17 == 7)
+                {
+                    if (count19 == 1)
+                    {
+                        count19++;
+                        Level1Building22.gameObject.SetActive(false);
+                        Level2Building22.gameObject.SetActive(true);
+                    }
+                    else if (count19 == 2)
+                    {
+                        count19++;
+                        Level2Building22.gameObject.SetActive(false);
+                        Level3Building22.gameObject.SetActive(true);
+                    }
+                    floor17 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor18 == 7)
+                {
+                    if (count20 == 1)
+                    {
+                        count20++;
+                        Level1Building23.gameObject.SetActive(false);
+                        Level2Building23.gameObject.SetActive(true);
+                    }
+                    else if (count20 == 2)
+                    {
+                        count20++;
+                        Level2Building23.gameObject.SetActive(false);
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    floor18 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor19 == 7)
+                {
+                    if (count21 == 1)
+                    {
+                        count21++;
+                        Level1Building24.gameObject.SetActive(false);
+                        Level2Building24.gameObject.SetActive(true);
+                    }
+                    else if (count21 == 2)
+                    {
+                        count21++;
+                        Level2Building24.gameObject.SetActive(false);
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    floor19 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor20 == 7)
+                {
+                    if (count22 == 1)
+                    {
+                        count22++;
+                        Level1Building26.gameObject.SetActive(false);
+                        Level2Building26.gameObject.SetActive(true);
+                    }
+                    else if (count22 == 2)
+                    {
+                        count22++;
+                        Level2Building26.gameObject.SetActive(false);
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    floor20 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor21 == 7)
+                {
+                    if (count23 == 1)
+                    {
+                        count23++;
+                        Level1Building27.gameObject.SetActive(false);
+                        Level2Building27.gameObject.SetActive(true);
+                    }
+                    else if (count23 == 2)
+                    {
+                        count23++;
+                        Level2Building27.gameObject.SetActive(false);
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    floor21 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor22 == 7)
+                {
+                    if (count24 == 1)
+                    {
+                        count24++;
+                        Level1Building28.gameObject.SetActive(false);
+                        Level2Building28.gameObject.SetActive(true);
+                    }
+                    else if (count24 == 2)
+                    {
+                        count24++;
+                        Level2Building28.gameObject.SetActive(false);
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    floor22 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor23 == 7)
+                {
+                    if (count25 == 1)
+                    {
+                        count25++;
+                        Level1Building29.gameObject.SetActive(false);
+                        Level2Building29.gameObject.SetActive(true);
+                    }
+                    else if (count25 == 2)
+                    {
+                        count25++;
+                        Level2Building29.gameObject.SetActive(false);
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    floor23 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor24 == 7)
+                {
+                    if (count26 == 1)
+                    {
+                        count26++;
+                        Level1Building31.gameObject.SetActive(false);
+                        Level2Building31.gameObject.SetActive(true);
+                    }
+                    else if (count26 == 2)
+                    {
+                        count26++;
+                        Level2Building31.gameObject.SetActive(false);
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    floor24 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor25 == 7)
+                {
+                    if (count27 == 1)
+                    {
+                        count27++;
+                        Level1Building32.gameObject.SetActive(false);
+                        Level2Building32.gameObject.SetActive(true);
+                    }
+                    else if (count27 == 2)
+                    {
+                        count27++;
+                        Level2Building32.gameObject.SetActive(false);
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    floor25 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor26 == 7)
+                {
+                    if (count28 == 1)
+                    {
+                        count28++;
+                        Level1Building33.gameObject.SetActive(false);
+                        Level2Building33.gameObject.SetActive(true);
+                    }
+                    else if (count28 == 2)
+                    {
+                        count28++;
+                        Level2Building33.gameObject.SetActive(false);
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    floor26 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor27 == 7)
+                {
+                    if (count29 == 1)
+                    {
+                        count29++;
+                        Level1Building34.gameObject.SetActive(false);
+                        Level2Building34.gameObject.SetActive(true);
+                    }
+                    else if (count29 == 2)
+                    {
+                        count29++;
+                        Level2Building34.gameObject.SetActive(false);
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    floor27 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor28 == 7)
+                {
+                    if (count30 == 1)
+                    {
+                        count30++;
+                        Level1Building36.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count30 == 2)
+                    {
+                        count30++;
+                        Level2Building36.gameObject.SetActive(false);
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    floor28 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor29 == 7)
+                {
+                    if (count31 == 1)
+                    {
+                        count31++;
+                        Level1Building37.gameObject.SetActive(false);
+                        Level2Building37.gameObject.SetActive(true);
+                    }
+                    else if (count31 == 2)
+                    {
+                        count31++;
+                        Level2Building37.gameObject.SetActive(false);
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    floor29 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor30 == 7)
+                {
+                    if (count33 == 1)
+                    {
+                        count33++;
+                        Level1Building39.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count33 == 2)
+                    {
+                        count33++;
+                        Level2Building39.gameObject.SetActive(false);
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    floor30 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor31 == 7)
+                {
+                    if (count34 == 1)
+                    {
+                        count34++;
+                        Level1Building40.gameObject.SetActive(false);
+                        Level2Building40.gameObject.SetActive(true);
+                    }
+                    else if (count34 == 2)
+                    {
+                        count34++;
+                        Level2Building40.gameObject.SetActive(false);
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    floor31 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor32 == 7)
+                {
+                    if (count35 == 1)
+                    {
+                        count35++;
+                        Level1Building42.gameObject.SetActive(false);
+                        Level2Building42.gameObject.SetActive(true);
+                    }
+                    else if (count35 == 2)
+                    {
+                        count35++;
+                        Level2Building42.gameObject.SetActive(false);
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    floor32 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor33 == 7)
+                {
+                    if (count36 == 1)
+                    {
+                        count36++;
+                        Level1Building43.gameObject.SetActive(false);
+                        Level2Building43.gameObject.SetActive(true);
+                    }
+                    else if (count36 == 2)
+                    {
+                        count36++;
+                        Level2Building43.gameObject.SetActive(false);
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    floor33 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor34 == 7)
+                {
+                    if (count38 == 1)
+                    {
+                        count37++;
+                        Level1Building44.gameObject.SetActive(false);
+                        Level2Building44.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count37++;
+                        Level2Building44.gameObject.SetActive(false);
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    floor34 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor35 == 7)
+                {
+                    if (count38 == 1)
+                    {
+                        count38++;
+                        Level1Building47.gameObject.SetActive(false);
+                        Level2Building47.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count38++;
+                        Level2Building47.gameObject.SetActive(false);
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    floor35 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor36 == 7)
+                {
+                    if (count39 == 1)
+                    {
+                        count39++;
+                        Level1Building48.gameObject.SetActive(false);
+                        Level2Building48.gameObject.SetActive(true);
+                    }
+                    else if (count39 == 2)
+                    {
+                        count39++;
+                        Level2Building48.gameObject.SetActive(false);
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    floor36 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor37 == 7)
+                {
+                    if (count40 == 1)
+                    {
+                        count40++;
+                        Level1Building49.gameObject.SetActive(false);
+                        Level2Building49.gameObject.SetActive(true);
+                    }
+                    else if (count40 == 2)
+                    {
+                        count40++;
+                        Level2Building49.gameObject.SetActive(false);
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    floor37 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor38 == 7)
+                {
+                    if (count42 == 1)
+                    {
+                        count42++;
+                        Level1Building51.gameObject.SetActive(false);
+                        Level2Building51.gameObject.SetActive(true);
+                    }
+                    else if (count42 == 2)
+                    {
+                        floor38 = 0;
+                        count42++;
+                        Level2Building51.gameObject.SetActive(false);
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor39 == 7)
+                {
+                    if (count43 == 1)
+                    {
+                        count43++;
+                        Level1Building52.gameObject.SetActive(false);
+                        Level2Building52.gameObject.SetActive(true);
+                    }
+                    else if (count43 == 2)
+                    {
+                        count43++;
+                        Level2Building52.gameObject.SetActive(false);
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    floor39 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor40 == 7)
+                {
+                    if (count44 == 1)
+                    {
+                        count44++;
+                        Level1Building55.gameObject.SetActive(false);
+                        Level2Building55.gameObject.SetActive(true);
+                    }
+                    else if (count44 == 2)
+                    {
+                        count40++;
+                        Level2Building55.gameObject.SetActive(false);
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    floor40 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor41 == 7)
+                {
+                    if (count45 == 1)
+                    {
+                        count45++;
+                        Level1Building56.gameObject.SetActive(false);
+                        Level2Building56.gameObject.SetActive(true);
+                    }
+                    else if (count45 == 2)
+                    {
+                        count45++;
+                        Level2Building56.gameObject.SetActive(false);
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    floor41 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor42 == 7)
+                {
+                    if (count46 == 1)
+                    {
+                        count46++;
+                        Level1Building57.gameObject.SetActive(false);
+                        Level2Building57.gameObject.SetActive(true);
+                    }
+                    else if (count46 == 2)
+                    {
+                        count46++;
+                        Level2Building57.gameObject.SetActive(false);
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    floor42 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+            }
+        }
+        if (whoTurn == 8)
+        {
+            if (floor1 == 8 || floor2 == 8 || floor3 == 8 || floor4 == 8 || floor5 == 8 || floor6 == 8 || floor7 == 8 || floor8 == 8 || floor9 == 8 || floor10 == 8
+                || floor11 == 8 || floor12 == 8 || floor13 == 8 || floor14 == 8 || floor15 == 8 || floor16 == 8 || floor17 == 8 || floor18 == 8 || floor19 == 8 | floor20 == 8
+                || floor21 == 8 || floor22 == 8 || floor23 == 8 || floor24 == 8 || floor25 == 8 || floor26 == 8 || floor27 == 8 || floor28 == 8 || floor29 == 8 || floor30 == 8
+                || floor31 == 8 || floor32 == 8 || floor33 == 8 || floor34 == 8 || floor35 == 8 || floor36 == 8 || floor37 == 8 || floor38 == 8 || floor39 == 8 || floor40 == 8
+                || floor41 == 8 || floor42 == 8)
+            {
+                if (floor1 == 8)
+                {
+                    if (count1 == 1)
+                    {
+                        count1++;
+                        Level1Building1.gameObject.SetActive(false);
+                        Level2Building1.gameObject.SetActive(true);
+                    }
+                    else if (count1 == 2)
+                    {
+                        count1++;
+                        Level2Building1.gameObject.SetActive(false);
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    floor1 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor2 == 8)
+                {
+                    if (count2 == 1)
+                    {
+                        count2++;
+                        Level1Building2.gameObject.SetActive(false);
+                        Level2Building2.gameObject.SetActive(true);
+                    }
+                    else if (count2 == 2)
+                    {
+                        count2++;
+                        Level2Building2.gameObject.SetActive(false);
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    floor2 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor3 == 8)
+                {
+                    if (count3 == 1)
+                    {
+                        count3++;
+                        Level1Building3.gameObject.SetActive(false);
+                        Level2Building3.gameObject.SetActive(true);
+                    }
+                    else if (count3 == 2)
+                    {
+                        count3++;
+                        Level2Building3.gameObject.SetActive(false);
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    floor3 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor4 == 8)
+                {
+                    if (count4 == 1)
+                    {
+                        count4++;
+                        Level1Building4.gameObject.SetActive(false);
+                        Level2Building4.gameObject.SetActive(true);
+                    }
+                    else if (count4 == 2)
+                    {
+                        count4++;
+                        Level2Building4.gameObject.SetActive(false);
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    floor4 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor5 == 8)
+                {
+                    if (count5 == 1)
+                    {
+                        count5++;
+                        Level1Building5.gameObject.SetActive(false);
+                        Level2Building5.gameObject.SetActive(true);
+                    }
+                    else if (count5 == 2)
+                    {
+                        count5++;
+                        Level2Building5.gameObject.SetActive(false);
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    floor5 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor6 == 8)
+                {
+                    if (count6 == 1)
+                    {
+                        count6++;
+                        Level1Building7.gameObject.SetActive(false);
+                        Level2Building7.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count6++;
+                        Level2Building7.gameObject.SetActive(false);
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    floor6 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor7 == 8)
+                {
+                    if (count7 == 1)
+                    {
+                        count7++;
+                        Level1Building8.gameObject.SetActive(false);
+                        Level2Building8.gameObject.SetActive(true);
+                    }
+                    else if (count6 == 2)
+                    {
+                        count7++;
+                        Level2Building8.gameObject.SetActive(false);
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    floor7 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor8 == 8)
+                {
+                    if (count8 == 1)
+                    {
+                        count8++;
+                        Level1Building9.gameObject.SetActive(false);
+                        Level2Building9.gameObject.SetActive(true);
+                    }
+                    else if (count8 == 2)
+                    {
+                        count8++;
+                        Level2Building9.gameObject.SetActive(false);
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    floor8 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor9 == 8)
+                {
+                    if (count10 == 1)
+                    {
+                        count10++;
+                        Level1Building11.gameObject.SetActive(false);
+                        Level2Building11.gameObject.SetActive(true);
+                    }
+                    else if (count10 == 2)
+                    {
+                        count10++;
+                        Level2Building11.gameObject.SetActive(false);
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    floor9 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor10 == 8)
+                {
+                    if (count11 == 1)
+                    {
+                        count11++;
+                        Level1Building13.gameObject.SetActive(false);
+                        Level2Building13.gameObject.SetActive(true);
+                    }
+                    else if (count11 == 2)
+                    {
+                        count11++;
+                        Level2Building13.gameObject.SetActive(false);
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    floor10 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor11 == 8)
+                {
+                    if (count12 == 1)
+                    {
+                        count12++;
+                        Level1Building14.gameObject.SetActive(false);
+                        Level2Building14.gameObject.SetActive(true);
+                    }
+                    else if (count12 == 2)
+                    {
+                        count12++;
+                        Level2Building14.gameObject.SetActive(false);
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    floor11 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor12 == 8)
+                {
+                    if (count13 == 1)
+                    {
+                        count13++;
+                        Level1Building15.gameObject.SetActive(false);
+                        Level2Building15.gameObject.SetActive(true);
+                    }
+                    else if (count13 == 2)
+                    {
+                        count13++;
+                        Level2Building15.gameObject.SetActive(false);
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    floor12 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor13 == 8)
+                {
+                    if (count14 == 1)
+                    {
+                        count14++;
+                        Level1Building16.gameObject.SetActive(false);
+                        Level2Building16.gameObject.SetActive(true);
+                    }
+                    else if (count14 == 2)
+                    {
+                        count14++;
+                        Level2Building16.gameObject.SetActive(false);
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    floor13 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor14 == 8)
+                {
+                    if (count15 == 1)
+                    {
+                        count15++;
+                        Level1Building17.gameObject.SetActive(false);
+                        Level2Building17.gameObject.SetActive(true);
+                    }
+                    else if (count15 == 2)
+                    {
+                        count15++;
+                        Level2Building17.gameObject.SetActive(false);
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    floor14 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor15 == 8)
+                {
+                    if (count16 == 1)
+                    {
+                        count16++;
+                        Level1Building19.gameObject.SetActive(false);
+                        Level2Building19.gameObject.SetActive(true);
+                    }
+                    else if (count16 == 2)
+                    {
+                        count16++;
+                        Level2Building19.gameObject.SetActive(false);
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    floor15 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor16 == 8)
+                {
+                    if (count16 == 1)
+                    {
+                        count17++;
+                        Level1Building20.gameObject.SetActive(false);
+                        Level2Building20.gameObject.SetActive(true);
+                    }
+                    else if (count17 == 2)
+                    {
+                        count17++;
+                        Level2Building20.gameObject.SetActive(false);
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    floor16 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor17 == 8)
+                {
+                    if (count19 == 1)
+                    {
+                        count19++;
+                        Level1Building22.gameObject.SetActive(false);
+                        Level2Building22.gameObject.SetActive(true);
+                    }
+                    else if (count19 == 2)
+                    {
+                        count19++;
+                        Level2Building22.gameObject.SetActive(false);
+                        Level3Building22.gameObject.SetActive(true);
+                    }
+                    floor17 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor18 == 8)
+                {
+                    if (count20 == 1)
+                    {
+                        count20++;
+                        Level1Building23.gameObject.SetActive(false);
+                        Level2Building23.gameObject.SetActive(true);
+                    }
+                    else if (count20 == 2)
+                    {
+                        count20++;
+                        Level2Building23.gameObject.SetActive(false);
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    floor18 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor19 == 8)
+                {
+                    if (count21 == 1)
+                    {
+                        count21++;
+                        Level1Building24.gameObject.SetActive(false);
+                        Level2Building24.gameObject.SetActive(true);
+                    }
+                    else if (count21 == 2)
+                    {
+                        count21++;
+                        Level2Building24.gameObject.SetActive(false);
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    floor19 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor20 == 8)
+                {
+                    if (count22 == 1)
+                    {
+                        count22++;
+                        Level1Building26.gameObject.SetActive(false);
+                        Level2Building26.gameObject.SetActive(true);
+                    }
+                    else if (count22 == 2)
+                    {
+                        count22++;
+                        Level2Building26.gameObject.SetActive(false);
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    floor20 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor21 == 8)
+                {
+                    if (count23 == 1)
+                    {
+                        count23++;
+                        Level1Building27.gameObject.SetActive(false);
+                        Level2Building27.gameObject.SetActive(true);
+                    }
+                    else if (count23 == 2)
+                    {
+                        count23++;
+                        Level2Building27.gameObject.SetActive(false);
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    floor21 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor22 == 8)
+                {
+                    if (count24 == 1)
+                    {
+                        count24++;
+                        Level1Building28.gameObject.SetActive(false);
+                        Level2Building28.gameObject.SetActive(true);
+                    }
+                    else if (count24 == 2)
+                    {
+                        count24++;
+                        Level2Building28.gameObject.SetActive(false);
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    floor22 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor23 == 8)
+                {
+                    if (count25 == 1)
+                    {
+                        count25++;
+                        Level1Building29.gameObject.SetActive(false);
+                        Level2Building29.gameObject.SetActive(true);
+                    }
+                    else if (count25 == 2)
+                    {
+                        count25++;
+                        Level2Building29.gameObject.SetActive(false);
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    floor23 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor24 == 8)
+                {
+                    if (count26 == 1)
+                    {
+                        count26++;
+                        Level1Building31.gameObject.SetActive(false);
+                        Level2Building31.gameObject.SetActive(true);
+                    }
+                    else if (count26 == 2)
+                    {
+                        count26++;
+                        Level2Building31.gameObject.SetActive(false);
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    floor24 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor25 == 8)
+                {
+                    if (count27 == 1)
+                    {
+                        count27++;
+                        Level1Building32.gameObject.SetActive(false);
+                        Level2Building32.gameObject.SetActive(true);
+                    }
+                    else if (count27 == 2)
+                    {
+                        count27++;
+                        Level2Building32.gameObject.SetActive(false);
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    floor25 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor26 == 8)
+                {
+                    if (count28 == 1)
+                    {
+                        count28++;
+                        Level1Building33.gameObject.SetActive(false);
+                        Level2Building33.gameObject.SetActive(true);
+                    }
+                    else if (count28 == 2)
+                    {
+                        count28++;
+                        Level2Building33.gameObject.SetActive(false);
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    floor26 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor27 == 8)
+                {
+                    if (count29 == 1)
+                    {
+                        count29++;
+                        Level1Building34.gameObject.SetActive(false);
+                        Level2Building34.gameObject.SetActive(true);
+                    }
+                    else if (count29 == 2)
+                    {
+                        count29++;
+                        Level2Building34.gameObject.SetActive(false);
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    floor27 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor28 == 8)
+                {
+                    if (count30 == 1)
+                    {
+                        count30++;
+                        Level1Building36.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count30 == 2)
+                    {
+                        count30++;
+                        Level2Building36.gameObject.SetActive(false);
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    floor28 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor29 == 8)
+                {
+                    if (count31 == 1)
+                    {
+                        count31++;
+                        Level1Building37.gameObject.SetActive(false);
+                        Level2Building37.gameObject.SetActive(true);
+                    }
+                    else if (count31 == 2)
+                    {
+                        count31++;
+                        Level2Building37.gameObject.SetActive(false);
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    floor29 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor30 == 8)
+                {
+                    if (count33 == 1)
+                    {
+                        count33++;
+                        Level1Building39.gameObject.SetActive(false);
+                        Level2Building36.gameObject.SetActive(true);
+                    }
+                    else if (count33 == 2)
+                    {
+                        count33++;
+                        Level2Building39.gameObject.SetActive(false);
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    floor30 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor31 == 8)
+                {
+                    if (count34 == 1)
+                    {
+                        count34++;
+                        Level1Building40.gameObject.SetActive(false);
+                        Level2Building40.gameObject.SetActive(true);
+                    }
+                    else if (count34 == 2)
+                    {
+                        count34++;
+                        Level2Building40.gameObject.SetActive(false);
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    floor31 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor32 == 8)
+                {
+                    if (count35 == 1)
+                    {
+                        count35++;
+                        Level1Building42.gameObject.SetActive(false);
+                        Level2Building42.gameObject.SetActive(true);
+                    }
+                    else if (count35 == 2)
+                    {
+                        count35++;
+                        Level2Building42.gameObject.SetActive(false);
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    floor32 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor33 == 8)
+                {
+                    if (count36 == 1)
+                    {
+                        count36++;
+                        Level1Building43.gameObject.SetActive(false);
+                        Level2Building43.gameObject.SetActive(true);
+                    }
+                    else if (count36 == 2)
+                    {
+                        count36++;
+                        Level2Building43.gameObject.SetActive(false);
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    floor33 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor34 == 8)
+                {
+                    if (count38 == 1)
+                    {
+                        count37++;
+                        Level1Building44.gameObject.SetActive(false);
+                        Level2Building44.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count37++;
+                        Level2Building44.gameObject.SetActive(false);
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    floor34 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor35 == 8)
+                {
+                    if (count38 == 1)
+                    {
+                        count38++;
+                        Level1Building47.gameObject.SetActive(false);
+                        Level2Building47.gameObject.SetActive(true);
+                    }
+                    else if (count38 == 2)
+                    {
+                        count38++;
+                        Level2Building47.gameObject.SetActive(false);
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    floor35 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor36 == 8)
+                {
+                    if (count39 == 1)
+                    {
+                        count39++;
+                        Level1Building48.gameObject.SetActive(false);
+                        Level2Building48.gameObject.SetActive(true);
+                    }
+                    else if (count39 == 2)
+                    {
+                        count39++;
+                        Level2Building48.gameObject.SetActive(false);
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    floor36 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor37 == 8)
+                {
+                    if (count40 == 1)
+                    {
+                        count40++;
+                        Level1Building49.gameObject.SetActive(false);
+                        Level2Building49.gameObject.SetActive(true);
+                    }
+                    else if (count40 == 2)
+                    {
+                        count40++;
+                        Level2Building49.gameObject.SetActive(false);
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    floor37 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor38 == 8)
+                {
+                    if (count42 == 1)
+                    {
+                        count42++;
+                        Level1Building51.gameObject.SetActive(false);
+                        Level2Building51.gameObject.SetActive(true);
+                    }
+                    else if (count42 == 2)
+                    {
+                        floor38 = 0;
+                        count42++;
+                        Level2Building51.gameObject.SetActive(false);
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor39 == 8)
+                {
+                    if (count43 == 1)
+                    {
+                        count43++;
+                        Level1Building52.gameObject.SetActive(false);
+                        Level2Building52.gameObject.SetActive(true);
+                    }
+                    else if (count43 == 2)
+                    {
+                        count43++;
+                        Level2Building52.gameObject.SetActive(false);
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    floor39 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor40 == 8)
+                {
+                    if (count44 == 1)
+                    {
+                        count44++;
+                        Level1Building55.gameObject.SetActive(false);
+                        Level2Building55.gameObject.SetActive(true);
+                    }
+                    else if (count44 == 2)
+                    {
+                        count40++;
+                        Level2Building55.gameObject.SetActive(false);
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    floor40 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor41 == 8)
+                {
+                    if (count45 == 1)
+                    {
+                        count45++;
+                        Level1Building56.gameObject.SetActive(false);
+                        Level2Building56.gameObject.SetActive(true);
+                    }
+                    else if (count45 == 2)
+                    {
+                        count45++;
+                        Level2Building56.gameObject.SetActive(false);
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    floor41 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+                if (floor42 == 8)
+                {
+                    if (count46 == 1)
+                    {
+                        count46++;
+                        Level1Building57.gameObject.SetActive(false);
+                        Level2Building57.gameObject.SetActive(true);
+                    }
+                    else if (count46 == 2)
+                    {
+                        count46++;
+                        Level2Building57.gameObject.SetActive(false);
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    floor42 = 0;
+                    dropButton.interactable = true;
+                    camMain();
+                }
+            }
+        }
+    }
+
+    void random2Building()
+    {
+        int getRangeNum = 0;
+        int rangeRadomNum = 0;
+
+        for (int i = 1; i <= 2; i++)
+        {
+            do { rangeRadomNum = Random.Range(1, 42); }
+            while (rangeRadomNum == getRangeNum);
+            getRangeNum = rangeRadomNum;
+
+            if (whoTurn == 1)
+            {
+                if (rangeRadomNum == 1)
+                {
+                    if (floor1 == 0)
+                    {
+                        own1 = 1;
+                        count1 = 3;
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 2)
+                {
+                    if (floor2 == 0)
+                    {
+                        own2 = 1;
+                        count2 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 3)
+                {
+                    if (floor3 == 0)
+                    {
+                        own3 = 1;
+                        count3 = 3;
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 4)
+                {
+                    if (floor4 == 0)
+                    {
+                        own4 = 1;
+                        count4 = 3;
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 5)
+                {
+                    if (floor5 == 0)
+                    {
+                        own5 = 1;
+                        count5 = 3;
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 6)
+                {
+                    if (floor6 == 0)
+                    {
+                        own6 = 1;
+                        count6 = 3;
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 7)
+                {
+                    if (floor7 == 0)
+                    {
+                        own7 = 1;
+                        count7 = 3;
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 8)
+                {
+                    if (floor8 == 0)
+                    {
+                        own8 = 1;
+                        count8 = 3;
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 9)
+                {
+                    if (floor9 == 0)
+                    {
+                        own10 = 1;
+                        count10 = 3;
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 10)
+                {
+                    if (floor10 == 0)
+                    {
+                        own11 = 1;
+                        count11 = 3;
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 11)
+                {
+                    if (floor1 == 0)
+                    {
+                        own12 = 1;
+                        count12= 3;
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 12)
+                {
+                    if (floor12 == 0)
+                    {
+                        own13 = 1;
+                        count13 = 3;
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 13)
+                {
+                    if (floor13 == 0)
+                    {
+                        own14 = 1;
+                        count14 = 3;
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 14)
+                {
+                    if (floor14 == 0)
+                    {
+                        own15 = 1;
+                        count15 = 3;
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 15)
+                {
+                    if (floor15 == 0)
+                    {
+                        own16 = 1;
+                        count16 = 3;
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 16)
+                {
+                    if (floor16 == 0)
+                    {
+                        own17 = 1;
+                        count17 = 3;
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 17)
+                {
+                    if (floor17 == 0)
+                    {
+                        own19 = 1;
+                        count19 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 18)
+                {
+                    if (floor18 == 0)
+                    {
+                        own20 = 1;
+                        count20 = 3;
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 19)
+                {
+                    if (floor19 == 0)
+                    {
+                        own21= 1;
+                        count21 = 3;
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 20)
+                {
+                    if (floor9 == 0)
+                    {
+                        own22 = 1;
+                        count22 = 3;
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 21)
+                {
+                    if (floor21 == 0)
+                    {
+                        own23 = 1;
+                        count23 = 3;
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 22)
+                {
+                    if (floor22 == 0)
+                    {
+                        own24= 1;
+                        count24 = 3;
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 23)
+                {
+                    if (floor23 == 0)
+                    {
+                        own25 = 1;
+                        count25 = 3;
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 24)
+                {
+                    if (floor24 == 0)
+                    {
+                        own26 = 1;
+                        count26 = 3;
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 25)
+                {
+                    if (floor9 == 0)
+                    {
+                        own27 = 1;
+                        count27 = 3;
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 26)
+                {
+                    if (floor26 == 0)
+                    {
+                        own28 = 1;
+                        count28 = 3;
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 27)
+                {
+                    if (floor27 == 0)
+                    {
+                        own29 = 1;
+                        count29 = 3;
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 28)
+                {
+                    if (floor28 == 0)
+                    {
+                        own30 = 1;
+                        count30 = 3;
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 29)
+                {
+                    if (floor29 == 0)
+                    {
+                        own31 = 1;
+                        count31 = 3;
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 30)
+                {
+                    if (floor30 == 0)
+                    {
+                        own33 = 1;
+                        count33 = 3;
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 31)
+                {
+                    if (floor31 == 0)
+                    {
+                        own34 = 1;
+                        count34 = 3;
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 32)
+                {
+                    if (floor32 == 0)
+                    {
+                        own35 = 1;
+                        count35 = 3;
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 33)
+                {
+                    if (floor33 == 0)
+                    {
+                        own36 = 1;
+                        count36 = 3;
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 34)
+                {
+                    if (floor34 == 0)
+                    {
+                        own37 = 1;
+                        count37 = 3;
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 35)
+                {
+                    if (floor35 == 0)
+                    {
+                        own38 = 1;
+                        count38 = 3;
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 36)
+                {
+                    if (floor36 == 0)
+                    {
+                        own39 = 1;
+                        count39 = 3;
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 37)
+                {
+                    if (floor37 == 0)
+                    {
+                        own40 = 1;
+                        count40 = 3;
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 38)
+                {
+                    if (floor38 == 0)
+                    {
+                        own42 = 1;
+                        count42 = 3;
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 39)
+                {
+                    if (floor39 == 0)
+                    {
+                        own43 = 1;
+                        count43 = 3;
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 40)
+                {
+                    if (floor40 == 0)
+                    {
+                        own44 = 1;
+                        count44 = 3;
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 41)
+                {
+                    if (floor41 == 0)
+                    {
+                        own45 = 1;
+                        count45 = 3;
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 42)
+                {
+                    if (floor42 == 0)
+                    {
+                        own46 = 1;
+                        count46 = 3;
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+            }
+            if (whoTurn == 2)
+            {
+                if (rangeRadomNum == 1)
+                {
+                    if (floor1 == 0)
+                    {
+                        own1 = 2;
+                        count1 = 3;
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 2)
+                {
+                    if (floor2 == 0)
+                    {
+                        own2 = 2;
+                        count2 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 3)
+                {
+                    if (floor3 == 0)
+                    {
+                        own3 = 2;
+                        count3 = 3;
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 4)
+                {
+                    if (floor4 == 0)
+                    {
+                        own4 = 2;
+                        count4 = 3;
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 5)
+                {
+                    if (floor5 == 0)
+                    {
+                        own5 = 2;
+                        count5 = 3;
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 6)
+                {
+                    if (floor6 == 0)
+                    {
+                        own6 = 2;
+                        count6 = 3;
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 7)
+                {
+                    if (floor7 == 0)
+                    {
+                        own7 = 2;
+                        count7 = 3;
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 8)
+                {
+                    if (floor8 == 0)
+                    {
+                        own8 = 2;
+                        count8 = 3;
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 9)
+                {
+                    if (floor9 == 0)
+                    {
+                        own10 = 2;
+                        count10 = 3;
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 10)
+                {
+                    if (floor10 == 0)
+                    {
+                        own11 = 2;
+                        count11 = 3;
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 11)
+                {
+                    if (floor1 == 0)
+                    {
+                        own12 = 2;
+                        count12 = 3;
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 12)
+                {
+                    if (floor12 == 0)
+                    {
+                        own13 = 2;
+                        count13 = 3;
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 13)
+                {
+                    if (floor13 == 0)
+                    {
+                        own14 = 2;
+                        count14 = 3;
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 14)
+                {
+                    if (floor14 == 0)
+                    {
+                        own15 = 2;
+                        count15 = 3;
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 15)
+                {
+                    if (floor15 == 0)
+                    {
+                        own16 = 2;
+                        count16 = 3;
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 16)
+                {
+                    if (floor16 == 0)
+                    {
+                        own17 = 2;
+                        count17 = 3;
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 17)
+                {
+                    if (floor17 == 0)
+                    {
+                        own19 = 2;
+                        count19 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 18)
+                {
+                    if (floor18 == 0)
+                    {
+                        own20 = 2;
+                        count20 = 3;
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 19)
+                {
+                    if (floor19 == 0)
+                    {
+                        own21 = 2;
+                        count21 = 3;
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 20)
+                {
+                    if (floor9 == 0)
+                    {
+                        own22 = 2;
+                        count22 = 3;
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 21)
+                {
+                    if (floor21 == 0)
+                    {
+                        own23 = 2;
+                        count23 = 3;
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 22)
+                {
+                    if (floor22 == 0)
+                    {
+                        own24 = 2;
+                        count24 = 3;
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 23)
+                {
+                    if (floor23 == 0)
+                    {
+                        own25 = 2;
+                        count25 = 3;
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 24)
+                {
+                    if (floor24 == 0)
+                    {
+                        own26 = 2;
+                        count26 = 3;
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 25)
+                {
+                    if (floor9 == 0)
+                    {
+                        own27 = 2;
+                        count27 = 3;
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 26)
+                {
+                    if (floor26 == 0)
+                    {
+                        own28 = 2;
+                        count28 = 3;
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 27)
+                {
+                    if (floor27 == 0)
+                    {
+                        own29 = 2;
+                        count29 = 3;
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 28)
+                {
+                    if (floor28 == 0)
+                    {
+                        own30 = 2;
+                        count30 = 3;
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 29)
+                {
+                    if (floor29 == 0)
+                    {
+                        own31 = 2;
+                        count31 = 3;
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 30)
+                {
+                    if (floor30 == 0)
+                    {
+                        own33 = 2;
+                        count33 = 3;
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 31)
+                {
+                    if (floor31 == 0)
+                    {
+                        own34 = 2;
+                        count34 = 3;
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 32)
+                {
+                    if (floor32 == 0)
+                    {
+                        own35 = 2;
+                        count35 = 3;
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 33)
+                {
+                    if (floor33 == 0)
+                    {
+                        own36 = 2;
+                        count36 = 3;
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 34)
+                {
+                    if (floor34 == 0)
+                    {
+                        own37 = 2;
+                        count37 = 3;
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 35)
+                {
+                    if (floor35 == 0)
+                    {
+                        own38 = 2;
+                        count38 = 3;
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 36)
+                {
+                    if (floor36 == 0)
+                    {
+                        own39 = 2;
+                        count39 = 3;
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 37)
+                {
+                    if (floor37 == 0)
+                    {
+                        own40 = 2;
+                        count40 = 3;
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 38)
+                {
+                    if (floor38 == 0)
+                    {
+                        own42 = 2;
+                        count42 = 3;
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 39)
+                {
+                    if (floor39 == 0)
+                    {
+                        own43 = 2;
+                        count43 = 3;
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 40)
+                {
+                    if (floor40 == 0)
+                    {
+                        own44 = 2;
+                        count44 = 3;
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 41)
+                {
+                    if (floor41 == 0)
+                    {
+                        own45 = 2;
+                        count45 = 3;
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 42)
+                {
+                    if (floor42 == 0)
+                    {
+                        own46 = 2;
+                        count46 = 3;
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+            }
+            if (whoTurn == 3)
+            {
+                if (rangeRadomNum == 1)
+                {
+                    if (floor1 == 0)
+                    {
+                        own1 = 3;
+                        count1 = 3;
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 2)
+                {
+                    if (floor2 == 0)
+                    {
+                        own2 = 3;
+                        count2 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 3)
+                {
+                    if (floor3 == 0)
+                    {
+                        own3 = 3;
+                        count3 = 3;
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 4)
+                {
+                    if (floor4 == 0)
+                    {
+                        own4 = 3;
+                        count4 = 3;
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 5)
+                {
+                    if (floor5 == 0)
+                    {
+                        own5 = 3;
+                        count5 = 3;
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 6)
+                {
+                    if (floor6 == 0)
+                    {
+                        own6 = 3;
+                        count6 = 3;
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 7)
+                {
+                    if (floor7 == 0)
+                    {
+                        own7 = 3;
+                        count7 = 3;
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 8)
+                {
+                    if (floor8 == 0)
+                    {
+                        own8 = 3;
+                        count8 = 3;
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 9)
+                {
+                    if (floor9 == 0)
+                    {
+                        own10 = 3;
+                        count10 = 3;
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 10)
+                {
+                    if (floor10 == 0)
+                    {
+                        own11 = 3;
+                        count11 = 3;
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 11)
+                {
+                    if (floor1 == 0)
+                    {
+                        own12 = 3;
+                        count12 = 3;
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 12)
+                {
+                    if (floor12 == 0)
+                    {
+                        own13 = 3;
+                        count13 = 3;
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 13)
+                {
+                    if (floor13 == 0)
+                    {
+                        own14 = 3;
+                        count14 = 3;
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 14)
+                {
+                    if (floor14 == 0)
+                    {
+                        own15 = 3;
+                        count15 = 3;
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 15)
+                {
+                    if (floor15 == 0)
+                    {
+                        own16 = 3;
+                        count16 = 3;
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 16)
+                {
+                    if (floor16 == 0)
+                    {
+                        own17 = 3;
+                        count17 = 3;
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 17)
+                {
+                    if (floor17 == 0)
+                    {
+                        own19 = 3;
+                        count19 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 18)
+                {
+                    if (floor18 == 0)
+                    {
+                        own20 = 3;
+                        count20 = 3;
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 19)
+                {
+                    if (floor19 == 0)
+                    {
+                        own21 = 3;
+                        count21 = 3;
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 20)
+                {
+                    if (floor9 == 0)
+                    {
+                        own22 = 3;
+                        count22 = 3;
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 21)
+                {
+                    if (floor21 == 0)
+                    {
+                        own23 = 3;
+                        count23 = 3;
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 22)
+                {
+                    if (floor22 == 0)
+                    {
+                        own24 = 3;
+                        count24 = 3;
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 23)
+                {
+                    if (floor23 == 0)
+                    {
+                        own25 = 3;
+                        count25 = 3;
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 24)
+                {
+                    if (floor24 == 0)
+                    {
+                        own26 = 3;
+                        count26 = 3;
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 25)
+                {
+                    if (floor9 == 0)
+                    {
+                        own27 = 3;
+                        count27 = 3;
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 26)
+                {
+                    if (floor26 == 0)
+                    {
+                        own28 = 3;
+                        count28 = 3;
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 27)
+                {
+                    if (floor27 == 0)
+                    {
+                        own29 = 3;
+                        count29 = 3;
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 28)
+                {
+                    if (floor28 == 0)
+                    {
+                        own30 = 3;
+                        count30 = 3;
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 29)
+                {
+                    if (floor29 == 0)
+                    {
+                        own31 = 3;
+                        count31 = 3;
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 30)
+                {
+                    if (floor30 == 0)
+                    {
+                        own33 = 3;
+                        count33 = 3;
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 31)
+                {
+                    if (floor31 == 0)
+                    {
+                        own34 = 3;
+                        count34 = 3;
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 32)
+                {
+                    if (floor32 == 0)
+                    {
+                        own35 = 3;
+                        count35 = 3;
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 33)
+                {
+                    if (floor33 == 0)
+                    {
+                        own36 = 3;
+                        count36 = 3;
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 34)
+                {
+                    if (floor34 == 0)
+                    {
+                        own37 = 3;
+                        count37 = 3;
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 35)
+                {
+                    if (floor35 == 0)
+                    {
+                        own38 = 3;
+                        count38 = 3;
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 36)
+                {
+                    if (floor36 == 0)
+                    {
+                        own39 = 3;
+                        count39 = 3;
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 37)
+                {
+                    if (floor37 == 0)
+                    {
+                        own40 = 3;
+                        count40 = 3;
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 38)
+                {
+                    if (floor38 == 0)
+                    {
+                        own42 = 3;
+                        count42 = 3;
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 39)
+                {
+                    if (floor39 == 0)
+                    {
+                        own43 = 3;
+                        count43 = 3;
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 40)
+                {
+                    if (floor40 == 0)
+                    {
+                        own44 = 3;
+                        count44 = 3;
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 41)
+                {
+                    if (floor41 == 0)
+                    {
+                        own45 = 3;
+                        count45 = 3;
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 42)
+                {
+                    if (floor42 == 0)
+                    {
+                        own46 = 3;
+                        count46 = 3;
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+            }
+            if (whoTurn == 4)
+            {
+                if (rangeRadomNum == 1)
+                {
+                    if (floor1 == 0)
+                    {
+                        own1 = 4;
+                        count1 = 3;
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 2)
+                {
+                    if (floor2 == 0)
+                    {
+                        own2 = 4;
+                        count2 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 3)
+                {
+                    if (floor3 == 0)
+                    {
+                        own3 = 4;
+                        count3 = 3;
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 4)
+                {
+                    if (floor4 == 0)
+                    {
+                        own4 = 4;
+                        count4 = 3;
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 5)
+                {
+                    if (floor5 == 0)
+                    {
+                        own5 = 4;
+                        count5 = 3;
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 6)
+                {
+                    if (floor6 == 0)
+                    {
+                        own6 = 4;
+                        count6 = 3;
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 7)
+                {
+                    if (floor7 == 0)
+                    {
+                        own7 = 4;
+                        count7 = 3;
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 8)
+                {
+                    if (floor8 == 0)
+                    {
+                        own8 = 4;
+                        count8 = 3;
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 9)
+                {
+                    if (floor9 == 0)
+                    {
+                        own10 = 4;
+                        count10 = 3;
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 10)
+                {
+                    if (floor10 == 0)
+                    {
+                        own11 = 4;
+                        count11 = 3;
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 11)
+                {
+                    if (floor1 == 0)
+                    {
+                        own12 = 4;
+                        count12 = 3;
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 12)
+                {
+                    if (floor12 == 0)
+                    {
+                        own13 = 4;
+                        count13 = 3;
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 13)
+                {
+                    if (floor13 == 0)
+                    {
+                        own14 = 4;
+                        count14 = 3;
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 14)
+                {
+                    if (floor14 == 0)
+                    {
+                        own15 = 4;
+                        count15 = 3;
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 15)
+                {
+                    if (floor15 == 0)
+                    {
+                        own16 = 4;
+                        count16 = 3;
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 16)
+                {
+                    if (floor16 == 0)
+                    {
+                        own17 = 4;
+                        count17 = 3;
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 17)
+                {
+                    if (floor17 == 0)
+                    {
+                        own19 = 4;
+                        count19 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 18)
+                {
+                    if (floor18 == 0)
+                    {
+                        own20 = 4;
+                        count20 = 3;
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 19)
+                {
+                    if (floor19 == 0)
+                    {
+                        own21 = 4;
+                        count21 = 3;
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 20)
+                {
+                    if (floor9 == 0)
+                    {
+                        own22 = 4;
+                        count22 = 3;
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 21)
+                {
+                    if (floor21 == 0)
+                    {
+                        own23 = 4;
+                        count23 = 3;
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 22)
+                {
+                    if (floor22 == 0)
+                    {
+                        own24 = 4;
+                        count24 = 3;
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 23)
+                {
+                    if (floor23 == 0)
+                    {
+                        own25 = 4;
+                        count25 = 3;
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 24)
+                {
+                    if (floor24 == 0)
+                    {
+                        own26 = 4;
+                        count26 = 3;
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 25)
+                {
+                    if (floor9 == 0)
+                    {
+                        own27 = 4;
+                        count27 = 3;
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 26)
+                {
+                    if (floor26 == 0)
+                    {
+                        own28 = 4;
+                        count28 = 3;
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 27)
+                {
+                    if (floor27 == 0)
+                    {
+                        own29 = 4;
+                        count29 = 3;
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 28)
+                {
+                    if (floor28 == 0)
+                    {
+                        own30 = 4;
+                        count30 = 3;
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 29)
+                {
+                    if (floor29 == 0)
+                    {
+                        own31 = 4;
+                        count31 = 3;
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 30)
+                {
+                    if (floor30 == 0)
+                    {
+                        own33 = 4;
+                        count33 = 3;
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 31)
+                {
+                    if (floor31 == 0)
+                    {
+                        own34 = 4;
+                        count34 = 3;
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 32)
+                {
+                    if (floor32 == 0)
+                    {
+                        own35 = 4;
+                        count35 = 3;
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 33)
+                {
+                    if (floor33 == 0)
+                    {
+                        own36 = 4;
+                        count36 = 3;
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 34)
+                {
+                    if (floor34 == 0)
+                    {
+                        own37 = 4;
+                        count37 = 3;
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 35)
+                {
+                    if (floor35 == 0)
+                    {
+                        own38 = 4;
+                        count38 = 3;
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 36)
+                {
+                    if (floor36 == 0)
+                    {
+                        own39 = 4;
+                        count39 = 3;
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 37)
+                {
+                    if (floor37 == 0)
+                    {
+                        own40 = 4;
+                        count40 = 3;
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 38)
+                {
+                    if (floor38 == 0)
+                    {
+                        own42 = 4;
+                        count42 = 3;
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 39)
+                {
+                    if (floor39 == 0)
+                    {
+                        own43 = 4;
+                        count43 = 3;
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 40)
+                {
+                    if (floor40 == 0)
+                    {
+                        own44 = 4;
+                        count44 = 3;
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 41)
+                {
+                    if (floor41 == 0)
+                    {
+                        own45 = 4;
+                        count45 = 3;
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 42)
+                {
+                    if (floor42 == 0)
+                    {
+                        own46 = 4;
+                        count46 = 3;
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+            }
+            if (whoTurn == 5)
+            {
+                if (rangeRadomNum == 1)
+                {
+                    if (floor1 == 0)
+                    {
+                        own1 = 5;
+                        count1 = 3;
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 2)
+                {
+                    if (floor2 == 0)
+                    {
+                        own2 = 5;
+                        count2 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 3)
+                {
+                    if (floor3 == 0)
+                    {
+                        own3 = 5;
+                        count3 = 3;
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 4)
+                {
+                    if (floor4 == 0)
+                    {
+                        own4 = 5;
+                        count4 = 3;
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 5)
+                {
+                    if (floor5 == 0)
+                    {
+                        own5 = 5;
+                        count5 = 3;
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 6)
+                {
+                    if (floor6 == 0)
+                    {
+                        own6 = 5;
+                        count6 = 3;
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 7)
+                {
+                    if (floor7 == 0)
+                    {
+                        own7 = 5;
+                        count7 = 3;
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 8)
+                {
+                    if (floor8 == 0)
+                    {
+                        own8 = 5;
+                        count8 = 3;
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 9)
+                {
+                    if (floor9 == 0)
+                    {
+                        own10 = 5;
+                        count10 = 3;
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 10)
+                {
+                    if (floor10 == 0)
+                    {
+                        own11 = 5;
+                        count11 = 3;
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 11)
+                {
+                    if (floor1 == 0)
+                    {
+                        own12 = 5;
+                        count12 = 3;
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 12)
+                {
+                    if (floor12 == 0)
+                    {
+                        own13 = 5;
+                        count13 = 3;
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 13)
+                {
+                    if (floor13 == 0)
+                    {
+                        own14 = 5;
+                        count14 = 3;
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 14)
+                {
+                    if (floor14 == 0)
+                    {
+                        own15 = 5;
+                        count15 = 3;
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 15)
+                {
+                    if (floor15 == 0)
+                    {
+                        own16 = 5;
+                        count16 = 3;
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 16)
+                {
+                    if (floor16 == 0)
+                    {
+                        own17 = 5;
+                        count17 = 3;
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 17)
+                {
+                    if (floor17 == 0)
+                    {
+                        own19 = 5;
+                        count19 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 18)
+                {
+                    if (floor18 == 0)
+                    {
+                        own20 = 5;
+                        count20 = 3;
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 19)
+                {
+                    if (floor19 == 0)
+                    {
+                        own21 = 5;
+                        count21 = 3;
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 20)
+                {
+                    if (floor9 == 0)
+                    {
+                        own22 = 5;
+                        count22 = 3;
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 21)
+                {
+                    if (floor21 == 0)
+                    {
+                        own23 = 5;
+                        count23 = 3;
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 22)
+                {
+                    if (floor22 == 0)
+                    {
+                        own24 = 5;
+                        count24 = 3;
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 23)
+                {
+                    if (floor23 == 0)
+                    {
+                        own25 = 5;
+                        count25 = 3;
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 24)
+                {
+                    if (floor24 == 0)
+                    {
+                        own26 = 5;
+                        count26 = 3;
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 25)
+                {
+                    if (floor9 == 0)
+                    {
+                        own27 = 5;
+                        count27 = 3;
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 26)
+                {
+                    if (floor26 == 0)
+                    {
+                        own28 = 5;
+                        count28 = 3;
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 27)
+                {
+                    if (floor27 == 0)
+                    {
+                        own29 = 5;
+                        count29 = 3;
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 28)
+                {
+                    if (floor28 == 0)
+                    {
+                        own30 = 5;
+                        count30 = 3;
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 29)
+                {
+                    if (floor29 == 0)
+                    {
+                        own31 = 5;
+                        count31 = 3;
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 30)
+                {
+                    if (floor30 == 0)
+                    {
+                        own33 = 5;
+                        count33 = 3;
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 31)
+                {
+                    if (floor31 == 0)
+                    {
+                        own34 = 5;
+                        count34 = 3;
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 32)
+                {
+                    if (floor32 == 0)
+                    {
+                        own35 = 5;
+                        count35 = 3;
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 33)
+                {
+                    if (floor33 == 0)
+                    {
+                        own36 = 5;
+                        count36 = 3;
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 34)
+                {
+                    if (floor34 == 0)
+                    {
+                        own37 = 5;
+                        count37 = 3;
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 35)
+                {
+                    if (floor35 == 0)
+                    {
+                        own38 = 5;
+                        count38 = 3;
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 36)
+                {
+                    if (floor36 == 0)
+                    {
+                        own39 = 5;
+                        count39 = 3;
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 37)
+                {
+                    if (floor37 == 0)
+                    {
+                        own40 = 5;
+                        count40 = 3;
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 38)
+                {
+                    if (floor38 == 0)
+                    {
+                        own42 = 5;
+                        count42 = 3;
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 39)
+                {
+                    if (floor39 == 0)
+                    {
+                        own43 = 5;
+                        count43 = 3;
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 40)
+                {
+                    if (floor40 == 0)
+                    {
+                        own44 = 5;
+                        count44 = 3;
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 41)
+                {
+                    if (floor41 == 0)
+                    {
+                        own45 = 5;
+                        count45 = 3;
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 42)
+                {
+                    if (floor42 == 0)
+                    {
+                        own46 = 5;
+                        count46 = 3;
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+            }
+            if (whoTurn == 6)
+            {
+                if (rangeRadomNum == 1)
+                {
+                    if (floor1 == 0)
+                    {
+                        own1 = 6;
+                        count1 = 3;
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 2)
+                {
+                    if (floor2 == 0)
+                    {
+                        own2 = 6;
+                        count2 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 3)
+                {
+                    if (floor3 == 0)
+                    {
+                        own3 = 6;
+                        count3 = 3;
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 4)
+                {
+                    if (floor4 == 0)
+                    {
+                        own4 = 6;
+                        count4 = 3;
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 5)
+                {
+                    if (floor5 == 0)
+                    {
+                        own5 = 6;
+                        count5 = 3;
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 6)
+                {
+                    if (floor6 == 0)
+                    {
+                        own6 = 6;
+                        count6 = 3;
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 7)
+                {
+                    if (floor7 == 0)
+                    {
+                        own7 = 6;
+                        count7 = 3;
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 8)
+                {
+                    if (floor8 == 0)
+                    {
+                        own8 = 6;
+                        count8 = 3;
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 9)
+                {
+                    if (floor9 == 0)
+                    {
+                        own10 = 6;
+                        count10 = 3;
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 10)
+                {
+                    if (floor10 == 0)
+                    {
+                        own11 = 6;
+                        count11 = 3;
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 11)
+                {
+                    if (floor1 == 0)
+                    {
+                        own12 = 6;
+                        count12 = 3;
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 12)
+                {
+                    if (floor12 == 0)
+                    {
+                        own13 = 6;
+                        count13 = 3;
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 13)
+                {
+                    if (floor13 == 0)
+                    {
+                        own14 = 6;
+                        count14 = 3;
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 14)
+                {
+                    if (floor14 == 0)
+                    {
+                        own15 = 6;
+                        count15 = 3;
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 15)
+                {
+                    if (floor15 == 0)
+                    {
+                        own16 = 6;
+                        count16 = 3;
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 16)
+                {
+                    if (floor16 == 0)
+                    {
+                        own17 = 6;
+                        count17 = 3;
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 17)
+                {
+                    if (floor17 == 0)
+                    {
+                        own19 = 6;
+                        count19 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 18)
+                {
+                    if (floor18 == 0)
+                    {
+                        own20 = 6;
+                        count20 = 3;
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 19)
+                {
+                    if (floor19 == 0)
+                    {
+                        own21 = 6;
+                        count21 = 3;
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 20)
+                {
+                    if (floor9 == 0)
+                    {
+                        own22 = 6;
+                        count22 = 3;
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 21)
+                {
+                    if (floor21 == 0)
+                    {
+                        own23 = 6;
+                        count23 = 3;
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 22)
+                {
+                    if (floor22 == 0)
+                    {
+                        own24 = 6;
+                        count24 = 3;
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 23)
+                {
+                    if (floor23 == 0)
+                    {
+                        own25 = 6;
+                        count25 = 3;
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 24)
+                {
+                    if (floor24 == 0)
+                    {
+                        own26 = 6;
+                        count26 = 3;
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 25)
+                {
+                    if (floor9 == 0)
+                    {
+                        own27 = 6;
+                        count27 = 3;
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 26)
+                {
+                    if (floor26 == 0)
+                    {
+                        own28 = 6;
+                        count28 = 3;
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 27)
+                {
+                    if (floor27 == 0)
+                    {
+                        own29 = 6;
+                        count29 = 3;
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 28)
+                {
+                    if (floor28 == 0)
+                    {
+                        own30 = 6;
+                        count30 = 3;
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 29)
+                {
+                    if (floor29 == 0)
+                    {
+                        own31 = 6;
+                        count31 = 3;
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 30)
+                {
+                    if (floor30 == 0)
+                    {
+                        own33 = 6;
+                        count33 = 3;
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 31)
+                {
+                    if (floor31 == 0)
+                    {
+                        own34 = 6;
+                        count34 = 3;
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 32)
+                {
+                    if (floor32 == 0)
+                    {
+                        own35 = 6;
+                        count35 = 3;
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 33)
+                {
+                    if (floor33 == 0)
+                    {
+                        own36 = 6;
+                        count36 = 3;
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 34)
+                {
+                    if (floor34 == 0)
+                    {
+                        own37 = 6;
+                        count37 = 3;
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 35)
+                {
+                    if (floor35 == 0)
+                    {
+                        own38 = 6;
+                        count38 = 3;
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 36)
+                {
+                    if (floor36 == 0)
+                    {
+                        own39 = 6;
+                        count39 = 3;
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 37)
+                {
+                    if (floor37 == 0)
+                    {
+                        own40 = 6;
+                        count40 = 3;
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 38)
+                {
+                    if (floor38 == 0)
+                    {
+                        own42 = 6;
+                        count42 = 3;
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 39)
+                {
+                    if (floor39 == 0)
+                    {
+                        own43 = 6;
+                        count43 = 3;
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 40)
+                {
+                    if (floor40 == 0)
+                    {
+                        own44 = 6;
+                        count44 = 3;
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 41)
+                {
+                    if (floor41 == 0)
+                    {
+                        own45 = 6;
+                        count45 = 3;
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 42)
+                {
+                    if (floor42 == 0)
+                    {
+                        own46 = 6;
+                        count46 = 3;
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+            }
+            if (whoTurn == 7)
+            {
+                if (rangeRadomNum == 1)
+                {
+                    if (floor1 == 0)
+                    {
+                        own1 = 7;
+                        count1 = 3;
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 2)
+                {
+                    if (floor2 == 0)
+                    {
+                        own2 = 7;
+                        count2 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 3)
+                {
+                    if (floor3 == 0)
+                    {
+                        own3 = 7;
+                        count3 = 3;
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 4)
+                {
+                    if (floor4 == 0)
+                    {
+                        own4 = 7;
+                        count4 = 3;
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 5)
+                {
+                    if (floor5 == 0)
+                    {
+                        own5 = 7;
+                        count5 = 3;
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 6)
+                {
+                    if (floor6 == 0)
+                    {
+                        own6 = 7;
+                        count6 = 3;
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 7)
+                {
+                    if (floor7 == 0)
+                    {
+                        own7 = 7;
+                        count7 = 3;
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 8)
+                {
+                    if (floor8 == 0)
+                    {
+                        own8 = 7;
+                        count8 = 3;
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 9)
+                {
+                    if (floor9 == 0)
+                    {
+                        own10 = 7;
+                        count10 = 3;
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 10)
+                {
+                    if (floor10 == 0)
+                    {
+                        own11 = 7;
+                        count11 = 3;
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 11)
+                {
+                    if (floor1 == 0)
+                    {
+                        own12 = 7;
+                        count12 = 3;
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 12)
+                {
+                    if (floor12 == 0)
+                    {
+                        own13 = 7;
+                        count13 = 3;
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 13)
+                {
+                    if (floor13 == 0)
+                    {
+                        own14 = 7;
+                        count14 = 3;
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 14)
+                {
+                    if (floor14 == 0)
+                    {
+                        own15 = 7;
+                        count15 = 3;
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 15)
+                {
+                    if (floor15 == 0)
+                    {
+                        own16 = 7;
+                        count16 = 3;
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 16)
+                {
+                    if (floor16 == 0)
+                    {
+                        own17 = 7;
+                        count17 = 3;
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 17)
+                {
+                    if (floor17 == 0)
+                    {
+                        own19 = 7;
+                        count19 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 18)
+                {
+                    if (floor18 == 0)
+                    {
+                        own20 = 7;
+                        count20 = 3;
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 19)
+                {
+                    if (floor19 == 0)
+                    {
+                        own21 = 7;
+                        count21 = 3;
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 20)
+                {
+                    if (floor9 == 0)
+                    {
+                        own22 = 7;
+                        count22 = 3;
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 21)
+                {
+                    if (floor21 == 0)
+                    {
+                        own23 = 7;
+                        count23 = 3;
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 22)
+                {
+                    if (floor22 == 0)
+                    {
+                        own24 = 7;
+                        count24 = 3;
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 23)
+                {
+                    if (floor23 == 0)
+                    {
+                        own25 = 7;
+                        count25 = 3;
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 24)
+                {
+                    if (floor24 == 0)
+                    {
+                        own26 = 7;
+                        count26 = 3;
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 25)
+                {
+                    if (floor9 == 0)
+                    {
+                        own27 = 7;
+                        count27 = 3;
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 26)
+                {
+                    if (floor26 == 0)
+                    {
+                        own28 = 7;
+                        count28 = 3;
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 27)
+                {
+                    if (floor27 == 0)
+                    {
+                        own29 = 7;
+                        count29 = 3;
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 28)
+                {
+                    if (floor28 == 0)
+                    {
+                        own30 = 7;
+                        count30 = 3;
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 29)
+                {
+                    if (floor29 == 0)
+                    {
+                        own31 = 7;
+                        count31 = 3;
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 30)
+                {
+                    if (floor30 == 0)
+                    {
+                        own33 = 7;
+                        count33 = 3;
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 31)
+                {
+                    if (floor31 == 0)
+                    {
+                        own34 = 7;
+                        count34 = 3;
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 32)
+                {
+                    if (floor32 == 0)
+                    {
+                        own35 = 7;
+                        count35 = 3;
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 33)
+                {
+                    if (floor33 == 0)
+                    {
+                        own36 = 7;
+                        count36 = 3;
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 34)
+                {
+                    if (floor34 == 0)
+                    {
+                        own37 = 7;
+                        count37 = 3;
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 35)
+                {
+                    if (floor35 == 0)
+                    {
+                        own38 = 7;
+                        count38 = 3;
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 36)
+                {
+                    if (floor36 == 0)
+                    {
+                        own39 = 7;
+                        count39 = 3;
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 37)
+                {
+                    if (floor37 == 0)
+                    {
+                        own40 = 7;
+                        count40 = 3;
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 38)
+                {
+                    if (floor38 == 0)
+                    {
+                        own42 = 7;
+                        count42 = 3;
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 39)
+                {
+                    if (floor39 == 0)
+                    {
+                        own43 = 7;
+                        count43 = 3;
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 40)
+                {
+                    if (floor40 == 0)
+                    {
+                        own44 = 7;
+                        count44 = 3;
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 41)
+                {
+                    if (floor41 == 0)
+                    {
+                        own45 = 7;
+                        count45 = 3;
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 42)
+                {
+                    if (floor42 == 0)
+                    {
+                        own46 = 7;
+                        count46 = 3;
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+            }
+            if (whoTurn == 8)
+            {
+                if (rangeRadomNum == 1)
+                {
+                    if (floor1 == 0)
+                    {
+                        own1 = 8;
+                        count1 = 3;
+                        Level3Building1.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 2)
+                {
+                    if (floor2 == 0)
+                    {
+                        own2 = 8;
+                        count2 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 3)
+                {
+                    if (floor3 == 0)
+                    {
+                        own3 = 8;
+                        count3 = 3;
+                        Level3Building3.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 4)
+                {
+                    if (floor4 == 0)
+                    {
+                        own4 = 8;
+                        count4 = 3;
+                        Level3Building4.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 5)
+                {
+                    if (floor5 == 0)
+                    {
+                        own5 = 8;
+                        count5 = 3;
+                        Level3Building5.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 6)
+                {
+                    if (floor6 == 0)
+                    {
+                        own6 = 8;
+                        count6 = 3;
+                        Level3Building7.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 7)
+                {
+                    if (floor7 == 0)
+                    {
+                        own7 = 8;
+                        count7 = 3;
+                        Level3Building8.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 8)
+                {
+                    if (floor8 == 0)
+                    {
+                        own8 = 8;
+                        count8 = 3;
+                        Level3Building9.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 9)
+                {
+                    if (floor9 == 0)
+                    {
+                        own10 = 8;
+                        count10 = 3;
+                        Level3Building11.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 10)
+                {
+                    if (floor10 == 0)
+                    {
+                        own11 = 8;
+                        count11 = 3;
+                        Level3Building13.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 11)
+                {
+                    if (floor1 == 0)
+                    {
+                        own12 = 8;
+                        count12 = 3;
+                        Level3Building14.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 12)
+                {
+                    if (floor12 == 0)
+                    {
+                        own13 = 8;
+                        count13 = 3;
+                        Level3Building15.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 13)
+                {
+                    if (floor13 == 0)
+                    {
+                        own14 = 8;
+                        count14 = 3;
+                        Level3Building16.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 14)
+                {
+                    if (floor14 == 0)
+                    {
+                        own15 = 8;
+                        count15 = 3;
+                        Level3Building17.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 15)
+                {
+                    if (floor15 == 0)
+                    {
+                        own16 = 8;
+                        count16 = 3;
+                        Level3Building19.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 16)
+                {
+                    if (floor16 == 0)
+                    {
+                        own17 = 8;
+                        count17 = 3;
+                        Level3Building20.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 17)
+                {
+                    if (floor17 == 0)
+                    {
+                        own19 = 8;
+                        count19 = 3;
+                        Level3Building2.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 18)
+                {
+                    if (floor18 == 0)
+                    {
+                        own20 = 8;
+                        count20 = 3;
+                        Level3Building23.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 19)
+                {
+                    if (floor19 == 0)
+                    {
+                        own21 = 8;
+                        count21 = 3;
+                        Level3Building24.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 20)
+                {
+                    if (floor9 == 0)
+                    {
+                        own22 = 8;
+                        count22 = 3;
+                        Level3Building26.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 21)
+                {
+                    if (floor21 == 0)
+                    {
+                        own23 = 8;
+                        count23 = 3;
+                        Level3Building27.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 22)
+                {
+                    if (floor22 == 0)
+                    {
+                        own24 = 8;
+                        count24 = 3;
+                        Level3Building28.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 23)
+                {
+                    if (floor23 == 0)
+                    {
+                        own25 = 8;
+                        count25 = 3;
+                        Level3Building29.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 24)
+                {
+                    if (floor24 == 0)
+                    {
+                        own26 = 8;
+                        count26 = 3;
+                        Level3Building31.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 25)
+                {
+                    if (floor9 == 0)
+                    {
+                        own27 = 8;
+                        count27 = 3;
+                        Level3Building32.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 26)
+                {
+                    if (floor26 == 0)
+                    {
+                        own28 = 8;
+                        count28 = 3;
+                        Level3Building33.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 27)
+                {
+                    if (floor27 == 0)
+                    {
+                        own29 = 8;
+                        count29 = 3;
+                        Level3Building34.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 28)
+                {
+                    if (floor28 == 0)
+                    {
+                        own30 = 8;
+                        count30 = 3;
+                        Level3Building36.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 29)
+                {
+                    if (floor29 == 0)
+                    {
+                        own31 = 8;
+                        count31 = 3;
+                        Level3Building37.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 30)
+                {
+                    if (floor30 == 0)
+                    {
+                        own33 = 8;
+                        count33 = 3;
+                        Level3Building39.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 31)
+                {
+                    if (floor31 == 0)
+                    {
+                        own34 = 8;
+                        count34 = 3;
+                        Level3Building40.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 32)
+                {
+                    if (floor32 == 0)
+                    {
+                        own35 = 8;
+                        count35 = 3;
+                        Level3Building42.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 33)
+                {
+                    if (floor33 == 0)
+                    {
+                        own36 = 8;
+                        count36 = 3;
+                        Level3Building43.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 34)
+                {
+                    if (floor34 == 0)
+                    {
+                        own37 = 8;
+                        count37 = 3;
+                        Level3Building44.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 35)
+                {
+                    if (floor35 == 0)
+                    {
+                        own38 = 8;
+                        count38 = 3;
+                        Level3Building47.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 36)
+                {
+                    if (floor36 == 0)
+                    {
+                        own39 = 8;
+                        count39 = 3;
+                        Level3Building48.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 37)
+                {
+                    if (floor37 == 0)
+                    {
+                        own40 = 8;
+                        count40 = 3;
+                        Level3Building49.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 38)
+                {
+                    if (floor38 == 0)
+                    {
+                        own42 = 8;
+                        count42 = 3;
+                        Level3Building51.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 39)
+                {
+                    if (floor39 == 0)
+                    {
+                        own43 = 8;
+                        count43 = 3;
+                        Level3Building52.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 40)
+                {
+                    if (floor40 == 0)
+                    {
+                        own44 = 8;
+                        count44 = 3;
+                        Level3Building55.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 41)
+                {
+                    if (floor41 == 0)
+                    {
+                        own45 = 8;
+                        count45 = 3;
+                        Level3Building56.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+                if (rangeRadomNum == 42)
+                {
+                    if (floor42 == 0)
+                    {
+                        own46 = 8;
+                        count46 = 3;
+                        Level3Building57.gameObject.SetActive(true);
+                    }
+                    else random2Building();
+                }
+            }
+
+
+
+
+
+        }
+
+    }
+
+
+    private IEnumerator TemporarilyDeactivate(float duration)
+    {
+        ImageForLucky1.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForLucky1.gameObject.SetActive(false);
+    }
+
+    private IEnumerator TemporarilyDeactivate2(float duration)
+    {
+        ImageForX.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForX.gameObject.SetActive(false);
+    }
+
+    public static IEnumerator TemporarilyDeactivate3(float duration)
+    {
+        ImageForLuck5.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForLuck5.gameObject.SetActive(false);
+    }
+
+    public static IEnumerator TemporarilyDeactivate4(float duration)
+    {
+        ImageForLuck6.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForLuck6.gameObject.SetActive(false);
+    }
+
+    private IEnumerator TemporarilyDeactivate5(float duration)
+    {
+        ImageForLuck7.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForLuck7.gameObject.SetActive(false);
+    }
+
+    private IEnumerator TemporarilyDeactivate6(float duration)
+    {
+        ImageForLuck8.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForLuck8.gameObject.SetActive(false);
+    }
+
 
 }
