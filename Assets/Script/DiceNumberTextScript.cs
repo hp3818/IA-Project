@@ -1607,14 +1607,14 @@ public class DiceNumberTextScript : MonoBehaviour {
 		FollowThePath.whosTurn = 8;
     }
 
-    private IEnumerator TemporarilyDeactivate(float duration)
+    public IEnumerator TemporarilyDeactivate(float duration)
     {
         ImageForJail.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);
         ImageForJail.gameObject.SetActive(false);
     }
 
-    private IEnumerator TemporarilyDeactivat2(float duration)
+    public IEnumerator TemporarilyDeactivat2(float duration)
     {
         ImageForHospital.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);

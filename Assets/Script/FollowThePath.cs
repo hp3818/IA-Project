@@ -16,7 +16,7 @@ public class FollowThePath : MonoBehaviour {
 
     public static int point0 = 1;
     public static int point12 = 0;
-    public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost, text5, text6, text7, text8;
+    public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost;
 
     [SerializeField]
     private float moveSpeed = 1f;
@@ -28,7 +28,6 @@ public class FollowThePath : MonoBehaviour {
     void Start()
     {
         transform.position = waypoints[wayPointIndex].transform.position;
-
         ImageForChance.gameObject.SetActive(false);
     }
     
@@ -417,16 +416,21 @@ public class FollowThePath : MonoBehaviour {
 				random ();
 			}
 
-            if (transform.position == waypoints[60].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
-            {
-                transform.position = waypoints[61].transform.position;
-                wayPointIndex = 61;
-            }
-
-            if (transform.position == waypoints[61].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
+            if (transform.position == waypoints[60].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown - Accept))
             {
                 transform.position = waypoints[58].transform.position;
                 wayPointIndex = 58;
+                Accept += Movement;
+                Debug.Log(wayPointIndex);
+                Debug.Log(GameControl.player1Waypoint);
+                Debug.Log(Accept);
+            }
+
+            if (transform.position == waypoints[61].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown - Accept))
+            {
+                transform.position = waypoints[58].transform.position;
+                wayPointIndex = 58;
+                Accept += Movement;
             }
 
             if (transform.position == waypoints[62].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
@@ -434,24 +438,24 @@ public class FollowThePath : MonoBehaviour {
                 StartCoroutine((GameControl.TemporarilyDeactivate3(2)));
                 if (GameControl.numberOfPlayer == 4)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn == 1)
                     {
                         HouseSelection.sum1 += 80000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn  == 2)
                     {
                         HouseSelection.sum2 += 80000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn == 3)
                     {
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 3 == 4)
+                    if (DiceNumberTextScript.whosTurn == 4)
                     {
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
@@ -462,17 +466,17 @@ public class FollowThePath : MonoBehaviour {
                 }
                 if (GameControl.numberOfPlayer == 5)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn  == 1)
                     {
                         HouseSelection.sum1 += 80000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn == 2)
                     {
                         HouseSelection.sum2 += 80000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn  == 3)
                     {
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
@@ -481,7 +485,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum5 += 80000;
                         player5Cost.text = HouseSelection.sum5.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    if (DiceNumberTextScript.whosTurn == 4)
                     {
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
@@ -503,26 +507,26 @@ public class FollowThePath : MonoBehaviour {
                 }
                 if (GameControl.numberOfPlayer == 6)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn  == 1)
                     {
                         HouseSelection.sum1 += 80000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn  == 2)
                     {
                         HouseSelection.sum2 += 80000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn == 3)
                     {
                         HouseSelection.sum2 += 80000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    if (DiceNumberTextScript.whosTurn == 4)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -531,7 +535,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum6 += 80000;
                         player5Cost.text = HouseSelection.sum6.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    if (DiceNumberTextScript.whosTurn  == 5)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -540,7 +544,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum6 += 80000;
                         player6Cost.text = HouseSelection.sum6.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 5 == 6)
+                    if (DiceNumberTextScript.whosTurn  == 6)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -553,26 +557,26 @@ public class FollowThePath : MonoBehaviour {
                 }
                 if (GameControl.numberOfPlayer == 7)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn  == 1)
                     {
                         HouseSelection.sum1 += 80000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn  == 2)
                     {
                         HouseSelection.sum2 += 80000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn == 3)
                     {
                         HouseSelection.sum2 += 80000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    if (DiceNumberTextScript.whosTurn  == 4)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -583,7 +587,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum7 += 80000;
                         player7Cost.text = HouseSelection.sum7.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    if (DiceNumberTextScript.whosTurn  == 5)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -594,7 +598,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum7 += 80000;
                         player7Cost.text = HouseSelection.sum7.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 5 == 6)
+                    if (DiceNumberTextScript.whosTurn  == 6)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -605,7 +609,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum7 += 80000;
                         player7Cost.text = HouseSelection.sum7.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 6 == 7)
+                    if (DiceNumberTextScript.whosTurn  == 7)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -620,26 +624,26 @@ public class FollowThePath : MonoBehaviour {
                 }
                 if (GameControl.numberOfPlayer == 8)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn == 1)
                     {
                         HouseSelection.sum1 += 80000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn  == 2)
                     {
                         HouseSelection.sum2 += 80000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn  == 3)
                     {
                         HouseSelection.sum2 += 80000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                         HouseSelection.sum3 += 80000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    if (DiceNumberTextScript.whosTurn == 4)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -652,7 +656,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum8 += 80000;
                         player8Cost.text = HouseSelection.sum8.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    if (DiceNumberTextScript.whosTurn== 5)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -665,7 +669,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum8 += 80000;
                         player8Cost.text = HouseSelection.sum8.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 6)
+                    if (DiceNumberTextScript.whosTurn  == 6)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -678,7 +682,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum8 += 80000;
                         player8Cost.text = HouseSelection.sum8.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 7)
+                    if (DiceNumberTextScript.whosTurn == 7)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -691,7 +695,7 @@ public class FollowThePath : MonoBehaviour {
                         HouseSelection.sum8 += 80000;
                         player8Cost.text = HouseSelection.sum8.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 7 == 8)
+                    if (DiceNumberTextScript.whosTurn == 8)
                     {
                         HouseSelection.sum4 += 80000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -713,22 +717,22 @@ public class FollowThePath : MonoBehaviour {
                 StartCoroutine((GameControl.TemporarilyDeactivate4(2)));
                 if (GameControl.numberOfPlayer == 4)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn == 1)
                     {
                         HouseSelection.sum1 += 1000000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn == 2)
                     {
                         HouseSelection.sum2 += 1000000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn == 3)
                     {
                         HouseSelection.sum3 += 1000000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 3 == 4)
+                    if (DiceNumberTextScript.whosTurn == 4)
                     {
                         HouseSelection.sum4 += 1000000;
                         player4Cost.text = HouseSelection.sum4.ToString();
@@ -736,27 +740,27 @@ public class FollowThePath : MonoBehaviour {
                 }
                 if (GameControl.numberOfPlayer == 5)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn == 1)
                     {
                         HouseSelection.sum1 += 1000000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn  == 2)
                     {
                         HouseSelection.sum2 += 1000000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn == 3)
                     {
                         HouseSelection.sum3 += 1000000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    if (DiceNumberTextScript.whosTurn == 4)
                     {
                         HouseSelection.sum4 += 1000000;
                         player4Cost.text = HouseSelection.sum4.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 4 == 5)
+                    if (DiceNumberTextScript.whosTurn  == 5)
                     {
                         HouseSelection.sum5 += 1000000;
                         player5Cost.text = HouseSelection.sum5.ToString();
@@ -764,32 +768,32 @@ public class FollowThePath : MonoBehaviour {
                 }
                 if (GameControl.numberOfPlayer == 6)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn == 1)
                     {
                         HouseSelection.sum1 += 1000000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn  == 2)
                     {
                         HouseSelection.sum2 += 1000000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn  == 3)
                     {
                         HouseSelection.sum3 += 1000000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    if (DiceNumberTextScript.whosTurn== 4)
                     {
                         HouseSelection.sum4 += 1000000;
                         player4Cost.text = HouseSelection.sum4.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    if (DiceNumberTextScript.whosTurn  == 5)
                     {
                         HouseSelection.sum5 += 1000000;
                         player5Cost.text = HouseSelection.sum5.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 5 == 6)
+                    if (DiceNumberTextScript.whosTurn == 6)
                     {
                         HouseSelection.sum6 += 1000000;
                         player6Cost.text = HouseSelection.sum6.ToString();
@@ -797,37 +801,37 @@ public class FollowThePath : MonoBehaviour {
                 }
                 if (GameControl.numberOfPlayer == 7)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn == 1)
                     {
                         HouseSelection.sum1 += 1000000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn == 2)
                     {
                         HouseSelection.sum2 += 1000000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn  == 3)
                     {
                         HouseSelection.sum3 += 1000000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    if (DiceNumberTextScript.whosTurn  == 4)
                     {
                         HouseSelection.sum4 += 1000000;
                         player4Cost.text = HouseSelection.sum4.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    if (DiceNumberTextScript.whosTurn == 5)
                     {
                         HouseSelection.sum5 += 1000000;
                         player5Cost.text = HouseSelection.sum5.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 6)
+                    if (DiceNumberTextScript.whosTurn == 6)
                     {
                         HouseSelection.sum6 += 1000000;
                         player6Cost.text = HouseSelection.sum6.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 6 == 7)
+                    if (DiceNumberTextScript.whosTurn == 7)
                     {
                         HouseSelection.sum7 += 1000000;
                         player7Cost.text = HouseSelection.sum7.ToString();
@@ -836,42 +840,42 @@ public class FollowThePath : MonoBehaviour {
                 }
                 if (GameControl.numberOfPlayer == 8)
                 {
-                    if (DiceNumberTextScript.whosTurn - 1 == 1)
+                    if (DiceNumberTextScript.whosTurn  == 1)
                     {
                         HouseSelection.sum1 += 1000000;
                         player1Cost.text = HouseSelection.sum1.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 2)
+                    if (DiceNumberTextScript.whosTurn == 2)
                     {
                         HouseSelection.sum2 += 1000000;
                         player2Cost.text = HouseSelection.sum2.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 3)
+                    if (DiceNumberTextScript.whosTurn  == 3)
                     {
                         HouseSelection.sum3 += 1000000;
                         player3Cost.text = HouseSelection.sum3.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 4)
+                    if (DiceNumberTextScript.whosTurn  == 4)
                     {
                         HouseSelection.sum4 += 1000000;
                         player4Cost.text = HouseSelection.sum4.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 5)
+                    if (DiceNumberTextScript.whosTurn  == 5)
                     {
                         HouseSelection.sum5 += 1000000;
                         player5Cost.text = HouseSelection.sum5.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 6)
+                    if (DiceNumberTextScript.whosTurn == 6)
                     {
                         HouseSelection.sum6 += 1000000;
                         player6Cost.text = HouseSelection.sum6.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn - 1 == 7)
+                    if (DiceNumberTextScript.whosTurn  == 7)
                     {
                         HouseSelection.sum7 += 1000000;
                         player7Cost.text = HouseSelection.sum7.ToString();
                     }
-                    if (DiceNumberTextScript.whosTurn + 7 == 8)
+                    if (DiceNumberTextScript.whosTurn  == 8)
                     {
                         HouseSelection.sum8 += 1000000;
                         player8Cost.text = HouseSelection.sum8.ToString();
@@ -879,6 +883,650 @@ public class FollowThePath : MonoBehaviour {
 
                 }
             }
+
+            if (transform.position == waypoints[68].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
+            {
+                StartCoroutine((GameControl.TemporarilyDeactivate9(2)));
+                if (GameControl.numberOfPlayer == 4)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.8;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.8;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+
+                    }
+                }
+                if (GameControl.numberOfPlayer == 5)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.8;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.8;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn + 4 == 5)
+                    {
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+
+                }
+                if (GameControl.numberOfPlayer == 6)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.8;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.8;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum2 *= 0.8;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player5Cost.text = HouseSelection.sum6.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player5Cost.text = HouseSelection.sum6.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum4 *= 0.8;
+                        player5Cost.text = HouseSelection.sum6.ToString();
+                    }
+
+                }
+                if (GameControl.numberOfPlayer == 7)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.8;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.8;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum2 *= 0.8;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 7)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+
+                }
+                if (GameControl.numberOfPlayer == 8)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.8;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.8;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum2 *= 0.8;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                        HouseSelection.sum3 *= 0.8;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                        HouseSelection.sum8 *= 0.8;
+                        player8Cost.text = HouseSelection.sum8.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                        HouseSelection.sum8 *= 0.8;
+                        player8Cost.text = HouseSelection.sum8.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                        HouseSelection.sum8 *= 0.8;
+                        player8Cost.text = HouseSelection.sum8.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 7)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                        HouseSelection.sum8 *= 0.8;
+                        player8Cost.text = HouseSelection.sum8.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 8)
+                    {
+                        HouseSelection.sum4 *= 0.8;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                        HouseSelection.sum5 *= 0.8;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                        HouseSelection.sum6 *= 0.8;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                        HouseSelection.sum7 *= 0.8;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                        HouseSelection.sum8 *= 0.8;
+                        player8Cost.text = HouseSelection.sum8.ToString();
+                    }
+
+                }
+            }
+
+            if (transform.position == waypoints[69].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
+            {
+                StartCoroutine((GameControl.TemporarilyDeactivate10(2)));
+                if (GameControl.numberOfPlayer == 4)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.5;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.5;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.5;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum5 *= 0.5;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                }
+                if (GameControl.numberOfPlayer == 5)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.5;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.5;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.5;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum5 *= 0.5;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum5 *= 0.5;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                }
+                if (GameControl.numberOfPlayer == 6)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.5;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.5;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.5;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.5;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum5 *= 0.5;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum6 *= 0.5;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                    }
+                }
+                if (GameControl.numberOfPlayer == 7)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.5;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.5;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.5;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.5;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum5 *= 0.5;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum6 *= 0.5;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 7)
+                    {
+                        HouseSelection.sum7 *= 0.5;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+
+                }
+                if (GameControl.numberOfPlayer == 8)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.5;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.5;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.5;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.5;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum5 *= 0.5;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum6 *= 0.5;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 7)
+                    {
+                        HouseSelection.sum7 *= 0.5;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 8)
+                    {
+                        HouseSelection.sum8 *= 0.5;
+                        player8Cost.text = HouseSelection.sum8.ToString();
+                    }
+
+                }
+            }
+
+            if (transform.position == waypoints[70].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
+            {
+                transform.position = waypoints[30].transform.position;
+                wayPointIndex = 30;
+                Accept += Movement;
+            }
+
+            if (transform.position == waypoints[71].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
+            {
+                goToHospital();
+                Accept += Movement;
+            }
+
+            if (transform.position == waypoints[72].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown - Accept))
+            {
+                transform.position = waypoints[71].transform.position;
+                wayPointIndex = 71;
+                Accept += Movement;
+            }
+
+            if (transform.position == waypoints[74].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown))
+            {
+                StartCoroutine((GameControl.TemporarilyDeactivate10(2)));
+                if (GameControl.numberOfPlayer == 4)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.1;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.1;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.1;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum5 *= 0.1;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                }
+                if (GameControl.numberOfPlayer == 5)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.1;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.1;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.1;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum5 *= 0.1;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum5 *= 0.1;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                }
+                if (GameControl.numberOfPlayer == 6)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.1;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.1;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.1;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.1;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum5 *= 0.1;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum6 *= 0.1;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                    }
+                }
+                if (GameControl.numberOfPlayer == 7)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.1;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.1;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.1;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.1;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum5 *= 0.1;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum6 *= 0.1;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 7)
+                    {
+                        HouseSelection.sum7 *= 0.1;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+
+                }
+                if (GameControl.numberOfPlayer == 8)
+                {
+                    if (DiceNumberTextScript.whosTurn == 1)
+                    {
+                        HouseSelection.sum1 *= 0.1;
+                        player1Cost.text = HouseSelection.sum1.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 2)
+                    {
+                        HouseSelection.sum2 *= 0.1;
+                        player2Cost.text = HouseSelection.sum2.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 3)
+                    {
+                        HouseSelection.sum3 *= 0.1;
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 4)
+                    {
+                        HouseSelection.sum4 *= 0.1;
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 5)
+                    {
+                        HouseSelection.sum5 *= 0.1;
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 6)
+                    {
+                        HouseSelection.sum6 *= 0.1;
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 7)
+                    {
+                        HouseSelection.sum7 *= 0.1;
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+                    if (DiceNumberTextScript.whosTurn == 8)
+                    {
+                        HouseSelection.sum8 *= 0.1;
+                        player8Cost.text = HouseSelection.sum8.ToString();
+                    }
+
+                }
+            }
+
 
         }
 
