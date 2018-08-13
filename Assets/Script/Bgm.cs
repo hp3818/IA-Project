@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//369
+//369 31231231231
 public class Bgm : MonoBehaviour
 {
     private static Bgm instance = null;
