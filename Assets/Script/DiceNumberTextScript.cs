@@ -104,6 +104,11 @@ public class DiceNumberTextScript : MonoBehaviour
             runOnce = false;
         }
 
+        if (dropButton.interactable == false)
+            Card.show = 1;
+        else if (dropButton.interactable == true)
+            Card.show = 0;
+            
         if (!runOnce && sum != 0)
         {
             Moving();

@@ -11,6 +11,8 @@ public class Card : MonoBehaviour {
     public static GameObject Card1, Card2, Card3, Card4, Card5;
     public static GameObject dropzone;
 
+    public static int show = 0;
+
     void Start()
     {
         Card1 = GameObject.Find("Card1");
@@ -22,6 +24,15 @@ public class Card : MonoBehaviour {
     }
 
 	void Update () {
+
+        if (show == 1)
+        {
+            Card1.gameObject.SetActive(false);
+            Card2.gameObject.SetActive(false);
+            Card3.gameObject.SetActive(false);
+            Card4.gameObject.SetActive(false);
+            Card5.gameObject.SetActive(false);
+        }
 
         if (this.transform.childCount < 33)
             return;
