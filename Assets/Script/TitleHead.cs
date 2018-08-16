@@ -9,10 +9,6 @@ public class TitleHead : MonoBehaviour {
     public static GameObject Head1;
     public static GameObject Head2;
     public static GameObject start;
-    public static GameObject ImageForParse;
-    public static GameObject ImageForParse2;
-    public Button ParseButton;
-    public Text bgmText;
     public static int i = 1;
 
     void Start () {
@@ -20,9 +16,6 @@ public class TitleHead : MonoBehaviour {
         Head1 = GameObject.Find("Head1");
         Head2 = GameObject.Find("Head2");
         start = GameObject.Find("Start");
-        ImageForParse = GameObject.Find("ImageForParse");
-        ImageForParse.gameObject.SetActive(false);
-
         StartCoroutine(TemporarilyDeactivate(0.25f));
         StartCoroutine(TemporarilyDeactivate3(0.25f));
     }
@@ -32,37 +25,6 @@ public class TitleHead : MonoBehaviour {
         if (Input.touchCount == 1)
         {
             SceneManager.LoadScene("Player selection");
-        }
-    }
-
-
-
-    public void ClickParse()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-            StartCoroutine(TemporarilyDeactivate5(0.1f));
-            ImageForParse.gameObject.SetActive(true);
-        }
-    }
-
-    public void Resume()
-    {
-        ImageForParse.gameObject.SetActive(false);
-    }
-
-    public void Mute()
-    {
-        if(i == 1)
-        {
-            i = 0;
-            bgmText.text = "開啟音量";
-            
-        }
-        else if (i == 0)
-        {
-            i = 1;
-            bgmText.text = "關閉音量";
         }
     }
 
@@ -94,13 +56,6 @@ public class TitleHead : MonoBehaviour {
         start.gameObject.SetActive(false);
         yield return new WaitForSeconds(duration);
         StartCoroutine(TemporarilyDeactivate3(1));
-    }
-
-    private IEnumerator TemporarilyDeactivate5(float duration)
-    {
-        ParseButton.GetComponent<Image>().color = Color.red;
-        yield return new WaitForSeconds(duration);
-        ParseButton.GetComponent<Image>().color = Color.black;
     }
 
 }

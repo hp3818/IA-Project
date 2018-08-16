@@ -5785,7 +5785,7 @@ public class HouseSelection : MonoBehaviour {
         }
 
         dropButton.interactable = true;
-
+        DiceNumberTextScript.stop = 1;
     }
 
     public void Investment()
@@ -5796,6 +5796,7 @@ public class HouseSelection : MonoBehaviour {
     public void EndTurn()
     {
         GameControl.ImageForBuyHouse.gameObject.SetActive(false);
+        DiceNumberTextScript.stop = 1;
         dropButton.interactable = true;
         camMain();
     }
@@ -5805,13 +5806,16 @@ public class HouseSelection : MonoBehaviour {
         Buy2();
         GameControl.ImageForBuyOtherHouse.gameObject.SetActive(false);
         dropButton.interactable = true;
+        DiceNumberTextScript.stop = 1;
         camMain();
+        
     }
 
     public void Nobutton()
     {
         GameControl.ImageForBuyOtherHouse.gameObject.SetActive(false);
         dropButton.interactable = true;
+        DiceNumberTextScript.stop = 1;
         camMain();
     }
 

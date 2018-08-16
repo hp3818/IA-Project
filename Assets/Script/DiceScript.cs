@@ -26,6 +26,6 @@ public class DiceScript : MonoBehaviour {
 			rb.AddTorque (dirX, dirY, dirZ);
             Vaild = 0;
 		}
-			
-	}
+
+    }
 }

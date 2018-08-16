@@ -121,6 +121,7 @@ public class Dice : MonoBehaviour {
 						accept = 1;
 					} else {
                         GameControl.ImageForMidSkill.gameObject.SetActive(true);
+                        dropButton.interactable = false;
 					}
                     
                 }
@@ -180,9 +181,11 @@ public class Dice : MonoBehaviour {
                         if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
                         {
                             GameControl.ImageForRich.gameObject.SetActive(true);
+                            dropButton.interactable = false;
                         } else
                         {
                             GameControl.ImageForMidSkill.gameObject.SetActive(true);
+                            dropButton.interactable = false;
                         }
 					}
                 }
@@ -240,7 +243,8 @@ public class Dice : MonoBehaviour {
 						accept = 1;
 					} else {
 						GameControl.ImageForRich.gameObject.SetActive(true);
-					}
+                        dropButton.interactable = false;
+                    }
                 }
 
             }
@@ -296,7 +300,8 @@ public class Dice : MonoBehaviour {
 						accept = 1;
 					} else {
 						GameControl.ImageForRich.gameObject.SetActive(true);
-					}
+                        dropButton.interactable = false;
+                    }
                 }
 
             }
@@ -352,7 +357,8 @@ public class Dice : MonoBehaviour {
 						accept = 1;
 					} else {
 						GameControl.ImageForRich.gameObject.SetActive(true);
-					}
+                        dropButton.interactable = false;
+                    }
                 }
 
             }
@@ -408,7 +414,8 @@ public class Dice : MonoBehaviour {
 						accept = 1;
 					} else {
 						GameControl.ImageForRich.gameObject.SetActive(true);
-					}
+                        dropButton.interactable = false;
+                    }
                 }
 
             }
@@ -464,7 +471,8 @@ public class Dice : MonoBehaviour {
 						accept = 1;
 					} else {
 						GameControl.ImageForRich.gameObject.SetActive(true);
-					}
+                        dropButton.interactable = false;
+                    }
                 }
 
             }

@@ -19,11 +19,8 @@ public class TitleHead2 : MonoBehaviour
 
     public void ClickParse()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            StartCoroutine(TemporarilyDeactivate5(0.1f));
-            ImageForParse.gameObject.SetActive(true);
-        }
+        StartCoroutine(TemporarilyDeactivate5(0.1f));
+        ImageForParse.gameObject.SetActive(true);
     }
 
     public void Resume()
@@ -52,6 +49,15 @@ public class TitleHead2 : MonoBehaviour
         yield return new WaitForSeconds(duration);
         ParseButton.GetComponent<Image>().color = Color.black;
     }
-
+    /*
+    public void ClickButtonTest()
+    {
+        Card.Card1.gameObject.SetActive(true);
+        Card.Card2.gameObject.SetActive(true);
+        Card.Card3.gameObject.SetActive(true);
+        Card.Card4.gameObject.SetActive(true);
+        Card.Card5.gameObject.SetActive(true);
+    }
+    */
 }
 

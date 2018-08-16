@@ -17,7 +17,7 @@ public class GameControl : MonoBehaviour {
 	own21 = 0, own22 = 0, own23 = 0, own24 = 0, own25 = 0, own26 = 0, own27 = 0, own28 = 0, own29 = 0, own30 = 0, own31 = 0, own32 = 0, own33 = 0, own34 = 0, own35 = 0, own36 = 0, own37 = 0, own38 = 0, own39 = 0, own40 = 0, own41 = 0,
 	own42 = 0, own43 = 0, own44 = 0, own45 = 0, own46 = 0;
 
-    public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost, text5, text6, text7, text8;
+    public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost, text3, text4, text5, text6, text7, text8;
     public static int jail1turn =3, jail2turn = 3, jail3turn = 3, jail4turn = 3, jail5turn = 3, jail6turn = 3, jail7turn = 3, jail8turn = 3; 
     public static int detect, count;
     public static int buyValue;
@@ -134,6 +134,8 @@ public class GameControl : MonoBehaviour {
             player6Cost.gameObject.SetActive(false);
             player7Cost.gameObject.SetActive(false);
             player8Cost.gameObject.SetActive(false);
+            text3.text = "低層1";
+            text4.text = "低層2";
         }
 
         if(numberOfPlayer == 5)
@@ -147,6 +149,9 @@ public class GameControl : MonoBehaviour {
             player6Cost.gameObject.SetActive(false);
             player7Cost.gameObject.SetActive(false);
             player8Cost.gameObject.SetActive(false);
+            text3.text = "低層1";
+            text4.text = "低層2";
+            text5.text = "低層3";
         }
 
         if (numberOfPlayer == 6)
@@ -157,6 +162,10 @@ public class GameControl : MonoBehaviour {
             text8.gameObject.SetActive(false);
             player7Cost.gameObject.SetActive(false);
             player8Cost.gameObject.SetActive(false);
+            text3.text = "中產1";
+            text4.text = "低層1";
+            text5.text = "低層2";
+            text6.text = "低層3";
         }
 
         if (numberOfPlayer == 7)
@@ -164,6 +173,21 @@ public class GameControl : MonoBehaviour {
             player8.gameObject.SetActive(false);
             text8.gameObject.SetActive(false);
             player8Cost.gameObject.SetActive(false);
+            text3.text = "中產1";
+            text4.text = "低層1";
+            text5.text = "低層2";
+            text6.text = "低層3";
+            text7.text = "低層4";
+        }
+        
+        if (numberOfPlayer == 8)
+        {
+            text3.text = "中產1";
+            text4.text = "低層1";
+            text5.text = "低層2";
+            text6.text = "低層3";
+            text7.text = "低層4";
+            text8.text = "低層5";
         }
 
         player1.GetComponent<FollowThePath>().moveAllowed = false;
@@ -2061,12 +2085,14 @@ public class GameControl : MonoBehaviour {
                     floor41 == 1 || floor42 == 1 )
                     random();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
             {
                 X1 = 1;
                 StartCoroutine(TemporarilyDeactivate2(2));
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -2115,6 +2141,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 1) floor42++;
                 AllLevelUp();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
             {
@@ -2164,6 +2191,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 1) floor42++;
                 random2Building();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[66].transform.position)
             {
@@ -2212,6 +2240,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 1) floor42++;
                 random2BuildingDelete();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[67].transform.position)
             {
@@ -2260,6 +2289,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 1) floor42++;
                 AllLevelDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[73].transform.position)
             {
@@ -2312,13 +2342,14 @@ public class GameControl : MonoBehaviour {
                     floor41 == 1 || floor42 == 1)
                     randomDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else
             {
                 dropButton.interactable = true;
                 camMain();
             }
-
+            
         }           
                                                                                                         
 		if (player2.GetComponent<FollowThePath>().wayPointIndex > player2Waypoint + diceSide1Thrown + diceSide2Thrown + diceSide3Thrown - player2.GetComponent<FollowThePath>().Accept)
@@ -4329,12 +4360,14 @@ public class GameControl : MonoBehaviour {
                     floor41 == 2 || floor42 == 2)
                     random2();
                 dropButton.interactable = true;
+                camMain();
             } 
             else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
             {
                 X2 = 1;
                 StartCoroutine(TemporarilyDeactivate2(2));
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -4383,6 +4416,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 2) floor42++;
                 AllLevelUp();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
             {
@@ -4431,6 +4465,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 2) floor42++;
                 random2Building();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[66].transform.position)
             {
@@ -4479,6 +4514,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 2) floor42++;
                 random2BuildingDelete();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[67].transform.position)
             {
@@ -4527,8 +4563,9 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 2) floor42++;
                 AllLevelDown();
                 dropButton.interactable = true;
+                camMain();
             }
-            else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
+            else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[73].transform.position)
             {
                 if (own1 == 2) floor1++;
                 if (own2 == 2) floor2++;
@@ -4579,6 +4616,7 @@ public class GameControl : MonoBehaviour {
                     floor41 == 2 || floor42 == 2)
                     randomDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else
             {
@@ -4644,8 +4682,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own1 >= 3 || own1 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own1 >= 3 || own1 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    } 
                     else
                     {
                         dropButton.interactable = true;
@@ -4686,8 +4727,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own2 >= 3 || own2 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own2 >= 3 || own2 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4728,8 +4772,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own3 >= 3 || own3 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own3 >= 3 || own3 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4770,8 +4817,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own4 >= 3 || own4 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own4 >= 3 || own4 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4812,8 +4862,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own5 >= 3 || own5 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own5 >= 3 || own5 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4854,8 +4907,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own6 >= 3 || own6 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own6 >= 3 || own6 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4896,8 +4952,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own7 >= 3 || own7 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own7 >= 3 || own7 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4938,8 +4997,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own8 >= 3 || own8 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own8 >= 3 || own8 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5014,8 +5076,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own10 >= 3 || own10 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own10 >= 3 || own10 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5056,8 +5121,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own11 >= 3 || own11 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own11 >= 3 || own11 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5098,8 +5166,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own12 >= 3 || own12 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own12 >= 3 || own12 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5140,8 +5211,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own13 >= 3 || own13 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own13 >= 3 || own13 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5182,8 +5256,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own14 >= 3 || own14 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own14 >= 3 || own14 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5224,8 +5301,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own15 >= 3 || own15 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own15 >= 3 || own15 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5266,8 +5346,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own16 >= 3 || own16 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own16 >= 3 || own16 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5308,8 +5391,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own17 >= 3 || own17 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own17 >= 3 || own17 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5385,8 +5471,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own19 >= 3 || own19 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own19 >= 3 || own19 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5427,8 +5516,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own20 >= 3 || own20 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own20 >= 3 || own20 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5469,8 +5561,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own21 >= 3 || own21 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own21 >= 3 || own21 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5511,8 +5606,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own22 >= 3 || own22 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own21 >= 3 || own2 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5553,8 +5651,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own23 >= 3 || own23 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own23 >= 3 || own23 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5595,8 +5696,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own24 >= 3 || own24 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own24 >= 3 || own24 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5637,8 +5741,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own25 >= 3 || own25 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own25 >= 3 || own25 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5726,8 +5833,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own26 >=3 || own26 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own26 >= 3 || own26 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5768,8 +5878,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own27 >= 3 || own27 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own27 >= 3 || own27 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5810,8 +5923,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own28 >= 3 || own29 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own28 >= 3 || own28 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5852,8 +5968,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own29 >= 3 || own29 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own29 >= 3 || own29 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5894,8 +6013,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own30 >= 3 || own30 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own30 >= 3 || own30 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5936,8 +6058,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own31 >= 3 || own31 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own31 >= 3 || own31 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6012,8 +6137,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own33 >= 3 || own33 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own33 >= 3 || own33 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6054,8 +6182,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own34 >=3 || own34 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own34 >= 3 || own34 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6096,8 +6227,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own35 >= 3 || own35 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own35 >= 3 || own35 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6138,8 +6272,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own36 >=3 || own36 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own36 >= 3 || own36 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6180,8 +6317,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own37 >= 3 || own37 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own37 >= 3 || own37 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6222,8 +6362,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own38 >= 3 || own38 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own38 >= 3 || own38 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6264,8 +6407,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own39 >= 3 || own39 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own39 >= 3 || own39 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6306,8 +6452,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own40 >= 3 || own40 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own40 >= 3 || own40 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6382,8 +6531,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own42 >= 3 || own42 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own42 >= 3 || own42 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6425,8 +6577,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own43 >= 3 || own43 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own43 >= 3 || own43 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6467,8 +6622,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own44 >= 3 || own44 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own44 >= 3 || own44 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6509,8 +6667,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own45 >= 3 || own45 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own45 >= 3 || own45 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6551,8 +6712,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X3 = 0;
 
-                    if (own46 >= 3 || own46 == 2)
-                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
+                    {
+                        if (own46 >= 3 || own46 == 2)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6611,12 +6775,14 @@ public class GameControl : MonoBehaviour {
                      floor41 == 3 || floor42 == 3)
                     random3();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
             {
                 X3 = 1;
                 StartCoroutine(TemporarilyDeactivate2(2));
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -6665,6 +6831,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 3) floor42++;
                 AllLevelUp();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
             {
@@ -6713,6 +6880,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 3) floor42++;
                 random2Building();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[66].transform.position)
             {
@@ -6761,6 +6929,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 3) floor42++;
                 random2BuildingDelete();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[67].transform.position)
             {
@@ -6809,6 +6978,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 3) floor42++;
                 AllLevelDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[73].transform.position)
             {
@@ -6861,6 +7031,7 @@ public class GameControl : MonoBehaviour {
                      floor41 == 3 || floor42 == 3)
                     randomDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else
             {
@@ -8670,12 +8841,14 @@ public class GameControl : MonoBehaviour {
                     floor41 == 4 || floor42 == 4)
                     random4();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
             {
                 X4 = 1;
                 StartCoroutine(TemporarilyDeactivate2(2));
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -8724,6 +8897,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 4) floor42++;
                 AllLevelUp();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
             {
@@ -8772,6 +8946,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 4) floor42++;
                 random2Building();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[66].transform.position)
             {
@@ -8820,6 +8995,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 4) floor42++;
                 random2BuildingDelete();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[67].transform.position)
             {
@@ -8868,6 +9044,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 4) floor42++;
                 AllLevelDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[73].transform.position)
             {
@@ -8920,6 +9097,7 @@ public class GameControl : MonoBehaviour {
                     floor41 == 4 || floor42 == 4)
                     randomDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else
             {
@@ -10727,12 +10905,14 @@ public class GameControl : MonoBehaviour {
                     floor41 == 5 || floor42 == 5)
                     random5();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
             {
                 X5 = 1;
                 StartCoroutine(TemporarilyDeactivate2(2));
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -10781,6 +10961,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 5) floor42++;
                 AllLevelUp();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
             {
@@ -10829,6 +11010,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 5) floor42++;
                 random2Building();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[66].transform.position)
             {
@@ -10877,6 +11059,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 5) floor42++;
                 random2BuildingDelete();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -10925,6 +11108,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 5) floor42++;
                 AllLevelDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[73].transform.position)
             {
@@ -10977,6 +11161,7 @@ public class GameControl : MonoBehaviour {
                     floor41 == 5 || floor42 == 5)
                     randomDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else
             {
@@ -12787,12 +12972,14 @@ public class GameControl : MonoBehaviour {
                      floor41 == 6 || floor42 == 6)
                     random6();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
             {
                 X6 = 1;
                 StartCoroutine(TemporarilyDeactivate2(2));
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -12841,6 +13028,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 6) floor42++;
                 AllLevelUp();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
             {
@@ -12889,6 +13077,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 6) floor42++;
                 random2Building();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[66].transform.position)
             {
@@ -12937,6 +13126,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 6) floor42++;
                 random2BuildingDelete();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[67].transform.position)
             {
@@ -12985,6 +13175,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 6) floor42++;
                 AllLevelDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[73].transform.position)
             {
@@ -13037,6 +13228,7 @@ public class GameControl : MonoBehaviour {
                      floor41 == 6 || floor42 == 6)
                     randomDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else
             {
@@ -14837,12 +15029,14 @@ public class GameControl : MonoBehaviour {
                  floor41 == 7 || floor42 == 7)
                     random7();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
             {
                 X7 = 1;
                 StartCoroutine(TemporarilyDeactivate2(2));
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -14891,6 +15085,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 7) floor42++;
                 AllLevelUp();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
             {
@@ -14939,6 +15134,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 7) floor42++;
                 random2Building();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[66].transform.position)
             {
@@ -14987,6 +15183,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 7) floor42++;
                 random2BuildingDelete();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[67].transform.position)
             {
@@ -15035,6 +15232,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 7) floor42++;
                 AllLevelDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[73].transform.position)
             {
@@ -15087,6 +15285,7 @@ public class GameControl : MonoBehaviour {
                  floor41 == 7 || floor42 == 7)
                     randomDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else
             {
@@ -16849,12 +17048,14 @@ public class GameControl : MonoBehaviour {
                 floor41 == 8 || floor42 == 8)
                     random8();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[59].transform.position)
             {
                 X8 = 1;
                 StartCoroutine(TemporarilyDeactivate2(2));
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[64].transform.position)
             {
@@ -16903,6 +17104,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 8) floor42++;
                 AllLevelUp();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[65].transform.position)
             {
@@ -16951,6 +17153,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 8) floor42++;
                 random2Building();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[66].transform.position)
             {
@@ -16999,6 +17202,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 8) floor42++;
                 random2BuildingDelete();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[67].transform.position)
             {
@@ -17047,6 +17251,7 @@ public class GameControl : MonoBehaviour {
                 if (own46 == 8) floor42++;
                 AllLevelDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[73].transform.position)
             {
@@ -17099,6 +17304,7 @@ public class GameControl : MonoBehaviour {
                 floor41 == 8 || floor42 == 8)
                     randomDown();
                 dropButton.interactable = true;
+                camMain();
             }
             else
             {
@@ -43924,9 +44130,6 @@ public class GameControl : MonoBehaviour {
             }
 
     }
-
-
-
 
     private IEnumerator TemporarilyDeactivate(float duration)
     {

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DiceNumberTextScript : MonoBehaviour {
+public class DiceNumberTextScript : MonoBehaviour
+{
 
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public static GameObject dice1, dice2, dice3;
@@ -12,31 +13,63 @@ public class DiceNumberTextScript : MonoBehaviour {
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
     public static GameObject ImageForBuyOtherHouse;
-	public Button dropButton;
+    public Button dropButton;
     public static GameObject ImageForJail;
     public static GameObject ImageForHospital;
     public Text InjureTurn;
     public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost;
+    public Text player1Card1, player1Card2, player1Card3, player1Card4, player1Card5, player2Card1, player2Card2, player2Card3, player2Card4, player2Card5,
+                            player3Card1, player3Card2, player3Card3, player3Card4, player3Card5, player4Card1, player4Card2, player4Card3, player4Card4, player4Card5,
+                               player5Card1, player5Card2, player5Card3, player5Card4, player5Card5, player6Card1, player6Card2, player6Card3, player6Card4, player6Card5,
+                                  player7Card1, player7Card2, player7Card3, player7Card4, player7Card5, player8Card1, player8Card2, player8Card3, player8Card4, player8Card5;
+
+    public static string player1Card1string, player1Card2string, player1Card3string, player1Card4string, player1Card5string, player2Card1string, player2Card2string, player2Card3string, player2Card4string, player2Card5string,
+                                        player3Card1string, player3Card2string, player3Card3string, player3Card4string, player3Card5string, player4Card1string, player4Card2string, player4Card3string, player4Card4string, player4Card5string,
+                                           player5Card1string, player5Card2string, player5Card3string, player5Card4string, player5Card5string, player6Card1string, player6Card2string, player6Card3string, player6Card4string, player6Card5string,
+                                               player7Card1string, player7Card2string, player7Card3string, player7Card4string, player7Card5string, player8Card1string, player8Card2string, player8Card3string, player8Card4string, player8Card5string;
 
     Text text;
-	public static int dice1Number;
-	public static int dice2Number;
-	public static int dice3Number;
-	public int sum;
+    public static int dice1Number;
+    public static int dice2Number;
+    public static int dice3Number;
+    public int sum;
     public Camera[] camera;
     public static int jail1 = 0, jail2 = 0, jail3 = 0, jail4 = 0, jail5 = 0, jail6 = 0, jail7 = 0, jail8 = 0;
     public static int injure1 = 0, injure2 = 0, injure3 = 0, injure4 = 0, injure5 = 0, injure6 = 0, injure7 = 0, injure8 = 0;
     public static int injure1Turn = 2, injure2Turn = 2, injure3Turn = 2, injure4Turn = 2, injure5Turn = 2, injure6Turn = 2, injure7Turn = 2, injure8Turn = 2;
 
+    public static int hide11, hide12, hide13, hide14, hide15, hide21, hide22, hide23, hide24, hide25, hide31, hide32, hide33, hide34, hide35, hide41, hide42, hide43, hide44, hide45;
+    public static int hide51, hide52, hide53, hide54, hide55, hide61, hide62, hide63, hide64, hide65, hide71, hide72, hide73, hide74, hide75, hide81, hide82, hide83, hide84, hide85;
+
+    public static GameObject Card1, Card2, Card3, Card4, Card5;
+
+    public static int OK = 1;
     public static int whosTurn = 1;
     public static int MaxPeople;
-    
+    public static int stop = 0;
+
     public static bool runOnce = false;
-	public static int Redrop = 0;
+    public static int Redrop = 0;
 
-    public void Start () {
+    public CardAnimation CA;
 
-        text = GetComponent<Text> ();
+    public void Start()
+    {
+
+        Card1 = GameObject.Find("Card1");
+        Card2 = GameObject.Find("Card2");
+        Card3 = GameObject.Find("Card3");
+        Card4 = GameObject.Find("Card4");
+        Card5 = GameObject.Find("Card5");
+
+        CA = GameObject.Find("CardAnimation").GetComponent<CardAnimation>();
+
+        if (DropZone.childCount < 5)
+        {
+            CA.PlayAnimation();
+        }
+
+        text = GetComponent<Text>();
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
         player3 = GameObject.Find("player3");
@@ -58,32 +91,576 @@ public class DiceNumberTextScript : MonoBehaviour {
         dice2 = GameObject.Find("dice2");
         dice3 = GameObject.Find("dice3");
     }
-	
-	public void Update () {
 
-        sum = int.Parse(dice1Number.ToString()) +int.Parse(dice2Number.ToString()) + int.Parse(dice3Number.ToString());
+    public void Update()
+    {
 
-        text.text = sum.ToString ();
+        sum = int.Parse(dice1Number.ToString()) + int.Parse(dice2Number.ToString()) + int.Parse(dice3Number.ToString());
 
-        if(sum == 0)
+        text.text = sum.ToString();
+
+        if (sum == 0)
         {
             runOnce = false;
         }
 
-        if(!runOnce && sum != 0)
+        if (!runOnce && sum != 0)
         {
             Moving();
+            stop = 1;
         }
+
+        if ((stop == 0 && dropButton.interactable == true) || (stop == 1 && dropButton.interactable == true))
+        {
+            if (whosTurn == 1)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide11 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide12 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide13 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide14 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide15 == 1)
+                    Card5.gameObject.SetActive(false);
+                player1Card1.text = player1Card1string;
+                player1Card2.text = player1Card2string;
+                player1Card3.text = player1Card3string;
+                player1Card4.text = player1Card4string;
+                player1Card5.text = player1Card5string;
+            }
+            else if (whosTurn == 2)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide21 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide22 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide23 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide24 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide25 == 1)
+                    Card5.gameObject.SetActive(false);
+                player2Card1.text = player2Card1string;
+                player2Card2.text = player2Card2string;
+                player2Card3.text = player2Card3string;
+                player2Card4.text = player2Card4string;
+                player2Card5.text = player2Card5string;
+            }
+            else if (whosTurn == 3)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide31 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide32 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide33 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide34 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide35 == 1)
+                    Card5.gameObject.SetActive(false);
+                player3Card1.text = player3Card1string;
+                player3Card2.text = player3Card2string;
+                player3Card3.text = player3Card3string;
+                player3Card4.text = player3Card4string;
+                player3Card5.text = player3Card5string;
+            }
+            else if (whosTurn == 4)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide41 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide42 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide43 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide44 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide45 == 1)
+                    Card5.gameObject.SetActive(false);
+                player4Card1.text = player4Card1string;
+                player4Card2.text = player4Card2string;
+                player4Card3.text = player4Card3string;
+                player4Card4.text = player4Card4string;
+                player4Card5.text = player4Card5string;
+            }
+            else if (whosTurn == 5)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide51 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide52 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide53 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide54 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide55 == 1)
+                    Card5.gameObject.SetActive(false);
+                player5Card1.text = player5Card1string;
+                player5Card2.text = player5Card2string;
+                player5Card3.text = player5Card3string;
+                player5Card4.text = player5Card4string;
+                player5Card5.text = player5Card5string;
+            }
+            else if (whosTurn == 6)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide61 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide62 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide63 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide64 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide65 == 1)
+                    Card5.gameObject.SetActive(false);
+                player6Card1.text = player6Card1string;
+                player6Card2.text = player6Card2string;
+                player6Card3.text = player6Card3string;
+                player6Card4.text = player6Card4string;
+                player6Card5.text = player6Card5string;
+            }
+            else if (whosTurn == 7)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide71 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide72 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide73 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide74 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide75 == 1)
+                    Card5.gameObject.SetActive(false);
+                player7Card1.text = player7Card1string;
+                player7Card2.text = player7Card2string;
+                player7Card3.text = player7Card3string;
+                player7Card4.text = player7Card4string;
+                player7Card5.text = player7Card5string;
+            }
+            else if (whosTurn == 8)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide81 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide82 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide83 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide84 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide85 == 1)
+                    Card5.gameObject.SetActive(false);
+                player8Card1.text = player8Card1string;
+                player8Card2.text = player8Card2string;
+                player8Card3.text = player8Card3string;
+                player8Card4.text = player8Card4string;
+                player8Card5.text = player8Card5string;
+            }
+        }
+        if (stop == 1 && dropButton.interactable == true)
+        {
+            if (whosTurn == 1)
+            {
+                Debug.Log("CA animation");
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide11 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide12 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide13 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide14 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide15 == 1)
+                    Card5.gameObject.SetActive(false);
+                player1Card1.text = player1Card1string;
+                player1Card2.text = player1Card2string;
+                player1Card3.text = player1Card3string;
+                player1Card4.text = player1Card4string;
+                player1Card5.text = player1Card5string;
+                if (Card1.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card2.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card4.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                
+            }
+            else if (whosTurn == 2)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide21 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide22 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide23 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide24 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide25 == 1)
+                    Card5.gameObject.SetActive(false);
+                player2Card1.text = player2Card1string;
+                player2Card2.text = player2Card2string;
+                player2Card3.text = player2Card3string;
+                player2Card4.text = player2Card4string;
+                player2Card5.text = player2Card5string;
+                if (Card1.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card2.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card4.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+            }
+            else if (whosTurn == 3)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide31 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide32 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide33 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide34 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide35 == 1)
+                    Card5.gameObject.SetActive(false);
+                player3Card1.text = player3Card1string;
+                player3Card2.text = player3Card2string;
+                player3Card3.text = player3Card3string;
+                player3Card4.text = player3Card4string;
+                player3Card5.text = player3Card5string;
+                if (Card1.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card2.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card4.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+            }
+            else if (whosTurn == 4)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide41 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide42 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide43 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide44 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide45 == 1)
+                    Card5.gameObject.SetActive(false);
+                player4Card1.text = player4Card1string;
+                player4Card2.text = player4Card2string;
+                player4Card3.text = player4Card3string;
+                player4Card4.text = player4Card4string;
+                player4Card5.text = player4Card5string;
+                if (Card1.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card2.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card4.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+            }
+            else if (whosTurn == 5)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide51 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide52 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide53 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide54 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide55 == 1)
+                    Card5.gameObject.SetActive(false);
+                player5Card1.text = player5Card1string;
+                player5Card2.text = player5Card2string;
+                player5Card3.text = player5Card3string;
+                player5Card4.text = player5Card4string;
+                player5Card5.text = player5Card5string;
+                if (Card1.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card2.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card4.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+            }
+            else if (whosTurn == 6)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide61 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide62 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide63 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide64 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide65 == 1)
+                    Card5.gameObject.SetActive(false);
+                player6Card1.text = player6Card1string;
+                player6Card2.text = player6Card2string;
+                player6Card3.text = player6Card3string;
+                player6Card4.text = player6Card4string;
+                player6Card5.text = player6Card5string;
+                if (Card1.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card2.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card4.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+            }
+            else if (whosTurn == 7)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide71 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide72 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide73 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide74 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide75 == 1)
+                    Card5.gameObject.SetActive(false);
+                player7Card1.text = player7Card1string;
+                player7Card2.text = player7Card2string;
+                player7Card3.text = player7Card3string;
+                player7Card4.text = player7Card4string;
+                player7Card5.text = player7Card5string;
+                if (Card1.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card2.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card4.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+            }
+            else if (whosTurn == 8)
+            {
+                Card1.gameObject.SetActive(true);
+                Card2.gameObject.SetActive(true);
+                Card3.gameObject.SetActive(true);
+                Card4.gameObject.SetActive(true);
+                Card5.gameObject.SetActive(true);
+                if (hide81 == 1)
+                    Card1.gameObject.SetActive(false);
+                if (hide82 == 1)
+                    Card2.gameObject.SetActive(false);
+                if (hide83 == 1)
+                    Card3.gameObject.SetActive(false);
+                if (hide84 == 1)
+                    Card4.gameObject.SetActive(false);
+                if (hide85 == 1)
+                    Card5.gameObject.SetActive(false);
+                player8Card1.text = player8Card1string;
+                player8Card2.text = player8Card2string;
+                player8Card3.text = player8Card3string;
+                player8Card4.text = player8Card4string;
+                player8Card5.text = player8Card5string;
+                if (Card1.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card2.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card3.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+                else if (Card4.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+            }
+            stop = 0;
+        }
+            /*
+        if (stop == 1)
+            stop = 0;
+            */
     }
 
     public void Moving()
     {
         MaxPeople = GameControl.numberOfPlayer;
-        
-        if(MaxPeople == 4)
+
+        if (MaxPeople == 4)
         {
             FourPeople();
-        } 
+        }
         else if (MaxPeople == 5)
         {
             FivePeople();
@@ -100,33 +677,38 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
             EightPeople();
         }
-
         whosTurn++;
         runOnce = true;
     }
 
     public void FourPeople()
     {
-
         if (whosTurn == 1)
         {
-            if (jail1 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail1 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail1turn = 3;
                     jail1 = 0;
-                    GameControl.MovePlayer (1);
-					cam1 ();
-				} else {
-					GameControl.jail1turn--;
+                    GameControl.MovePlayer(1);
+                    cam1();
+                }
+                else
+                {
+                    GameControl.jail1turn--;
                     JailTurn.text = GameControl.jail1turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail1turn == 0) {
-						jail1 = 0;
+                    if (GameControl.jail1turn == 0)
+                    {
+                        jail1 = 0;
                         GameControl.jail1turn = 3;
                     }
-					dropButton.interactable = true;
-				}
-			} else if (injure1 == 1 ){
+                    dropButton.interactable = true;
+                }
+            }
+            else if (injure1 == 1)
+            {
                 injure1Turn--;
                 InjureTurn.text = injure1Turn.ToString();
                 StartCoroutine(TemporarilyDeactivat2(2));
@@ -134,33 +716,38 @@ public class DiceNumberTextScript : MonoBehaviour {
                 {
                     injure1 = 0;
                     injure2Turn = 2;
-                }     
+                }
                 dropButton.interactable = true;
-            } else
+            }
+            else
             {
-                whosTurn = 0;
                 GameControl.MovePlayer(1);
                 cam1();
             }
         }
         else if (whosTurn == 2)
         {
-            if (jail2 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail2 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail2turn = 3;
                     jail2 = 0;
-                    GameControl.MovePlayer (2);
-					cam2 ();
-				} else {
-					GameControl.jail2turn--;
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
+                else
+                {
+                    GameControl.jail2turn--;
                     JailTurn.text = GameControl.jail2turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail2turn == 0) {
-						jail2 = 0;
+                    if (GameControl.jail2turn == 0)
+                    {
+                        jail2 = 0;
                         GameControl.jail2turn = 3;
                     }
-					dropButton.interactable = true;
-				}
+                    dropButton.interactable = true;
+                }
             }
             else if (injure2 == 1)
             {
@@ -176,7 +763,6 @@ public class DiceNumberTextScript : MonoBehaviour {
             }
             else
             {
-                Debug.Log(Skill.luckydraw);
                 if (Skill.luckydraw == 1)
                 {
                     if (dice1Number > 3)
@@ -191,7 +777,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     }
                     Skill.luckydraw = 0;
                     whosTurn--;
-                    dropButton.interactable = true;
+                    dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
                 }
                 else
@@ -203,22 +789,27 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 3)
         {
-            if (jail3 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail3 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail3turn = 3;
                     jail3 = 0;
-                    GameControl.MovePlayer (3);
-					cam3 ();
-				} else {
-					GameControl.jail3turn--;
+                    GameControl.MovePlayer(3);
+                    cam3();
+                }
+                else
+                {
+                    GameControl.jail3turn--;
                     JailTurn.text = GameControl.jail3turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail3turn == 0) {
+                    if (GameControl.jail3turn == 0)
+                    {
                         GameControl.jail3turn = 3;
                         jail3 = 0;
-					}
-					dropButton.interactable = true;
-				}
+                    }
+                    dropButton.interactable = true;
+                }
             }
             else if (injure3 == 1)
             {
@@ -240,24 +831,29 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 4)
         {
-            if (jail4 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail4 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail4turn = 3;
                     jail4 = 0;
-                    GameControl.MovePlayer (4);
-					cam4 ();
-					whosTurn = 0;
-				} else {
-					GameControl.jail4turn--;
+                    GameControl.MovePlayer(4);
+                    cam4();
+                    whosTurn = 0;
+                }
+                else
+                {
+                    GameControl.jail4turn--;
                     JailTurn.text = GameControl.jail4turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail4turn == 0) {
+                    if (GameControl.jail4turn == 0)
+                    {
                         GameControl.jail4turn = 3;
                         jail4 = 0;
                     }
-					whosTurn = 0;
-					dropButton.interactable = true;
-				}
+                    whosTurn = 0;
+                    dropButton.interactable = true;
+                }
             }
             else if (injure4 == 1)
             {
@@ -279,7 +875,6 @@ public class DiceNumberTextScript : MonoBehaviour {
                 whosTurn = 0;
             }
         }
-
     }
 
     public void FivePeople()
@@ -328,22 +923,27 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 2)
         {
-			if (jail2 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail2 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail2turn = 3;
                     jail2 = 0;
-                    GameControl.MovePlayer (2);
-					cam2 ();
-				} else {
-					GameControl.jail2turn--;
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
+                else
+                {
+                    GameControl.jail2turn--;
                     JailTurn.text = GameControl.jail2turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail2turn == 0) {
+                    if (GameControl.jail2turn == 0)
+                    {
                         GameControl.jail2turn = 3;
                         jail2 = 0;
-					}
-					dropButton.interactable = true;
-				}
+                    }
+                    dropButton.interactable = true;
+                }
             }
             else if (injure2 == 1)
             {
@@ -373,7 +973,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     }
                     Skill.luckydraw = 0;
                     whosTurn--;
-                    dropButton.interactable = true;
+                    dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
                 }
                 else
@@ -385,22 +985,27 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 3)
         {
-			if (jail3 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail3 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail3turn = 3;
                     jail3 = 0;
-                    GameControl.MovePlayer (3);
-					cam3 ();
-				} else {
-					GameControl.jail3turn--;
+                    GameControl.MovePlayer(3);
+                    cam3();
+                }
+                else
+                {
+                    GameControl.jail3turn--;
                     JailTurn.text = GameControl.jail3turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail3turn == 0) {
+                    if (GameControl.jail3turn == 0)
+                    {
                         GameControl.jail3turn = 3;
                         jail3 = 0;
-					}
-					dropButton.interactable = true;
-				}
+                    }
+                    dropButton.interactable = true;
+                }
             }
             else if (injure3 == 1)
             {
@@ -422,22 +1027,27 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 4)
         {
-			if (jail4 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail4 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail4turn = 3;
                     jail4 = 0;
-                    GameControl.MovePlayer (4);
-					cam4 ();
-				} else {
-					GameControl.jail4turn--;
+                    GameControl.MovePlayer(4);
+                    cam4();
+                }
+                else
+                {
+                    GameControl.jail4turn--;
                     JailTurn.text = GameControl.jail4turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail4turn == 0) {
+                    if (GameControl.jail4turn == 0)
+                    {
                         GameControl.jail4turn = 3;
                         jail4 = 0;
-					}
-					dropButton.interactable = true;
-				}
+                    }
+                    dropButton.interactable = true;
+                }
             }
             else if (injure4 == 1)
             {
@@ -459,24 +1069,29 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 5)
         {
-			if (jail5 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail5 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail5turn = 3;
                     jail5 = 0;
-                    GameControl.MovePlayer (5);
-					cam5 ();
-					whosTurn = 0;
-				} else {
-					GameControl.jail5turn--;
+                    GameControl.MovePlayer(5);
+                    cam5();
+                    whosTurn = 0;
+                }
+                else
+                {
+                    GameControl.jail5turn--;
                     JailTurn.text = GameControl.jail5turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail5turn == 0) {
+                    if (GameControl.jail5turn == 0)
+                    {
                         GameControl.jail5turn = 3;
                         jail5 = 0;
-					}
+                    }
                     whosTurn = 0;
                     dropButton.interactable = true;
-				}
+                }
             }
             else if (injure5 == 1)
             {
@@ -491,11 +1106,12 @@ public class DiceNumberTextScript : MonoBehaviour {
                 dropButton.interactable = true;
                 whosTurn = 0;
             }
-            else {
-				GameControl.MovePlayer (5);
-				cam5 ();
-				whosTurn = 0;
-			}
+            else
+            {
+                GameControl.MovePlayer(5);
+                cam5();
+                whosTurn = 0;
+            }
         }
 
     }
@@ -504,22 +1120,27 @@ public class DiceNumberTextScript : MonoBehaviour {
     {
         if (whosTurn == 1)
         {
-			if (jail1 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail1 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail1turn = 3;
                     jail1 = 0;
-                    GameControl.MovePlayer (1);
-					cam1 ();
-				} else {
-					GameControl.jail1turn--;
+                    GameControl.MovePlayer(1);
+                    cam1();
+                }
+                else
+                {
+                    GameControl.jail1turn--;
                     JailTurn.text = GameControl.jail1turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail1turn == 0) {
+                    if (GameControl.jail1turn == 0)
+                    {
                         GameControl.jail1turn = 3;
                         jail1 = 0;
-					}
-					dropButton.interactable = true;
-				}
+                    }
+                    dropButton.interactable = true;
+                }
             }
             else if (injure1 == 1)
             {
@@ -533,30 +1154,36 @@ public class DiceNumberTextScript : MonoBehaviour {
                 }
                 dropButton.interactable = true;
             }
-            else {
-				GameControl.MovePlayer (1);
-				cam1 ();
-			}
+            else
+            {
+                GameControl.MovePlayer(1);
+                cam1();
+            }
         }
         else if (whosTurn == 2)
         {
-			if (jail2 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail2 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail2turn = 3;
                     jail2 = 0;
-                    GameControl.MovePlayer (2);
-					cam2 ();
-				} else {
-					GameControl.jail2turn--;
+                    GameControl.MovePlayer(2);
+                    cam2();
+                }
+                else
+                {
+                    GameControl.jail2turn--;
                     JailTurn.text = GameControl.jail2turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail2turn == 0) {
+                    if (GameControl.jail2turn == 0)
+                    {
                         GameControl.jail2turn = 3;
                         jail2 = 0;
-					}
-					dropButton.interactable = true;
-				}
-			}
+                    }
+                    dropButton.interactable = true;
+                }
+            }
             else if (injure2 == 1)
             {
                 injure2Turn--;
@@ -569,7 +1196,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                 }
                 dropButton.interactable = true;
             }
-            else {
+            else
+            {
                 if (Skill.luckydraw == 1)
                 {
                     if (dice1Number > 3)
@@ -584,7 +1212,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     }
                     Skill.luckydraw = 0;
                     whosTurn--;
-                    dropButton.interactable = true;
+                    dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
                 }
                 else
@@ -596,23 +1224,28 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 3)
         {
-			if (jail3 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail3 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail3turn = 3;
                     jail3 = 0;
-                    GameControl.MovePlayer (3);
-					cam3 ();
-				} else {
-					GameControl.jail3turn--;
+                    GameControl.MovePlayer(3);
+                    cam3();
+                }
+                else
+                {
+                    GameControl.jail3turn--;
                     JailTurn.text = GameControl.jail3turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail3turn == 0) {
-						jail3 = 0;
+                    if (GameControl.jail3turn == 0)
+                    {
+                        jail3 = 0;
                         GameControl.jail3turn = 3;
                     }
-					dropButton.interactable = true;
-				}
-			}
+                    dropButton.interactable = true;
+                }
+            }
             else if (injure3 == 1)
             {
                 injure3Turn--;
@@ -625,7 +1258,8 @@ public class DiceNumberTextScript : MonoBehaviour {
                 }
                 dropButton.interactable = true;
             }
-            else {
+            else
+            {
                 if (Skill.luckydraw == 1)
                 {
                     if (dice1Number > 3)
@@ -640,7 +1274,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     }
                     Skill.luckydraw = 0;
                     whosTurn--;
-                    dropButton.interactable = true;
+                    dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
                 }
                 else
@@ -652,23 +1286,28 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 4)
         {
-			if (jail4 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail4 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail4turn = 3;
                     jail4 = 0;
-                    GameControl.MovePlayer (4);
-					cam4 ();
-				} else {
-					GameControl.jail4turn--;
+                    GameControl.MovePlayer(4);
+                    cam4();
+                }
+                else
+                {
+                    GameControl.jail4turn--;
                     JailTurn.text = GameControl.jail4turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail4turn == 0) {
-						jail4 = 0;
+                    if (GameControl.jail4turn == 0)
+                    {
+                        jail4 = 0;
                         GameControl.jail2turn = 3;
                     }
-					dropButton.interactable = true;
-				}
-			}
+                    dropButton.interactable = true;
+                }
+            }
             else if (injure4 == 1)
             {
                 injure4Turn--;
@@ -681,30 +1320,36 @@ public class DiceNumberTextScript : MonoBehaviour {
                 }
                 dropButton.interactable = true;
             }
-            else {
-				GameControl.MovePlayer (4);
-				cam4 ();
-			}
+            else
+            {
+                GameControl.MovePlayer(4);
+                cam4();
+            }
         }
         else if (whosTurn == 5)
         {
-			if (jail5 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail5 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail5turn = 3;
                     jail5 = 0;
-                    GameControl.MovePlayer (5);
-					cam5 ();
-				} else {
-					GameControl.jail5turn--;
+                    GameControl.MovePlayer(5);
+                    cam5();
+                }
+                else
+                {
+                    GameControl.jail5turn--;
                     JailTurn.text = GameControl.jail5turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail5turn == 0) {
-						jail5 = 0;
+                    if (GameControl.jail5turn == 0)
+                    {
+                        jail5 = 0;
                         GameControl.jail5turn = 3;
                     }
-					dropButton.interactable = true;
-				}
-			}
+                    dropButton.interactable = true;
+                }
+            }
             else if (injure5 == 1)
             {
                 injure5Turn--;
@@ -717,32 +1362,38 @@ public class DiceNumberTextScript : MonoBehaviour {
                 }
                 dropButton.interactable = true;
             }
-            else {
-				GameControl.MovePlayer (5);
-				cam5 ();
-			}
+            else
+            {
+                GameControl.MovePlayer(5);
+                cam5();
+            }
         }
         else if (whosTurn == 6)
         {
-			if (jail6 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail6 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail6turn = 3;
                     jail6 = 0;
-                    GameControl.MovePlayer (6);
-					cam6 ();
-					whosTurn = 0;
-				} else {
-					GameControl.jail6turn--;
+                    GameControl.MovePlayer(6);
+                    cam6();
+                    whosTurn = 0;
+                }
+                else
+                {
+                    GameControl.jail6turn--;
                     JailTurn.text = GameControl.jail6turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail6turn == 0) {
+                    if (GameControl.jail6turn == 0)
+                    {
                         GameControl.jail6turn = 3;
                         jail6 = 0;
-					}
+                    }
                     whosTurn = 0;
                     dropButton.interactable = true;
-				}
-			}
+                }
+            }
             else if (injure6 == 1)
             {
                 injure6Turn--;
@@ -756,11 +1407,12 @@ public class DiceNumberTextScript : MonoBehaviour {
                 whosTurn = 0;
                 dropButton.interactable = true;
             }
-            else {
-				GameControl.MovePlayer (6);
-				cam6 ();
-				whosTurn = 0;
-			}
+            else
+            {
+                GameControl.MovePlayer(6);
+                cam6();
+                whosTurn = 0;
+            }
         }
 
     }
@@ -861,7 +1513,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     }
                     Skill.luckydraw = 0;
                     whosTurn--;
-                    dropButton.interactable = true;
+                    dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
                 }
                 else
@@ -923,7 +1575,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     }
                     Skill.luckydraw = 0;
                     whosTurn--;
-                    dropButton.interactable = true;
+                    dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
                 }
                 else
@@ -1062,25 +1714,30 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 7)
         {
-			if (jail7 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail7 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail7turn = 3;
                     jail7 = 0;
-                    GameControl.MovePlayer (7);
-					cam7 ();
-					whosTurn = 0;
-				} else {
-					GameControl.jail7turn--;
+                    GameControl.MovePlayer(7);
+                    cam7();
+                    whosTurn = 0;
+                }
+                else
+                {
+                    GameControl.jail7turn--;
                     JailTurn.text = GameControl.jail7turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail7turn == 0) {
+                    if (GameControl.jail7turn == 0)
+                    {
                         GameControl.jail7turn = 3;
                         jail7 = 0;
-					}
+                    }
                     whosTurn = 0;
                     dropButton.interactable = true;
-				}
-			}
+                }
+            }
             else if (injure7 == 1)
             {
                 injure7Turn--;
@@ -1094,11 +1751,12 @@ public class DiceNumberTextScript : MonoBehaviour {
                 whosTurn = 0;
                 dropButton.interactable = true;
             }
-            else {
-				GameControl.MovePlayer (7);
-				cam7 ();
+            else
+            {
+                GameControl.MovePlayer(7);
+                cam7();
                 whosTurn = 0;
-			}
+            }
         }
     }
 
@@ -1198,7 +1856,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     }
                     Skill.luckydraw = 0;
                     whosTurn--;
-                    dropButton.interactable = true;
+                    dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
                 }
                 else
@@ -1260,7 +1918,7 @@ public class DiceNumberTextScript : MonoBehaviour {
                     }
                     Skill.luckydraw = 0;
                     whosTurn--;
-                    dropButton.interactable = true;
+                    dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
                 }
                 else
@@ -1442,25 +2100,30 @@ public class DiceNumberTextScript : MonoBehaviour {
         }
         else if (whosTurn == 8)
         {
-			if (jail8 == 1) {
-				if (DiceNumberTextScript.dice1Number == 6) {
+            if (jail8 == 1)
+            {
+                if (DiceNumberTextScript.dice1Number == 6)
+                {
                     GameControl.jail8turn = 3;
                     jail8 = 0;
-                    GameControl.MovePlayer (8);
-					cam8 ();
-					whosTurn = 0;
-				} else {
-					GameControl.jail8turn--;
+                    GameControl.MovePlayer(8);
+                    cam8();
+                    whosTurn = 0;
+                }
+                else
+                {
+                    GameControl.jail8turn--;
                     JailTurn.text = GameControl.jail8turn.ToString();
                     StartCoroutine(TemporarilyDeactivate(2));
-                    if (GameControl.jail8turn == 0) {
-						jail8 = 0;
+                    if (GameControl.jail8turn == 0)
+                    {
+                        jail8 = 0;
                         GameControl.jail8turn = 3;
                     }
                     whosTurn = 0;
                     dropButton.interactable = true;
-				}
-			}
+                }
+            }
             else if (injure8 == 1)
             {
                 injure8Turn--;
@@ -1474,11 +2137,12 @@ public class DiceNumberTextScript : MonoBehaviour {
                 whosTurn = 0;
                 dropButton.interactable = true;
             }
-            else {
-				GameControl.MovePlayer(8);
-				cam8 ();
-				whosTurn = 0;
-			}
+            else
+            {
+                GameControl.MovePlayer(8);
+                cam8();
+                whosTurn = 0;
+            }
         }
     }
 
@@ -1506,9 +2170,9 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[6].enabled = false;
         camera[7].enabled = false;
         camera[8].enabled = false;
-		FollowThePath.whosTurn = 1;
+        FollowThePath.whosTurn = 1;
     }
-   
+
     public void cam2()
     {
         camera[0].enabled = false;
@@ -1520,7 +2184,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[6].enabled = false;
         camera[7].enabled = false;
         camera[8].enabled = false;
-		FollowThePath.whosTurn = 2;
+        FollowThePath.whosTurn = 2;
     }
 
     public void cam3()
@@ -1534,7 +2198,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[6].enabled = false;
         camera[7].enabled = false;
         camera[8].enabled = false;
-		FollowThePath.whosTurn = 3;
+        FollowThePath.whosTurn = 3;
     }
 
     public void cam4()
@@ -1548,7 +2212,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[6].enabled = false;
         camera[7].enabled = false;
         camera[8].enabled = false;
-		FollowThePath.whosTurn = 4;
+        FollowThePath.whosTurn = 4;
     }
 
     public void cam5()
@@ -1562,7 +2226,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[6].enabled = false;
         camera[7].enabled = false;
         camera[8].enabled = false;
-		FollowThePath.whosTurn = 5;
+        FollowThePath.whosTurn = 5;
     }
 
     public void cam6()
@@ -1576,7 +2240,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[6].enabled = true; //
         camera[7].enabled = false;
         camera[8].enabled = false;
-		FollowThePath.whosTurn = 6;
+        FollowThePath.whosTurn = 6;
     }
 
     public void cam7()
@@ -1590,7 +2254,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[6].enabled = false;
         camera[7].enabled = true; //;
         camera[8].enabled = false;
-		FollowThePath.whosTurn = 7;
+        FollowThePath.whosTurn = 7;
     }
 
     public void cam8()
@@ -1604,7 +2268,7 @@ public class DiceNumberTextScript : MonoBehaviour {
         camera[6].enabled = false;
         camera[7].enabled = false;
         camera[8].enabled = true; //
-		FollowThePath.whosTurn = 8;
+        FollowThePath.whosTurn = 8;
     }
 
     public IEnumerator TemporarilyDeactivate(float duration)
@@ -1621,3 +2285,5 @@ public class DiceNumberTextScript : MonoBehaviour {
         ImageForHospital.gameObject.SetActive(false);
     }
 }
+
+

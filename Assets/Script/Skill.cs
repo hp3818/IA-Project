@@ -14,6 +14,7 @@ public class Skill : MonoBehaviour {
 
     public void YesButton()
     {
+        DiceNumberTextScript.OK = 0; // no animation
         GameControl.ImageForMidSkill.gameObject.SetActive(false);
         DiceNumberTextScript.dice1.gameObject.SetActive(true);
         DiceNumberTextScript.dice2.gameObject.SetActive(false);

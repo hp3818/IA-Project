@@ -421,9 +421,6 @@ public class FollowThePath : MonoBehaviour {
                 transform.position = waypoints[58].transform.position;
                 wayPointIndex = 58;
                 Accept += Movement;
-                Debug.Log(wayPointIndex);
-                Debug.Log(GameControl.player1Waypoint);
-                Debug.Log(Accept);
             }
 
             if (transform.position == waypoints[61].transform.position && Movement == (GameControl.diceSide1Thrown + GameControl.diceSide2Thrown + GameControl.diceSide3Thrown - Accept))
