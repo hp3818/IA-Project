@@ -4353,11 +4353,11 @@ public class GameControl : MonoBehaviour {
                 if (own44 == 2) floor40++;
                 if (own45 == 2) floor41++;
                 if (own46 == 2) floor42++;
-                if (floor1 == 2 || floor2 == 2 || floor3 == 2 || floor4 == 2 || floor5 == 2 || floor6 == 2 || floor7 == 2 || floor8 == 2 || floor9 == 2 || floor10 == 2 ||
-                    floor11 == 2 || floor12 == 2 || floor13 == 2 || floor14 == 2 || floor15 == 2 || floor16 == 2 || floor17 == 2 || floor18 == 2 || floor19 == 2 || floor20 == 2 ||
-                    floor21 == 2 || floor22 == 2 || floor23 == 2 || floor24 == 2 || floor25 == 2 || floor26 == 2 || floor27 == 2 || floor28 == 2 || floor29 == 2 || floor30 == 2 ||
-                    floor31 == 2 || floor32 == 2 || floor33 == 2 || floor34 == 2 || floor35 == 2 || floor36 == 2 || floor37 == 2 || floor38 == 2 || floor39 == 2 || floor40 == 2 ||
-                    floor41 == 2 || floor42 == 2)
+                if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                    || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                    || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                    || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                    || floor41 == 1 || floor42 == 1)
                     random2();
                 dropButton.interactable = true;
                 camMain();
@@ -4609,11 +4609,11 @@ public class GameControl : MonoBehaviour {
                 if (own44 == 2) floor40++;
                 if (own45 == 2) floor41++;
                 if (own46 == 2) floor42++;
-                if (floor1 == 2 || floor2 == 2 || floor3 == 2 || floor4 == 2 || floor5 == 2 || floor6 == 2 || floor7 == 2 || floor8 == 2 || floor9 == 2 || floor10 == 2 ||
-                    floor11 == 2 || floor12 == 2 || floor13 == 2 || floor14 == 2 || floor15 == 2 || floor16 == 2 || floor17 == 2 || floor18 == 2 || floor19 == 2 || floor20 == 2 ||
-                    floor21 == 2 || floor22 == 2 || floor23 == 2 || floor24 == 2 || floor25 == 2 || floor26 == 2 || floor27 == 2 || floor28 == 2 || floor29 == 2 || floor30 == 2 ||
-                    floor31 == 2 || floor32 == 2 || floor33 == 2 || floor34 == 2 || floor35 == 2 || floor36 == 2 || floor37 == 2 || floor38 == 2 || floor39 == 2 || floor40 == 2 ||
-                    floor41 == 2 || floor42 == 2)
+                if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                    || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                    || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                    || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                    || floor41 == 1 || floor42 == 1)
                     randomDown();
                 dropButton.interactable = true;
                 camMain();
@@ -6768,11 +6768,11 @@ public class GameControl : MonoBehaviour {
                 if (own44 == 3) floor40++;
                 if (own45 == 3) floor41++;
                 if (own46 == 3) floor42++;
-                if (floor1 == 3 || floor2 == 3 || floor3 == 3 || floor4 == 3 || floor5 == 3 || floor6 == 3 || floor7 == 3 || floor8 == 3 || floor9 ==3 || floor10 == 3 ||
-                     floor11 == 3 || floor12 == 3 || floor13 == 3 || floor14 == 3 || floor15 == 3 || floor16 == 3 || floor17 == 3 || floor18 == 3 || floor19 == 3 || floor20 == 3 ||
-                     floor21 == 3 || floor22 == 3 || floor23 == 3 || floor24 == 3 || floor25 == 3 || floor26 == 3 || floor27 == 3 || floor28 == 3 || floor29 == 3 || floor30 == 3 ||
-                     floor31 == 3 || floor32 == 3 || floor33 == 3 || floor34 == 3 || floor35 == 3 || floor36 == 3 || floor37 == 3 || floor38 == 3 || floor39 == 3 || floor40 == 3 ||
-                     floor41 == 3 || floor42 == 3)
+                if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                    || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                    || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                    || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                    || floor41 == 1 || floor42 == 1)
                     random3();
                 dropButton.interactable = true;
                 camMain();
@@ -8834,11 +8834,11 @@ public class GameControl : MonoBehaviour {
                 if (own44 == 4) floor40++;
                 if (own45 == 4) floor41++;
                 if (own46 == 4) floor42++;
-                if (floor1 == 4 || floor2 == 4 || floor3 == 4 || floor4 == 4 || floor5 == 4 || floor6 == 4|| floor7 == 4|| floor8 == 4 || floor9 == 4|| floor10 ==4 ||
-                    floor11 == 4 || floor12 == 4 || floor13 == 4 || floor14 == 4 || floor15 == 4 || floor16 == 4 || floor17 == 4 || floor18 == 4 || floor19 == 4 || floor20 == 4 ||
-                    floor21 == 4 || floor22 == 4 || floor23 == 4 || floor24 == 4 || floor25 == 4 || floor26 == 4 || floor27 == 4 || floor28 == 4 || floor29 == 4 || floor30 == 4 ||
-                    floor31 == 4 || floor32 == 4 || floor33 == 4 || floor34 == 4 || floor35 == 4 || floor36 == 4 || floor37 == 4 || floor38 == 4 || floor39 == 4 || floor40 == 4 ||
-                    floor41 == 4 || floor42 == 4)
+                if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                    || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                    || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                    || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                    || floor41 == 1 || floor42 == 1)
                     random4();
                 dropButton.interactable = true;
                 camMain();
@@ -10898,11 +10898,11 @@ public class GameControl : MonoBehaviour {
                 if (own44 == 5) floor40++;
                 if (own45 == 5) floor41++;
                 if (own46 == 5) floor42++;
-                if (floor1 == 5 || floor2 == 5 || floor3 == 5 || floor4 == 5 || floor5 == 5 || floor6 == 5|| floor7 == 5 || floor8 ==5 || floor9 == 5|| floor10 == 5 ||
-                    floor11 == 5 || floor12 == 5 || floor13 == 5 || floor14 == 5 || floor15 ==5 || floor16 == 5|| floor17 == 5 || floor18 ==5 || floor19 == 5 || floor20 == 5 ||
-                    floor21 ==5 || floor22 ==5 || floor23 == 5 || floor24 ==5 || floor25 == 5 || floor26 == 5 || floor27 == 5 || floor28 ==5 || floor29 == 5 || floor30 == 5 ||
-                    floor31 ==5 || floor32 == 5 || floor33 ==5 || floor34 == 5 || floor35 == 5|| floor36 == 5|| floor37 == 5 || floor38 == 5 || floor39 == 5 || floor40 ==5 ||
-                    floor41 == 5 || floor42 == 5)
+                if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                    || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                    || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                    || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                    || floor41 == 1 || floor42 == 1)
                     random5();
                 dropButton.interactable = true;
                 camMain();
@@ -12965,11 +12965,11 @@ public class GameControl : MonoBehaviour {
                 if (own44 == 6) floor40++;
                 if (own45 == 6) floor41++;
                 if (own46 == 6) floor42++;
-                if (floor1 == 6 || floor2 == 6 || floor3 == 6 || floor4 == 6 || floor5 == 6 || floor6 == 6||  floor7 == 6|| floor8 == 6 || floor9 == 6 || floor10 ==6 ||
-                     floor11 == 6 || floor12 == 6 || floor13 == 6 || floor14 == 6 || floor15 == 6 || floor16 == 6 || floor17 == 6 || floor18 == 6 || floor19 == 6 || floor20 == 6 ||
-                     floor21 == 6 || floor22 == 6 || floor23 == 6 || floor24 == 6 || floor25 == 6 || floor26 == 6 || floor27 == 6 || floor28 == 6 || floor29 == 6 || floor30 == 6 ||
-                     floor31 == 6 || floor32 == 6 || floor33 == 6 || floor34 == 6 || floor35 == 6 || floor36 == 6 || floor37 == 6 || floor38 == 6 || floor39 == 6 || floor40 == 6 ||
-                     floor41 == 6 || floor42 == 6)
+                if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                    || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                    || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                    || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                    || floor41 == 1 || floor42 == 1)
                     random6();
                 dropButton.interactable = true;
                 camMain();
@@ -15022,11 +15022,11 @@ public class GameControl : MonoBehaviour {
                 if (own44 == 7) floor40++;
                 if (own45 == 7) floor41++;
                 if (own46 == 7) floor42++;
-                if (floor1 == 7 || floor2 == 7 || floor3 ==7 || floor4 == 7 || floor5 == 7 || floor6 == 7 || floor7 == 7|| floor8 == 7 || floor9 == 7|| floor10 == 7 ||
-                floor11 == 7|| floor12 == 7 || floor13 == 7 || floor14 == 7|| floor15 == 7 || floor16 == 7 || floor17 ==7 || floor18 ==7 || floor19 ==7 || floor20 ==7 ||
-                floor21 == 7 || floor22 == 7 || floor23 == 7 || floor24 == 7 || floor25 == 7 || floor26 == 7 || floor27 ==7 || floor28 ==7 || floor29 ==7 || floor30 ==7 ||
-                floor31 == 7 || floor32 == 7 || floor33 == 7 || floor34 == 7 || floor35 == 7 || floor36 == 7 || floor37 ==7| floor38 ==7 || floor39 ==7|| floor40 ==7 ||
-                 floor41 == 7 || floor42 == 7)
+                if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                    || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                    || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                    || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                    || floor41 == 1 || floor42 == 1)
                     random7();
                 dropButton.interactable = true;
                 camMain();
@@ -17041,11 +17041,11 @@ public class GameControl : MonoBehaviour {
                 if (own44 == 8) floor40++;
                 if (own45 == 8) floor41++;
                 if (own46 == 8) floor42++;
-                if (floor1 == 8 || floor2 == 8 || floor3 == 8 || floor4 == 8 || floor5 == 8 || floor6 == 8 || floor7 == 8 || floor8 == 8 || floor9 == 8 || floor10 == 8 ||
-                 floor11 == 8 || floor12 == 8 || floor13 == 8 || floor14 == 8 || floor15 == 8 || floor16 == 8 || floor17 == 8 || floor18 == 8 || floor19 == 8 || floor20 == 8 ||
-                 floor21 == 8 || floor22 == 8 || floor23 == 8 || floor24 == 8 || floor25 == 8 || floor26 == 8 || floor27 == 8 || floor28 == 8 || floor29 == 8 || floor30 == 8 ||
-                floor31 == 8 || floor32 == 8 || floor33 == 8 || floor34 == 8 || floor35 == 8 || floor36 == 8 || floor37 == 8 || floor38 == 8 || floor39 == 8 || floor40 == 8 ||
-                floor41 == 8 || floor42 == 8)
+                if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                    || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                    || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                    || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                    || floor41 == 1 || floor42 == 1)
                     random8();
                 dropButton.interactable = true;
                 camMain();
@@ -18524,6 +18524,12 @@ public class GameControl : MonoBehaviour {
                 dropButton.interactable = true;
                 camMain();
             }
+        floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+        floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+        floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+        floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+        floor41 = 0; floor42 = 0;
+
 
     }
 
@@ -25103,6 +25109,9 @@ public class GameControl : MonoBehaviour {
                 || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
                 || floor41 == 1 || floor42 == 1)
             {
+                Debug.Log(floor1);
+                Debug.Log(floor2);
+                Debug.Log(floor3);
                 if (floor1 == 1) {
                     if (count1 == 1)
                     {
@@ -26624,6 +26633,11 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
         if (whoTurn == 3)
@@ -32202,17 +32216,22 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
         if (whoTurn == 2)
         {
-            if (floor1 == 2 || floor2 == 2 || floor3 == 2 || floor4 == 2 || floor5 == 2 || floor6 == 2 || floor7 == 2 || floor8 == 2 || floor9 == 2 || floor10 == 2
-                || floor11 == 2 || floor12 == 2 || floor13 == 2 || floor14 == 2 || floor15 == 2 || floor16 == 2 || floor17 == 2 || floor18 == 2 || floor19 == 2 || floor20 == 2
-                || floor21 == 2 || floor22 == 2 || floor23 == 2 || floor24 == 2 || floor25 == 2 || floor26 == 2 || floor27 == 2 || floor28 == 2 || floor29 == 2 || floor30 == 2
-                || floor31 == 2 || floor32 == 2 || floor33 == 2 || floor34 == 2 || floor35 == 2 || floor36 == 2 || floor37 == 2 || floor38 == 2 || floor39 == 2 || floor40 == 2
-                || floor41 == 2 || floor42 == 2)
+            if (floor1 == 1 || floor2 == 1|| floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 2 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 2 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 2 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                || floor41 == 1 || floor42 == 1)
             {
-                if (floor1 == 2)
+                if (floor1 == 1)
                 {
                     if (count1 == 3)
                     {
@@ -32236,7 +32255,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor2 == 2)
+                if (floor2 == 1)
                 {
                     if (count2 == 3)
                     {
@@ -32259,7 +32278,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor3 == 2)
+                if (floor3 == 1)
                 {
                     if (count3 == 3)
                     {
@@ -32282,7 +32301,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor4 == 2)
+                if (floor4 == 1)
                 {
                     if (count4 == 3)
                     {
@@ -32305,7 +32324,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor5 == 2)
+                if (floor5 == 1)
                 {
                     if (count5 == 3)
                     {
@@ -32328,7 +32347,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor6 == 2)
+                if (floor6 == 1)
                 {
                     if (count6 == 3)
                     {
@@ -32351,7 +32370,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor7 == 2)
+                if (floor7 == 1)
                 {
                     if (count7 == 3)
                     {
@@ -32374,7 +32393,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor8 == 2)
+                if (floor8 == 1)
                 {
                     if (count8 == 3)
                     {
@@ -32397,7 +32416,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor9 == 2)
+                if (floor9 == 1)
                 {
                     if (count10 == 3)
                     {
@@ -32420,7 +32439,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor10 == 2)
+                if (floor10 == 1)
                 {
                     if (count11 == 3)
                     {
@@ -32443,7 +32462,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor11 == 2)
+                if (floor11 == 1)
                 {
                     if (count12 == 3)
                     {
@@ -32466,7 +32485,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor12 == 2)
+                if (floor12 == 1)
                 {
                     if (count13 == 3)
                     {
@@ -32489,7 +32508,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor13 == 2)
+                if (floor13 == 1)
                 {
                     if (count14 == 3)
                     {
@@ -32512,7 +32531,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor14 == 2)
+                if (floor14 == 1)
                 {
                     if (count15 == 3)
                     {
@@ -32535,7 +32554,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor15 == 2)
+                if (floor15 == 1)
                 {
                     if (count16 == 3)
                     {
@@ -32558,7 +32577,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor16 == 2)
+                if (floor16 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -32581,7 +32600,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor17 == 2)
+                if (floor17 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -32604,7 +32623,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor18 == 2)
+                if (floor18 == 1)
                 {
                     if (count20 == 3)
                     {
@@ -32628,7 +32647,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor19 == 2)
+                if (floor19 == 1)
                 {
                     if (count21 == 3)
                     {
@@ -32651,7 +32670,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor20 == 2)
+                if (floor20 == 1)
                 {
                     if (count22 == 3)
                     {
@@ -32674,7 +32693,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor21 == 2)
+                if (floor21 == 1)
                 {
                     if (count23 == 3)
                     {
@@ -32697,7 +32716,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor22 == 2)
+                if (floor22 == 1)
                 {
                     if (count24 == 3)
                     {
@@ -32720,7 +32739,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor23 == 2)
+                if (floor23 == 1)
                 {
                     if (count25 == 3)
                     {
@@ -32743,7 +32762,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor24 == 2)
+                if (floor24 == 1)
                 {
                     if (count26 == 3)
                     {
@@ -32766,7 +32785,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor25 == 2)
+                if (floor25 == 1)
                 {
                     if (count27 == 3)
                     {
@@ -32789,7 +32808,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor26 == 2)
+                if (floor26 == 1)
                 {
                     if (count28 == 3)
                     {
@@ -32812,7 +32831,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor27 == 2)
+                if (floor27 == 1)
                 {
                     if (count29 == 3)
                     {
@@ -32835,7 +32854,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor28 == 2)
+                if (floor28 == 1)
                 {
                     if (count30 == 3)
                     {
@@ -32858,7 +32877,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor29 == 2)
+                if (floor29 == 1)
                 {
                     if (count31 == 3)
                     {
@@ -32881,7 +32900,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor30 == 2)
+                if (floor30 == 1)
                 {
                     if (count33 == 3)
                     {
@@ -32904,7 +32923,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor31 == 2)
+                if (floor31 == 1)
                 {
                     if (count34 == 3)
                     {
@@ -32927,7 +32946,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor32 == 2)
+                if (floor32 == 1)
                 {
                     if (count35 == 3)
                     {
@@ -32950,7 +32969,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor33 == 2)
+                if (floor33 == 1)
                 {
                     if (count36 == 3)
                     {
@@ -32973,7 +32992,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor34 == 2)
+                if (floor34 == 1)
                 {
                     if (count37 == 3)
                     {
@@ -32996,7 +33015,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor35 == 2)
+                if (floor35 == 1)
                 {
                     if (count38 == 3)
                     {
@@ -33019,7 +33038,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor36 == 2)
+                if (floor36 == 1)
                 {
                     if (count39 == 3)
                     {
@@ -33042,7 +33061,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor37 == 2)
+                if (floor37 == 1)
                 {
                     if (count40 == 3)
                     {
@@ -33065,7 +33084,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor38 == 2)
+                if (floor38 == 1)
                 {
                     if (count42 == 3)
                     {
@@ -33088,7 +33107,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor39 == 2)
+                if (floor39 == 1)
                 {
                     if (count43 == 3)
                     {
@@ -33111,7 +33130,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor40 == 2)
+                if (floor40 == 1)
                 {
                     if (count44 == 3)
                     {
@@ -33134,7 +33153,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor41 == 2)
+                if (floor41 == 1)
                 {
                     if (count45 == 3)
                     {
@@ -33157,7 +33176,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor42 == 2)
+                if (floor42 == 1)
                 {
                     if (count46 == 3)
                     {
@@ -33180,18 +33199,22 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
         if (whoTurn == 3)
         {
-            if (floor1 == 3 || floor2 == 3 || floor3 == 3 || floor4 == 3 || floor5 == 3 || floor6 == 3 || floor7 == 3 || floor8 == 3 || floor9 == 3 || floor10 == 3
-                || floor11 == 3 || floor12 == 3 || floor13 == 3 || floor14 == 3 || floor15 == 3 || floor16 == 3 || floor17 == 3 || floor18 == 3 || floor19 == 3 | floor20 == 3
-                || floor21 == 3 || floor22 == 3 || floor23 == 3 || floor24 == 3 || floor25 == 3 || floor26 == 3 || floor27 == 3 || floor28 == 3 || floor29 == 3 || floor30 == 3
-                || floor31 == 3 || floor32 == 3 || floor33 == 3 || floor34 == 3 || floor35 == 3 || floor36 == 3 || floor37 == 3 || floor38 == 3 || floor39 == 3 || floor40 == 3
-                || floor41 == 3 || floor42 == 3)
+            if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 | floor20 == 1
+                || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                || floor41 == 1 || floor42 == 1)
             {
-                if (floor1 == 3)
+                if (floor1 == 1)
                 {
                     if (count1 == 3)
                     {
@@ -33215,7 +33238,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor2 == 3)
+                if (floor2 == 1)
                 {
                     if (count2 == 3)
                     {
@@ -33238,7 +33261,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor3 == 3)
+                if (floor3 == 1)
                 {
                     if (count3 == 3)
                     {
@@ -33261,7 +33284,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor4 == 3)
+                if (floor4 == 1)
                 {
                     if (count4 == 3)
                     {
@@ -33284,7 +33307,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor5 == 3)
+                if (floor5 == 1)
                 {
                     if (count5 == 3)
                     {
@@ -33307,7 +33330,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor6 == 3)
+                if (floor6 == 1)
                 {
                     if (count6 == 3)
                     {
@@ -33330,7 +33353,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor7 == 3)
+                if (floor7 == 1)
                 {
                     if (count7 == 3)
                     {
@@ -33353,7 +33376,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor8 == 3)
+                if (floor8 == 1)
                 {
                     if (count8 == 3)
                     {
@@ -33376,7 +33399,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor9 == 3)
+                if (floor9 == 1)
                 {
                     if (count10 == 3)
                     {
@@ -33399,7 +33422,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor10 == 3)
+                if (floor10 == 1)
                 {
                     if (count11 == 3)
                     {
@@ -33422,7 +33445,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor11 == 3)
+                if (floor11 == 1)
                 {
                     if (count12 == 3)
                     {
@@ -33445,7 +33468,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor12 == 3)
+                if (floor12 == 1)
                 {
                     if (count13 == 3)
                     {
@@ -33468,7 +33491,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor13 == 3)
+                if (floor13 == 1)
                 {
                     if (count14 == 3)
                     {
@@ -33491,7 +33514,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor14 == 3)
+                if (floor14 == 1)
                 {
                     if (count15 == 3)
                     {
@@ -33514,7 +33537,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor15 == 3)
+                if (floor15 == 1)
                 {
                     if (count16 == 3)
                     {
@@ -33537,7 +33560,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor16 == 3)
+                if (floor16 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -33560,7 +33583,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor17 == 3)
+                if (floor17 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -33583,7 +33606,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor18 == 3)
+                if (floor18 == 1)
                 {
                     if (count20 == 3)
                     {
@@ -33607,7 +33630,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor19 == 3)
+                if (floor19 == 1)
                 {
                     if (count21 == 3)
                     {
@@ -33630,7 +33653,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor20 == 3)
+                if (floor20 == 1)
                 {
                     if (count22 == 3)
                     {
@@ -33653,7 +33676,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor21 == 3)
+                if (floor21 == 1)
                 {
                     if (count23 == 3)
                     {
@@ -33676,7 +33699,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor22 == 3)
+                if (floor22 == 1)
                 {
                     if (count24 == 3)
                     {
@@ -33699,7 +33722,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor23 == 3)
+                if (floor23 == 1)
                 {
                     if (count25 == 3)
                     {
@@ -33722,7 +33745,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor24 == 3)
+                if (floor24 == 1)
                 {
                     if (count26 == 3)
                     {
@@ -33745,7 +33768,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor25 == 3)
+                if (floor25 == 1)
                 {
                     if (count27 == 3)
                     {
@@ -33768,7 +33791,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor26 == 3)
+                if (floor26 == 1)
                 {
                     if (count28 == 3)
                     {
@@ -33791,7 +33814,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor27 == 3)
+                if (floor27 == 1)
                 {
                     if (count29 == 3)
                     {
@@ -33814,7 +33837,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor28 == 3)
+                if (floor28 == 1)
                 {
                     if (count30 == 3)
                     {
@@ -33837,7 +33860,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor29 == 3)
+                if (floor29 == 1)
                 {
                     if (count31 == 3)
                     {
@@ -33860,7 +33883,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor30 == 3)
+                if (floor30 == 1)
                 {
                     if (count33 == 3)
                     {
@@ -33883,7 +33906,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor31 == 3)
+                if (floor31 == 1)
                 {
                     if (count34 == 3)
                     {
@@ -33906,7 +33929,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor32 == 3)
+                if (floor32 == 1)
                 {
                     if (count35 == 3)
                     {
@@ -33929,7 +33952,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor33 == 3)
+                if (floor33 == 1)
                 {
                     if (count36 == 3)
                     {
@@ -33952,7 +33975,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor34 == 3)
+                if (floor34 == 1)
                 {
                     if (count37 == 3)
                     {
@@ -33975,7 +33998,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor35 == 3)
+                if (floor35 == 1)
                 {
                     if (count38 == 3)
                     {
@@ -33998,7 +34021,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor36 == 3)
+                if (floor36 == 1)
                 {
                     if (count39 == 3)
                     {
@@ -34021,7 +34044,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor37 == 3)
+                if (floor37 == 1)
                 {
                     if (count40 == 3)
                     {
@@ -34044,7 +34067,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor38 == 3)
+                if (floor38 == 1)
                 {
                     if (count42 == 3)
                     {
@@ -34067,7 +34090,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor39 == 3)
+                if (floor39 == 1)
                 {
                     if (count43 == 3)
                     {
@@ -34090,7 +34113,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor40 == 3)
+                if (floor40 == 1)
                 {
                     if (count44 == 3)
                     {
@@ -34113,7 +34136,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor41 == 3)
+                if (floor41 == 1)
                 {
                     if (count45 == 3)
                     {
@@ -34136,7 +34159,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor42 == 3)
+                if (floor42 == 1)
                 {
                     if (count46 == 3)
                     {
@@ -34159,17 +34182,22 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
         if (whoTurn == 4)
         {
-            if (floor1 == 4 || floor2 == 4 || floor3 == 4 || floor4 == 4 || floor5 == 4 || floor6 == 4 || floor7 == 4 || floor8 == 4 || floor9 == 4 || floor10 == 4
-                || floor11 == 4 || floor12 == 4 || floor13 == 4 || floor14 == 4 || floor15 == 4 || floor16 == 4 || floor17 == 4 || floor18 == 4 || floor19 == 4 | floor20 == 4
-                || floor21 == 4 || floor22 == 4 || floor23 == 4 || floor24 == 4 || floor25 == 4 || floor26 == 4 || floor27 == 4 || floor28 == 4 || floor29 == 4 || floor30 == 4
-                || floor31 == 4 || floor32 == 4 || floor33 == 4 || floor34 == 4 || floor35 == 4 || floor36 == 4 || floor37 == 4 || floor38 == 4 || floor39 == 4 || floor40 == 4
-                || floor41 == 4 || floor42 == 4)
+            if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 | floor20 == 1
+                || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                || floor41 == 1 || floor42 == 1)
             {
-                if (floor1 == 4)
+                if (floor1 == 1)
                 {
                     if (count1 == 3)
                     {
@@ -34193,7 +34221,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor2 == 4)
+                if (floor2 == 1)
                 {
                     if (count2 == 3)
                     {
@@ -34216,7 +34244,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor3 == 4)
+                if (floor3 == 1)
                 {
                     if (count3 == 3)
                     {
@@ -34239,7 +34267,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor4 == 4)
+                if (floor4 == 1)
                 {
                     if (count4 == 3)
                     {
@@ -34262,7 +34290,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor5 == 4)
+                if (floor5 == 1)
                 {
                     if (count5 == 3)
                     {
@@ -34285,7 +34313,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor6 == 4)
+                if (floor6 == 1)
                 {
                     if (count6 == 3)
                     {
@@ -34308,7 +34336,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor7 == 4)
+                if (floor7 == 1)
                 {
                     if (count7 == 3)
                     {
@@ -34331,7 +34359,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor8 == 4)
+                if (floor8 == 1)
                 {
                     if (count8 == 3)
                     {
@@ -34354,7 +34382,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor9 == 4)
+                if (floor9 == 1)
                 {
                     if (count10 == 3)
                     {
@@ -34377,7 +34405,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor10 ==41)
+                if (floor10 == 1)
                 {
                     if (count11 == 3)
                     {
@@ -34400,7 +34428,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor11 == 4)
+                if (floor11 == 1)
                 {
                     if (count12 == 3)
                     {
@@ -34423,7 +34451,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor12 == 4)
+                if (floor12 == 1)
                 {
                     if (count13 == 3)
                     {
@@ -34446,7 +34474,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor13 == 4)
+                if (floor13 == 1)
                 {
                     if (count14 == 3)
                     {
@@ -34469,7 +34497,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor14 == 4)
+                if (floor14 == 1)
                 {
                     if (count15 == 3)
                     {
@@ -34492,7 +34520,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor15 == 4)
+                if (floor15 == 1)
                 {
                     if (count16 == 3)
                     {
@@ -34515,7 +34543,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor16 == 4)
+                if (floor16 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -34538,7 +34566,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor17 == 4)
+                if (floor17 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -34561,7 +34589,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor18 == 4)
+                if (floor18 == 1)
                 {
                     if (count20 == 3)
                     {
@@ -34585,7 +34613,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor19 == 4)
+                if (floor19 == 1)
                 {
                     if (count21 == 3)
                     {
@@ -34608,7 +34636,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor20 == 4)
+                if (floor20 == 1)
                 {
                     if (count22 == 3)
                     {
@@ -34631,7 +34659,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor21 == 4)
+                if (floor21 == 1)
                 {
                     if (count23 == 3)
                     {
@@ -34654,7 +34682,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor22 == 4)
+                if (floor22 == 1)
                 {
                     if (count24 == 3)
                     {
@@ -34677,7 +34705,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor23 == 4)
+                if (floor23 == 1)
                 {
                     if (count25 == 3)
                     {
@@ -34700,7 +34728,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor24 == 4)
+                if (floor24 == 1)
                 {
                     if (count26 == 3)
                     {
@@ -34723,7 +34751,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor25 == 4)
+                if (floor25 == 1)
                 {
                     if (count27 == 3)
                     {
@@ -34746,7 +34774,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor26 == 4)
+                if (floor26 == 1)
                 {
                     if (count28 == 3)
                     {
@@ -34769,7 +34797,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor27 == 4)
+                if (floor27 == 1)
                 {
                     if (count29 == 3)
                     {
@@ -34792,7 +34820,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor28 == 4)
+                if (floor28 == 1)
                 {
                     if (count30 == 3)
                     {
@@ -34815,7 +34843,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor29 == 4)
+                if (floor29 == 1)
                 {
                     if (count31 == 3)
                     {
@@ -34838,7 +34866,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor30 == 4)
+                if (floor30 == 1)
                 {
                     if (count33 == 3)
                     {
@@ -34861,7 +34889,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor31 == 4)
+                if (floor31 == 1)
                 {
                     if (count34 == 3)
                     {
@@ -34884,7 +34912,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor32 == 4)
+                if (floor32 == 1)
                 {
                     if (count35 == 3)
                     {
@@ -34907,7 +34935,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor33 == 4)
+                if (floor33 == 1)
                 {
                     if (count36 == 3)
                     {
@@ -34930,7 +34958,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor34 == 4)
+                if (floor34 == 1)
                 {
                     if (count37 == 3)
                     {
@@ -34953,7 +34981,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor35 == 4)
+                if (floor35 == 1)
                 {
                     if (count38 == 3)
                     {
@@ -34976,7 +35004,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor36 == 4)
+                if (floor36 == 1)
                 {
                     if (count39 == 3)
                     {
@@ -34999,7 +35027,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor37 == 4)
+                if (floor37 == 1)
                 {
                     if (count40 == 3)
                     {
@@ -35022,7 +35050,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor38 == 4)
+                if (floor38 == 1)
                 {
                     if (count42 == 3)
                     {
@@ -35045,7 +35073,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor39 == 4)
+                if (floor39 == 1)
                 {
                     if (count43 == 3)
                     {
@@ -35068,7 +35096,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor40 == 4)
+                if (floor40 == 1)
                 {
                     if (count44 == 3)
                     {
@@ -35091,7 +35119,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor41 == 4)
+                if (floor41 == 1)
                 {
                     if (count45 == 3)
                     {
@@ -35114,7 +35142,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor42 == 4)
+                if (floor42 == 1)
                 {
                     if (count46 == 3)
                     {
@@ -35137,17 +35165,22 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
         if (whoTurn == 5)
         {
-            if (floor1 == 5 || floor2 == 5 || floor3 == 5 || floor4 == 5 || floor5 == 5 || floor6 == 5 || floor7 == 5 || floor8 == 5 || floor9 == 5 || floor10 == 5
-                || floor11 == 5 || floor12 == 5 || floor13 == 5 || floor14 == 5 || floor15 == 5 || floor16 == 5 || floor17 == 5 || floor18 == 5 || floor19 == 5 | floor20 == 5
-                || floor21 == 5 || floor22 == 5 || floor23 == 5 || floor24 == 5 || floor25 == 5 || floor26 == 5 || floor27 == 5 || floor28 == 5 || floor29 == 5 || floor30 == 5
-                || floor31 == 5 || floor32 == 5 || floor33 == 5 || floor34 == 5 || floor35 == 5 || floor36 == 5 || floor37 == 5 || floor38 == 5 || floor39 == 5 || floor40 == 5
-                || floor41 == 5 || floor42 == 5)
+            if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 | floor20 == 1
+                || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                || floor41 == 1 || floor42 == 1)
             {
-                if (floor1 == 5)
+                if (floor1 == 1)
                 {
                     if (count1 == 3)
                     {
@@ -35171,7 +35204,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor2 == 5)
+                if (floor2 == 1)
                 {
                     if (count2 == 3)
                     {
@@ -35194,7 +35227,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor3 == 5)
+                if (floor3 == 1)
                 {
                     if (count3 == 3)
                     {
@@ -35217,7 +35250,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor4 == 5)
+                if (floor4 == 1)
                 {
                     if (count4 == 3)
                     {
@@ -35240,7 +35273,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor5 == 5)
+                if (floor5 == 1)
                 {
                     if (count5 == 3)
                     {
@@ -35263,7 +35296,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor6 == 5)
+                if (floor6 == 1)
                 {
                     if (count6 == 3)
                     {
@@ -35286,7 +35319,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor7 == 5) 
+                if (floor7 == 1) 
                 {
                     if (count7 == 3)
                     {
@@ -35309,7 +35342,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor8 == 5)
+                if (floor8 == 1)
                 {
                     if (count8 == 3)
                     {
@@ -35332,7 +35365,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor9 == 5)
+                if (floor9 == 1)
                 {
                     if (count10 == 3)
                     {
@@ -35355,7 +35388,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor10 == 5)
+                if (floor10 == 1)
                 {
                     if (count11 == 3)
                     {
@@ -35378,7 +35411,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor11 == 5)
+                if (floor11 == 1)
                 {
                     if (count12 == 3)
                     {
@@ -35401,7 +35434,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor12 == 5)
+                if (floor12 == 1)
                 {
                     if (count13 == 3)
                     {
@@ -35424,7 +35457,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor13 == 5)
+                if (floor13 == 1)
                 {
                     if (count14 == 3)
                     {
@@ -35447,7 +35480,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor14 == 5)
+                if (floor14 == 1)
                 {
                     if (count15 == 3)
                     {
@@ -35470,7 +35503,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor15 == 5)
+                if (floor15 == 1)
                 {
                     if (count16 == 3)
                     {
@@ -35493,7 +35526,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor16 == 5)
+                if (floor16 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -35516,7 +35549,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor17 == 5)
+                if (floor17 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -35539,7 +35572,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor18 == 5)
+                if (floor18 == 1)
                 {
                     if (count20 == 3)
                     {
@@ -35563,7 +35596,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor19 == 5)
+                if (floor19 == 1)
                 {
                     if (count21 == 3)
                     {
@@ -35586,7 +35619,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor20 == 5)
+                if (floor20 == 1)
                 {
                     if (count22 == 3)
                     {
@@ -35609,7 +35642,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor21 == 5)
+                if (floor21 == 1)
                 {
                     if (count23 == 3)
                     {
@@ -35632,7 +35665,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor22 == 5)
+                if (floor22 == 1)
                 {
                     if (count24 == 3)
                     {
@@ -35655,7 +35688,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor23 == 5)
+                if (floor23 == 1)
                 {
                     if (count25 == 3)
                     {
@@ -35678,7 +35711,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor24 == 5)
+                if (floor24 == 1)
                 {
                     if (count26 == 3)
                     {
@@ -35701,7 +35734,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor25 == 5)
+                if (floor25 == 1)
                 {
                     if (count27 == 3)
                     {
@@ -35724,7 +35757,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor26 == 5)
+                if (floor26 == 1)
                 {
                     if (count28 == 3)
                     {
@@ -35747,7 +35780,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor27 == 5)
+                if (floor27 == 1)
                 {
                     if (count29 == 3)
                     {
@@ -35770,7 +35803,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor28 == 5)
+                if (floor28 == 1)
                 {
                     if (count30 == 3)
                     {
@@ -35793,7 +35826,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor29 == 5)
+                if (floor29 == 1)
                 {
                     if (count31 == 3)
                     {
@@ -35816,7 +35849,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor30 == 5)
+                if (floor30 == 1)
                 {
                     if (count33 == 3)
                     {
@@ -35839,7 +35872,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor31 == 5)
+                if (floor31 == 1)
                 {
                     if (count34 == 3)
                     {
@@ -35862,7 +35895,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor32 == 5)
+                if (floor32 == 1)
                 {
                     if (count35 == 3)
                     {
@@ -35885,7 +35918,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor33 == 5)
+                if (floor33 == 1)
                 {
                     if (count36 == 3)
                     {
@@ -35908,7 +35941,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor34 == 5)
+                if (floor34 == 1)
                 {
                     if (count37 == 3)
                     {
@@ -35931,7 +35964,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor35 == 5)
+                if (floor35 == 1)
                 {
                     if (count38 == 3)
                     {
@@ -35954,7 +35987,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor36 == 5)
+                if (floor36 == 1)
                 {
                     if (count39 == 3)
                     {
@@ -35977,7 +36010,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor37 == 5)
+                if (floor37 == 1)
                 {
                     if (count40 == 3)
                     {
@@ -36000,7 +36033,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor38 == 5)
+                if (floor38 == 1)
                 {
                     if (count42 == 3)
                     {
@@ -36023,7 +36056,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor39 == 5)
+                if (floor39 == 1)
                 {
                     if (count43 == 3)
                     {
@@ -36046,7 +36079,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor40 == 5)
+                if (floor40 == 1)
                 {
                     if (count44 == 3)
                     {
@@ -36069,7 +36102,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor41 == 5)
+                if (floor41 == 1)
                 {
                     if (count45 == 3)
                     {
@@ -36092,7 +36125,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor42 == 5)
+                if (floor42 == 1)
                 {
                     if (count46 == 3)
                     {
@@ -36115,17 +36148,22 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
         if (whoTurn == 6)
         {
-            if (floor1 == 6 || floor2 == 6 || floor3 == 6 || floor4 == 6 || floor5 == 6 || floor6 == 6 || floor7 == 6 || floor8 == 6 || floor9 == 6 || floor10 == 6
-                || floor11 == 6 || floor12 == 6 || floor13 == 6 || floor14 == 6 || floor15 == 6 || floor16 == 6 || floor17 == 6 || floor18 == 6 || floor19 == 6 | floor20 == 6
-                || floor21 == 6 || floor22 == 6 || floor23 == 6 || floor24 == 6 || floor25 == 6 || floor26 == 6 || floor27 == 6 || floor28 == 6 || floor29 == 6 || floor30 == 6
-                || floor31 == 6 || floor32 == 6 || floor33 == 6 || floor34 == 6 || floor35 == 6 || floor36 == 6 || floor37 == 6 || floor38 == 6 || floor39 == 6 || floor40 == 6
-                || floor41 == 6 || floor42 == 6)
+            if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                || floor41 == 1 || floor42 == 1)
             {
-                if (floor1 == 6)
+                if (floor1 == 1)
                 {
                     if (count1 == 3)
                     {
@@ -36149,7 +36187,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor2 == 6)
+                if (floor2 == 1)
                 {
                     if (count2 == 3)
                     {
@@ -36172,7 +36210,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor3 == 6)
+                if (floor3 == 1)
                 {
                     if (count3 == 3)
                     {
@@ -36195,7 +36233,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor4 == 6)
+                if (floor4 == 1)
                 {
                     if (count4 == 3)
                     {
@@ -36218,7 +36256,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor5 == 6)
+                if (floor5 == 1)
                 {
                     if (count5 == 3)
                     {
@@ -36241,7 +36279,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor6 == 6)
+                if (floor6 == 1)
                 {
                     if (count6 == 3)
                     {
@@ -36264,7 +36302,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor7 == 6)
+                if (floor7 == 1)
                 {
                     if (count7 == 3)
                     {
@@ -36287,7 +36325,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor8 == 6)
+                if (floor8 == 1)
                 {
                     if (count8 == 3)
                     {
@@ -36310,7 +36348,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor9 == 6)
+                if (floor9 == 1)
                 {
                     if (count10 == 3)
                     {
@@ -36333,7 +36371,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor10 == 6)
+                if (floor10 == 1)
                 {
                     if (count11 == 3)
                     {
@@ -36356,7 +36394,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor11 == 6)
+                if (floor11 == 1)
                 {
                     if (count12 == 3)
                     {
@@ -36379,7 +36417,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor12 == 6)
+                if (floor12 == 1)
                 {
                     if (count13 == 3)
                     {
@@ -36402,7 +36440,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor13 == 6)
+                if (floor13 == 1)
                 {
                     if (count14 == 3)
                     {
@@ -36425,7 +36463,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor14 == 6)
+                if (floor14 == 1)
                 {
                     if (count15 == 3)
                     {
@@ -36448,7 +36486,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor15 == 6)
+                if (floor15 == 1)
                 {
                     if (count16 == 3)
                     {
@@ -36471,7 +36509,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor16 == 6)
+                if (floor16 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -36494,7 +36532,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor17 == 6)
+                if (floor17 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -36517,7 +36555,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor18 == 6)
+                if (floor18 == 1)
                 {
                     if (count20 == 3)
                     {
@@ -36541,7 +36579,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor19 == 6)
+                if (floor19 == 1)
                 {
                     if (count21 == 3)
                     {
@@ -36564,7 +36602,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor20 == 6)
+                if (floor20 == 1)
                 {
                     if (count22 == 3)
                     {
@@ -36587,7 +36625,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor21 == 6)
+                if (floor21 == 1)
                 {
                     if (count23 == 3)
                     {
@@ -36610,7 +36648,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor22 == 6)
+                if (floor22 == 1)
                 {
                     if (count24 == 3)
                     {
@@ -36633,7 +36671,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor23 == 6)
+                if (floor23 == 1)
                 {
                     if (count25 == 3)
                     {
@@ -36656,7 +36694,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor24 == 6)
+                if (floor24 == 1)
                 {
                     if (count26 == 3)
                     {
@@ -36679,7 +36717,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor25 == 6)
+                if (floor25 == 1)
                 {
                     if (count27 == 3)
                     {
@@ -36702,7 +36740,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor26 == 6)
+                if (floor26 == 1)
                 {
                     if (count28 == 3)
                     {
@@ -36725,7 +36763,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor27 == 6)
+                if (floor27 == 1)
                 {
                     if (count29 == 3)
                     {
@@ -36748,7 +36786,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor28 == 6)
+                if (floor28 == 1)
                 {
                     if (count30 == 3)
                     {
@@ -36771,7 +36809,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor29 == 6)
+                if (floor29 == 1)
                 {
                     if (count31 == 3)
                     {
@@ -36794,7 +36832,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor30 == 6)
+                if (floor30 == 1)
                 {
                     if (count33 == 3)
                     {
@@ -36817,7 +36855,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor31 == 6)
+                if (floor31 == 1)
                 {
                     if (count34 == 3)
                     {
@@ -36840,7 +36878,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor32 == 6)
+                if (floor32 == 1)
                 {
                     if (count35 == 3)
                     {
@@ -36863,7 +36901,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor33 == 6)
+                if (floor33 == 1)
                 {
                     if (count36 == 3)
                     {
@@ -36886,7 +36924,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor34 == 6)
+                if (floor34 == 1)
                 {
                     if (count37 == 3)
                     {
@@ -36909,7 +36947,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor35 == 6)
+                if (floor35 == 1)
                 {
                     if (count38 == 3)
                     {
@@ -36932,7 +36970,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor36 == 6)
+                if (floor36 == 1)
                 {
                     if (count39 == 3)
                     {
@@ -36955,7 +36993,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor37 == 6)
+                if (floor37 == 1)
                 {
                     if (count40 == 3)
                     {
@@ -36978,7 +37016,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor38 == 6)
+                if (floor38 == 1)
                 {
                     if (count42 == 3)
                     {
@@ -37001,7 +37039,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor39 == 6)
+                if (floor39 == 1)
                 {
                     if (count43 == 3)
                     {
@@ -37024,7 +37062,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor40 == 6)
+                if (floor40 == 1)
                 {
                     if (count44 == 3)
                     {
@@ -37047,7 +37085,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor41 == 6)
+                if (floor41 == 1)
                 {
                     if (count45 == 3)
                     {
@@ -37070,7 +37108,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor42 == 6)
+                if (floor42 == 1)
                 {
                     if (count46 == 3)
                     {
@@ -37093,18 +37131,22 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
         if (whoTurn == 7)
         {
-            if (floor1 == 7 || floor2 == 7 || floor3 == 7 || floor4 == 7 || floor5 == 7 || floor6 == 7 || floor7 == 7 || floor8 == 7 || floor9 == 7 || floor10 == 7
-                || floor11 == 7 || floor12 == 7 || floor13 == 7 || floor14 == 7 || floor15 == 7 || floor16 == 7 || floor17 == 7 || floor18 == 7 || floor19 == 7 | floor20 == 7
-                || floor21 == 7 || floor22 == 7 || floor23 == 7 || floor24 == 7 || floor25 == 7 || floor26 == 7 || floor27 == 7 || floor28 == 7 || floor29 == 7 || floor30 == 7
-                || floor31 == 7 || floor32 == 7 || floor33 == 7 || floor34 == 7 || floor35 == 7 || floor36 == 7 || floor37 == 7 || floor38 == 7 || floor39 == 7 || floor40 == 7
-                || floor41 == 7 || floor42 == 7)
+            if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                            || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                            || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                            || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                            || floor41 == 1 || floor42 == 1)
             {
-                if (floor1 == 7)
+                if (floor1 == 1)
                 {
                     if (count1 == 3)
                     {
@@ -37128,7 +37170,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor2 == 7)
+                if (floor2 == 1)
                 {
                     if (count2 == 3)
                     {
@@ -37151,7 +37193,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor3 == 7)
+                if (floor3 == 1)
                 {
                     if (count3 == 3)
                     {
@@ -37174,7 +37216,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor4 == 7)
+                if (floor4 == 1)
                 {
                     if (count4 == 3)
                     {
@@ -37197,7 +37239,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor5 == 7)
+                if (floor5 == 1)
                 {
                     if (count5 == 3)
                     {
@@ -37220,7 +37262,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor6 == 7)
+                if (floor6 == 1)
                 {
                     if (count6 == 3)
                     {
@@ -37243,7 +37285,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor7 == 7)
+                if (floor7 == 1)
                 {
                     if (count7 == 3)
                     {
@@ -37266,7 +37308,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor8 == 7)
+                if (floor8 == 1)
                 {
                     if (count8 == 3)
                     {
@@ -37289,7 +37331,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor9 == 7)
+                if (floor9 == 1)
                 {
                     if (count10 == 3)
                     {
@@ -37312,7 +37354,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor10 == 7)
+                if (floor10 == 1)
                 {
                     if (count11 == 3)
                     {
@@ -37335,7 +37377,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor11 == 7)
+                if (floor11 == 1)
                 {
                     if (count12 == 3)
                     {
@@ -37358,7 +37400,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor12 == 7)
+                if (floor12 == 1)
                 {
                     if (count13 == 3)
                     {
@@ -37381,7 +37423,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor13 == 7)
+                if (floor13 == 1)
                 {
                     if (count14 == 3)
                     {
@@ -37404,7 +37446,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor14 == 7)
+                if (floor14 == 1)
                 {
                     if (count15 == 3)
                     {
@@ -37427,7 +37469,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor15 == 7)
+                if (floor15 == 1)
                 {
                     if (count16 == 3)
                     {
@@ -37450,7 +37492,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor16 == 7)
+                if (floor16 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -37473,7 +37515,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor17 == 7)
+                if (floor17 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -37496,7 +37538,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor18 == 7)
+                if (floor18 == 1)
                 {
                     if (count20 == 3)
                     {
@@ -37520,7 +37562,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor19 == 7)
+                if (floor19 == 1)
                 {
                     if (count21 == 3)
                     {
@@ -37543,7 +37585,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor20 == 7)
+                if (floor20 == 1)
                 {
                     if (count22 == 3)
                     {
@@ -37566,7 +37608,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor21 == 7)
+                if (floor21 == 1)
                 {
                     if (count23 == 3)
                     {
@@ -37589,7 +37631,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor22 == 7)
+                if (floor22 == 1)
                 {
                     if (count24 == 3)
                     {
@@ -37612,7 +37654,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor23 == 7)
+                if (floor23 == 1)
                 {
                     if (count25 == 3)
                     {
@@ -37635,7 +37677,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor24 == 7)
+                if (floor24 == 1)
                 {
                     if (count26 == 3)
                     {
@@ -37658,7 +37700,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor25 == 7)
+                if (floor25 == 1)
                 {
                     if (count27 == 3)
                     {
@@ -37681,7 +37723,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor26 == 7)
+                if (floor26 == 1)
                 {
                     if (count28 == 3)
                     {
@@ -37704,7 +37746,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor27 == 7)
+                if (floor27 == 1)
                 {
                     if (count29 == 3)
                     {
@@ -37727,7 +37769,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor28 == 7)
+                if (floor28 == 1)
                 {
                     if (count30 == 3)
                     {
@@ -37750,7 +37792,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor29 == 7)
+                if (floor29 == 1)
                 {
                     if (count31 == 3)
                     {
@@ -37773,7 +37815,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor30 == 7)
+                if (floor30 == 1)
                 {
                     if (count33 == 3)
                     {
@@ -37796,7 +37838,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor31 == 7)
+                if (floor31 == 1)
                 {
                     if (count34 == 3)
                     {
@@ -37819,7 +37861,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor32 == 7)
+                if (floor32 == 1)
                 {
                     if (count35 == 3)
                     {
@@ -37842,7 +37884,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor33 == 7)
+                if (floor33 == 1)
                 {
                     if (count36 == 3)
                     {
@@ -37865,7 +37907,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor34 == 7)
+                if (floor34 == 1)
                 {
                     if (count37 == 3)
                     {
@@ -37888,7 +37930,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor35 == 7)
+                if (floor35 == 1)
                 {
                     if (count38 == 3)
                     {
@@ -37911,7 +37953,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor36 == 7)
+                if (floor36 == 1)
                 {
                     if (count39 == 3)
                     {
@@ -37934,7 +37976,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor37 == 7)
+                if (floor37 == 1)
                 {
                     if (count40 == 3)
                     {
@@ -37957,7 +37999,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor38 == 7)
+                if (floor38 == 1)
                 {
                     if (count42 == 3)
                     {
@@ -37980,7 +38022,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor39 == 7)
+                if (floor39 == 1)
                 {
                     if (count43 == 3)
                     {
@@ -38003,7 +38045,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor40 == 7)
+                if (floor40 == 1)
                 {
                     if (count44 == 3)
                     {
@@ -38026,7 +38068,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor41 == 7)
+                if (floor41 == 1)
                 {
                     if (count45 == 3)
                     {
@@ -38049,7 +38091,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor42 == 7)
+                if (floor42 == 1)
                 {
                     if (count46 == 3)
                     {
@@ -38072,18 +38114,22 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
         if (whoTurn == 8)
         {
-            if (floor1 == 8 || floor2 == 8 || floor3 == 8 || floor4 == 8 || floor5 == 8 || floor6 == 8 || floor7 == 8 || floor8 == 8 || floor9 == 8 || floor10 == 8
-                || floor11 == 8 || floor12 == 8 || floor13 == 8 || floor14 == 8 || floor15 == 8 || floor16 == 8 || floor17 == 8 || floor18 == 8 || floor19 == 8 | floor20 == 8
-                || floor21 == 8 || floor22 == 8 || floor23 == 8 || floor24 == 8 || floor25 == 8 || floor26 == 8 || floor27 == 8 || floor28 == 8 || floor29 == 8 || floor30 == 8
-                || floor31 == 8 || floor32 == 8 || floor33 == 8 || floor34 == 8 || floor35 == 8 || floor36 == 8 || floor37 == 8 || floor38 == 8 || floor39 == 8 || floor40 == 8
-                || floor41 == 8 || floor42 == 8)
+            if (floor1 == 1 || floor2 == 1 || floor3 == 1 || floor4 == 1 || floor5 == 1 || floor6 == 1 || floor7 == 1 || floor8 == 1 || floor9 == 1 || floor10 == 1
+                || floor11 == 1 || floor12 == 1 || floor13 == 1 || floor14 == 1 || floor15 == 1 || floor16 == 1 || floor17 == 1 || floor18 == 1 || floor19 == 1 || floor20 == 1
+                || floor21 == 1 || floor22 == 1 || floor23 == 1 || floor24 == 1 || floor25 == 1 || floor26 == 1 || floor27 == 1 || floor28 == 1 || floor29 == 1 || floor30 == 1
+                || floor31 == 1 || floor32 == 1 || floor33 == 1 || floor34 == 1 || floor35 == 1 || floor36 == 1 || floor37 == 1 || floor38 == 1 || floor39 == 1 || floor40 == 1
+                || floor41 == 1 || floor42 == 1)
             {
-                if (floor1 == 8)
+                if (floor1 == 1)
                 {
                     if (count1 == 3)
                     {
@@ -38107,7 +38153,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor2 == 8)
+                if (floor2 == 1)
                 {
                     if (count2 == 3)
                     {
@@ -38130,7 +38176,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor3 == 8)
+                if (floor3 == 1)
                 {
                     if (count3 == 3)
                     {
@@ -38153,7 +38199,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor4 == 8)
+                if (floor4 == 1)
                 {
                     if (count4 == 3)
                     {
@@ -38176,7 +38222,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor5 == 8)
+                if (floor5 == 1)
                 {
                     if (count5 == 3)
                     {
@@ -38199,7 +38245,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor6 == 8)
+                if (floor6 == 1)
                 {
                     if (count6 == 3)
                     {
@@ -38222,7 +38268,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor7 == 8)
+                if (floor7 == 1)
                 {
                     if (count7 == 3)
                     {
@@ -38245,7 +38291,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor8 == 8)
+                if (floor8 == 1)
                 {
                     if (count8 == 3)
                     {
@@ -38268,7 +38314,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor9 == 8)
+                if (floor9 == 1)
                 {
                     if (count10 == 3)
                     {
@@ -38291,7 +38337,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor10 == 8)
+                if (floor10 == 1)
                 {
                     if (count11 == 3)
                     {
@@ -38314,7 +38360,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor11 == 8)
+                if (floor11 == 1)
                 {
                     if (count12 == 3)
                     {
@@ -38337,7 +38383,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor12 == 8)
+                if (floor12 == 1)
                 {
                     if (count13 == 3)
                     {
@@ -38360,7 +38406,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor13 == 8)
+                if (floor13 == 1)
                 {
                     if (count14 == 3)
                     {
@@ -38383,7 +38429,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor14 == 8)
+                if (floor14 == 1)
                 {
                     if (count15 == 3)
                     {
@@ -38406,7 +38452,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor15 == 8)
+                if (floor15 == 1)
                 {
                     if (count16 == 3)
                     {
@@ -38429,7 +38475,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor16 == 8)
+                if (floor16 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -38452,7 +38498,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor17 == 8)
+                if (floor17 == 1)
                 {
                     if (count17 == 3)
                     {
@@ -38475,7 +38521,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor18 == 8)
+                if (floor18 == 1)
                 {
                     if (count20 == 3)
                     {
@@ -38499,7 +38545,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor19 == 8)
+                if (floor19 == 1)
                 {
                     if (count21 == 3)
                     {
@@ -38522,7 +38568,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor20 == 8)
+                if (floor20 == 1)
                 {
                     if (count22 == 3)
                     {
@@ -38545,7 +38591,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor21 == 8)
+                if (floor21 == 1)
                 {
                     if (count23 == 3)
                     {
@@ -38568,7 +38614,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor22 == 8)
+                if (floor22 == 1)
                 {
                     if (count24 == 3)
                     {
@@ -38591,7 +38637,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor23 == 8)
+                if (floor23 == 1)
                 {
                     if (count25 == 3)
                     {
@@ -38614,7 +38660,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor24 == 8)
+                if (floor24 == 1)
                 {
                     if (count26 == 3)
                     {
@@ -38637,7 +38683,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor25 == 8)
+                if (floor25 == 1)
                 {
                     if (count27 == 3)
                     {
@@ -38660,7 +38706,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor26 == 8)
+                if (floor26 == 1)
                 {
                     if (count28 == 3)
                     {
@@ -38683,7 +38729,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor27 == 8)
+                if (floor27 == 1)
                 {
                     if (count29 == 3)
                     {
@@ -38706,7 +38752,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor28 == 8)
+                if (floor28 == 1)
                 {
                     if (count30 == 3)
                     {
@@ -38729,7 +38775,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor29 == 8)
+                if (floor29 == 1)
                 {
                     if (count31 == 3)
                     {
@@ -38752,7 +38798,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor30 == 8)
+                if (floor30 == 1)
                 {
                     if (count33 == 3)
                     {
@@ -38775,7 +38821,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor31 == 8)
+                if (floor31 == 1)
                 {
                     if (count34 == 3)
                     {
@@ -38798,7 +38844,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor32 == 8)
+                if (floor32 == 1)
                 {
                     if (count35 == 3)
                     {
@@ -38821,7 +38867,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor33 == 8)
+                if (floor33 == 1)
                 {
                     if (count36 == 3)
                     {
@@ -38844,7 +38890,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor34 == 8)
+                if (floor34 == 1)
                 {
                     if (count37 == 3)
                     {
@@ -38867,7 +38913,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor35 == 8)
+                if (floor35 == 1)
                 {
                     if (count38 == 3)
                     {
@@ -38890,7 +38936,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor36 == 8)
+                if (floor36 == 1)
                 {
                     if (count39 == 3)
                     {
@@ -38913,7 +38959,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor37 == 8)
+                if (floor37 == 1)
                 {
                     if (count40 == 3)
                     {
@@ -38936,7 +38982,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor38 == 8)
+                if (floor38 == 1)
                 {
                     if (count42 == 3)
                     {
@@ -38959,7 +39005,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor39 == 8)
+                if (floor39 == 1)
                 {
                     if (count43 == 3)
                     {
@@ -38982,7 +39028,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor40 == 8)
+                if (floor40 == 1)
                 {
                     if (count44 == 3)
                     {
@@ -39005,7 +39051,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor41 == 8)
+                if (floor41 == 1)
                 {
                     if (count45 == 3)
                     {
@@ -39028,7 +39074,7 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-                if (floor42 == 8)
+                if (floor42 == 1)
                 {
                     if (count46 == 3)
                     {
@@ -39051,7 +39097,11 @@ public class GameControl : MonoBehaviour {
                     dropButton.interactable = true;
                     camMain();
                 }
-
+                floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+                floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+                floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+                floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+                floor41 = 0; floor42 = 0;
             }
         }
     }
@@ -43014,7 +43064,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 2)
-            if (floor2 != 1) random();
+            if (floor2 != 1) randomDown();
             else
             {
                 text2.text = "紅2";
@@ -43041,7 +43091,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 3)
-            if (floor3 != 1) random();
+            if (floor3 != 1) randomDown();
             else
             {
                 text2.text = "紅3";
@@ -43068,8 +43118,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 4)
-            if (floor4 != 1) random();
-            else
+            if (floor4 != 1) randomDown();
             {
                 text2.text = "紅4";
                 StartCoroutine(TemporarilyDeactivate(2));
@@ -43095,7 +43144,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 5)
-            if (floor5 != 1) random();
+            if (floor5 != 1) randomDown();
             else
             {
                 text2.text = "紅5";
@@ -43122,7 +43171,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 6)
-            if (floor6 != 1) random();
+            if (floor6 != 1) randomDown();
             else
             {
                 text2.text = "紅6";
@@ -43149,7 +43198,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 7)
-            if (floor7 != 1) random();
+            if (floor7 != 1) randomDown();
             else
             {
                 text2.text = "紅7";
@@ -43176,7 +43225,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 8)
-            if (floor8 != 1) random();
+            if (floor8 != 1) randomDown();
             else
             {
                 text2.text = "橙1";
@@ -43203,7 +43252,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 9)
-            if (floor9 != 1) random();
+            if (floor9 != 1) randomDown();
             else
             {
                 text2.text = "橙2";
@@ -43231,7 +43280,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 10)
-            if (floor10 != 1) random();
+            if (floor10 != 1) randomDown();
             else
             {
                 text2.text = "橙3";
@@ -43259,7 +43308,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 11)
-            if (floor11 != 1) random();
+            if (floor11 != 1) randomDown();
             else
             {
                 text2.text = "橙4";
@@ -43286,7 +43335,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 12)
-            if (floor12 != 1) random();
+            if (floor12 != 1) randomDown();
             else
             {
                 text2.text = "橙5";
@@ -43313,7 +43362,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 13)
-            if (floor13 != 1) random();
+            if (floor13 != 1) randomDown();
             else
             {
                 text2.text = "橙6";
@@ -43340,7 +43389,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 14)
-            if (floor14 != 1) random();
+            if (floor14 != 1) randomDown();
             else
             {
                 text2.text = "橙7";
@@ -43368,7 +43417,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 15)
-            if (floor15 != 1) random();
+            if (floor15 != 1) randomDown();
             else
             {
                 text2.text = "黃1";
@@ -43395,7 +43444,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 16)
-            if (floor16 != 1) random();
+            if (floor16 != 1) randomDown();
             else
             {
                 text2.text = "黃2";
@@ -43422,7 +43471,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 17)
-            if (floor17 != 1) random();
+            if (floor17 != 1) randomDown();
             else
             {
                 text2.text = "黃3";
@@ -43449,7 +43498,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 18)
-            if (floor17 != 1) random();
+            if (floor17 != 1) randomDown();
             else
             {
                 text2.text = "黃4";
@@ -43476,7 +43525,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 19)
-            if (floor19 != 1) random();
+            if (floor19 != 1) randomDown();
             else
             {
                 text2.text = "黃5";
@@ -43504,7 +43553,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 20)
-            if (floor20 != 1) random();
+            if (floor20 != 1) randomDown();
             else
             {
                 text2.text = "黃6";
@@ -43531,7 +43580,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 21)
-            if (floor21 != 1) random();
+            if (floor21 != 1) randomDown();
             else
             {
                 text2.text = "黃7";
@@ -43558,7 +43607,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 22)
-            if (floor22 != 1) random();
+            if (floor22 != 1) randomDown();
             else
             {
                 text2.text = "綠1";
@@ -43585,7 +43634,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 23)
-            if (floor23 != 1) random();
+            if (floor23 != 1) randomDown();
             else
             {
                 text2.text = "綠2";
@@ -43612,7 +43661,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 24)
-            if (floor24 != 1) random();
+            if (floor24 != 1) randomDown();
             else
             {
                 text2.text = "綠3";
@@ -43639,7 +43688,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 25)
-            if (floor25 != 1) random();
+            if (floor25 != 1) randomDown();
             else
             {
                 text2.text = "綠4";
@@ -43666,7 +43715,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 26)
-            if (floor26 != 1) random();
+            if (floor26 != 1) randomDown();
             else
             {
                 text2.text = "綠5";
@@ -43694,7 +43743,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 27)
-            if (floor27 != 1) random();
+            if (floor27 != 1) randomDown();
             else
             {
                 text2.text = "綠6";
@@ -43722,7 +43771,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 28)
-            if (floor28 != 1) random();
+            if (floor28 != 1) randomDown();
             else
             {
                 text2.text = "藍1";
@@ -43749,7 +43798,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 29)
-            if (floor29 != 1) random();
+            if (floor29 != 1) randomDown();
             else
             {
                 text2.text = "藍2";
@@ -43776,7 +43825,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 30)
-            if (floor30 != 1) random();
+            if (floor30 != 1) randomDown();
             else
             {
                 text2.text = "藍3";
@@ -43803,7 +43852,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 31)
-            if (floor31 != 1) random();
+            if (floor31 != 1) randomDown();
             else
             {
                 text2.text = "藍4";
@@ -43830,7 +43879,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 32)
-            if (floor32 != 1) random();
+            if (floor32 != 1) randomDown();
             else
             {
                 text2.text = "紫1";
@@ -43857,7 +43906,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 33)
-            if (floor33 != 1) random();
+            if (floor33 != 1) randomDown();
             else
             {
                 text2.text = "紫2";
@@ -43884,7 +43933,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 34)
-            if (floor34 != 1) random();
+            if (floor34 != 1) randomDown();
             else
             {
                 text2.text = "紫3";
@@ -43911,7 +43960,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 35)
-            if (floor35 != 1) random();
+            if (floor35 != 1) randomDown();
             else
             {
                 text2.text = "紫4";
@@ -43938,7 +43987,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 36)
-            if (floor36 != 1) random();
+            if (floor36 != 1) randomDown();
             else
             {
                 text2.text = "紫5";
@@ -43965,7 +44014,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 37)
-            if (floor37 != 1) random();
+            if (floor37 != 1) randomDown();
             else
             {
                 text2.text = "啡1";
@@ -43993,7 +44042,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 38)
-            if (floor38 != 1) random();
+            if (floor38 != 1) randomDown();
             else
             {
                 text2.text = "啡2";
@@ -44020,7 +44069,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 39)
-            if (floor39 != 1) random();
+            if (floor39 != 1) randomDown();
             else
             {
                 text2.text = "啡3";
@@ -44048,7 +44097,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 40)
-            if (floor40 != 1) random();
+            if (floor40 != 1) randomDown();
             else
             {
                 text2.text = "黑1";
@@ -44075,7 +44124,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 41)
-            if (floor42 != 1) random();
+            if (floor42 != 1) randomDown();
             else
             {
                 text2.text = "黑2";
@@ -44102,7 +44151,7 @@ public class GameControl : MonoBehaviour {
                 camMain();
             }
         if (rangeRadomNum == 42)
-            if (floor42 != 1) random();
+            if (floor42 != 1) randomDown();
             else
             {
                 text2.text = "黑3";
@@ -44128,6 +44177,11 @@ public class GameControl : MonoBehaviour {
                 dropButton.interactable = true;
                 camMain();
             }
+        floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor1 = 10;
+        floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor1 = 20;
+        floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor1 = 30;
+        floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor1 = 40;
+        floor41 = 0; floor42 = 0;
 
     }
 

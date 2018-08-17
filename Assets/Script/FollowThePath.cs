@@ -1616,7 +1616,9 @@ public class FollowThePath : MonoBehaviour {
 	void goToGo() {
 		transform.position = waypoints[0].transform.position;
 		wayPointIndex = 0;
-	}
+        GameControl.player1Waypoint = 0;
+        Accept += Movement;
+    }
 
     void goToHospital()
     {
