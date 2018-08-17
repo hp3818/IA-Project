@@ -15,7 +15,6 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     public Text text7a, text7b, text7c, text7d, text7e;
     public static int childCount = 5;
     int getRangeNum = 0;
-    int rangeRadomNum = 0;
     public static int
         player1Card1Number1 = 0, player1Card1Number2 = 0, player1Card1Number3 = 0, player1Card1Number4 = 0, player1Card1Number5 = 0, player1Card1Number6 = 0, player1Card1Number7 = 0, player1Card1Number8 = 0, player1Card1Number9 = 0,
         player1Card2Number1 = 0, player1Card2Number2 = 0, player1Card2Number3 = 0, player1Card2Number4 = 0, player1Card2Number5 = 0, player1Card2Number6 = 0, player1Card2Number7 = 0, player1Card2Number8 = 0, player1Card2Number9 = 0,
@@ -109,10 +108,15 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     public void OnDrop(PointerEventData eventData)
     {
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-        if (d != null)
+
+        if (Input.touchCount == 1)
         {
-            d.parentToReturnTo = transform;
+            if (d != null)
+            {
+                d.parentToReturnTo = transform;
+            }
         }
+
     }
 
     public void random()
