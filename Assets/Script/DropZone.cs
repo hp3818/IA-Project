@@ -121,19 +121,27 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
     public void random()
     {
+        int getRangeNum1 = 0;
+        int getRangeNum2 = 0;
+        int getRangeNum3 = 0;
+        int getRangeNum4 = 0;
+        int getRangeNum5 = 0;
         for (int j = 1; j <= 8; j ++)
         {
+
             if (j == 1)
             {
                 for (int i = 1; i <= 5; i++)
                 {
+
                     if (i == 1)
                     {
                         do
                         {
                             getRangeNum = Random.Range(1, 9);
                         }
-                        while (getRangeNum.ToString() == text5.text || getRangeNum.ToString() == text2.text || getRangeNum.ToString() == text3.text || getRangeNum.ToString() == text4.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum1 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player1Card1Number1 = 1;
@@ -188,7 +196,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 9);
                         }
-                        while (getRangeNum.ToString() == text5.text || getRangeNum.ToString() == text1.text || getRangeNum.ToString() == text3.text || getRangeNum.ToString() == text4.text);
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum2 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player1Card2Number1 = 1;
@@ -243,8 +252,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 9);
                         }
-                        while (getRangeNum.ToString() == text2.text || getRangeNum.ToString() == text1.text || getRangeNum.ToString() == text5.text || getRangeNum.ToString() == text4.text);
-                        text3.text = getRangeNum.ToString();
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum5);
+                        getRangeNum3 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player1Card3Number1 = 1;
@@ -293,52 +302,47 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 9);
                         }
-                        while (getRangeNum.ToString() == text2.text || getRangeNum.ToString() == text1.text || getRangeNum.ToString() == text3.text || getRangeNum.ToString() == text5.text);
-                        text4.text = getRangeNum.ToString();
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum5);
+                        getRangeNum4 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player1Card4Number1 = 1;
-                            text4.text = "接受物業(中)";
+                            text4.text = "強制入獄";
                         }
                         else if (getRangeNum == 2)
                         {
                             player1Card4Number2 = 1;
-                            text4.text = "愛回家";
+                            text4.text = "跑車奔馳";
                         }
                         else if (getRangeNum == 3)
                         {
                             player1Card4Number3 = 1;
-                            text4.text = "開心快遞";
+                            text4.text = "高級飛機";
                         }
                         else if (getRangeNum == 4)
                         {
                             player1Card4Number4 = 1;
-                            text4.text = "綠化物業";
+                            text4.text = "黑手黨";
                         }
                         else if (getRangeNum == 5)
                         {
                             player1Card4Number5 = 1;
-                            text4.text = "沉默";
+                            text4.text = "商業霸權";
                         }
                         else if (getRangeNum == 6)
                         {
                             player1Card4Number6 = 1;
-                            text4.text = "幸運輪";
+                            text4.text = "搬龍門";
                         }
                         else if (getRangeNum == 7)
                         {
                             player1Card4Number7 = 1;
-                            text4.text = "挑戰節目";
+                            text4.text = "上司特權";
                         }
                         else if (getRangeNum == 8)
                         {
                             player1Card4Number8 = 1;
-                            text4.text = "交通規則";
-                        }
-                        else if (getRangeNum == 9)
-                        {
-                            player1Card4Number9 = 1;
-                            text4.text = "逆轉移動";
+                            text4.text = "盛會";
                         }
                         DiceNumberTextScript.player1Card4string = text4.text;
                     }
@@ -348,7 +352,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 9);
                         }
-                        while (getRangeNum.ToString() == text2.text || getRangeNum.ToString() == text1.text || getRangeNum.ToString() == text3.text || getRangeNum.ToString() == text4.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum1);
+                        getRangeNum5 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player1Card5Number1 = 1;
@@ -392,7 +397,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         DiceNumberTextScript.player1Card5string = text5.text;
                     }
                 }
-            }
+            } 
             else if (j == 2)
             {
                 for (int i = 1; i <= 5; i++)
@@ -403,7 +408,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text1e.text || getRangeNum.ToString() == text1b.text || getRangeNum.ToString() == text1c.text || getRangeNum.ToString() == text1d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum1 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player2Card1Number1 = 1;
@@ -457,7 +463,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text1a.text || getRangeNum.ToString() == text1e.text || getRangeNum.ToString() == text1c.text || getRangeNum.ToString() == text1d.text);
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum2 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player2Card2Number1 = 1;
@@ -511,7 +518,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text1a.text || getRangeNum.ToString() == text1b.text || getRangeNum.ToString() == text1e.text || getRangeNum.ToString() == text1d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum3 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player2Card3Number1 = 1;
@@ -565,7 +573,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text1a.text || getRangeNum.ToString() == text1b.text || getRangeNum.ToString() == text1e.text || getRangeNum.ToString() == text1c.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum5);
+                        getRangeNum4 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player2Card4Number1 = 1;
@@ -619,7 +628,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text1a.text || getRangeNum.ToString() == text1b.text || getRangeNum.ToString() == text1c.text || getRangeNum.ToString() == text1d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum1);
+                        getRangeNum5 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player2Card5Number1 = 1;
@@ -682,7 +692,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2b.text || getRangeNum.ToString() == text2c.text || getRangeNum.ToString() == text2e.text || getRangeNum.ToString() == text2d.text);
+                            while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                            getRangeNum1 = getRangeNum;
                             if (getRangeNum == 1)
                             {
                                 player3Card1Number1 = 1;
@@ -736,7 +747,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2a.text || getRangeNum.ToString() == text2c.text || getRangeNum.ToString() == text2e.text || getRangeNum.ToString() == text2d.text);
+                            while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                            getRangeNum2 = getRangeNum;
                             if (getRangeNum == 1)
                             {
                                 player3Card2Number1 = 1;
@@ -790,7 +802,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2a.text || getRangeNum.ToString() == text2b.text || getRangeNum.ToString() == text2e.text || getRangeNum.ToString() == text2d.text);
+                            while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                            getRangeNum3 = getRangeNum;
                             if (getRangeNum == 1)
                             {
                                 player3Card3Number1 = 1;
@@ -844,8 +857,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2a.text || getRangeNum.ToString() == text2b.text || getRangeNum.ToString() == text2e.text || getRangeNum.ToString() == text2c.text);
-                            text2d.text = getRangeNum.ToString();
+                            while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum5);
+                            getRangeNum4 = getRangeNum1;
                             if (getRangeNum == 1)
                             {
                                 player3Card4Number1 = 1;
@@ -899,8 +912,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2a.text || getRangeNum.ToString() == text2b.text || getRangeNum.ToString() == text2c.text || getRangeNum.ToString() == text2d.text);
-                            text2e.text = getRangeNum.ToString();
+                            while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum1);
+                            getRangeNum5 = getRangeNum1;
                             if (getRangeNum == 1)
                             {
                                 player3Card5Number1 = 1;
@@ -958,7 +971,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2b.text || getRangeNum.ToString() == text2c.text || getRangeNum.ToString() == text2e.text || getRangeNum.ToString() == text2d.text);
+                            while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                            getRangeNum1 = getRangeNum;
                             if (getRangeNum == 1)
                             {
                                 player3Card1Number1 = 1;
@@ -1012,7 +1026,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2a.text || getRangeNum.ToString() == text2c.text || getRangeNum.ToString() == text2e.text || getRangeNum.ToString() == text2d.text);
+                            while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                            getRangeNum1 = getRangeNum;
                             if (getRangeNum == 1)
                             {
                                 player3Card2Number1 = 1;
@@ -1066,7 +1081,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2a.text || getRangeNum.ToString() == text2b.text || getRangeNum.ToString() == text2e.text || getRangeNum.ToString() == text2d.text);
+                            while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                            getRangeNum3 = getRangeNum;
                             if (getRangeNum == 1)
                             {
                                 player3Card3Number1 = 1;
@@ -1120,8 +1136,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2a.text || getRangeNum.ToString() == text2b.text || getRangeNum.ToString() == text2e.text || getRangeNum.ToString() == text2c.text);
-                            text2d.text = getRangeNum.ToString();
+                            while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                            getRangeNum3 = getRangeNum;
                             if (getRangeNum == 1)
                             {
                                 player3Card4Number1 = 1;
@@ -1175,8 +1191,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 getRangeNum = Random.Range(1, 10);
                             }
-                            while (getRangeNum.ToString() == text2a.text || getRangeNum.ToString() == text2b.text || getRangeNum.ToString() == text2c.text || getRangeNum.ToString() == text2d.text);
-                            text2e.text = getRangeNum.ToString();
+                            while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum1);
+                            getRangeNum5 = getRangeNum;
                             if (getRangeNum == 1)
                             {
                                 player3Card5Number1 = 1;
@@ -1231,13 +1247,15 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             {
                 for (int i = 1; i <= 5; i++)
                 {
+
                     if (i == 1)
                     {
                         do
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text3c.text || getRangeNum.ToString() == text3b.text || getRangeNum.ToString() == text3e.text || getRangeNum.ToString() == text3d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum1 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player4Card1Number1 = 1;
@@ -1291,7 +1309,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text3c.text || getRangeNum.ToString() == text3a.text || getRangeNum.ToString() == text3e.text || getRangeNum.ToString() == text3d.text);
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum2 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player4Card2Number1 = 1;
@@ -1345,7 +1364,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text3a.text || getRangeNum.ToString() == text3b.text || getRangeNum.ToString() == text3e.text || getRangeNum.ToString() == text3d.text);
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum2 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum3 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player4Card3Number1 = 1;
@@ -1399,8 +1419,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text3a.text || getRangeNum.ToString() == text3b.text || getRangeNum.ToString() == text3e.text || getRangeNum.ToString() == text3c.text);
-                        text3d.text = getRangeNum.ToString();
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum2 || getRangeNum == getRangeNum5);
+                        getRangeNum4 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player4Card4Number1 = 1;
@@ -1454,8 +1474,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text3a.text || getRangeNum.ToString() == text3b.text || getRangeNum.ToString() == text3c.text || getRangeNum.ToString() == text3d.text);
-                        text3e.text = getRangeNum.ToString();
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum2);
+                        getRangeNum5 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player4Card5Number1 = 1;
@@ -1508,14 +1528,15 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             else if (j == 5)
             {
                 for (int i = 1; i <= 5; i++)
-                { 
+                {
                     if (i == 1)
                     {
                         do
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text4b.text || getRangeNum.ToString() == text4c.text || getRangeNum.ToString() == text4e.text || getRangeNum.ToString() == text4d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum1 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player5Card1Number1 = 1;
@@ -1569,7 +1590,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text4a.text || getRangeNum.ToString() == text4c.text || getRangeNum.ToString() == text4e.text || getRangeNum.ToString() == text4d.text);
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum2 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player5Card2Number1 = 1;
@@ -1623,7 +1645,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text4a.text || getRangeNum.ToString() == text4b.text || getRangeNum.ToString() == text4e.text || getRangeNum.ToString() == text4d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum3 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player5Card3Number1 = 1;
@@ -1677,7 +1700,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text4a.text || getRangeNum.ToString() == text4b.text || getRangeNum.ToString() == text4e.text || getRangeNum.ToString() == text4c.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum5);
+                        getRangeNum4 = getRangeNum;
 
                         if (getRangeNum == 1)
                         {
@@ -1732,8 +1756,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text4a.text || getRangeNum.ToString() == text4b.text || getRangeNum.ToString() == text4c.text || getRangeNum.ToString() == text4d.text);
-                        text4e.text = getRangeNum.ToString();
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum1);
+                        getRangeNum5 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player5Card5Number1 = 1;
@@ -1794,7 +1818,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text5c.text || getRangeNum.ToString() == text5b.text || getRangeNum.ToString() == text5e.text || getRangeNum.ToString() == text5d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum1 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player6Card1Number1 = 1;
@@ -1848,7 +1873,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text5a.text || getRangeNum.ToString() == text5c.text || getRangeNum.ToString() == text5e.text || getRangeNum.ToString() == text5d.text);
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum2 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player6Card2Number1 = 1;
@@ -1902,7 +1928,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text5a.text || getRangeNum.ToString() == text5b.text || getRangeNum.ToString() == text5e.text || getRangeNum.ToString() == text5d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum3 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player6Card3Number1 = 1;
@@ -1956,7 +1983,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text5a.text || getRangeNum.ToString() == text5b.text || getRangeNum.ToString() == text5e.text || getRangeNum.ToString() == text5c.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum5);
+                        getRangeNum4 = getRangeNum1;
                         if (getRangeNum == 1)
                         {
                             player6Card4Number1 = 1;
@@ -2010,7 +2038,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text5a.text || getRangeNum.ToString() == text5b.text || getRangeNum.ToString() == text5c.text || getRangeNum.ToString() == text5d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum1);
+                        getRangeNum5 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player6Card5Number1 = 1;
@@ -2070,7 +2099,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text6b.text || getRangeNum.ToString() == text6c.text || getRangeNum.ToString() == text6e.text || getRangeNum.ToString() == text6d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum1 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player7Card1Number1 = 1;
@@ -2124,7 +2154,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text6a.text || getRangeNum.ToString() == text6c.text || getRangeNum.ToString() == text6e.text || getRangeNum.ToString() == text6d.text);
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum2 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player7Card2Number1 = 1;
@@ -2178,7 +2209,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text6a.text || getRangeNum.ToString() == text6b.text || getRangeNum.ToString() == text6e.text || getRangeNum.ToString() == text6d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum3 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player7Card3Number1 = 1;
@@ -2232,7 +2264,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text6a.text || getRangeNum.ToString() == text6b.text || getRangeNum.ToString() == text6e.text || getRangeNum.ToString() == text6c.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum5);
+                        getRangeNum4 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player7Card4Number1 = 1;
@@ -2286,7 +2319,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text6a.text || getRangeNum.ToString() == text6b.text || getRangeNum.ToString() == text6c.text || getRangeNum.ToString() == text6d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum1);
+                        getRangeNum5 = getRangeNum1;
                         if (getRangeNum == 1)
                         {
                             player7Card5Number1 = 1;
@@ -2346,7 +2380,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text7c.text || getRangeNum.ToString() == text7b.text || getRangeNum.ToString() == text7e.text || getRangeNum.ToString() == text7d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum1 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player8Card1Number1 = 1;
@@ -2400,7 +2435,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text7a.text || getRangeNum.ToString() == text7c.text || getRangeNum.ToString() == text7e.text || getRangeNum.ToString() == text7d.text);
+                        while (getRangeNum == getRangeNum1 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum2 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player8Card2Number1 = 1;
@@ -2454,8 +2490,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text7a.text || getRangeNum.ToString() == text7b.text || getRangeNum.ToString() == text7e.text || getRangeNum.ToString() == text7d.text);
-                        text7c.text = getRangeNum.ToString();
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum3 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player8Card3Number1 = 1;
@@ -2509,8 +2545,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text7a.text || getRangeNum.ToString() == text7b.text || getRangeNum.ToString() == text7e.text || getRangeNum.ToString() == text7c.text);
-                        text7d.text = getRangeNum.ToString();
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
+                        getRangeNum4 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player8Card4Number1 = 1;
@@ -2564,7 +2600,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 10);
                         }
-                        while (getRangeNum.ToString() == text7a.text || getRangeNum.ToString() == text7b.text || getRangeNum.ToString() == text7c.text || getRangeNum.ToString() == text7d.text);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum1);
+                        getRangeNum5 = getRangeNum;
                         if (getRangeNum == 1)
                         {
                             player8Card5Number1 = 1;

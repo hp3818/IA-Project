@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEngine.UI;
 
 
 public class Card : MonoBehaviour {
@@ -10,7 +11,8 @@ public class Card : MonoBehaviour {
     public static int i = 0;
     public static GameObject Card1, Card2, Card3, Card4, Card5;
     public static GameObject dropzone;
-
+    public Text skillName1, skillName2, skillName3, skillName4, skillName5;
+    public Button dropButton;
     public static int show = 0;
 
     void Start()
@@ -50,7 +52,7 @@ public class Card : MonoBehaviour {
 
     void ShowMessage()
     {
-        
+        //dropButton.interactable = false;
         if (children_gameObject.name == "Card1")
         {
             if (DiceNumberTextScript.whosTurn == 1)
@@ -58,6 +60,10 @@ public class Card : MonoBehaviour {
                 Card1.gameObject.SetActive(false);
                 Card1.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide11 = 1;
+                if (skillName1.text == "強制入獄")
+                {
+                    GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -110,6 +116,10 @@ public class Card : MonoBehaviour {
                 Card2.gameObject.SetActive(false);
                 Card2.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide12 = 1;
+                if (skillName2.text == "強制入獄")
+                {
+                    GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -161,6 +171,10 @@ public class Card : MonoBehaviour {
                 Card3.gameObject.SetActive(false);
                 Card3.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide13 = 1;
+                if (skillName3.text == "強制入獄")
+                {
+                    GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -212,6 +226,10 @@ public class Card : MonoBehaviour {
                 Card4.gameObject.SetActive(false);
                 Card4.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide14 = 1;
+                if (skillName4.text == "強制入獄")
+                {
+                    GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -263,6 +281,10 @@ public class Card : MonoBehaviour {
                 Card5.gameObject.SetActive(false);
                 Card5.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide15 = 1;
+                if (skillName5.text == "強制入獄")
+                {
+                    GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {

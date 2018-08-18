@@ -728,7 +728,7 @@ public class DiceNumberTextScript : MonoBehaviour
             }
             else
             {
-                whosTurn = 0;
+                //whosTurn = 0;
                 GameControl.MovePlayer(1);
                 cam1();
             }

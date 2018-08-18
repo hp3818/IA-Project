@@ -13,6 +13,7 @@ public class GameControl : MonoBehaviour {
                                   count34 = 0, count35 = 0, count36 = 0, count37 = 0, count38 = 0, count39 = 0, count40 = 0, count41 = 0, count42 = 0, count43 = 0, count44 = 0,
 								  count45 = 0, count46 = 0;
 
+    public static int beChoosed1, beChoosed2, beChoosed3, beChoosed4, beChoosed5, beChoosed6, beChoosed7, beChoosed8;
 	public static int own1 = 0, own2 = 0, own3 = 0, own4 = 0, own5 = 0, own6 = 0, own7 = 0, own8 = 0,  own9 = 0, own10 = 0, own11 = 0, own12 = 0, own13 = 0, own14 = 0, own15 = 0, own16 = 0, own17 = 0,  own18 = 0, own19 = 0, own20 = 0,
 	own21 = 0, own22 = 0, own23 = 0, own24 = 0, own25 = 0, own26 = 0, own27 = 0, own28 = 0, own29 = 0, own30 = 0, own31 = 0, own32 = 0, own33 = 0, own34 = 0, own35 = 0, own36 = 0, own37 = 0, own38 = 0, own39 = 0, own40 = 0, own41 = 0,
 	own42 = 0, own43 = 0, own44 = 0, own45 = 0, own46 = 0;
@@ -79,7 +80,8 @@ public class GameControl : MonoBehaviour {
     public static GameObject ImageForLuck5, ImageForLuck6, ImageForBad3, ImageForBad4;
     public Text text2;
     public static int X1 = 0, X2 = 0, X3 = 0, X4 = 0, X5 = 0, X6 = 0, X7 = 0, X8 = 0;
-
+    public Button choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8;
+    public static GameObject ImageForJailSkill;
 
     void Start () {
 
@@ -93,6 +95,9 @@ public class GameControl : MonoBehaviour {
         ImageForBad3.gameObject.SetActive(false);
         ImageForBad4 = GameObject.Find("ImageForBad4");
         ImageForBad4.gameObject.SetActive(false);
+
+        ImageForJailSkill = GameObject.Find("ImageForJailSkill");
+        ImageForJailSkill.gameObject.SetActive(false);
 
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
@@ -136,6 +141,10 @@ public class GameControl : MonoBehaviour {
             player8Cost.gameObject.SetActive(false);
             text3.text = "低層1";
             text4.text = "低層2";
+            choice3.interactable = false;
+            choice6.interactable = false;
+            choice7.interactable = false;
+            choice8.interactable = false;
         }
 
         if(numberOfPlayer == 5)
@@ -152,6 +161,9 @@ public class GameControl : MonoBehaviour {
             text3.text = "低層1";
             text4.text = "低層2";
             text5.text = "低層3";
+            choice3.interactable = false;
+            choice7.interactable = false;
+            choice8.interactable = false;
         }
 
         if (numberOfPlayer == 6)
@@ -166,6 +178,8 @@ public class GameControl : MonoBehaviour {
             text4.text = "低層1";
             text5.text = "低層2";
             text6.text = "低層3";
+            choice7.interactable = false;
+            choice8.interactable = false;
         }
 
         if (numberOfPlayer == 7)
@@ -178,6 +192,7 @@ public class GameControl : MonoBehaviour {
             text5.text = "低層2";
             text6.text = "低層3";
             text7.text = "低層4";
+            choice8.gameObject.SetActive(false);
         }
         
         if (numberOfPlayer == 8)
@@ -1230,7 +1245,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail1 = 1;
                 JailTurn.text = jail1turn.ToString();
-                ImageForJail.gameObject.SetActive(true);
+                StartCoroutine(TemporarilyDeactivate12(2));
 
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
@@ -3444,7 +3459,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail2 = 1;
                 JailTurn.text = jail2turn.ToString();
-                ImageForJail.gameObject.SetActive(true);
+                StartCoroutine(TemporarilyDeactivate12(2));
             }
             else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -5798,7 +5813,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail3 = 1;
                 JailTurn.text = jail3turn.ToString();
-                ImageForJail.gameObject.SetActive(true);
+                StartCoroutine(TemporarilyDeactivate12(2));
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -8016,7 +8031,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail4 = 1;
                 JailTurn.text = jail4turn.ToString();
-                ImageForJail.gameObject.SetActive(true);
+                StartCoroutine(TemporarilyDeactivate12(2));
             }
 
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
@@ -10081,7 +10096,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail5 = 1;
                 JailTurn.text = jail5turn.ToString();
-                ImageForJail.gameObject.SetActive(true);
+                StartCoroutine(TemporarilyDeactivate12(2));
             }        
             else if(player5.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -12150,7 +12165,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail6 = 1;
                 JailTurn.text = jail6turn.ToString();
-                ImageForJail.gameObject.SetActive(true);
+                StartCoroutine(TemporarilyDeactivate12(2));
             }
 
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
@@ -14212,7 +14227,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail7 = 1;
                 JailTurn.text = jail7turn.ToString();
-                ImageForJail.gameObject.SetActive(true);
+                StartCoroutine(TemporarilyDeactivate12(2));
             }
 
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
@@ -16247,7 +16262,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail8 = 1;
                 JailTurn.text = jail8turn.ToString();
-                ImageForJail.gameObject.SetActive(true);
+                StartCoroutine(TemporarilyDeactivate12(2));
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -44260,6 +44275,13 @@ public class GameControl : MonoBehaviour {
         ImageForBad8.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);
         ImageForBad8.gameObject.SetActive(false);
+    }
+
+    public IEnumerator TemporarilyDeactivate12(float duration)
+    {
+        ImageForJail.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ImageForJail.gameObject.SetActive(false);
     }
 
 }
