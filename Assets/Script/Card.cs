@@ -50,6 +50,7 @@ public class Card : MonoBehaviour {
 
     void ShowMessage()
     {
+        
         if (children_gameObject.name == "Card1")
         {
             if (DiceNumberTextScript.whosTurn == 1)

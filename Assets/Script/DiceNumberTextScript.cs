@@ -9,7 +9,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public static GameObject dice1, dice2, dice3;
     public Transform[] waypoints;
-    public Text JailTurn;
+    public Text JailTurn; public Text RoundText; public static int round = 0;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
     public static GameObject ImageForBuyOtherHouse;
@@ -690,6 +690,8 @@ public class DiceNumberTextScript : MonoBehaviour
     {
         if (whosTurn == 1)
         {
+            round++;
+            RoundText.text = round.ToString();
             if (jail1 == 1)
             {
                 if (DiceNumberTextScript.dice1Number == 6)
@@ -885,6 +887,8 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void FivePeople()
     {
+        round++;
+        RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
             if (jail1 == 1)
@@ -1124,6 +1128,8 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void SixPeople()
     {
+        round++;
+        RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
             if (jail1 == 1)
@@ -1425,6 +1431,8 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void SevenPeople()
     {
+        round++;
+        RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
             if (jail1 == 1)
@@ -1768,6 +1776,8 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void EightPeople()
     {
+        round++;
+        RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
             if (jail1 == 1)

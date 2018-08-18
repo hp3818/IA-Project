@@ -155,8 +155,38 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-                
-                text1.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text1.text = "強制入獄";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text1.text = "跑車奔馳";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text1.text = "高級飛機";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text1.text = "黑手黨";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text1.text = "商業霸權";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text1.text = "搬龍門";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text1.text = "上司特權";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text1.text = "盛會";
+                }
                 DiceNumberTextScript.player1Card1string  = text1.text;
                 
                 Card.Card1.gameObject.SetActive(true);
@@ -287,7 +317,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-                text1.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text1.text = "接受物業(中)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text1.text = "愛回家";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text1.text = "開心快遞";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text1.text = "綠化物業";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text1.text = "沉默";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text1.text = "幸運輪";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text1.text = "挑戰節目";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text1.text = "交通規則";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text1.text = "逆轉移動";
+                }
                 DiceNumberTextScript.player2Card1string = text1.text;
 
                 Card.Card1.gameObject.SetActive(true);
@@ -418,7 +483,82 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-                text1.text = getRangeNum.ToString();
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (getRangeNum == 1)
+                    {
+                        text1.text = "接受物業(低)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text1.text = "上級借款";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text1.text = "隻資";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text1.text = "眾集人口";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text1.text = "共產主義";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text1.text = "偷工減料";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text1.text = "神之救濟";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text1.text = "良心建築";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text1.text = "小偷";
+                    }
+                } else if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 6) {
+                    if (getRangeNum == 1)
+                    {
+                        text1.text = "接受物業(中)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text1.text = "愛回家";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text1.text = "開心快遞";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text1.text = "綠化物業";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text1.text = "沉默";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text1.text = "幸運輪";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text1.text = "挑戰節目";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text1.text = "交通規則";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text1.text = "逆轉行動";
+                    }
+                }
                 DiceNumberTextScript.player3Card1string = text1.text;
 
                 Card.Card1.gameObject.SetActive(true);
@@ -549,7 +689,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-                text1.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text1.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text1.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text1.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text1.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text1.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text1.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text1.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text1.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text1.text = "小偷";
+                }
                 DiceNumberTextScript.player4Card1string = text1.text;
 
                 Card.Card1.gameObject.SetActive(true);
@@ -680,7 +855,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-                text1.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text1.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text1.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text1.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text1.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text1.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text1.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text1.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text1.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text1.text = "小偷";
+                }
                 DiceNumberTextScript.player5Card1string = text1.text;
 
                 Card.Card1.gameObject.SetActive(true);
@@ -811,7 +1021,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-                text1.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text1.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text1.text = "上級借貸";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text1.text = "集資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text1.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text1.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text1.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text1.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text1.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text1.text = "小偷";
+                }
                 DiceNumberTextScript.player6Card1string = text1.text;
 
                 Card.Card1.gameObject.SetActive(true);
@@ -942,7 +1187,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-                text1.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text1.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text1.text = "上級借貸";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text1.text = "集資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text1.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text1.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text1.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text1.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text1.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text1.text = "小偷";
+                }
                 DiceNumberTextScript.player7Card1string = text1.text;
 
                 Card.Card1.gameObject.SetActive(true);
@@ -1073,7 +1353,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-                text1.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text1.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text1.text = "上級借貸";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text1.text = "集資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text1.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text1.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text1.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text1.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text1.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text1.text = "小偷";
+                }
                 DiceNumberTextScript.player8Card1string = text1.text;
 
                 Card.Card1.gameObject.SetActive(true);
@@ -1207,8 +1522,38 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text2.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text2.text = "強制入獄";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text2.text = "跑車奔馳";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text2.text = "高級飛機";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text2.text = "黑手黨";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text2.text = "商業霸權";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text2.text = "搬龍門";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text2.text = "上司特權";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text2.text = "盛會";
+                }
                 DiceNumberTextScript.player1Card2string = text2.text;
 
                 Card.Card2.gameObject.SetActive(true);
@@ -1339,8 +1684,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text2.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text2.text = "接受物業(中)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text2.text = "愛回家";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text2.text = "開心快遞";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text2.text = "綠化物業";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text2.text = "沉默";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text2.text = "幸運輪";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text2.text = "挑戰節目";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text2.text = "交通規則";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text2.text = "逆轉移動";
+                }
                 DiceNumberTextScript.player2Card2string = text2.text;
 
                 Card.Card2.gameObject.SetActive(true);
@@ -1471,8 +1850,82 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text2.text = getRangeNum.ToString();
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (getRangeNum == 1)
+                    {
+                        text2.text = "接受物業(低)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text2.text = "上級借款";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text2.text = "隻資";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text2.text = "眾集人口";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text2.text = "共產主義";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text2.text = "偷工減料";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text2.text = "神之救濟";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text2.text = "良心建築";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text2.text = "小偷";
+                    }
+                } else if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8) {
+                    if (getRangeNum == 1)
+                    {
+                        text2.text = "接受物業(中)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text2.text = "愛回家";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text2.text = "開心快遞";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text2.text = "綠化物業";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text2.text = "沉默";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text2.text = "幸運輪";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text2.text = "挑戰節目";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text2.text = "交通規則";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text2.text = "逆轉移動";
+                    }
+                }
                 DiceNumberTextScript.player3Card2string = text2.text;
 
                 Card.Card2.gameObject.SetActive(true);
@@ -1603,8 +2056,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text2.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text2.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text2.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text2.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text2.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text2.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text2.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text2.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text2.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text2.text = "小偷";
+                }
                 DiceNumberTextScript.player4Card2string = text2.text;
 
                 Card.Card2.gameObject.SetActive(true);
@@ -1736,7 +2223,42 @@ public class CardAnimation : MonoBehaviour {
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
 
-                text2.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text2.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text2.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text2.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text2.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text2.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text2.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text2.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text2.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text2.text = "小偷";
+                }
                 DiceNumberTextScript.player5Card2string = text2.text;
 
                 Card.Card2.gameObject.SetActive(true);
@@ -1867,8 +2389,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text2.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text2.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text2.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text2.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text2.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text2.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text2.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text2.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text2.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text2.text = "小偷";
+                }
                 DiceNumberTextScript.player6Card2string = text2.text;
 
                 Card.Card2.gameObject.SetActive(true);
@@ -1999,8 +2555,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text2.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text2.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text2.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text2.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text2.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text2.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text2.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text2.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text2.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text2.text = "小偷";
+                }
                 DiceNumberTextScript.player7Card2string = text2.text;
 
                 Card.Card2.gameObject.SetActive(true);
@@ -2131,8 +2721,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text2.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text2.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text2.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text2.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text2.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text2.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text2.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text2.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text2.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text2.text = "小偷";
+                }
                 DiceNumberTextScript.player8Card2string = text2.text;
 
                 Card.Card2.gameObject.SetActive(true);
@@ -2266,8 +2890,38 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text3.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text2.text = "強制入獄";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text2.text = "跑車奔馳";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text2.text = "高級飛機";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text2.text = "黑手黨";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text2.text = "商業霸權";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text2.text = "搬龍門";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text2.text = "上司特權";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text2.text = "盛會";
+                }
                 DiceNumberTextScript.player1Card3string = text3.text;
 
                 Card.Card3.gameObject.SetActive(true);
@@ -2398,8 +3052,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text3.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text3.text = "接受物業(中)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text3.text = "愛回家";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text3.text = "開心快遞";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text3.text = "綠化物業";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text3.text = "沉默";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text3.text = "幸運輪";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text3.text = "挑戰節目";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text3.text = "交通規則";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text3.text = "逆轉移動";
+                }
                 DiceNumberTextScript.player2Card3string = text3.text;
 
                 Card.Card3.gameObject.SetActive(true);
@@ -2531,7 +3219,83 @@ public class CardAnimation : MonoBehaviour {
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
 
-                text3.text = getRangeNum.ToString();
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (getRangeNum == 1)
+                    {
+                        text3.text = "接受物業(低)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text3.text = "上級借款";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text3.text = "隻資";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text3.text = "眾集人口";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text3.text = "共產主義";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text3.text = "偷工減料";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text3.text = "神之救濟";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text3.text = "良心建築";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text3.text = "小偷";
+                    }
+                } else if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
+                {
+                    if (getRangeNum == 1)
+                    {
+                        text3.text = "接受物業(中)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text3.text = "愛回家";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text3.text = "開心快遞";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text3.text = "綠化物業";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text3.text = "沉默";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text3.text = "幸運輪";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text3.text = "挑戰節目";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text3.text = "交通規則";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text3.text = "逆轉移動";
+                    }
+                }
                 DiceNumberTextScript.player3Card3string = text3.text;
 
                 Card.Card3.gameObject.SetActive(true);
@@ -2662,8 +3426,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text3.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text3.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text3.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text3.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text3.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text3.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text3.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text3.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text3.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text3.text = "小偷";
+                }
                 DiceNumberTextScript.player4Card3string = text3.text;
 
                 Card.Card3.gameObject.SetActive(true);
@@ -2794,8 +3592,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text3.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text3.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text3.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text3.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text3.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text3.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text3.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text3.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text3.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text3.text = "小偷";
+                }
                 DiceNumberTextScript.player5Card3string = text3.text;
 
                 Card.Card3.gameObject.SetActive(true);
@@ -2926,8 +3758,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text3.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text3.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text3.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text3.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text3.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text3.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text3.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text3.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text3.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text3.text = "小偷";
+                }
                 DiceNumberTextScript.player6Card3string = text3.text;
 
                 Card.Card3.gameObject.SetActive(true);
@@ -3058,8 +3924,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text3.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text3.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text3.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text3.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text3.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text3.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text3.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text3.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text3.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text3.text = "小偷";
+                }
                 DiceNumberTextScript.player7Card3string = text3.text;
 
                 Card.Card3.gameObject.SetActive(true);
@@ -3190,8 +4090,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text3.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text3.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text3.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text3.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text3.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text3.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text3.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text3.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text3.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text3.text = "小偷";
+                }
                 DiceNumberTextScript.player8Card3string = text3.text;
 
                 Card.Card3.gameObject.SetActive(true);
@@ -3325,8 +4259,38 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text4.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text4.text = "強制入獄";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text4.text = "跑車奔馳";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text4.text = "高級飛機";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text4.text = "黑手黨";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text4.text = "商業霸權";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text4.text = "搬龍門";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text4.text = "上司特權";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text4.text = "盛會";
+                }
                 DiceNumberTextScript.player1Card4string = text4.text;
 
                 Card.Card4.gameObject.SetActive(true);
@@ -3457,8 +4421,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text4.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text4.text = "接受物業(中)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text4.text = "愛回家";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text4.text = "開心快遞";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text4.text = "綠化物業";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text4.text = "沉默";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text4.text = "幸運輪";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text4.text = "挑戰節目";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text4.text = "交通規則";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text4.text = "逆轉移動";
+                }
                 DiceNumberTextScript.player2Card4string = text4.text;
 
                 Card.Card4.gameObject.SetActive(true);
@@ -3589,8 +4587,84 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text4.text = getRangeNum.ToString();
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (getRangeNum == 1)
+                    {
+                        text4.text = "接受物業(低)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text4.text = "上級借款";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text4.text = "隻資";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text4.text = "眾集人口";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text4.text = "共產主義";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text4.text = "偷工減料";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text4.text = "神之救濟";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text4.text = "良心建築";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text4.text = "小偷";
+                    }
+                }
+                else if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
+                {
+                    if (getRangeNum == 1)
+                    {
+                        text4.text = "接受物業(中)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text4.text = "愛回家";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text4.text = "開心快遞";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text4.text = "綠化物業";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text4.text = "沉默";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text4.text = "幸運輪";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text4.text = "挑戰節目";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text4.text = "交通規則";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text4.text = "逆轉移動";
+                    }
+                }
                 DiceNumberTextScript.player3Card4string = text4.text;
 
                 Card.Card4.gameObject.SetActive(true);
@@ -3721,8 +4795,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text4.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text4.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text4.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text4.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text4.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text4.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text4.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text4.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text4.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text4.text = "小偷";
+                }
                 DiceNumberTextScript.player4Card4string = text4.text;
 
                 Card.Card4.gameObject.SetActive(true);
@@ -3853,8 +4961,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text4.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text4.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text4.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text4.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text4.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text4.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text4.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text4.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text4.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text4.text = "小偷";
+                }
                 DiceNumberTextScript.player5Card4string = text4.text;
 
                 Card.Card4.gameObject.SetActive(true);
@@ -3985,8 +5127,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text4.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text4.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text4.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text4.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text4.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text4.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text4.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text4.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text4.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text4.text = "小偷";
+                }
                 DiceNumberTextScript.player6Card4string = text4.text;
 
                 Card.Card4.gameObject.SetActive(true);
@@ -4117,8 +5293,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text4.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text4.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text4.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text4.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text4.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text4.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text4.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text4.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text4.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text4.text = "小偷";
+                }
                 DiceNumberTextScript.player7Card4string = text4.text;
 
                 Card.Card4.gameObject.SetActive(true);
@@ -4249,8 +5459,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text4.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text4.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text4.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text4.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text4.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text4.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text4.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text4.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text4.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text4.text = "小偷";
+                }
                 DiceNumberTextScript.player8Card4string = text4.text;
 
                 Card.Card4.gameObject.SetActive(true);
@@ -4384,8 +5628,38 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text5.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text5.text = "強制入獄";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text5.text = "跑車奔馳";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text5.text = "高級飛機";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text5.text = "黑手黨";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text5.text = "商業霸權";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text5.text = "搬龍門";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text5.text = "上司特權";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text5.text = "盛會";
+                }
                 DiceNumberTextScript.player1Card5string = text5.text;
 
                 Card.Card5.gameObject.SetActive(true);
@@ -4516,8 +5790,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text5.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text4.text = "接受物業(中)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text4.text = "愛回家";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text4.text = "開心快遞";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text4.text = "綠化物業";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text4.text = "沉默";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text4.text = "幸運輪";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text4.text = "挑戰節目";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text4.text = "交通規則";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text4.text = "逆轉移動";
+                }
                 DiceNumberTextScript.player2Card5string = text5.text;
 
                 Card.Card5.gameObject.SetActive(true);
@@ -4648,8 +5956,83 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text5.text = getRangeNum.ToString();
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (getRangeNum == 1)
+                    {
+                        text5.text = "接受物業(低)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text5.text = "上級借款";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text5.text = "隻資";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text5.text = "眾集人口";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text5.text = "共產主義";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text5.text = "偷工減料";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text5.text = "神之救濟";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text5.text = "良心建築";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text5.text = "小偷";
+                    }
+                } else if ( GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
+                {
+                    if (getRangeNum == 1)
+                    {
+                        text5.text = "接受物業(中)";
+                    }
+                    else if (getRangeNum == 2)
+                    {
+                        text5.text = "愛回家";
+                    }
+                    else if (getRangeNum == 3)
+                    {
+                        text5.text = "開心快遞";
+                    }
+                    else if (getRangeNum == 4)
+                    {
+                        text5.text = "綠化物業";
+                    }
+                    else if (getRangeNum == 5)
+                    {
+                        text5.text = "沉默";
+                    }
+                    else if (getRangeNum == 6)
+                    {
+                        text5.text = "幸運輪";
+                    }
+                    else if (getRangeNum == 7)
+                    {
+                        text5.text = "挑戰節目";
+                    }
+                    else if (getRangeNum == 8)
+                    {
+                        text5.text = "交通規則";
+                    }
+                    else if (getRangeNum == 9)
+                    {
+                        text5.text = "逆轉移動";
+                    }
+                }
                 DiceNumberTextScript.player3Card5string = text5.text;
 
                 Card.Card5.gameObject.SetActive(true);
@@ -4780,8 +6163,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text5.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text5.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text5.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text5.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text5.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text5.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text5.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text5.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text5.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text5.text = "小偷";
+                }
                 DiceNumberTextScript.player4Card5string = text5.text;
 
                 Card.Card5.gameObject.SetActive(true);
@@ -4912,8 +6329,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text5.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text5.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text5.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text5.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text5.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text5.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text5.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text5.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text5.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text5.text = "小偷";
+                }
                 DiceNumberTextScript.player5Card5string = text5.text;
 
                 Card.Card5.gameObject.SetActive(true);
@@ -5044,8 +6495,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text5.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text5.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text5.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text5.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text5.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text5.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text5.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text5.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text5.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text5.text = "小偷";
+                }
                 DiceNumberTextScript.player6Card5string = text5.text;
 
                 Card.Card5.gameObject.SetActive(true);
@@ -5176,8 +6661,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text5.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text5.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text5.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text5.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text5.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text5.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text5.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text5.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text5.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text5.text = "小偷";
+                }
                 DiceNumberTextScript.player7Card5string = text5.text;
 
                 Card.Card5.gameObject.SetActive(true);
@@ -5308,8 +6827,42 @@ public class CardAnimation : MonoBehaviour {
                     getRangeNum = Random.Range(1, 10);
                 }
                 while (getRangeNum == num1 || getRangeNum == num2 || getRangeNum == num3 || getRangeNum == num4 || getRangeNum == num5 || getRangeNum == num6 || getRangeNum == num7 || getRangeNum == num8 || getRangeNum == num9);
-
-                text5.text = getRangeNum.ToString();
+                if (getRangeNum == 1)
+                {
+                    text5.text = "接受物業(低)";
+                }
+                else if (getRangeNum == 2)
+                {
+                    text5.text = "上級借款";
+                }
+                else if (getRangeNum == 3)
+                {
+                    text5.text = "隻資";
+                }
+                else if (getRangeNum == 4)
+                {
+                    text5.text = "眾集人口";
+                }
+                else if (getRangeNum == 5)
+                {
+                    text5.text = "共產主義";
+                }
+                else if (getRangeNum == 6)
+                {
+                    text5.text = "偷工減料";
+                }
+                else if (getRangeNum == 7)
+                {
+                    text5.text = "神之救濟";
+                }
+                else if (getRangeNum == 8)
+                {
+                    text5.text = "良心建築";
+                }
+                else if (getRangeNum == 9)
+                {
+                    text5.text = "小偷";
+                }
                 DiceNumberTextScript.player8Card5string = text5.text;
 
                 Card.Card5.gameObject.SetActive(true);

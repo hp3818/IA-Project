@@ -43,15 +43,10 @@ public class DropZone1 : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
         Card.i = 1;
         Card.runOnce = false;
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-
-        if (Input.touchCount == 1)
+        if (d != null)
         {
-            if (d != null)
-            {
-                d.parentToReturnTo = transform;
-            }
+            d.parentToReturnTo = transform;
         }
-
     }
 
 }
