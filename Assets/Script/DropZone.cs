@@ -76,14 +76,6 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        /*
-        if (eventData.pointerDrag == null)
-            return;
-        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-        if (d != null)
-        {
-            d.placeholderParent = transform;
-        }*/
         if (eventData.pointerDrag == null)
             return;
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
@@ -116,6 +108,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 d.parentToReturnTo = transform;
             }
         }
+
 
     }
 
@@ -252,7 +245,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         {
                             getRangeNum = Random.Range(1, 9);
                         }
-                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum3 || getRangeNum == getRangeNum5);
+                        while (getRangeNum == getRangeNum2 || getRangeNum == getRangeNum1 || getRangeNum == getRangeNum4 || getRangeNum == getRangeNum5);
                         getRangeNum3 = getRangeNum;
                         if (getRangeNum == 1)
                         {

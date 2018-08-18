@@ -62,7 +62,12 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide11 = 1;
                 if (skillName1.text == "強制入獄")
                 {
+                    DropZone1.doing = 1;
                     GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
+                if (skillName1.text == "高級飛機")
+                {
+                    Dice.airPlane = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)
@@ -118,7 +123,12 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide12 = 1;
                 if (skillName2.text == "強制入獄")
                 {
+                    DropZone1.doing = 1;
                     GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
+                if (skillName2.text == "高級飛機")
+                {
+                    Dice.airPlane = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)
@@ -173,7 +183,12 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide13 = 1;
                 if (skillName3.text == "強制入獄")
                 {
+                    DropZone1.doing = 1;
                     GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
+                if (skillName3.text == "高級飛機")
+                {
+                    Dice.airPlane = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)
@@ -228,7 +243,12 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide14 = 1;
                 if (skillName4.text == "強制入獄")
                 {
+                    DropZone1.doing = 1;
                     GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
+                if (skillName4.text == "高級飛機")
+                {
+                    Dice.airPlane = 1; 
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)
@@ -283,7 +303,12 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide15 = 1;
                 if (skillName5.text == "強制入獄")
                 {
+                    DropZone1.doing = 1;
                     GameControl.ImageForJailSkill.gameObject.SetActive(true);
+                }
+                if (skillName5.text == "高級飛機")
+                {
+                    Dice.airPlane = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)

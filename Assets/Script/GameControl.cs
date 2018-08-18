@@ -1242,10 +1242,11 @@ public class GameControl : MonoBehaviour {
                         DiceNumberTextScript.jail8 = 0;
                     }
                 }
-
+                //Debug.Log("1");
                 DiceNumberTextScript.jail1 = 1;
                 JailTurn.text = jail1turn.ToString();
-                StartCoroutine(TemporarilyDeactivate12(2));
+                ImageForJail.gameObject.SetActive(true);
+                //if (usedForSkill == 1) { DiceNumberTextScript.whosTurn++; usedForSkill = 0; Debug.Log("Hello"); }
 
             }
             else if (player1.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
@@ -3459,7 +3460,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail2 = 1;
                 JailTurn.text = jail2turn.ToString();
-                StartCoroutine(TemporarilyDeactivate12(2));
+                ImageForJail.gameObject.SetActive(true);
             }
             else if (player2.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -5813,7 +5814,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail3 = 1;
                 JailTurn.text = jail3turn.ToString();
-                StartCoroutine(TemporarilyDeactivate12(2));
+                ImageForJail.gameObject.SetActive(true);
             }
             else if (player3.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -8031,7 +8032,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail4 = 1;
                 JailTurn.text = jail4turn.ToString();
-                StartCoroutine(TemporarilyDeactivate12(2));
+                ImageForJail.gameObject.SetActive(true);
             }
 
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
@@ -10096,7 +10097,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail5 = 1;
                 JailTurn.text = jail5turn.ToString();
-                StartCoroutine(TemporarilyDeactivate12(2));
+                ImageForJail.gameObject.SetActive(true);
             }        
             else if(player5.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -12165,7 +12166,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail6 = 1;
                 JailTurn.text = jail6turn.ToString();
-                StartCoroutine(TemporarilyDeactivate12(2));
+                ImageForJail.gameObject.SetActive(true);
             }
 
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
@@ -14227,7 +14228,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail7 = 1;
                 JailTurn.text = jail7turn.ToString();
-                StartCoroutine(TemporarilyDeactivate12(2));
+                ImageForJail.gameObject.SetActive(true);
             }
 
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
@@ -16262,7 +16263,7 @@ public class GameControl : MonoBehaviour {
 
                 DiceNumberTextScript.jail8 = 1;
                 JailTurn.text = jail8turn.ToString();
-                StartCoroutine(TemporarilyDeactivate12(2));
+                ImageForJail.gameObject.SetActive(true);
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[31].transform.position)
             {
@@ -44275,13 +44276,6 @@ public class GameControl : MonoBehaviour {
         ImageForBad8.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);
         ImageForBad8.gameObject.SetActive(false);
-    }
-
-    public IEnumerator TemporarilyDeactivate12(float duration)
-    {
-        ImageForJail.gameObject.SetActive(true);
-        yield return new WaitForSeconds(duration);
-        ImageForJail.gameObject.SetActive(false);
     }
 
 }
