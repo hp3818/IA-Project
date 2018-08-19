@@ -17,6 +17,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public static GameObject ImageForJail;
     public static GameObject ImageForHospital;
     public Text InjureTurn;
+    public static int challenge = 0;
     public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost;
     public Text player1Card1, player1Card2, player1Card3, player1Card4, player1Card5, player2Card1, player2Card2, player2Card3, player2Card4, player2Card5,
                             player3Card1, player3Card2, player3Card3, player3Card4, player3Card5, player4Card1, player4Card2, player4Card3, player4Card4, player4Card5,
@@ -42,6 +43,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public static int hide51, hide52, hide53, hide54, hide55, hide61, hide62, hide63, hide64, hide65, hide71, hide72, hide73, hide74, hide75, hide81, hide82, hide83, hide84, hide85;
 
     public static GameObject Card1, Card2, Card3, Card4, Card5;
+    GameControl instanceOfB;
 
     public static int OK = 1;
     public static int whosTurn = 1;
@@ -63,11 +65,14 @@ public class DiceNumberTextScript : MonoBehaviour
         Card5 = GameObject.Find("Card5");
 
         CA = GameObject.Find("CardAnimation").GetComponent<CardAnimation>();
-
+        instanceOfB = GameObject.Find("GameControl").GetComponent<GameControl>();
+        
+        /*
         if (DropZone.childCount < 5)
         {
             CA.PlayAnimation();
         }
+        */
 
         text = GetComponent<Text>();
         player1 = GameObject.Find("player1");
@@ -94,9 +99,8 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void Update()
     {
-
+        
         sum = int.Parse(dice1Number.ToString()) + int.Parse(dice2Number.ToString()) + int.Parse(dice3Number.ToString());
-
         text.text = sum.ToString();
 
         if (sum == 0)
@@ -789,6 +793,10 @@ public class DiceNumberTextScript : MonoBehaviour
                 }
                 else
                 {
+                    if (challenge == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate3(2));
+                    }
                     GameControl.MovePlayer(2);
                     cam2();
                 }
@@ -2298,6 +2306,16 @@ public class DiceNumberTextScript : MonoBehaviour
         ImageForHospital.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);
         ImageForHospital.gameObject.SetActive(false);
+    }
+
+    public IEnumerator TemporarilyDeactivate3(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        int sum2 = dice1Number + dice2Number;
+        if (sum2 >= 8)
+        {
+            instanceOfB.getBuilding();
+        }
     }
 }
 

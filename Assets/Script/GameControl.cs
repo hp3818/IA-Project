@@ -44420,4 +44420,619 @@ public class GameControl : MonoBehaviour {
         ImageForBad8.gameObject.SetActive(false);
     }
 
+    public void getBuilding()
+    {
+        if (own1 == 1) floor1++;
+        if (own2 == 1) floor2++;
+        if (own3 == 1) floor3++;
+        if (own4 == 1) floor4++;
+        if (own5 == 1) floor5++;
+        if (own6 == 1) floor6++;
+        if (own7 == 1) floor7++;
+        if (own8 == 1) floor8++;
+        if (own10 == 1) floor9++;
+        if (own11 == 1) floor10++;
+        if (own12 == 1) floor11++;
+        if (own13 == 1) floor12++;
+        if (own14 == 1) floor13++;
+        if (own15 == 1) floor14++;
+        if (own16 == 1) floor15++;
+        if (own17 == 1) floor16++;
+        if (own19 == 1) floor17++;
+        if (own20 == 1) floor18++;
+        if (own21 == 1) floor19++;
+        if (own22 == 1) floor20++;
+        if (own23 == 1) floor21++;
+        if (own24 == 1) floor22++;
+        if (own25 == 1) floor23++;
+        if (own26 == 1) floor24++;
+        if (own27 == 1) floor25++;
+        if (own28 == 1) floor26++;
+        if (own29 == 1) floor27++;
+        if (own30 == 1) floor28++;
+        if (own31 == 1) floor29++;
+        if (own33 == 1) floor30++;
+        if (own34 == 1) floor31++;
+        if (own35 == 1) floor32++;
+        if (own36 == 1) floor33++;
+        if (own37 == 1) floor34++;
+        if (own38 == 1) floor35++;
+        if (own39 == 1) floor36++;
+        if (own40 == 1) floor37++;
+        if (own42 == 1) floor38++;
+        if (own43 == 1) floor39++;
+        if (own44 == 1) floor40++;
+        if (own45 == 1) floor41++;
+        if (own46 == 1) floor42++;
+        if (floor1 == 0 || floor2 == 0 || floor3 == 0 || floor4 == 0 || floor5 == 0 || floor6 == 0 || floor7 == 0 || floor8 == 0 || floor9 == 0 || floor10 == 0
+            || floor11 == 0 || floor12 == 0 || floor13 == 0 || floor14 == 0 || floor15 == 0 || floor16 == 0 || floor17 == 0 || floor18 == 0 || floor19 == 0 || floor20 == 0
+            || floor21 == 0 || floor22 == 0 || floor23 == 0 || floor24 == 0 || floor25 == 0 || floor26 == 0 || floor27 == 0 || floor28 == 0 || floor29 == 0 || floor30 == 0
+            || floor31 == 0 || floor32 == 0 || floor33 == 0 || floor34 == 0 || floor35 == 0 || floor36 == 0 || floor37 == 0 || floor38 == 0 || floor39 == 0 || floor40 == 0
+            || floor41 == 0 || floor42 == 0)
+        {
+            int getRangeNum = 0;
+            int rangeRadomNum = 0;
+            do
+            {
+                rangeRadomNum = Random.Range(1, 42);
+            } while (rangeRadomNum == getRangeNum);
+            Debug.Log(rangeRadomNum);
+            getRangeNum = rangeRadomNum;
+            if (getRangeNum == 1)
+            {
+                if (floor1 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own1 = 2;
+                    else
+                        own1 = 3;
+                }
+                    Level1Building1.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 2)
+            {
+                if (floor2 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own2 = 2;
+                    else
+                        own2 = 3;
+                }
+                Level1Building2.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 3)
+            {
+                if (floor3 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own3 = 2;
+                    else
+                        own3 = 3;
+                }
+                Level1Building3.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 4)
+            {
+                if (floor4 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own4 = 2;
+                    else
+                        own4 = 3;
+                }
+                Level1Building4.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 5)
+            {
+                if (floor5 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own5 = 2;
+                    else
+                        own5 = 3;
+                }
+                Level1Building5.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 6)
+            {
+                if (floor6 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own6 = 2;
+                    else
+                        own6 = 3;
+                }
+                Level1Building7.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 7)
+            {
+                if (floor7 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own7 = 2;
+                    else
+                        own7 = 3;
+                }
+                Level1Building8.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 8)
+            {
+                if (floor8 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own8 = 2;
+                    else
+                        own8 = 3;
+                }
+                Level1Building9.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 9)
+            {
+                if (floor9 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own9 = 2;
+                    else
+                        own9 = 3;
+                }
+                Level1Building11.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 10)
+            {
+                if (floor10 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own10 = 2;
+                    else
+                        own10 = 3;
+                }
+                Level1Building13.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 11)
+            {
+                if (floor11 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own11 = 2;
+                    else
+                        own11 = 3;
+                }
+                Level1Building14.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 12)
+            {
+                if (floor12 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own12 = 2;
+                    else
+                        own12 = 3;
+                }
+                Level1Building15.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 13)
+            {
+                if (floor13 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own13 = 2;
+                    else
+                        own13 = 3;
+                }
+                Level1Building16.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 14)
+            {
+                if (floor14 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own14 = 2;
+                    else
+                        own14 = 3;
+                }
+                Level1Building17.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 15)
+            {
+                if (floor15 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own15 = 2;
+                    else
+                        own15 = 3;
+                }
+                Level1Building19.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 16)
+            {
+                if (floor16 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own16 = 2;
+                    else
+                        own16 = 3;
+                }
+                Level1Building20.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 17)
+            {
+                if (floor17 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own17 = 2;
+                    else
+                        own17 = 3;
+                }
+                Level1Building22.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 18)
+            {
+                if (floor18 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own18 = 2;
+                    else
+                        own18 = 3;
+                }
+                Level1Building23.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 19)
+            {
+                if (floor19 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own19 = 2;
+                    else
+                        own19 = 3;
+                }
+                Level1Building24.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 20)
+            {
+                if (floor20 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own20 = 2;
+                    else
+                        own20 = 3;
+                }
+                Level1Building26.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 21)
+            {
+                if (floor21 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own21 = 2;
+                    else
+                        own21 = 3;
+                }
+                Level1Building27.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 22)
+            {
+                if (floor22 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own22 = 2;
+                    else
+                        own22 = 3;
+                }
+                Level1Building28.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 23)
+            {
+                if (floor23 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own23 = 2;
+                    else
+                        own23 = 3;
+                }
+                Level1Building29.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 24)
+            {
+                if (floor24 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own24 = 2;
+                    else
+                        own24 = 3;
+                }
+                Level1Building31.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 25)
+            {
+                if (floor25 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own25 = 2;
+                    else
+                        own25 = 3;
+                }
+                Level1Building32.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 26)
+            {
+                if (floor26 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own26 = 2;
+                    else
+                        own26 = 3;
+                }
+                Level1Building33.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 27)
+            {
+                if (floor27 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own27 = 2;
+                    else
+                        own27 = 3;
+                }
+                Level1Building34.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 28)
+            {
+                if (floor28 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own28 = 2;
+                    else
+                        own28 = 3;
+                }
+                Level1Building36.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 29)
+            {
+                if (floor29 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own29 = 2;
+                    else
+                        own29 = 3;
+                }
+                Level1Building37.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 30)
+            {
+                if (floor30 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own30 = 2;
+                    else
+                        own30 = 3;
+                }
+                Level1Building39.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 31)
+            {
+                if (floor31 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own31 = 2;
+                    else
+                        own31 = 3;
+                }
+                Level1Building40.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 32)
+            {
+                if (floor32 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own32 = 2;
+                    else
+                        own32 = 3;
+                }
+                Level1Building42.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 33)
+            {
+                if (floor33 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own33 = 2;
+                    else
+                        own33 = 3;
+                }
+                Level1Building43.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 34)
+            {
+                if (floor34 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own34 = 2;
+                    else
+                        own34 = 3;
+                }
+                Level1Building44.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 35)
+            {
+                if (floor35 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own35 = 2;
+                    else
+                        own35 = 3;
+                }
+                Level1Building47.gameObject.SetActive(true);
+              
+            }
+            if (getRangeNum == 36)
+            {
+                if (floor36 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own36 = 2;
+                    else
+                        own36 = 3;
+                }
+                Level1Building48.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 37)
+            {
+                if (floor37 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own37 = 2;
+                    else
+                        own37 = 3;
+                }
+                Level1Building49.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 38)
+            {
+                if (floor38 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own38 = 2;
+                    else
+                        own38 = 3;
+                }
+                Level1Building51.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 39)
+            {
+                if (floor39 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own39 = 2;
+                    else
+                        own39 = 3;
+                }
+                Level1Building52.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 40)
+            {
+                if (floor40 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own40 = 2;
+                    else
+                        own40 = 3;
+                }
+                Level1Building55.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 41)
+            {
+                if (floor41 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own41 = 2;
+                    else
+                        own41 = 3;
+                }
+                Level1Building56.gameObject.SetActive(true);
+            }
+            if (getRangeNum == 42)
+            {
+                if (floor42 != 0)
+                    getBuilding();
+                else
+                {
+                    if (DiceNumberTextScript.whosTurn == 2)
+                        own42 = 2;
+                    else
+                        own42 = 3;
+                }
+                Level1Building57.gameObject.SetActive(true);
+            }
+            floor1 = 0; floor2 = 0; floor3 = 0; floor4 = 0; floor5 = 0; floor6 = 0; floor7 = 0; floor8 = 0; floor9 = 0; floor10 = 0;
+            floor11 = 0; floor12 = 0; floor13 = 0; floor14 = 0; floor15 = 0; floor16 = 0; floor17 = 0; floor18 = 0; floor19 = 0; floor20 = 0;
+            floor21 = 0; floor22 = 0; floor23 = 0; floor24 = 0; floor25 = 0; floor26 = 0; floor27 = 0; floor28 = 0; floor29 = 0; floor30 = 0;
+            floor31 = 0; floor32 = 0; floor33 = 0; floor34 = 0; floor35 = 0; floor36 = 0; floor37 = 0; floor38 = 0; floor39 = 0; floor40 = 0;
+            floor41 = 0; floor42 = 0;
+        }
+        dropButton.interactable = true;
+        camMain();
+    }
+
 }
