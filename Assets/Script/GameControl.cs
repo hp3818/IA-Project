@@ -81,7 +81,8 @@ public class GameControl : MonoBehaviour {
     public Text text2;
     public static int X1 = 0, X2 = 0, X3 = 0, X4 = 0, X5 = 0, X6 = 0, X7 = 0, X8 = 0;
     public Button choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8;
-    public static GameObject ImageForJailSkill;
+    public Button choiceH1, choiceH2, choiceH3, choicdH4, choiceH5, choiceH6, choiceH7, choiceH8;
+    public static GameObject ImageForJailSkill, ImageForHospitalSkill;
 
     void Start () {
 
@@ -98,8 +99,10 @@ public class GameControl : MonoBehaviour {
 
         ImageForJailSkill = GameObject.Find("ImageForJailSkill");
         ImageForJailSkill.gameObject.SetActive(false);
+        ImageForHospitalSkill = GameObject.Find("ImageForHospitalSkill");
+        ImageForHospitalSkill.gameObject.SetActive(false);
 
-        player1 = GameObject.Find("player1");
+      player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
         player3 = GameObject.Find("player3");
         player4 = GameObject.Find("player4");
@@ -145,6 +148,10 @@ public class GameControl : MonoBehaviour {
             choice6.interactable = false;
             choice7.interactable = false;
             choice8.interactable = false;
+            choiceH3.interactable = false;
+            choiceH6.interactable = false;
+            choiceH7.interactable = false;
+            choiceH8.interactable = false;
         }
 
         if(numberOfPlayer == 5)
@@ -164,6 +171,9 @@ public class GameControl : MonoBehaviour {
             choice3.interactable = false;
             choice7.interactable = false;
             choice8.interactable = false;
+            choiceH3.interactable = false;
+            choiceH7.interactable = false;
+            choiceH8.interactable = false;
         }
 
         if (numberOfPlayer == 6)
@@ -180,6 +190,8 @@ public class GameControl : MonoBehaviour {
             text6.text = "低層3";
             choice7.interactable = false;
             choice8.interactable = false;
+            choiceH7.interactable = false;
+            choiceH8.interactable = false;
         }
 
         if (numberOfPlayer == 7)
@@ -193,6 +205,7 @@ public class GameControl : MonoBehaviour {
             text6.text = "低層3";
             text7.text = "低層4";
             choice8.gameObject.SetActive(false);
+            choiceH8.gameObject.SetActive(false);
         }
         
         if (numberOfPlayer == 8)

@@ -110,5 +110,84 @@ public class AllSkillScript : MonoBehaviour {
         DropZone1.doing = 0;
     }
 
+    public void choosePeople1ForHospital()
+    {
+        player1.GetComponent<FollowThePath>().transform.position = waypoints[46].transform.position;
+        player1.GetComponent<FollowThePath>().wayPointIndex = 46;
+        GameControl.player1Waypoint = 46;
+        DiceNumberTextScript.injure1 = 1;
+        GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void choosePeople2ForHospital()
+    {
+        player2.GetComponent<FollowThePath>().transform.position = waypoints[46].transform.position;
+        player2.GetComponent<FollowThePath>().wayPointIndex = 46;
+        GameControl.player2Waypoint = 46;
+        DiceNumberTextScript.injure2 = 1;
+        GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void choosePeople3ForHospital()
+    {
+        player3.GetComponent<FollowThePath>().transform.position = waypoints[46].transform.position;
+        player3.GetComponent<FollowThePath>().wayPointIndex = 46;
+        GameControl.player3Waypoint = 46;
+        DiceNumberTextScript.injure3 = 1;
+        GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void choosePeople4ForHospital()
+    {
+        player4.GetComponent<FollowThePath>().transform.position = waypoints[46].transform.position;
+        player4.GetComponent<FollowThePath>().wayPointIndex = 46;
+        GameControl.player4Waypoint = 46;
+        DiceNumberTextScript.injure4 = 1;
+        GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void choosePeople5ForHospital()
+    {
+        player5.GetComponent<FollowThePath>().transform.position = waypoints[46].transform.position;
+        player5.GetComponent<FollowThePath>().wayPointIndex = 46;
+        GameControl.player5Waypoint = 46;
+        DiceNumberTextScript.injure5 = 1;
+        GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void choosePeople6ForHospital()
+    {
+        player6.GetComponent<FollowThePath>().transform.position = waypoints[46].transform.position;
+        player6.GetComponent<FollowThePath>().wayPointIndex = 46;
+        GameControl.player6Waypoint = 46;
+        DiceNumberTextScript.injure6 = 1;
+        GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void choosePeople7ForHospital()
+    {
+        player7.GetComponent<FollowThePath>().transform.position = waypoints[46].transform.position;
+        player7.GetComponent<FollowThePath>().wayPointIndex = 46;
+        GameControl.player7Waypoint = 46;
+        DiceNumberTextScript.injure7 = 1;
+        GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void choosePeople8ForHospital()
+    {
+        player8.GetComponent<FollowThePath>().transform.position = waypoints[46].transform.position;
+        player8.GetComponent<FollowThePath>().wayPointIndex = 46;
+        GameControl.player8Waypoint = 46;
+        DiceNumberTextScript.injure8 = 1;
+        GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
 
 }

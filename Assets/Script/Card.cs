@@ -69,6 +69,11 @@ public class Card : MonoBehaviour {
                 {
                     Dice.airPlane = 1;
                 }
+                if (skillName1.text == "黑手黨")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -130,6 +135,11 @@ public class Card : MonoBehaviour {
                 {
                     Dice.airPlane = 1;
                 }
+                if (skillName2.text == "黑手黨")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -189,6 +199,11 @@ public class Card : MonoBehaviour {
                 if (skillName3.text == "高級飛機")
                 {
                     Dice.airPlane = 1;
+                }
+                if (skillName3.text == "黑手黨")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)
@@ -250,6 +265,11 @@ public class Card : MonoBehaviour {
                 {
                     Dice.airPlane = 1; 
                 }
+                if (skillName4.text == "黑手黨")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -309,6 +329,11 @@ public class Card : MonoBehaviour {
                 if (skillName5.text == "高級飛機")
                 {
                     Dice.airPlane = 1;
+                }
+                if (skillName5.text == "黑手黨")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)
