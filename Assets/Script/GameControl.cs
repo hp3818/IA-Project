@@ -44476,7 +44476,7 @@ public class GameControl : MonoBehaviour {
             {
                 rangeRadomNum = Random.Range(1, 42);
             } while (rangeRadomNum == getRangeNum);
-            Debug.Log(rangeRadomNum);
+            } while (rangeRadomNum == getRangeNum);
             getRangeNum = rangeRadomNum;
             if (getRangeNum == 1)
             {

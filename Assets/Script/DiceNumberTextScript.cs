@@ -17,7 +17,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public static GameObject ImageForJail;
     public static GameObject ImageForHospital;
     public Text InjureTurn;
-    public static int challenge = 0;
+    public static int challenge = 0, challengeRule = 0, challengeRuleRound = 2;
     public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost;
     public Text player1Card1, player1Card2, player1Card3, player1Card4, player1Card5, player2Card1, player2Card2, player2Card3, player2Card4, player2Card5,
                             player3Card1, player3Card2, player3Card3, player3Card4, player3Card5, player4Card1, player4Card2, player4Card3, player4Card4, player4Card5,
@@ -796,6 +796,10 @@ public class DiceNumberTextScript : MonoBehaviour
                     if (challenge == 1)
                     {
                         StartCoroutine(TemporarilyDeactivate3(2));
+                    } 
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
                     }
                     GameControl.MovePlayer(2);
                     cam2();
@@ -822,6 +826,10 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         GameControl.jail3turn = 3;
                         jail3 = 0;
+                    }
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
                     }
                     dropButton.interactable = true;
                 }
@@ -995,6 +1003,14 @@ public class DiceNumberTextScript : MonoBehaviour
                 }
                 else
                 {
+                    if (challenge == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate3(2));
+                    }
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
+                    }
                     GameControl.MovePlayer(2);
                     cam2();
                 }
@@ -1236,6 +1252,14 @@ public class DiceNumberTextScript : MonoBehaviour
                 }
                 else
                 {
+                    if (challenge == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate3(2));
+                    }
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
+                    }
                     GameControl.MovePlayer(2);
                     cam2();
                 }
@@ -1298,6 +1322,14 @@ public class DiceNumberTextScript : MonoBehaviour
                 }
                 else
                 {
+                    if (challenge == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate3(2));
+                    }
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
+                    }
                     GameControl.MovePlayer(3);
                     cam3();
                 }
@@ -1516,6 +1548,7 @@ public class DiceNumberTextScript : MonoBehaviour
                     injure2Turn = 2;
                     injure2 = 0;
                 }
+
                 dropButton.interactable = true;
             }
             else
@@ -1539,6 +1572,14 @@ public class DiceNumberTextScript : MonoBehaviour
                 }
                 else
                 {
+                    if (challenge == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate3(2));
+                    }
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
+                    }
                     GameControl.MovePlayer(2);
                     cam2();
                 }
@@ -1601,6 +1642,14 @@ public class DiceNumberTextScript : MonoBehaviour
                 }
                 else
                 {
+                    if (challenge == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate3(2));
+                    }
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
+                    }
                     GameControl.MovePlayer(2);
                     cam2();
                 }
@@ -1884,6 +1933,14 @@ public class DiceNumberTextScript : MonoBehaviour
                 }
                 else
                 {
+                    if (challenge == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate3(2));
+                    }
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
+                    }
                     GameControl.MovePlayer(2);
                     cam2();
                 }
@@ -1946,8 +2003,16 @@ public class DiceNumberTextScript : MonoBehaviour
                 }
                 else
                 {
-                    GameControl.MovePlayer(2);
-                    cam2();
+                    if (challenge == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate3(2));
+                    }
+                    if (challengeRule == 1)
+                    {
+                        StartCoroutine(TemporarilyDeactivate4(2));
+                    }
+                    GameControl.MovePlayer(3);
+                    cam3();
                 }
             }
         }
@@ -2317,6 +2382,185 @@ public class DiceNumberTextScript : MonoBehaviour
             instanceOfB.getBuilding();
         }
     }
+
+    public IEnumerator TemporarilyDeactivate4(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        int sum2 = dice1Number + dice2Number;
+        if (sum2 >= 8)
+        {
+            Debug.Log(GameControl.whoTurn);
+            if (GameControl.numberOfPlayer == 4)
+            {
+                if (GameControl.whoTurn - 3 == 1)
+                {
+                    HouseSelection.sum1 *= 0.9;
+                    player1Cost.text = HouseSelection.sum1.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 2)
+                {
+                    HouseSelection.sum2 *= 0.9;
+                    player2Cost.text = HouseSelection.sum2.ToString();
+                } // 1
+                if (GameControl.whoTurn + 1== 3)
+                {
+                    HouseSelection.sum3 *= 0.9;
+                    player3Cost.text = HouseSelection.sum3.ToString();
+                }  // 2
+                if (GameControl.whoTurn + 1== 4)
+                {
+                    HouseSelection.sum4 *= 0.9;
+                    player4Cost.text = HouseSelection.sum4.ToString();
+                }  // 3
+            } else if (GameControl.numberOfPlayer == 5)
+            {
+                if (GameControl.whoTurn - 4 == 1)
+                {
+                    HouseSelection.sum1 *= 0.9;
+                    player1Cost.text = HouseSelection.sum1.ToString();
+                }
+                if (GameControl.whoTurn +1 == 2)
+                {
+                    HouseSelection.sum2 *= 0.9;
+                    player2Cost.text = HouseSelection.sum2.ToString();
+                }
+                if (GameControl.whoTurn +1 == 3)
+                {
+                    HouseSelection.sum3 *= 0.9;
+                    player3Cost.text = HouseSelection.sum3.ToString();
+                }
+                if (GameControl.whoTurn +1 == 4)
+                {
+                    HouseSelection.sum4 *= 0.9;
+                    player4Cost.text = HouseSelection.sum4.ToString();
+                }
+                if (GameControl.whoTurn +1 == 5)
+                {
+                    HouseSelection.sum5 *= 0.9;
+                    player5Cost.text = HouseSelection.sum5.ToString();
+                }
+            }  else if (GameControl.numberOfPlayer == 6)
+            {
+                if (GameControl.whoTurn - 5 == 1)
+                {
+                    HouseSelection.sum1 *= 0.9;
+                    player1Cost.text = HouseSelection.sum1.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 2)
+                {
+                    HouseSelection.sum2 *= 0.9;
+                    player2Cost.text = HouseSelection.sum2.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 3)
+                {
+                    HouseSelection.sum3 *= 0.9;
+                    player3Cost.text = HouseSelection.sum3.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 4)
+                {
+                    HouseSelection.sum4 *= 0.9;
+                    player4Cost.text = HouseSelection.sum4.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 5)
+                {
+                    HouseSelection.sum5 *= 0.9;
+                    player5Cost.text = HouseSelection.sum5.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 6)
+                {
+                    HouseSelection.sum6 *= 0.9;
+                    player6Cost.text = HouseSelection.sum6.ToString();
+                }
+            } else if (GameControl.numberOfPlayer == 7)
+            {
+                if (GameControl.whoTurn - 6 == 1)
+                {
+                    HouseSelection.sum1 *= 0.9;
+                    player1Cost.text = HouseSelection.sum1.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 2)
+                {
+                    HouseSelection.sum2 *= 0.9;
+                    player2Cost.text = HouseSelection.sum2.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 3)
+                {
+                    HouseSelection.sum3 *= 0.9;
+                    player3Cost.text = HouseSelection.sum3.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 4)
+                {
+                    HouseSelection.sum4 *= 0.9;
+                    player4Cost.text = HouseSelection.sum4.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 5)
+                {
+                    HouseSelection.sum5 *= 0.9;
+                    player5Cost.text = HouseSelection.sum5.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 6)
+                {
+                    HouseSelection.sum6 *= 0.9;
+                    player6Cost.text = HouseSelection.sum6.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 7)
+                {
+                    HouseSelection.sum7 *= 0.9;
+                    player7Cost.text = HouseSelection.sum7.ToString();
+                }
+            } else if (GameControl.numberOfPlayer ==8)
+            {
+                if (GameControl.whoTurn - 7 == 1)
+                {
+                    HouseSelection.sum1 *= 0.9;
+                    player1Cost.text = HouseSelection.sum1.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 2)
+                {
+                    HouseSelection.sum2 *= 0.9;
+                    player2Cost.text = HouseSelection.sum2.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 3)
+                {
+                    HouseSelection.sum3 *= 0.9;
+                    player3Cost.text = HouseSelection.sum3.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 4)
+                {
+                    HouseSelection.sum4 *= 0.9;
+                    player4Cost.text = HouseSelection.sum4.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 5)
+                {
+                    HouseSelection.sum5 *= 0.9;
+                    player5Cost.text = HouseSelection.sum5.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 6)
+                {
+                    HouseSelection.sum6 *= 0.9;
+                    player6Cost.text = HouseSelection.sum6.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 7)
+                {
+                    HouseSelection.sum7 *= 0.9;
+                    player7Cost.text = HouseSelection.sum7.ToString();
+                }
+                if (GameControl.whoTurn + 1 == 8)
+                {
+                    HouseSelection.sum8 *= 0.9;
+                    player8Cost.text = HouseSelection.sum8.ToString();
+                }
+            }
+
+        }
+        challengeRuleRound--;
+        if (challengeRuleRound == 0)
+        {
+            challengeRule = 0;
+            challengeRuleRound = 2;
+        }
+    }
+
 }
 
 

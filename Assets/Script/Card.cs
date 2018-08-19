@@ -91,8 +91,11 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "挑戰節目")
                 {
-                    Debug.Log("1");
                     DiceNumberTextScript.challenge = 1;
+                }
+                if (skillName1.text == "交通規則")
+                {
+                    DiceNumberTextScript.challengeRule = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 3)
@@ -171,8 +174,11 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName2.text == "挑戰節目")
                 {
-                    Debug.Log("2");
                     DiceNumberTextScript.challenge = 1;
+                }
+                if (skillName2.text == "交通規則")
+                {
+                    DiceNumberTextScript.challengeRule = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 3)
@@ -250,8 +256,11 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName3.text == "挑戰節目")
                 {
-                    Debug.Log("3");
                     DiceNumberTextScript.challenge = 1;
+                }
+                if (skillName3.text == "交通規則")
+                {
+                    DiceNumberTextScript.challengeRule = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 3)
@@ -329,8 +338,11 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName4.text == "挑戰節目")
                 {
-                    Debug.Log("4");
                     DiceNumberTextScript.challenge = 1;
+                }
+                if (skillName4.text == "交通規則")
+                {
+                    DiceNumberTextScript.challengeRule = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 3)
@@ -408,8 +420,11 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName5.text == "挑戰節目")
                 {
-                    Debug.Log("5");
                     DiceNumberTextScript.challenge = 1;
+                }
+                if (skillName5.text == "交通規則")
+                {
+                    DiceNumberTextScript.challengeRule = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 3)
