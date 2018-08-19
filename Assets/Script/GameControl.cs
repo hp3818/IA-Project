@@ -82,7 +82,7 @@ public class GameControl : MonoBehaviour {
     public static int X1 = 0, X2 = 0, X3 = 0, X4 = 0, X5 = 0, X6 = 0, X7 = 0, X8 = 0;
     public Button choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8;
     public Button choiceH1, choiceH2, choiceH3, choicdH4, choiceH5, choiceH6, choiceH7, choiceH8;
-    public static GameObject ImageForJailSkill, ImageForHospitalSkill;
+    public static GameObject ImageForJailSkill, ImageForHospitalSkill, ImageForMonopoly;
 
     void Start () {
 
@@ -101,8 +101,10 @@ public class GameControl : MonoBehaviour {
         ImageForJailSkill.gameObject.SetActive(false);
         ImageForHospitalSkill = GameObject.Find("ImageForHospitalSkill");
         ImageForHospitalSkill.gameObject.SetActive(false);
+        ImageForMonopoly = GameObject.Find("ImageForMonopoly");
+        ImageForMonopoly.gameObject.SetActive(false);
 
-      player1 = GameObject.Find("player1");
+        player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
         player3 = GameObject.Find("player3");
         player4 = GameObject.Find("player4");

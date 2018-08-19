@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class AllSkillScript : MonoBehaviour {
 
     public Transform[] waypoints;
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
+    public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost;
 
     void Start()
     {
@@ -187,6 +187,102 @@ public class AllSkillScript : MonoBehaviour {
         GameControl.player8Waypoint = 46;
         DiceNumberTextScript.injure8 = 1;
         GameControl.ImageForHospitalSkill.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void choosePoor()
+    {
+        if (GameControl.numberOfPlayer == 4)
+        {
+            HouseSelection.sum3 *= 0.9;
+            player3Cost.text = HouseSelection.sum3.ToString();
+            HouseSelection.sum4 *= 0.9;
+            player4Cost.text = HouseSelection.sum4.ToString();
+
+            double A = HouseSelection.sum3 *= 0.1; double B = HouseSelection.sum4 *= 0.1;
+            HouseSelection.sum1 += (A + B);
+            player1Cost.text = HouseSelection.sum1.ToString();
+        }
+        else if (GameControl.numberOfPlayer == 5) 
+        {
+            HouseSelection.sum3 *= 0.9;
+            player3Cost.text = HouseSelection.sum3.ToString();
+            HouseSelection.sum4 *= 0.9;
+            player4Cost.text = HouseSelection.sum4.ToString();
+            HouseSelection.sum5 *= 0.9;
+            player5Cost.text = HouseSelection.sum5.ToString();
+
+            double A = HouseSelection.sum3 *= 0.1; double B = HouseSelection.sum4 *= 0.1; double C = HouseSelection.sum4 *= 0.1;
+            HouseSelection.sum1 += (A + B + C);
+            player1Cost.text = HouseSelection.sum1.ToString();
+        }
+        else if (GameControl.numberOfPlayer == 6)
+        {
+            HouseSelection.sum4 *= 0.9;
+            player4Cost.text = HouseSelection.sum4.ToString();
+            HouseSelection.sum5 *= 0.9;
+            player5Cost.text = HouseSelection.sum5.ToString();
+            HouseSelection.sum6 *= 0.9;
+            player6Cost.text = HouseSelection.sum6.ToString();
+            double A = HouseSelection.sum4 *= 0.1; double B = HouseSelection.sum5 *= 0.1; double C = HouseSelection.sum6 *= 0.1;
+            HouseSelection.sum1 += (A + B + C);
+            player1Cost.text = HouseSelection.sum1.ToString();
+        }
+        else if (GameControl.numberOfPlayer == 7)
+        {
+            HouseSelection.sum4 *= 0.9;
+            player4Cost.text = HouseSelection.sum4.ToString();
+            HouseSelection.sum5 *= 0.9;
+            player5Cost.text = HouseSelection.sum5.ToString();
+            HouseSelection.sum6 *= 0.9;
+            player6Cost.text = HouseSelection.sum6.ToString();
+            HouseSelection.sum7 *= 0.9;
+            player7Cost.text = HouseSelection.sum7.ToString();
+            double A = HouseSelection.sum4 *= 0.1; double B = HouseSelection.sum5 *= 0.1; double C = HouseSelection.sum6 *= 0.1; double D = HouseSelection.sum7 *= 0.1;
+            HouseSelection.sum1 += (A + B + C + D);
+            player1Cost.text = HouseSelection.sum1.ToString();
+        }
+        else if (GameControl.numberOfPlayer == 8)
+        {
+            HouseSelection.sum4 *= 0.9;
+            player4Cost.text = HouseSelection.sum4.ToString();
+            HouseSelection.sum5 *= 0.9;
+            player5Cost.text = HouseSelection.sum5.ToString();
+            HouseSelection.sum6 *= 0.9;
+            player6Cost.text = HouseSelection.sum6.ToString();
+            HouseSelection.sum7 *= 0.9;
+            player7Cost.text = HouseSelection.sum7.ToString();
+            HouseSelection.sum8 *= 0.9;
+            player8Cost.text = HouseSelection.sum8.ToString();
+            double A = HouseSelection.sum4 *= 0.1; double B = HouseSelection.sum5 *= 0.1; double C = HouseSelection.sum6 *= 0.1; double D = HouseSelection.sum7 *= 0.1; double E = HouseSelection.sum8 *= 0.1;
+            HouseSelection.sum1 += (A + B + C + D + E);
+            player1Cost.text = HouseSelection.sum1.ToString();
+        }
+        GameControl.ImageForMonopoly.gameObject.SetActive(false);
+        DropZone1.doing = 0;
+    }
+
+    public void chooseMiddle()
+    {
+        if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+        {
+            HouseSelection.sum2 *= 0.9;
+            player2Cost.text = HouseSelection.sum2.ToString();
+            double A = HouseSelection.sum2 *= 0.1;
+            HouseSelection.sum1 += A;
+            player1Cost.text = HouseSelection.sum1.ToString();
+        }
+        else if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
+        {
+            HouseSelection.sum2 *= 0.9;
+            player2Cost.text = HouseSelection.sum2.ToString();
+            HouseSelection.sum3 *= 0.9;
+            player3Cost.text = HouseSelection.sum3.ToString();
+            double A = HouseSelection.sum2 *= 0.1; double B = HouseSelection.sum3 *= 0.1;
+            HouseSelection.sum1 += (A + B);
+            player1Cost.text = HouseSelection.sum1.ToString();
+        }
+        GameControl.ImageForMonopoly.gameObject.SetActive(false);
         DropZone1.doing = 0;
     }
 

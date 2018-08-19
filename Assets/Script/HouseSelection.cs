@@ -7975,7 +7975,6 @@ public class HouseSelection : MonoBehaviour {
                 player8Cost.text = sum8.ToString();
                 break;
         }
-
     }
 
     public void Confirm()

@@ -74,6 +74,11 @@ public class Card : MonoBehaviour {
                     DropZone1.doing = 1;
                     GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
                 }
+                if (skillName1.text == "商業霸權")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForMonopoly.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -140,6 +145,11 @@ public class Card : MonoBehaviour {
                     DropZone1.doing = 1;
                     GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
                 }
+                if (skillName2.text == "商業霸權")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForMonopoly.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -204,6 +214,11 @@ public class Card : MonoBehaviour {
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
+                }
+                if (skillName3.text == "商業霸權")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForMonopoly.gameObject.SetActive(true);
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)
@@ -270,6 +285,11 @@ public class Card : MonoBehaviour {
                     DropZone1.doing = 1;
                     GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
                 }
+                if (skillName4.text == "商業霸權")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForMonopoly.gameObject.SetActive(true);
+                }
             }
             if (DiceNumberTextScript.whosTurn == 2)
             {
@@ -334,6 +354,11 @@ public class Card : MonoBehaviour {
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForHospitalSkill.gameObject.SetActive(true);
+                }
+                if (skillName5.text == "商業霸權")
+                {
+                    DropZone1.doing = 1;
+                    GameControl.ImageForMonopoly.gameObject.SetActive(true);
                 }
             }
             if (DiceNumberTextScript.whosTurn == 2)
