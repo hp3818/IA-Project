@@ -32,6 +32,7 @@ public class GameControl : MonoBehaviour {
                                   floor31 = 0, floor32 = 0, floor33 = 0, floor34 = 0, floor35 = 0, floor36 = 0, floor37 = 0, floor38 = 0, floor39 = 0, floor40 = 0,
                                   floor41 = 0, floor42;
 
+    public static int getRichBuilding = 0;
     public static int whoTurn;
     public Button dropButton;
     public static int numberOfPlayer = 4;
@@ -2430,8 +2431,12 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X2 = 0;
-                    if (own1 >= 2)
+                    if (own1 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
+                        
                     else
                     {
                         dropButton.interactable = true;
@@ -2472,8 +2477,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own2 >= 2)
+                    if (own2 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2514,8 +2522,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own3 >= 2)
+                    if (own3 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2556,8 +2567,10 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own4 >= 2)
+                    if (own4 >= 2 || getRichBuilding == 1) {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2598,8 +2611,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own5 >= 2)
+                    if (own5 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2640,8 +2656,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own6 >= 2)
+                    if (own6 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2682,8 +2701,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own7 >= 2)
+                    if (own7 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2724,8 +2746,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own8 >= 2)
+                    if (own8 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2799,8 +2824,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own10 >= 2)
+                    if (own10 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2841,8 +2869,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own11 >= 2)
+                    if (own11 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    } 
                     else
                     {
                         dropButton.interactable = true;
@@ -2883,8 +2914,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own12 >= 2)
+                    if (own12 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2925,8 +2959,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own13 >= 2)
+                    if (own13 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -2967,8 +3004,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own14 >= 2)
+                    if (own14 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3009,8 +3049,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own15 >= 2)
+                    if (own15 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3051,8 +3094,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own16 >= 2)
+                    if (own16 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3093,8 +3139,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own17 >= 2)
+                    if (own17 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3169,8 +3218,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own19 >= 2)
+                    if (own19 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3211,8 +3263,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own20 >= 2)
+                    if (own20 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3253,8 +3308,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own21 >= 2)
+                    if (own21 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3295,8 +3353,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own22 >= 2)
+                    if (own22 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3337,8 +3398,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own23 >= 2)
+                    if (own23 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3379,8 +3443,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own24 >= 2)
+                    if (own24 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3421,8 +3488,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own25 >= 2)
+                    if (own25 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3510,8 +3580,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own26 >= 2)
+                    if (own26 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3552,8 +3625,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own27 >= 2)
+                    if (own27 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3590,8 +3666,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own28 >= 2)
+                    if (own28 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3633,8 +3712,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own29 >= 2)
+                    if (own29 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3675,8 +3757,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own30 >= 2)
+                    if (own30 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3717,8 +3802,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own31 >= 2)
+                    if (own31 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3793,8 +3881,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own33 >= 2)
+                    if (own33 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3835,8 +3926,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own34 >= 2)
+                    if (own34 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3877,8 +3971,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own35 >= 2)
+                    if (own35 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3919,8 +4016,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own36 >= 2)
+                    if (own36 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -3961,8 +4061,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own37 >= 2)
+                    if (own37 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4003,8 +4106,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own38 >= 2)
+                    if (own38 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4045,8 +4151,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own39 >= 2)
+                    if (own39 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4087,8 +4196,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own40 >= 2)
+                    if (own40 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4163,8 +4275,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own42 >= 2)
+                    if (own42 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4205,8 +4320,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own43 >= 2)
+                    if (own43 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4247,8 +4365,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own44 >= 2)
+                    if (own44 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4289,8 +4410,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own45 >= 2)
+                    if (own45 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4331,8 +4455,11 @@ public class GameControl : MonoBehaviour {
                     else
                         X2 = 0;
 
-                    if (own46 >= 2)
+                    if (own46 >= 2 || getRichBuilding == 1)
+                    {
                         ImageForBuyOtherHouse.gameObject.SetActive(true);
+                        getRichBuilding = 0;
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4715,7 +4842,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own1 >= 3 || own1 == 2)
+                        if (own1 >= 3 || own1 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     } 
                     else
@@ -4760,7 +4887,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own2 >= 3 || own2 == 2)
+                        if (own2 >= 3 || own2 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -4805,7 +4932,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own3 >= 3 || own3 == 2)
+                        if (own3 >= 3 || own3 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -4850,7 +4977,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own4 >= 3 || own4 == 2)
+                        if (own4 >= 3 || own4 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -4895,7 +5022,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own5 >= 3 || own5 == 2)
+                        if (own5 >= 3 || own5 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -4940,7 +5067,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own6 >= 3 || own6 == 2)
+                        if (own6 >= 3 || own6 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -4985,7 +5112,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own7 >= 3 || own7 == 2)
+                        if (own7 >= 3 || own7 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5030,7 +5157,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own8 >= 3 || own8 == 2)
+                        if (own8 >= 3 || own8 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5109,7 +5236,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own10 >= 3 || own10 == 2)
+                        if (own10 >= 3 || own10 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5154,7 +5281,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own11 >= 3 || own11 == 2)
+                        if (own11 >= 3 || own11 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5199,7 +5326,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own12 >= 3 || own12 == 2)
+                        if (own12 >= 3 || own12 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5244,7 +5371,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own13 >= 3 || own13 == 2)
+                        if (own13 >= 3 || own13 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5289,7 +5416,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own14 >= 3 || own14 == 2)
+                        if (own14 >= 3 || own14 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5334,7 +5461,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own15 >= 3 || own15 == 2)
+                        if (own15 >= 3 || own15 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5379,7 +5506,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own16 >= 3 || own16 == 2)
+                        if (own17 >= 3 || own17 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5424,7 +5551,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own17 >= 3 || own17 == 2)
+                        if (own17 >= 3 || own17 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5504,7 +5631,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own19 >= 3 || own19 == 2)
+                        if (own19 >= 3 || own19 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5549,7 +5676,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own20 >= 3 || own20 == 2)
+                        if (own20 >= 3 || own20 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5594,7 +5721,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own21 >= 3 || own21 == 2)
+                        if (own21 >= 3 || own21 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5639,7 +5766,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own21 >= 3 || own2 == 2)
+                        if (own22 >= 3 || own22 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5684,7 +5811,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own23 >= 3 || own23 == 2)
+                        if (own23 >= 3 || own23 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5729,7 +5856,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own24 >= 3 || own24 == 2)
+                        if (own24 >= 3 || own24 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5774,7 +5901,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own25 >= 3 || own25 == 2)
+                        if (own25 >= 3 || own25 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5866,7 +5993,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own26 >= 3 || own26 == 2)
+                        if (own26 >= 3 || own26 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5911,7 +6038,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own27 >= 3 || own27 == 2)
+                        if (own27 >= 3 || own27 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5956,7 +6083,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own28 >= 3 || own28 == 2)
+                        if (own28 >= 3 || own28 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6001,7 +6128,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own29 >= 3 || own29 == 2)
+                        if (own29 >= 3 || own29 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6046,7 +6173,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own30 >= 3 || own30 == 2)
+                        if (own30 >= 3 || own30 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6091,7 +6218,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own31 >= 3 || own31 == 2)
+                        if (own31 >= 3 || own31 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6170,7 +6297,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own33 >= 3 || own33 == 2)
+                        if (own33 >= 3 || own33 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6215,7 +6342,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own34 >= 3 || own34 == 2)
+                        if (own34 >= 3 || own34 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6260,7 +6387,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own35 >= 3 || own35 == 2)
+                        if (own35 >= 3 || own35 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6305,7 +6432,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own36 >= 3 || own36 == 2)
+                        if (own36 >= 3 || own36 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6350,7 +6477,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own37 >= 3 || own37 == 2)
+                        if (own37 >= 3 || own37 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6395,7 +6522,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own38 >= 3 || own38 == 2)
+                        if (own38 >= 3 || own38 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6440,7 +6567,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own39 >= 3 || own39 == 2)
+                        if (own39 >= 3 || own39 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6485,7 +6612,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own40 >= 3 || own40 == 2)
+                        if (own40 >= 3 || own40 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6564,7 +6691,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own42 >= 3 || own42 == 2)
+                        if (own42 >= 3 || own42 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6610,7 +6737,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own43 >= 3 || own43 == 2)
+                        if (own43 >= 3 || own43 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6655,7 +6782,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own44 >= 3 || own44 == 2)
+                        if (own44 >= 3 || own44 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6700,7 +6827,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own45 >= 3 || own45 == 2)
+                        if (own45 >= 3 || own45 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6745,7 +6872,7 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own46 >= 3 || own46 == 2)
+                        if (own46 >= 3 || own46 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else

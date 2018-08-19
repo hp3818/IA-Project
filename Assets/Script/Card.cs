@@ -85,6 +85,10 @@ public class Card : MonoBehaviour {
                 Card1.gameObject.SetActive(false);
                 Card1.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide21 = 1;
+                if (skillName2.text == "接受物業(中)")
+                {
+                    GameControl.getRichBuilding = 1;
+                }
             }
             if (DiceNumberTextScript.whosTurn == 3)
             {
@@ -156,6 +160,10 @@ public class Card : MonoBehaviour {
                 Card2.gameObject.SetActive(false);
                 Card2.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide22 = 1;
+                if (skillName2.text == "接受物業(中)")
+                {
+                    GameControl.getRichBuilding = 1;
+                }
             }
             if (DiceNumberTextScript.whosTurn == 3)
             {
@@ -226,6 +234,10 @@ public class Card : MonoBehaviour {
                 Card3.gameObject.SetActive(false);
                 Card3.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide23 = 1;
+                if (skillName2.text == "接受物業(中)")
+                {
+                    GameControl.getRichBuilding = 1;
+                }
             }
             if (DiceNumberTextScript.whosTurn == 3)
             {
@@ -296,6 +308,10 @@ public class Card : MonoBehaviour {
                 Card4.gameObject.SetActive(false);
                 Card4.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide24 = 1;
+                if (skillName2.text == "接受物業(中)")
+                {
+                    GameControl.getRichBuilding = 1;
+                }
             }
             if (DiceNumberTextScript.whosTurn == 3)
             {
@@ -366,6 +382,10 @@ public class Card : MonoBehaviour {
                 Card5.gameObject.SetActive(false);
                 Card5.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide25 = 1;
+                if (skillName2.text == "接受物業(中)")
+                {
+                    GameControl.getRichBuilding = 1;
+                }
             }
             if (DiceNumberTextScript.whosTurn == 3)
             {
