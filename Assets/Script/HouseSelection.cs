@@ -7935,7 +7935,7 @@ public class HouseSelection : MonoBehaviour {
         }
 
         dropButton.interactable = true;
-
+        GameControl.getMidAndRichBuilding = 0;
     }
 
     void ReduceSum(int plus, int player)

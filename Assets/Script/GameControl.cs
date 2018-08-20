@@ -32,7 +32,7 @@ public class GameControl : MonoBehaviour {
                                   floor31 = 0, floor32 = 0, floor33 = 0, floor34 = 0, floor35 = 0, floor36 = 0, floor37 = 0, floor38 = 0, floor39 = 0, floor40 = 0,
                                   floor41 = 0, floor42;
 
-    public static int getRichBuilding = 0;
+    public static int getRichBuilding = 0, getMidAndRichBuilding = 0;
     public static int whoTurn;
     public Button dropButton;
     public static int numberOfPlayer = 4;
@@ -4844,7 +4844,12 @@ public class GameControl : MonoBehaviour {
                     {
                         if (own1 >= 3 || own1 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
-                    } 
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own1 != 0 && own1 != 1 && own1 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4888,6 +4893,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own2 >= 3 || own2 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own2 != 0 && own2 != 1 && own2 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -4935,6 +4945,11 @@ public class GameControl : MonoBehaviour {
                         if (own3 >= 3 || own3 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own3 != 0 && own3 != 1 && own3 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -4978,6 +4993,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own4 >= 3 || own4 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own4 != 0 && own4 != 1 && own4 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5025,6 +5045,11 @@ public class GameControl : MonoBehaviour {
                         if (own5 >= 3 || own5 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own5 != 0 && own5 != 1 && own5 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5068,6 +5093,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own6 >= 3 || own6 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own6 != 0 && own6 != 1 && own6 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5115,6 +5145,11 @@ public class GameControl : MonoBehaviour {
                         if (own7 >= 3 || own7 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own7 != 0 && own7 != 1 && own7 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5158,6 +5193,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own8 >= 3 || own8 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own8 != 0 && own8 != 1 && own8 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5239,6 +5279,11 @@ public class GameControl : MonoBehaviour {
                         if (own10 >= 3 || own10 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own10 != 0 && own10 != 1 && own10 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5282,6 +5327,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own11 >= 3 || own11 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own11 != 0 && own11 != 1 && own11 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5329,6 +5379,11 @@ public class GameControl : MonoBehaviour {
                         if (own12 >= 3 || own12 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own12 != 0 && own12 != 1 && own12 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5372,6 +5427,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own13 >= 3 || own13 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own13 != 0 && own13 != 1 && own13 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5419,6 +5479,11 @@ public class GameControl : MonoBehaviour {
                         if (own14 >= 3 || own14 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own14 != 0 && own14 != 1 && own14 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5464,6 +5529,11 @@ public class GameControl : MonoBehaviour {
                         if (own15 >= 3 || own15 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own15 != 0 && own15 != 1 && own15 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5506,7 +5576,12 @@ public class GameControl : MonoBehaviour {
 
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
-                        if (own17 >= 3 || own17 == 2 || getRichBuilding == 1)
+                        if (own16 >= 3 || own16 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own16 != 0 && own16 != 1 && own16 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5552,6 +5627,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own17 >= 3 || own17 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own17 != 0 && own17 != 1 && own17 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5634,6 +5714,11 @@ public class GameControl : MonoBehaviour {
                         if (own19 >= 3 || own19 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own19 != 0 && own19 != 1 && own19 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5677,6 +5762,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own20 >= 3 || own20 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own20 != 0 && own20 != 1 && own20 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5724,6 +5814,11 @@ public class GameControl : MonoBehaviour {
                         if (own21 >= 3 || own21 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own21 != 0 && own21 != 1 && own21 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5767,6 +5862,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own22 >= 3 || own22 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own22 != 0 && own22 != 1 && own22 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5814,6 +5914,11 @@ public class GameControl : MonoBehaviour {
                         if (own23 >= 3 || own23 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own23 != 0 && own23 != 1 && own23 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5859,6 +5964,11 @@ public class GameControl : MonoBehaviour {
                         if (own24 >= 3 || own24 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own24 != 0 && own24 != 1 && own24 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -5902,6 +6012,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own25 >= 3 || own25 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own25 != 0 && own25 != 1 && own25 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -5996,6 +6111,11 @@ public class GameControl : MonoBehaviour {
                         if (own26 >= 3 || own26 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own26 != 0 && own26 != 1 && own26 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6039,6 +6159,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own27 >= 3 || own27 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own27 != 0 && own27 != 1 && own27 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6086,6 +6211,11 @@ public class GameControl : MonoBehaviour {
                         if (own28 >= 3 || own28 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own28 != 0 && own28 != 1 && own28 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6129,6 +6259,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own29 >= 3 || own29 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own29 != 0 && own29 != 1 && own29 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6176,6 +6311,11 @@ public class GameControl : MonoBehaviour {
                         if (own30 >= 3 || own30 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own30 != 0 && own30 != 1 && own30 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6219,6 +6359,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own31 >= 3 || own31 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own31 != 0 && own31 != 1 && own31 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6300,6 +6445,11 @@ public class GameControl : MonoBehaviour {
                         if (own33 >= 3 || own33 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own33 != 0 && own33 != 1 && own33 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6343,6 +6493,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own34 >= 3 || own34 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own34 != 0 && own34 != 1 && own34 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6390,6 +6545,11 @@ public class GameControl : MonoBehaviour {
                         if (own35 >= 3 || own35 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own35 != 0 && own35 != 1 && own35 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6433,6 +6593,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own36 >= 3 || own36 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own36 != 0 && own36 != 1 && own36 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6480,6 +6645,11 @@ public class GameControl : MonoBehaviour {
                         if (own37 >= 3 || own37 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own37 != 0 && own37 != 1 && own37 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6523,6 +6693,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own38 >= 3 || own38 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own38 != 0 && own38 != 1 && own38 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6570,6 +6745,11 @@ public class GameControl : MonoBehaviour {
                         if (own39 >= 3 || own39 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own39 != 0 && own39 != 1 && own39 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6613,6 +6793,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own40 >= 3 || own40 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own40 != 0 && own40 != 1 && own40 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6694,6 +6879,11 @@ public class GameControl : MonoBehaviour {
                         if (own42 >= 3 || own42 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own42 != 0 && own42 != 1 && own42 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6738,6 +6928,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own43 >= 3 || own43 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own43 != 0 && own43 != 1 && own43 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -6785,6 +6980,11 @@ public class GameControl : MonoBehaviour {
                         if (own44 >= 3 || own44 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own44 != 0 && own44 != 1 && own44 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6830,6 +7030,11 @@ public class GameControl : MonoBehaviour {
                         if (own45 >= 3 || own45 == 2 || getRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own45 != 0 && own45 != 1 && own45 != 2 && getMidAndRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
                     else
                     {
                         dropButton.interactable = true;
@@ -6873,6 +7078,11 @@ public class GameControl : MonoBehaviour {
                     if (numberOfPlayer == 6 || numberOfPlayer == 7 || numberOfPlayer == 8)
                     {
                         if (own46 >= 3 || own46 == 2 || getRichBuilding == 1)
+                            ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    }
+                    if (numberOfPlayer == 4 || numberOfPlayer == 5)
+                    {
+                        if (own46 != 0 && own46 != 1 && own46 != 2 && getMidAndRichBuilding == 1)
                             ImageForBuyOtherHouse.gameObject.SetActive(true);
                     }
                     else
@@ -7245,8 +7455,14 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
+
                 }
             }
 
@@ -7282,8 +7498,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7319,8 +7540,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7356,8 +7582,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7393,8 +7624,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7430,8 +7666,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7467,8 +7708,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7504,8 +7750,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7537,8 +7788,7 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+
                 }
             }
 
@@ -7574,8 +7824,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7611,8 +7866,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7648,8 +7908,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7685,8 +7950,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7722,15 +7992,20 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[17].transform.position)
             {
                 detect = count15;
-                houseName.text = "橙6";
+                houseName.text = "橙7";
                 cost1.text = "$15000"; cost2.text = "+ $6000"; cost3.text = "+ $6000";
                 if (count15 == 0)
                 {
@@ -7759,8 +8034,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7796,8 +8076,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7833,8 +8118,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7903,8 +8193,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7940,8 +8235,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -7977,8 +8277,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[26].transform.position)
@@ -8013,8 +8318,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8050,8 +8360,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8087,8 +8402,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8124,8 +8444,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
@@ -8209,8 +8534,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8246,8 +8576,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8283,8 +8618,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8320,8 +8660,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8357,8 +8702,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8394,8 +8744,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8465,8 +8820,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8502,8 +8862,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8539,8 +8904,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8576,8 +8946,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8613,8 +8988,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8650,8 +9030,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8687,8 +9072,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
 
                 }
             }
@@ -8725,8 +9115,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8795,8 +9190,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
 
                 }
             }
@@ -8833,8 +9233,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8870,8 +9275,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8907,8 +9317,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -8944,8 +9359,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X4 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player4.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
@@ -9311,8 +9731,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9348,8 +9773,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9385,8 +9815,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9422,8 +9857,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9459,8 +9899,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9496,8 +9941,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9533,8 +9983,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9570,8 +10025,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9603,8 +10063,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9640,8 +10105,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9677,8 +10147,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9714,8 +10189,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9751,8 +10231,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9788,8 +10273,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9825,8 +10315,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9862,8 +10357,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9899,8 +10399,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9932,8 +10437,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -9969,8 +10479,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10006,8 +10521,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10043,8 +10563,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if(player5.GetComponent<FollowThePath>().transform.position == waypoints[26].transform.position)
@@ -10079,8 +10604,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10116,8 +10646,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10153,8 +10688,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10190,8 +10730,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if(player5.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
@@ -10273,8 +10818,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10314,8 +10864,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10351,8 +10906,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10388,8 +10948,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10425,8 +10990,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
 
                 }
             }
@@ -10463,8 +11033,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
                
             }
@@ -10530,8 +11105,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10567,8 +11147,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10604,8 +11189,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10641,8 +11231,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10678,8 +11273,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10715,8 +11315,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
 
                 }
             }
@@ -10753,8 +11358,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10790,8 +11400,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10860,8 +11475,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10897,8 +11517,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10934,8 +11559,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -10971,8 +11601,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11008,8 +11643,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X5 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player5.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
@@ -11377,8 +12017,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11414,8 +12059,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11451,8 +12101,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11488,8 +12143,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
 
                 }
             }
@@ -11526,8 +12186,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
 
                 }
             }
@@ -11564,8 +12229,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11601,8 +12271,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11638,8 +12313,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11708,8 +12388,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11745,8 +12430,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11782,8 +12472,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11819,8 +12514,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11856,8 +12556,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11893,8 +12598,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11930,8 +12640,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -11967,8 +12682,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12037,8 +12757,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12074,8 +12799,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12111,8 +12841,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12148,8 +12883,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12185,8 +12925,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12222,8 +12967,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12259,8 +13009,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
@@ -12343,8 +13098,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12380,8 +13140,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12417,8 +13182,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12454,8 +13224,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12491,8 +13266,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12528,8 +13308,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12561,8 +13346,6 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
                 }
             }
 
@@ -12598,8 +13381,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12635,8 +13423,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12672,8 +13465,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12709,8 +13507,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12746,8 +13549,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12783,8 +13591,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12820,8 +13633,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12857,8 +13675,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12927,8 +13750,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -12964,8 +13792,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13001,8 +13834,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13038,8 +13876,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13075,8 +13918,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X6 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player6.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
@@ -13442,8 +14290,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13479,8 +14332,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13516,8 +14374,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13553,8 +14416,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13590,8 +14458,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13627,8 +14500,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13664,8 +14542,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13701,8 +14584,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13771,8 +14659,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13808,8 +14701,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13845,8 +14743,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13882,8 +14785,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13919,8 +14827,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13956,8 +14869,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -13993,8 +14911,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14030,8 +14953,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14100,8 +15028,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14137,8 +15070,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14174,8 +15112,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14211,8 +15154,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14248,8 +15196,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14285,8 +15238,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14322,8 +15280,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
@@ -14405,8 +15368,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14442,8 +15410,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14479,8 +15452,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14516,8 +15494,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14553,8 +15536,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14590,8 +15578,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14660,8 +15653,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14697,8 +15695,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14734,8 +15737,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14766,8 +15774,13 @@ public class GameControl : MonoBehaviour {
                     else if (detect == 3)
                         Reduce = 88000;
                     ReduceSum(7, Reduce, own);
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14803,8 +15816,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14840,8 +15858,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14877,8 +15900,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14914,8 +15942,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -14984,8 +16017,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -15021,8 +16059,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -15058,8 +16101,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -15095,8 +16143,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
 
@@ -15132,8 +16185,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X7 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player7.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
@@ -15500,8 +16558,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[2].transform.position)
@@ -15536,8 +16599,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[3].transform.position)
@@ -15572,8 +16640,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[4].transform.position)
@@ -15608,8 +16681,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[5].transform.position)
@@ -15644,8 +16722,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[7].transform.position)
@@ -15680,8 +16763,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[8].transform.position)
@@ -15716,8 +16804,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[9].transform.position)
@@ -15752,8 +16845,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[10].transform.position)
@@ -15820,8 +16918,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[13].transform.position)
@@ -15856,8 +16959,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[14].transform.position)
@@ -15892,8 +17000,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[15].transform.position)
@@ -15928,8 +17041,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[16].transform.position)
@@ -15964,8 +17082,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[17].transform.position)
@@ -16000,8 +17123,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[19].transform.position)
@@ -16036,8 +17164,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[20].transform.position)
@@ -16072,8 +17205,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[21].transform.position)
@@ -16140,8 +17278,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[23].transform.position)
@@ -16176,8 +17319,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[24].transform.position)
@@ -16212,8 +17360,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[26].transform.position)
@@ -16248,8 +17401,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[27].transform.position)
@@ -16284,8 +17442,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[28].transform.position)
@@ -16320,8 +17483,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[29].transform.position)
@@ -16356,8 +17524,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[30].transform.position)
@@ -16439,8 +17612,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[32].transform.position)
@@ -16475,8 +17653,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[33].transform.position)
@@ -16511,8 +17694,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[34].transform.position)
@@ -16547,8 +17735,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[36].transform.position)
@@ -16583,8 +17776,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[37].transform.position)
@@ -16619,8 +17817,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[38].transform.position)
@@ -16687,8 +17890,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[40].transform.position)
@@ -16723,8 +17931,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[42].transform.position)
@@ -16759,8 +17972,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[43].transform.position)
@@ -16795,8 +18013,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[44].transform.position)
@@ -16831,8 +18054,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[47].transform.position)
@@ -16867,8 +18095,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[48].transform.position)
@@ -16903,8 +18136,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[49].transform.position)
@@ -16939,8 +18177,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[50].transform.position)
@@ -17007,8 +18250,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[52].transform.position)
@@ -17043,8 +18291,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[55].transform.position)
@@ -17079,8 +18332,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[56].transform.position)
@@ -17115,8 +18373,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[57].transform.position)
@@ -17151,8 +18414,13 @@ public class GameControl : MonoBehaviour {
                     }
                     else
                         X8 = 0;
-                    dropButton.interactable = true;
-                    camMain();
+                    if (own != 0 && own != 1 && own != 2 && getMidAndRichBuilding == 1)
+                        ImageForBuyOtherHouse.gameObject.SetActive(true);
+                    else
+                    {
+                        dropButton.interactable = true;
+                        camMain();
+                    }
                 }
             }
             else if (player8.GetComponent<FollowThePath>().transform.position == waypoints[58].transform.position)
@@ -44475,7 +45743,6 @@ public class GameControl : MonoBehaviour {
             do
             {
                 rangeRadomNum = Random.Range(1, 42);
-            } while (rangeRadomNum == getRangeNum);
             } while (rangeRadomNum == getRangeNum);
             getRangeNum = rangeRadomNum;
             if (getRangeNum == 1)
