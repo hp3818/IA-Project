@@ -83,7 +83,8 @@ public class GameControl : MonoBehaviour {
     public static int X1 = 0, X2 = 0, X3 = 0, X4 = 0, X5 = 0, X6 = 0, X7 = 0, X8 = 0;
     public Button choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8;
     public Button choiceH1, choiceH2, choiceH3, choicdH4, choiceH5, choiceH6, choiceH7, choiceH8;
-    public static GameObject ImageForJailSkill, ImageForHospitalSkill, ImageForMonopoly;
+    public Button choiceI1, choiceI2, ChoiceI3;
+    public static GameObject ImageForJailSkill, ImageForHospitalSkill, ImageForMonopoly, ImageForInvestment;
 
     void Start () {
 
@@ -104,6 +105,8 @@ public class GameControl : MonoBehaviour {
         ImageForHospitalSkill.gameObject.SetActive(false);
         ImageForMonopoly = GameObject.Find("ImageForMonopoly");
         ImageForMonopoly.gameObject.SetActive(false);
+        ImageForInvestment = GameObject.Find("ImageForInvestment");
+        ImageForInvestment.gameObject.SetActive(false);
 
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
@@ -155,6 +158,7 @@ public class GameControl : MonoBehaviour {
             choiceH6.interactable = false;
             choiceH7.interactable = false;
             choiceH8.interactable = false;
+            ChoiceI3.interactable = false;
         }
 
         if(numberOfPlayer == 5)
@@ -177,6 +181,7 @@ public class GameControl : MonoBehaviour {
             choiceH3.interactable = false;
             choiceH7.interactable = false;
             choiceH8.interactable = false;
+            ChoiceI3.interactable = false;
         }
 
         if (numberOfPlayer == 6)

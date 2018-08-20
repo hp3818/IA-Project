@@ -286,4 +286,112 @@ public class AllSkillScript : MonoBehaviour {
         DropZone1.doing = 0;
     }
 
+    // All skills for poor
+    public void choiceInvestment1()
+    {
+        HouseSelection.sum1 -= 100000;
+        player1Cost.text = HouseSelection.sum1.ToString();
+        if (DiceNumberTextScript.whosTurn == 3)
+        {
+            HouseSelection.sum3 += 100000;
+            player3Cost.text = HouseSelection.sum3.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 4)
+        {
+            HouseSelection.sum4 += 100000;
+            player4Cost.text = HouseSelection.sum4.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 5)
+        {
+            HouseSelection.sum5 += 100000;
+            player5Cost.text = HouseSelection.sum5.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 6)
+        {
+            HouseSelection.sum6 += 100000;
+            player6Cost.text = HouseSelection.sum6.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 7)
+        {
+            HouseSelection.sum7 += 100000;
+            player7Cost.text = HouseSelection.sum7.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 8)
+        {
+            HouseSelection.sum8 += 100000;
+            player8Cost.text = HouseSelection.sum8.ToString();
+        }
+        DropZone1.doing = 0;
+    }
+
+    public void choiceInvestment2()
+    {
+        HouseSelection.sum2 -= 100000;
+        player2Cost.text = HouseSelection.sum2.ToString();
+        if (DiceNumberTextScript.whosTurn == 3)
+        {
+            HouseSelection.sum3 += 100000;
+            player3Cost.text = HouseSelection.sum3.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 4)
+        {
+            HouseSelection.sum4 += 100000;
+            player4Cost.text = HouseSelection.sum4.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 5)
+        {
+            HouseSelection.sum5 += 100000;
+            player5Cost.text = HouseSelection.sum5.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 6)
+        {
+            HouseSelection.sum6 += 100000;
+            player6Cost.text = HouseSelection.sum6.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 7)
+        {
+            HouseSelection.sum7 += 100000;
+            player7Cost.text = HouseSelection.sum7.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 8)
+        {
+            HouseSelection.sum8 += 100000;
+            player8Cost.text = HouseSelection.sum8.ToString();
+        }
+        DropZone1.doing = 0;
+    }
+
+    public void choiceInvestment3()
+    {
+        HouseSelection.sum3 -= 100000;
+        player3Cost.text = HouseSelection.sum3.ToString();
+
+        if (DiceNumberTextScript.whosTurn == 4)
+        {
+            HouseSelection.sum4 += 100000;
+            player4Cost.text = HouseSelection.sum4.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 5)
+        {
+            HouseSelection.sum5 += 100000;
+            player5Cost.text = HouseSelection.sum5.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 6)
+        {
+            HouseSelection.sum6 += 100000;
+            player6Cost.text = HouseSelection.sum6.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 7)
+        {
+            HouseSelection.sum7 += 100000;
+            player7Cost.text = HouseSelection.sum7.ToString();
+        }
+        if (DiceNumberTextScript.whosTurn == 8)
+        {
+            HouseSelection.sum8 += 100000;
+            player8Cost.text = HouseSelection.sum8.ToString();
+        }
+        DropZone1.doing = 0;
+    }
+
 }

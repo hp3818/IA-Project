@@ -130,7 +130,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -152,7 +153,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -174,7 +176,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -196,7 +199,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -218,7 +222,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -307,7 +312,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -329,7 +335,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -351,7 +358,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -373,7 +381,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -395,7 +404,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -484,7 +494,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -506,7 +517,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -528,7 +540,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -550,7 +563,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -572,7 +586,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -661,7 +676,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -683,7 +699,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -705,7 +722,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -727,7 +745,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -749,7 +768,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -838,7 +858,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -860,7 +881,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -882,7 +904,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -904,7 +927,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
@@ -926,7 +950,8 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "上級借款")
                 {
-
+                    DropZone1.doing = 1;
+                    GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
                 if (skillName1.text == "共產主義")
                 {
