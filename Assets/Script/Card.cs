@@ -14,6 +14,7 @@ public class Card : MonoBehaviour {
     public Text skillName1, skillName2, skillName3, skillName4, skillName5;
     public Button dropButton;
     public static int show = 0;
+    public Text player1Cost, player2Cost, player3Cost, player4Cost, player5Cost, player6Cost, player7Cost, player8Cost;
 
     void Start()
     {
@@ -135,7 +136,80 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "共產主義")
                 {
-
+                    if (GameControl.numberOfPlayer == 4)
+                    {
+                        if (DiceNumberTextScript.whosTurn == 3 || DiceNumberTextScript.whosTurn == 4)
+                        {
+                            double sum = HouseSelection.sum3 + HouseSelection.sum4;
+                            double average = sum / 2;
+                            HouseSelection.sum3 = average;
+                            HouseSelection.sum4 = average;
+                            player3Cost.text = HouseSelection.sum3.ToString();
+                            player4Cost.text = HouseSelection.sum4.ToString();
+                        }
+                    }
+                    if (GameControl.numberOfPlayer == 5)
+                    {
+                        if (DiceNumberTextScript.whosTurn == 3 || DiceNumberTextScript.whosTurn == 4 || DiceNumberTextScript.whosTurn == 5)
+                        {
+                            double sum = HouseSelection.sum3 + HouseSelection.sum4 + HouseSelection.sum5;
+                            double average = sum / 3;
+                            HouseSelection.sum3 = average;
+                            HouseSelection.sum4 = average;
+                            HouseSelection.sum5 = average;
+                            player3Cost.text = HouseSelection.sum3.ToString();
+                            player4Cost.text = HouseSelection.sum4.ToString();
+                            player5Cost.text = HouseSelection.sum5.ToString();
+                        }
+                    }
+                    if (GameControl.numberOfPlayer == 6)
+                    {
+                        if (DiceNumberTextScript.whosTurn == 4 || DiceNumberTextScript.whosTurn == 5 || DiceNumberTextScript.whosTurn ==6)
+                        {
+                            double sum = HouseSelection.sum4 + HouseSelection.sum5 + HouseSelection.sum6;
+                            double average = sum / 3;
+                            HouseSelection.sum4 = average;
+                            HouseSelection.sum5 = average;
+                            HouseSelection.sum6 = average;
+                            player4Cost.text = HouseSelection.sum4.ToString();
+                            player5Cost.text = HouseSelection.sum5.ToString();
+                            player6Cost.text = HouseSelection.sum6.ToString();
+                        }
+                    }
+                    if (GameControl.numberOfPlayer == 7)
+                    {
+                        if (DiceNumberTextScript.whosTurn == 4 || DiceNumberTextScript.whosTurn == 5 || DiceNumberTextScript.whosTurn == 6 || DiceNumberTextScript.whosTurn == 7)
+                        {
+                            double sum = HouseSelection.sum4 + HouseSelection.sum5 + HouseSelection.sum6 + HouseSelection.sum7;
+                            double average = sum / 4;
+                            HouseSelection.sum4 = average;
+                            HouseSelection.sum5 = average;
+                            HouseSelection.sum6 = average;
+                            HouseSelection.sum7 = average;
+                            player4Cost.text = HouseSelection.sum4.ToString();
+                            player5Cost.text = HouseSelection.sum5.ToString();
+                            player6Cost.text = HouseSelection.sum6.ToString();
+                            player7Cost.text = HouseSelection.sum7.ToString();
+                        }
+                    }
+                    if (GameControl.numberOfPlayer == 8)
+                    {
+                        if (DiceNumberTextScript.whosTurn == 4 || DiceNumberTextScript.whosTurn == 5 || DiceNumberTextScript.whosTurn == 6 || DiceNumberTextScript.whosTurn == 7 || DiceNumberTextScript.whosTurn == 8)
+                        {
+                            double sum = HouseSelection.sum4 + HouseSelection.sum5 + HouseSelection.sum6 + HouseSelection.sum7 + HouseSelection.sum8;
+                            double average = sum / 5;
+                            HouseSelection.sum4 = average;
+                            HouseSelection.sum5 = average;
+                            HouseSelection.sum6 = average;
+                            HouseSelection.sum7 = average;
+                            HouseSelection.sum8 = average;
+                            player4Cost.text = HouseSelection.sum4.ToString();
+                            player5Cost.text = HouseSelection.sum5.ToString();
+                            player6Cost.text = HouseSelection.sum6.ToString();
+                            player7Cost.text = HouseSelection.sum7.ToString();
+                            player8Cost.text = HouseSelection.sum8.ToString();
+                        }
+                    }
                 }
                 if (skillName1.text == "神之救濟")
                 {
