@@ -119,6 +119,26 @@ public class Card : MonoBehaviour {
                         DiceNumberTextScript.challengeRule = 1;
                     }
                 }
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (skillName1.text == "接收物業(低)")
+                    {
+                        GameControl.getMidAndRichBuilding = 1;
+                    }
+                    if (skillName1.text == "上級借款")
+                    {
+                        DropZone1.doing = 1;
+                        GameControl.ImageForInvestment.gameObject.SetActive(true);
+                    }
+                    if (skillName1.text == "共產主義")
+                    {
+                        ShareFunny();
+                    }
+                    if (skillName1.text == "神之救濟")
+                    {
+                        DiceNumberTextScript.godMoney = 1;
+                    }
+                }
             }
             if (DiceNumberTextScript.whosTurn == 4)
             {
@@ -140,7 +160,7 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 5)
@@ -163,7 +183,7 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 6)
@@ -186,7 +206,7 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 7)
@@ -209,7 +229,7 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 8)
@@ -232,7 +252,7 @@ public class Card : MonoBehaviour {
                 }
                 if (skillName1.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
         }
@@ -288,17 +308,37 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide32 = 1;
                 if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
                 {
-                    if (skillName1.text == "接受物業(中)")
+                    if (skillName2.text == "接受物業(中)")
                     {
                         GameControl.getRichBuilding = 1;
                     }
-                    if (skillName1.text == "挑戰節目")
+                    if (skillName2.text == "挑戰節目")
                     {
                         DiceNumberTextScript.challenge = 1;
                     }
-                    if (skillName1.text == "交通規則")
+                    if (skillName2.text == "交通規則")
                     {
                         DiceNumberTextScript.challengeRule = 1;
+                    }
+                }
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (skillName2.text == "接收物業(低)")
+                    {
+                        GameControl.getMidAndRichBuilding = 1;
+                    }
+                    if (skillName2.text == "上級借款")
+                    {
+                        DropZone1.doing = 1;
+                        GameControl.ImageForInvestment.gameObject.SetActive(true);
+                    }
+                    if (skillName2.text == "共產主義")
+                    {
+                        ShareFunny();
+                    }
+                    if (skillName2.text == "神之救濟")
+                    {
+                        DiceNumberTextScript.godMoney = 1;
                     }
                 }
             }
@@ -307,22 +347,22 @@ public class Card : MonoBehaviour {
                 Card2.gameObject.SetActive(false);
                 Card2.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide42 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName2.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName2.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName2.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName2.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 5)
@@ -330,22 +370,22 @@ public class Card : MonoBehaviour {
                 Card2.gameObject.SetActive(false);
                 Card2.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide52 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName2.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName2.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName2.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName2.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 6)
@@ -353,22 +393,22 @@ public class Card : MonoBehaviour {
                 Card2.gameObject.SetActive(false);
                 Card2.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide62 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName2.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName2.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName2.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName2.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 7)
@@ -376,22 +416,22 @@ public class Card : MonoBehaviour {
                 Card2.gameObject.SetActive(false);
                 Card2.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide72 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName2.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName2.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName2.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName2.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 8)
@@ -399,22 +439,22 @@ public class Card : MonoBehaviour {
                 Card2.gameObject.SetActive(false);
                 Card2.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide82 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName2.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName2.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName2.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName2.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
         }
@@ -470,17 +510,37 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide33 = 1;
                 if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
                 {
-                    if (skillName1.text == "接受物業(中)")
+                    if (skillName3.text == "接受物業(中)")
                     {
                         GameControl.getRichBuilding = 1;
                     }
-                    if (skillName1.text == "挑戰節目")
+                    if (skillName3.text == "挑戰節目")
                     {
                         DiceNumberTextScript.challenge = 1;
                     }
-                    if (skillName1.text == "交通規則")
+                    if (skillName3.text == "交通規則")
                     {
                         DiceNumberTextScript.challengeRule = 1;
+                    }
+                }
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (skillName3.text == "接收物業(低)")
+                    {
+                        GameControl.getMidAndRichBuilding = 1;
+                    }
+                    if (skillName3.text == "上級借款")
+                    {
+                        DropZone1.doing = 1;
+                        GameControl.ImageForInvestment.gameObject.SetActive(true);
+                    }
+                    if (skillName3.text == "共產主義")
+                    {
+                        ShareFunny();
+                    }
+                    if (skillName3.text == "神之救濟")
+                    {
+                        DiceNumberTextScript.godMoney = 1;
                     }
                 }
             }
@@ -489,22 +549,22 @@ public class Card : MonoBehaviour {
                 Card3.gameObject.SetActive(false);
                 Card3.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide43 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName3.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName3.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName3.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName3.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 5)
@@ -512,22 +572,22 @@ public class Card : MonoBehaviour {
                 Card3.gameObject.SetActive(false);
                 Card3.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide53 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName3.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName3.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName3.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName3.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 6)
@@ -535,22 +595,22 @@ public class Card : MonoBehaviour {
                 Card3.gameObject.SetActive(false);
                 Card3.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide63 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName3.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName3.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName3.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName3.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 7)
@@ -558,22 +618,22 @@ public class Card : MonoBehaviour {
                 Card3.gameObject.SetActive(false);
                 Card3.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide73 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName3.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName3.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName3.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName3.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 8)
@@ -581,22 +641,22 @@ public class Card : MonoBehaviour {
                 Card3.gameObject.SetActive(false);
                 Card3.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide83 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName3.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName3.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName3.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName3.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
         }
@@ -652,17 +712,37 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide34 = 1;
                 if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
                 {
-                    if (skillName1.text == "接受物業(中)")
+                    if (skillName4.text == "接受物業(中)")
                     {
                         GameControl.getRichBuilding = 1;
                     }
-                    if (skillName1.text == "挑戰節目")
+                    if (skillName4.text == "挑戰節目")
                     {
                         DiceNumberTextScript.challenge = 1;
                     }
-                    if (skillName1.text == "交通規則")
+                    if (skillName4.text == "交通規則")
                     {
                         DiceNumberTextScript.challengeRule = 1;
+                    }
+                }
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (skillName4.text == "接收物業(低)")
+                    {
+                        GameControl.getMidAndRichBuilding = 1;
+                    }
+                    if (skillName4.text == "上級借款")
+                    {
+                        DropZone1.doing = 1;
+                        GameControl.ImageForInvestment.gameObject.SetActive(true);
+                    }
+                    if (skillName4.text == "共產主義")
+                    {
+                        ShareFunny();
+                    }
+                    if (skillName4.text == "神之救濟")
+                    {
+                        DiceNumberTextScript.godMoney = 1;
                     }
                 }
             }
@@ -671,22 +751,22 @@ public class Card : MonoBehaviour {
                 Card4.gameObject.SetActive(false);
                 Card4.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide44 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName4.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName4.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName4.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName4.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 5)
@@ -694,22 +774,22 @@ public class Card : MonoBehaviour {
                 Card4.gameObject.SetActive(false);
                 Card4.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide54 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName4.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName4.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName4.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName4.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 6)
@@ -717,22 +797,22 @@ public class Card : MonoBehaviour {
                 Card4.gameObject.SetActive(false);
                 Card4.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide64 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName4.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName4.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName4.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName4.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 7)
@@ -740,22 +820,22 @@ public class Card : MonoBehaviour {
                 Card4.gameObject.SetActive(false);
                 Card4.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide74 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName4.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName4.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName4.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName4.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 8)
@@ -763,22 +843,22 @@ public class Card : MonoBehaviour {
                 Card4.gameObject.SetActive(false);
                 Card4.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide84 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName4.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName4.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName4.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName4.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
         }
@@ -834,17 +914,37 @@ public class Card : MonoBehaviour {
                 DiceNumberTextScript.hide35 = 1;
                 if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
                 {
-                    if (skillName1.text == "接受物業(中)")
+                    if (skillName5.text == "接受物業(中)")
                     {
                         GameControl.getRichBuilding = 1;
                     }
-                    if (skillName1.text == "挑戰節目")
+                    if (skillName5.text == "挑戰節目")
                     {
                         DiceNumberTextScript.challenge = 1;
                     }
-                    if (skillName1.text == "交通規則")
+                    if (skillName5.text == "交通規則")
                     {
                         DiceNumberTextScript.challengeRule = 1;
+                    }
+                }
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+                {
+                    if (skillName5.text == "接收物業(低)")
+                    {
+                        GameControl.getMidAndRichBuilding = 1;
+                    }
+                    if (skillName5.text == "上級借款")
+                    {
+                        DropZone1.doing = 1;
+                        GameControl.ImageForInvestment.gameObject.SetActive(true);
+                    }
+                    if (skillName5.text == "共產主義")
+                    {
+                        ShareFunny();
+                    }
+                    if (skillName5.text == "神之救濟")
+                    {
+                        DiceNumberTextScript.godMoney = 1;
                     }
                 }
             }
@@ -853,22 +953,22 @@ public class Card : MonoBehaviour {
                 Card5.gameObject.SetActive(false);
                 Card5.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide45 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName5.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName5.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName5.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName5.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 5)
@@ -876,22 +976,22 @@ public class Card : MonoBehaviour {
                 Card5.gameObject.SetActive(false);
                 Card5.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide55 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName5.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName5.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName5.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName5.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 6)
@@ -899,22 +999,22 @@ public class Card : MonoBehaviour {
                 Card5.gameObject.SetActive(false);
                 Card5.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide65 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName5.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName5.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName5.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName5.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 7)
@@ -922,22 +1022,22 @@ public class Card : MonoBehaviour {
                 Card5.gameObject.SetActive(false);
                 Card5.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide75 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName5.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName5.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName5.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName5.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
             if (DiceNumberTextScript.whosTurn == 8)
@@ -945,22 +1045,22 @@ public class Card : MonoBehaviour {
                 Card5.gameObject.SetActive(false);
                 Card5.transform.parent = dropzone.transform;
                 DiceNumberTextScript.hide85 = 1;
-                if (skillName1.text == "接收物業(低)")
+                if (skillName5.text == "接收物業(低)")
                 {
                     GameControl.getMidAndRichBuilding = 1;
                 }
-                if (skillName1.text == "上級借款")
+                if (skillName5.text == "上級借款")
                 {
                     DropZone1.doing = 1;
                     GameControl.ImageForInvestment.gameObject.SetActive(true);
                 }
-                if (skillName1.text == "共產主義")
+                if (skillName5.text == "共產主義")
                 {
                     ShareFunny();
                 }
-                if (skillName1.text == "神之救濟")
+                if (skillName5.text == "神之救濟")
                 {
-
+                    DiceNumberTextScript.godMoney = 1;
                 }
             }
         }
