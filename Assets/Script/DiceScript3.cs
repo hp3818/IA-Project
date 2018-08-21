@@ -24,7 +24,8 @@ public class DiceScript3 : MonoBehaviour {
 			transform.rotation = Quaternion.identity;
 			rb.AddForce (transform.up * 500);
 			rb.AddTorque (dirX, dirY, dirZ);
-			Vaild = 0;
+            oneDice.OneDice();
+            Vaild = 0;
 		}
 
 	}

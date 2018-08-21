@@ -33,5 +33,6 @@ public class Bgm : MonoBehaviour
         else if (TitleHead.i == 1)
             AudioListener.volume = 1;
     }
+
 }
 

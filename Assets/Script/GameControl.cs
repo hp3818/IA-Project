@@ -35,7 +35,7 @@ public class GameControl : MonoBehaviour {
     public static int getRichBuilding = 0, getMidAndRichBuilding = 0;
     public static int whoTurn;
     public Button dropButton;
-    public static int numberOfPlayer = 4;
+    public static int numberOfPlayer;
     public Camera[] camera;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
