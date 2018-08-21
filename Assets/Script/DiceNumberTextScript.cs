@@ -44,6 +44,7 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public static GameObject Card1, Card2, Card3, Card4, Card5;
     GameControl instanceOfB;
+    public static int godMoney = 0;
 
     public static int OK = 1;
     public static int whosTurn = 1;
@@ -116,51 +117,55 @@ public class DiceNumberTextScript : MonoBehaviour
         if (!runOnce && sum != 0)
         {
             Moving();
-            if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
+            if (godMoney == 1)
             {
-                if (whosTurn == 3)
+                if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
                 {
-                    HouseSelection.sum3 += (sum * 5000);
-                    player3Cost.text = HouseSelection.sum3.ToString();
+                    if (whosTurn == 3)
+                    {
+                        HouseSelection.sum3 += (sum * 5000);
+                        player3Cost.text = HouseSelection.sum3.ToString();
+                    }
+                    if (whosTurn == 4)
+                    {
+                        HouseSelection.sum4 += (sum * 5000);
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (whosTurn == 5)
+                    {
+                        HouseSelection.sum5 += (sum * 5000);
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
                 }
-                if (whosTurn == 4)
+                if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
                 {
-                    HouseSelection.sum4 += (sum * 5000);
-                    player4Cost.text = HouseSelection.sum4.ToString();
+                    if (whosTurn == 4)
+                    {
+                        HouseSelection.sum4 += (sum * 5000);
+                        player4Cost.text = HouseSelection.sum4.ToString();
+                    }
+                    if (whosTurn == 5)
+                    {
+                        HouseSelection.sum5 += (sum * 5000);
+                        player5Cost.text = HouseSelection.sum5.ToString();
+                    }
+                    if (whosTurn == 6)
+                    {
+                        HouseSelection.sum6 += (sum * 5000);
+                        player6Cost.text = HouseSelection.sum6.ToString();
+                    }
+                    if (whosTurn == 7)
+                    {
+                        HouseSelection.sum7 += (sum * 5000);
+                        player7Cost.text = HouseSelection.sum7.ToString();
+                    }
+                    if (whosTurn == 8)
+                    {
+                        HouseSelection.sum8 += (sum * 5000);
+                        player8Cost.text = HouseSelection.sum8.ToString();
+                    }
                 }
-                if (whosTurn == 5)
-                {
-                    HouseSelection.sum5 += (sum * 5000);
-                    player5Cost.text = HouseSelection.sum5.ToString();
-                }
-            }
-            if (GameControl.numberOfPlayer == 6 || GameControl.numberOfPlayer == 7 || GameControl.numberOfPlayer == 8)
-            {
-                if (whosTurn == 4)
-                {
-                    HouseSelection.sum4 += (sum * 5000);
-                    player4Cost.text = HouseSelection.sum4.ToString();
-                }
-                if (whosTurn == 5)
-                {
-                    HouseSelection.sum5 += (sum * 5000);
-                    player5Cost.text = HouseSelection.sum5.ToString();
-                }
-                if (whosTurn == 6)
-                {
-                    HouseSelection.sum6 += (sum * 5000);
-                    player6Cost.text = HouseSelection.sum6.ToString();
-                }
-                if (whosTurn == 7)
-                {
-                    HouseSelection.sum7 += (sum * 5000);
-                    player7Cost.text = HouseSelection.sum7.ToString();
-                }
-                if (whosTurn == 8)
-                {
-                    HouseSelection.sum8 += (sum * 5000);
-                    player8Cost.text = HouseSelection.sum8.ToString();
-                }
+                godMoney = 0;
             }
             stop = 1;
         }
