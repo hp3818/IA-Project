@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class DiceNumberTextScript : MonoBehaviour
 {
 
+    public static int gameOver1 = 0, gameOver2 = 0, gameOver3 = 0, gameOver4 = 0, gameOver5 = 0, gameOver6 = 0, gameOver7 = 0, gameOver8 = 0, gameOver = 0;
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public static GameObject dice1, dice2, dice3;
     public Transform[] waypoints;
-    public Text JailTurn; public Text RoundText; public static int round = 0; public static float i = 0;
+    public Text JailTurn; public Text RoundText; public static int round = 0; public static float i = 0; public static float j = 0;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
     public static GameObject ImageForBuyOtherHouse;
@@ -53,12 +54,15 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public static bool runOnce = false;
     public static int Redrop = 0;
+    public static GameObject ImageForGameOver;
+    public Text winner;
 
     public CardAnimation CA;
 
     public void Start()
     {
-
+        ImageForGameOver = GameObject.Find("ImageForGameOver");
+        ImageForGameOver.gameObject.SetActive(false);
         Card1 = GameObject.Find("Card1");
         Card2 = GameObject.Find("Card2");
         Card3 = GameObject.Find("Card3");
@@ -100,11 +104,226 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void Update()
     {
+        if (GameControl.numberOfPlayer == 4)
+        {
+            if ((player1.gameObject.activeSelf == false && player2.gameObject.activeSelf == false))
+            {
+                winner.text = "低層";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if ((player1.gameObject.activeSelf == false && player3.gameObject.activeSelf == false && player4.gameObject.activeSelf == false))
+            {
+                winner.text = "中產";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if ((player2.gameObject.activeSelf == false && player3.gameObject.activeSelf == false && player4.gameObject.activeSelf == false))
+            {
+                winner.text = "富翁";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+        } 
+        if (GameControl.numberOfPlayer == 5)
+        {
+            if ((player1.gameObject.activeSelf == false && player2.gameObject.activeSelf == false))
+            {
+                winner.text = "低層";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if ((player1.gameObject.activeSelf == false && player3.gameObject.activeSelf == false && player4.gameObject.activeSelf == false && player5.gameObject.active == false))
+            {
+                winner.text = "中產";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if ((player2.gameObject.activeSelf == false && player3.gameObject.activeSelf == false && player4.gameObject.activeSelf == false && player5.gameObject.active == false))
+            {
+                winner.text = "富翁";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+        }
+        if (GameControl.numberOfPlayer == 6)
+        {
+            if (player1.gameObject.activeSelf == false && player2.gameObject.activeSelf == false && player3.gameObject.activeSelf == false)
+            {
+                winner.text = "低層";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if (player1.gameObject.activeSelf == false && player4.gameObject.activeSelf == false && player5.gameObject.activeSelf == false && player6.gameObject.activeSelf == false)
+            {
+                winner.text = "中產";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if (player2.gameObject.activeSelf == false && player3.gameObject.activeSelf == false && player4.gameObject.activeSelf == false && player5.gameObject.activeSelf == false && player6.gameObject.activeSelf == false)
+            {
+                winner.text = "富翁";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+        }
+        if (GameControl.numberOfPlayer == 7)
+        {
+            if (player1.gameObject.activeSelf == false && player2.gameObject.activeSelf == false && player3.gameObject.activeSelf == false)
+            {
+                winner.text = "低層";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if (player1.gameObject.activeSelf == false && player4.gameObject.activeSelf == false && player5.gameObject.activeSelf == false && player6.gameObject.activeSelf == false && player7.gameObject.activeSelf == false)
+            {
+                winner.text = "中產";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if (player2.gameObject.activeSelf == false && player3.gameObject.activeSelf == false && player4.gameObject.activeSelf == false && player5.gameObject.activeSelf == false && player6.gameObject.activeSelf == false && player7.gameObject.activeSelf == false)
+            {
+                winner.text = "富翁";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+        }
+        if (GameControl.numberOfPlayer == 8)
+        {
+            if (player1.gameObject.activeSelf == false && player2.gameObject.activeSelf == false && player3.gameObject.activeSelf == false)
+            {
+                winner.text = "低層";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if (player1.gameObject.activeSelf == false && player4.gameObject.activeSelf == false && player5.gameObject.activeSelf == false && player6.gameObject.activeSelf == false && player7.gameObject.activeSelf == false && player8.gameObject.activeSelf == false)
+            {
+                winner.text = "中產";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+            if (player2.gameObject.activeSelf == false && player3.gameObject.activeSelf == false && player4.gameObject.activeSelf == false && player5.gameObject.activeSelf == false && player6.gameObject.activeSelf == false && player7.gameObject.activeSelf == false && player8.gameObject.activeSelf == false)
+            {
+                winner.text = "富翁";
+                ImageForGameOver.gameObject.SetActive(true);
+            }
+        }
+
         if (i / 12 == 1)
         {
             hide11 = 0; hide12 = 0; hide13 = 0; hide14 = 0; hide15 = 0; hide21 = 0; hide22 = 0; hide23 = 0; hide24 = 0; hide25 = 0; hide31 = 0; hide32 = 0; hide33 = 0; hide34 = 0; hide35 = 0; hide41 = 0; hide42 = 0; hide43 = 0; hide44 = 0; hide45 = 0;
             hide51 = 0; hide52 = 0; hide53 = 0; hide54 = 0; hide55 = 0; hide61 = 0; hide62 = 0; hide63 = 0; hide64 = 0; hide65 = 0; hide71 = 0; hide72 = 0; hide73 = 0; hide74 = 0; hide75 = 0; hide81 = 0; hide82 = 0; hide83 = 0; hide84 = 0; hide85 = 0;
             i = 0;
+        }
+
+        if (j / 5 == 1)
+        {
+            if (HouseSelection.sum1 < 50000)
+            {
+                gameOver1 = 1;
+                gameOver++;
+            }
+            if (HouseSelection.sum2 < 50000)
+            {
+                gameOver2 = 1;
+                gameOver++;
+            }
+            if (HouseSelection.sum3 < 50000)
+            {
+                gameOver3 = 1;
+                gameOver++;
+            }
+            if (HouseSelection.sum4 < 50000)
+            {
+                gameOver4 = 1;
+                gameOver++;
+            }
+            if (HouseSelection.sum5 < 50000)
+            {
+                gameOver5 = 1;
+                gameOver++;
+            }
+            if (HouseSelection.sum6 < 50000)
+            {
+                gameOver6 = 1;
+                gameOver++;
+            }
+            if (HouseSelection.sum7 < 50000)
+            {
+                gameOver7 = 1;
+                gameOver++;
+            }
+            if (HouseSelection.sum8 < 50000)
+            {
+                gameOver8 = 1;
+                gameOver++;
+            }
+
+            if (gameOver > 1)
+            {
+                double min = 0; double max = 49999;
+                if (HouseSelection.sum1 <= max)
+                    min = HouseSelection.sum1;
+                if (HouseSelection.sum2 <= min)
+                    min = HouseSelection.sum2;
+                if (HouseSelection.sum3 <= min)
+                    min = HouseSelection.sum3;
+                if (HouseSelection.sum4 <= min)
+                    min = HouseSelection.sum4;
+                if (HouseSelection.sum5 <= min)
+                    min = HouseSelection.sum5;
+                if (HouseSelection.sum6 <= min)
+                    min = HouseSelection.sum6;
+                if (HouseSelection.sum7 <= min)
+                    min = HouseSelection.sum7;
+                if (HouseSelection.sum8 <= min)
+                    min = HouseSelection.sum8;
+
+                if (HouseSelection.sum1 == min)
+                    player1.gameObject.SetActive(false);
+                if (HouseSelection.sum2 == min)
+                    player2.gameObject.SetActive(false);
+                if (HouseSelection.sum3 == min)
+                    player3.gameObject.SetActive(false);
+                if (HouseSelection.sum4 == min)
+                    player4.gameObject.SetActive(false);
+                if (HouseSelection.sum5 == min)
+                    player5.gameObject.SetActive(false);
+                if (HouseSelection.sum6 == min)
+                    player6.gameObject.SetActive(false);
+                if (HouseSelection.sum7 == min)
+                    player7.gameObject.SetActive(false);
+                if (HouseSelection.sum8 == min)
+                    player8.gameObject.SetActive(false);
+
+                min = 0;
+                gameOver = 0;
+            }
+
+            if (gameOver == 1)
+            {
+                if (HouseSelection.sum1 < 50000)
+                {
+                    player1.gameObject.SetActive(false);
+                }
+                if (HouseSelection.sum2 < 50000)
+                {
+                    player2.gameObject.SetActive(false);
+                }
+                if (HouseSelection.sum3 < 50000)
+                {
+                    player3.gameObject.SetActive(false);
+                }
+                if (HouseSelection.sum4 < 50000)
+                {
+                    player4.gameObject.SetActive(false);
+                }
+                if (HouseSelection.sum5 < 50000)
+                {
+                    player5.gameObject.SetActive(false);
+                }
+                if (HouseSelection.sum6 < 50000)
+                {
+                    player6.gameObject.SetActive(false);
+                }
+                if (HouseSelection.sum7 < 50000)
+                {
+                    player7.gameObject.SetActive(false);
+                }
+                if (HouseSelection.sum8 < 50000)
+                {
+                    player8.gameObject.SetActive(false);
+                }
+                gameOver = 0;
+            }
+
+            j = 0;
         }
         
         sum = int.Parse(dice1Number.ToString()) + int.Parse(dice2Number.ToString()) + int.Parse(dice3Number.ToString());
@@ -753,6 +972,7 @@ public class DiceNumberTextScript : MonoBehaviour
         {
             round++;
             i++;
+            j++;
             RoundText.text = round.ToString();
             if (jail1 == 1)
             {
@@ -792,6 +1012,12 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(1);
                 cam1();
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn = 0;
             }
         }
         else if (whosTurn == 2)
@@ -861,6 +1087,12 @@ public class DiceNumberTextScript : MonoBehaviour
                     }
                     GameControl.MovePlayer(2);
                     cam2();
+                    if (player3.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player4.gameObject.activeSelf == false)
+                        whosTurn = 0;
+                    if (player1.gameObject.activeSelf == false)
+                        whosTurn ++;
                 }
             }
         }
@@ -908,6 +1140,12 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(3);
                 cam3();
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 4)
@@ -953,7 +1191,12 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(4);
                 cam4();
-                whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn = 1;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
     }
@@ -962,6 +1205,7 @@ public class DiceNumberTextScript : MonoBehaviour
     {
         round++;
         i++;
+        j++;
         RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
@@ -1003,6 +1247,14 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(1);
                 cam1();
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn = 0;
             }
         }
         else if (whosTurn == 2)
@@ -1072,6 +1324,14 @@ public class DiceNumberTextScript : MonoBehaviour
                     }
                     GameControl.MovePlayer(2);
                     cam2();
+                    if (player3.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player4.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player5.gameObject.activeSelf == false)
+                        whosTurn = 0;
+                    if (player1.gameObject.activeSelf == false)
+                        whosTurn++;
                 }
             }
         }
@@ -1115,6 +1375,14 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(3);
                 cam3();
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 4)
@@ -1157,6 +1425,14 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(4);
                 cam4();
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 5)
@@ -1202,7 +1478,14 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(5);
                 cam5();
-                whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
 
@@ -1212,6 +1495,7 @@ public class DiceNumberTextScript : MonoBehaviour
     {
         round++;
         i++;
+        j++;
         RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
@@ -1253,6 +1537,16 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(1);
                 cam1();
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn = 0;
             }
         }
         else if (whosTurn == 2)
@@ -1322,6 +1616,16 @@ public class DiceNumberTextScript : MonoBehaviour
                     }
                     GameControl.MovePlayer(2);
                     cam2();
+                    if (player3.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player4.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player5.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player6.gameObject.activeSelf == false)
+                        whosTurn = 0;
+                    if (player1.gameObject.activeSelf == false)
+                        whosTurn++;
                 }
             }
         }
@@ -1392,6 +1696,16 @@ public class DiceNumberTextScript : MonoBehaviour
                     }
                     GameControl.MovePlayer(3);
                     cam3();
+                    if (player4.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player5.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player6.gameObject.activeSelf == false)
+                        whosTurn = 0;
+                    if (player1.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player2.gameObject.activeSelf == false)
+                        whosTurn++;
                 }
             }
         }
@@ -1435,6 +1749,16 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(4);
                 cam4();
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 5)
@@ -1477,6 +1801,16 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(5);
                 cam5();
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn= 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 6)
@@ -1522,7 +1856,16 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(6);
                 cam6();
-                whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
 
@@ -1532,6 +1875,7 @@ public class DiceNumberTextScript : MonoBehaviour
     {
         round++;
         i++;
+        j++;
         RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
@@ -1573,6 +1917,18 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(1);
                 cam1();
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn = 0;
             }
         }
         else if (whosTurn == 2)
@@ -1643,6 +1999,18 @@ public class DiceNumberTextScript : MonoBehaviour
                     }
                     GameControl.MovePlayer(2);
                     cam2();
+                    if (player3.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player4.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player5.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player6.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player7.gameObject.activeSelf == false)
+                        whosTurn = 0;
+                    if (player1.gameObject.activeSelf == false)
+                        whosTurn++;
                 }
             }
         }
@@ -1711,8 +2079,20 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         StartCoroutine(TemporarilyDeactivate4(2));
                     }
-                    GameControl.MovePlayer(2);
-                    cam2();
+                    GameControl.MovePlayer(3);
+                    cam3();
+                    if (player4.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player5.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player6.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player7.gameObject.activeSelf == false)
+                        whosTurn = 0;
+                    if (player1.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player2.gameObject.activeSelf == false)
+                        whosTurn++;
                 }
             }
         }
@@ -1756,6 +2136,18 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(4);
                 cam4();
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 5)
@@ -1798,6 +2190,18 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(5);
                 cam5();
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 6)
@@ -1841,6 +2245,18 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(6);
                 cam6();
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 7)
@@ -1886,7 +2302,18 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(7);
                 cam7();
-                whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
     }
@@ -1895,6 +2322,7 @@ public class DiceNumberTextScript : MonoBehaviour
     {
         round++;
         i++;
+        j++;
         RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
@@ -1936,6 +2364,20 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(1);
                 cam1();
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player8.gameObject.activeSelf == false)
+                    whosTurn = 0;
             }
         }
         else if (whosTurn == 2)
@@ -2005,6 +2447,20 @@ public class DiceNumberTextScript : MonoBehaviour
                     }
                     GameControl.MovePlayer(2);
                     cam2();
+                    if (player3.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player4.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player5.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player6.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player7.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player8.gameObject.activeSelf == false)
+                        whosTurn = 0;
+                    if (player1.gameObject.activeSelf == false)
+                        whosTurn++;
                 }
             }
         }
@@ -2075,6 +2531,20 @@ public class DiceNumberTextScript : MonoBehaviour
                     }
                     GameControl.MovePlayer(3);
                     cam3();
+                    if (player4.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player5.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player6.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player7.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player8.gameObject.activeSelf == false)
+                        whosTurn = 0;
+                    if (player1.gameObject.activeSelf == false)
+                        whosTurn++;
+                    if (player2.gameObject.activeSelf == false)
+                        whosTurn++;
                 }
             }
         }
@@ -2118,6 +2588,20 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(4);
                 cam4();
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player8.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 5)
@@ -2160,6 +2644,20 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(5);
                 cam5();
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player8.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 6)
@@ -2203,6 +2701,20 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(6);
                 cam6();
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player8.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 7)
@@ -2246,6 +2758,20 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(7);
                 cam7();
+                if (player8.gameObject.activeSelf == false)
+                    whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
         else if (whosTurn == 8)
@@ -2291,7 +2817,20 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(8);
                 cam8();
-                whosTurn = 0;
+                if (player1.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player2.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player3.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player4.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player5.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player6.gameObject.activeSelf == false)
+                    whosTurn++;
+                if (player7.gameObject.activeSelf == false)
+                    whosTurn++;
             }
         }
     }
