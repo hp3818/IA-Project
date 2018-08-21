@@ -9,7 +9,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public static GameObject dice1, dice2, dice3;
     public Transform[] waypoints;
-    public Text JailTurn; public Text RoundText; public static int round = 0;
+    public Text JailTurn; public Text RoundText; public static int round = 0; public static float i = 0;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
     public static GameObject ImageForBuyOtherHouse;
@@ -100,6 +100,12 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void Update()
     {
+        if (i / 12 == 1)
+        {
+            hide11 = 0; hide12 = 0; hide13 = 0; hide14 = 0; hide15 = 0; hide21 = 0; hide22 = 0; hide23 = 0; hide24 = 0; hide25 = 0; hide31 = 0; hide32 = 0; hide33 = 0; hide34 = 0; hide35 = 0; hide41 = 0; hide42 = 0; hide43 = 0; hide44 = 0; hide45 = 0;
+            hide51 = 0; hide52 = 0; hide53 = 0; hide54 = 0; hide55 = 0; hide61 = 0; hide62 = 0; hide63 = 0; hide64 = 0; hide65 = 0; hide71 = 0; hide72 = 0; hide73 = 0; hide74 = 0; hide75 = 0; hide81 = 0; hide82 = 0; hide83 = 0; hide84 = 0; hide85 = 0;
+            i = 0;
+        }
         
         sum = int.Parse(dice1Number.ToString()) + int.Parse(dice2Number.ToString()) + int.Parse(dice3Number.ToString());
         text.text = sum.ToString();
@@ -746,6 +752,7 @@ public class DiceNumberTextScript : MonoBehaviour
         if (whosTurn == 1)
         {
             round++;
+            i++;
             RoundText.text = round.ToString();
             if (jail1 == 1)
             {
@@ -954,6 +961,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public void FivePeople()
     {
         round++;
+        i++;
         RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
@@ -1203,6 +1211,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public void SixPeople()
     {
         round++;
+        i++;
         RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
@@ -1522,6 +1531,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public void SevenPeople()
     {
         round++;
+        i++;
         RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
@@ -1884,6 +1894,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public void EightPeople()
     {
         round++;
+        i++;
         RoundText.text = round.ToString();
         if (whosTurn == 1)
         {
