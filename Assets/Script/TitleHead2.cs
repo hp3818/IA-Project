@@ -34,7 +34,6 @@ public class TitleHead2 : MonoBehaviour
         {
             i = 0;
             bgmText.text = "開啟音量";
-
         }
         else if (i == 0)
         {

@@ -24,7 +24,7 @@ public class TitleHead : MonoBehaviour {
     {
         if (Input.touchCount == 1)
         {
-            SceneManager.LoadScene("GameMode");
+            SceneManager.LoadScene("Player selection");
         }
     }
 

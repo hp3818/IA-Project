@@ -28,9 +28,9 @@ public class Bgm : MonoBehaviour
 
     void Update()
     {
-        if (TitleHead.i == 0)
+        if (TitleHead2.i == 0)
             AudioListener.volume = 0;
-        else if (TitleHead.i == 1)
+        else if (TitleHead2.i == 1)
             AudioListener.volume = 1;
     }
 

@@ -6,13 +6,6 @@ using UnityEngine.UI;
 
 public class MoveToTitle : MonoBehaviour {
 
-    public Button online;
-
-    void Start()
-    {
-        online.interactable = false;
-    }
-
 	public void Clicked()
     {
         SceneManager.LoadScene("Title");
