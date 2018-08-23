@@ -35,7 +35,7 @@ public class GameControl : MonoBehaviour {
     public static int getRichBuilding = 0, getMidAndRichBuilding = 0;
     public static int whoTurn;
     public Button dropButton;
-    public static int numberOfPlayer;
+    public static int numberOfPlayer = 4;
     public Camera[] camera;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
@@ -44,6 +44,8 @@ public class GameControl : MonoBehaviour {
 
     public static GameObject player1, player2, player3, player4, player5, player6, player7, player8;
     public GameObject ImageForJail;
+
+    public static GameObject ImageForPlayer1, ImageForPlayer2, ImageForPlayer3, ImageForPlayer4, ImageForPlayer5, ImageForPlayer6, ImageForPlayer7, ImageForPlayer8;
 
     public static int diceSide1Thrown = 0;
     public static int diceSide2Thrown = 0;
@@ -87,6 +89,23 @@ public class GameControl : MonoBehaviour {
     public static GameObject ImageForJailSkill, ImageForHospitalSkill, ImageForMonopoly, ImageForInvestment;
 
     void Start () {
+
+        ImageForPlayer1 = GameObject.Find("ImageForPlayer1");
+        ImageForPlayer2 = GameObject.Find("ImageForPlayer2");
+        ImageForPlayer3 = GameObject.Find("ImageForPlayer3");
+        ImageForPlayer4 = GameObject.Find("ImageForPlayer4");
+        ImageForPlayer5 = GameObject.Find("ImageForPlayer5");
+        ImageForPlayer6 = GameObject.Find("ImageForPlayer6");
+        ImageForPlayer7 = GameObject.Find("ImageForPlayer7");
+        ImageForPlayer8 = GameObject.Find("ImageForPlayer8");
+        ImageForPlayer1.gameObject.SetActive(false);
+        ImageForPlayer2.gameObject.SetActive(false);
+        ImageForPlayer3.gameObject.SetActive(false);
+        ImageForPlayer4.gameObject.SetActive(false);
+        ImageForPlayer5.gameObject.SetActive(false);
+        ImageForPlayer6.gameObject.SetActive(false);
+        ImageForPlayer7.gameObject.SetActive(false);
+        ImageForPlayer8.gameObject.SetActive(false);
 
         payMoney.interactable = false;
 
@@ -148,8 +167,8 @@ public class GameControl : MonoBehaviour {
             player6Cost.gameObject.SetActive(false);
             player7Cost.gameObject.SetActive(false);
             player8Cost.gameObject.SetActive(false);
-            text3.text = "低層1";
-            text4.text = "低層2";
+            text3.text = "低層1:";
+            text4.text = "低層2:";
             choice3.interactable = false;
             choice6.interactable = false;
             choice7.interactable = false;
@@ -159,6 +178,10 @@ public class GameControl : MonoBehaviour {
             choiceH7.interactable = false;
             choiceH8.interactable = false;
             ChoiceI3.interactable = false;
+            ImageForPlayer1.gameObject.SetActive(true);
+            ImageForPlayer2.gameObject.SetActive(true);
+            ImageForPlayer3.gameObject.SetActive(true);
+            ImageForPlayer4.gameObject.SetActive(true);
         }
 
         if(numberOfPlayer == 5)
@@ -182,6 +205,11 @@ public class GameControl : MonoBehaviour {
             choiceH7.interactable = false;
             choiceH8.interactable = false;
             ChoiceI3.interactable = false;
+            ImageForPlayer1.gameObject.SetActive(true);
+            ImageForPlayer2.gameObject.SetActive(true);
+            ImageForPlayer3.gameObject.SetActive(true);
+            ImageForPlayer4.gameObject.SetActive(true);
+            ImageForPlayer5.gameObject.SetActive(true);
         }
 
         if (numberOfPlayer == 6)
@@ -200,6 +228,12 @@ public class GameControl : MonoBehaviour {
             choice8.interactable = false;
             choiceH7.interactable = false;
             choiceH8.interactable = false;
+            ImageForPlayer1.gameObject.SetActive(true);
+            ImageForPlayer2.gameObject.SetActive(true);
+            ImageForPlayer3.gameObject.SetActive(true);
+            ImageForPlayer4.gameObject.SetActive(true);
+            ImageForPlayer5.gameObject.SetActive(true);
+            ImageForPlayer6.gameObject.SetActive(true);
         }
 
         if (numberOfPlayer == 7)
@@ -214,6 +248,13 @@ public class GameControl : MonoBehaviour {
             text7.text = "低層4";
             choice8.gameObject.SetActive(false);
             choiceH8.gameObject.SetActive(false);
+            ImageForPlayer1.gameObject.SetActive(true);
+            ImageForPlayer2.gameObject.SetActive(true);
+            ImageForPlayer3.gameObject.SetActive(true);
+            ImageForPlayer4.gameObject.SetActive(true);
+            ImageForPlayer5.gameObject.SetActive(true);
+            ImageForPlayer6.gameObject.SetActive(true);
+            ImageForPlayer7.gameObject.SetActive(true);
         }
         
         if (numberOfPlayer == 8)
@@ -224,6 +265,14 @@ public class GameControl : MonoBehaviour {
             text6.text = "低層3";
             text7.text = "低層4";
             text8.text = "低層5";
+            ImageForPlayer1.gameObject.SetActive(true);
+            ImageForPlayer2.gameObject.SetActive(true);
+            ImageForPlayer3.gameObject.SetActive(true);
+            ImageForPlayer4.gameObject.SetActive(true);
+            ImageForPlayer5.gameObject.SetActive(true);
+            ImageForPlayer6.gameObject.SetActive(true);
+            ImageForPlayer7.gameObject.SetActive(true);
+            ImageForPlayer8.gameObject.SetActive(true);
         }
 
         player1.GetComponent<FollowThePath>().moveAllowed = false;
