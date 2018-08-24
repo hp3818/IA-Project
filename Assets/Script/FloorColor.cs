@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FloorColor : MonoBehaviour {
 
@@ -11,11 +12,21 @@ public class FloorColor : MonoBehaviour {
         Cube31, Cube32, Cube33, Cube34, Cube35, Cube36, Cube37, Cube38, Cube39, Cube40,
         Cube41, Cube42, Cube43, Cube44, Cube45, Cube46;
 
+    public static GameObject ImageForPlayer1, ImageForPlayer2, ImageForPlayer3, ImageForPlayer4, ImageForPlayer5, ImageForPlayer6, ImageForPlayer7, ImageForPlayer8;
+
     public Color32 orange = new Color32(254, 161, 0, 1);
     public Color32 purple = new Color32(147, 112, 219, 255);
     public Color32 brown = new Color32(165, 42, 42, 255);
 
     void Start () {
+        ImageForPlayer1 = GameObject.Find("ImageForPlayer1");
+        ImageForPlayer2 = GameObject.Find("ImageForPlayer2");
+        ImageForPlayer3 = GameObject.Find("ImageForPlayer3");
+        ImageForPlayer4 = GameObject.Find("ImageForPlayer4");
+        ImageForPlayer5 = GameObject.Find("ImageForPlayer5");
+        ImageForPlayer6 = GameObject.Find("ImageForPlayer6");
+        ImageForPlayer7 = GameObject.Find("ImageForPlayer7");
+        ImageForPlayer8 = GameObject.Find("ImageForPlayer8");
         Cube1 = GameObject.Find("Cube1");
         Cube2 = GameObject.Find("Cube2");
         Cube3 = GameObject.Find("Cube3");
@@ -66,6 +77,94 @@ public class FloorColor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (DiceNumberTextScript.whosTurn == 1)
+        {
+            ImageForPlayer1.gameObject.GetComponent<Image>().color = Color.green;
+            ImageForPlayer2.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer3.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer4.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer5.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer6.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer7.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer8.gameObject.GetComponent<Image>().color = Color.yellow;
+        } else if (DiceNumberTextScript.whosTurn == 2)
+        {
+            ImageForPlayer1.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer2.gameObject.GetComponent<Image>().color = Color.green;
+            ImageForPlayer3.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer4.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer5.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer6.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer7.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer8.gameObject.GetComponent<Image>().color = Color.yellow;
+        }
+        else if (DiceNumberTextScript.whosTurn == 3)
+        {
+            ImageForPlayer1.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer2.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer3.gameObject.GetComponent<Image>().color = Color.green;
+            ImageForPlayer4.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer5.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer6.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer7.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer8.gameObject.GetComponent<Image>().color = Color.yellow;
+        }
+        else if (DiceNumberTextScript.whosTurn == 4)
+        {
+            ImageForPlayer1.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer2.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer3.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer4.gameObject.GetComponent<Image>().color = Color.green;
+            ImageForPlayer5.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer6.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer7.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer8.gameObject.GetComponent<Image>().color = Color.yellow;
+        }
+        else if (DiceNumberTextScript.whosTurn == 5)
+        {
+            ImageForPlayer1.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer2.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer3.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer4.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer5.gameObject.GetComponent<Image>().color = Color.green;
+            ImageForPlayer6.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer7.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer8.gameObject.GetComponent<Image>().color = Color.yellow;
+        }
+        else if (DiceNumberTextScript.whosTurn == 6)
+        {
+            ImageForPlayer1.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer2.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer3.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer4.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer5.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer6.gameObject.GetComponent<Image>().color = Color.green;
+            ImageForPlayer7.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer8.gameObject.GetComponent<Image>().color = Color.yellow;
+        }
+        else if (DiceNumberTextScript.whosTurn == 7)
+        {
+            ImageForPlayer1.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer2.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer3.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer4.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer5.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer6.gameObject.GetComponent<Image>().color = Color.yellow;
+            ImageForPlayer7.gameObject.GetComponent<Image>().color = Color.green;
+            ImageForPlayer8.gameObject.GetComponent<Image>().color = Color.yellow;
+        }
+        else if (DiceNumberTextScript.whosTurn == 8)
+        {
+            ImageForPlayer1.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            ImageForPlayer2.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            ImageForPlayer3.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            ImageForPlayer4.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            ImageForPlayer5.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            ImageForPlayer6.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            ImageForPlayer7.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            ImageForPlayer8.gameObject.GetComponent<Renderer>().material.color = Color.green;
+        }
 
         if (GameControl.own1 == 1)
             Cube1.gameObject.GetComponent<Renderer>().material.color = Color.red;
