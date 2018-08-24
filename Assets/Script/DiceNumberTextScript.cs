@@ -1196,12 +1196,14 @@ public class DiceNumberTextScript : MonoBehaviour
             {
                 GameControl.MovePlayer(4);
                 cam4();
+                Debug.Log(whosTurn);
                 if (player1.gameObject.activeSelf == false)
                     whosTurn = 1;
                 if (player2.gameObject.activeSelf == false)
                     whosTurn++;
                 if (player3.gameObject.activeSelf == false)
                     whosTurn++;
+                whosTurn = 0;
             }
         }
     }
@@ -1488,13 +1490,14 @@ public class DiceNumberTextScript : MonoBehaviour
                 GameControl.MovePlayer(5);
                 cam5();
                 if (player1.gameObject.activeSelf == false)
-                    whosTurn++;
+                    whosTurn = 1;
                 if (player2.gameObject.activeSelf == false)
                     whosTurn++;
                 if (player3.gameObject.activeSelf == false)
                     whosTurn++;
                 if (player4.gameObject.activeSelf == false)
                     whosTurn++;
+                whosTurn = 0;
             }
         }
 
@@ -1873,7 +1876,7 @@ public class DiceNumberTextScript : MonoBehaviour
                 GameControl.MovePlayer(6);
                 cam6();
                 if (player1.gameObject.activeSelf == false)
-                    whosTurn++;
+                    whosTurn = 1;
                 if (player2.gameObject.activeSelf == false)
                     whosTurn++;
                 if (player3.gameObject.activeSelf == false)
@@ -1882,6 +1885,7 @@ public class DiceNumberTextScript : MonoBehaviour
                     whosTurn++;
                 if (player5.gameObject.activeSelf == false)
                     whosTurn++;
+                whosTurn = 0;
             }
         }
 
@@ -2326,7 +2330,7 @@ public class DiceNumberTextScript : MonoBehaviour
                 GameControl.MovePlayer(7);
                 cam7();
                 if (player1.gameObject.activeSelf == false)
-                    whosTurn++;
+                    whosTurn = 1;
                 if (player2.gameObject.activeSelf == false)
                     whosTurn++;
                 if (player3.gameObject.activeSelf == false)
@@ -2337,6 +2341,7 @@ public class DiceNumberTextScript : MonoBehaviour
                     whosTurn++;
                 if (player6.gameObject.activeSelf == false)
                     whosTurn++;
+                whosTurn = 0;
             }
         }
     }
@@ -2848,7 +2853,7 @@ public class DiceNumberTextScript : MonoBehaviour
                 GameControl.MovePlayer(8);
                 cam8();
                 if (player1.gameObject.activeSelf == false)
-                    whosTurn++;
+                    whosTurn = 1;
                 if (player2.gameObject.activeSelf == false)
                     whosTurn++;
                 if (player3.gameObject.activeSelf == false)
@@ -2861,6 +2866,7 @@ public class DiceNumberTextScript : MonoBehaviour
                     whosTurn++;
                 if (player7.gameObject.activeSelf == false)
                     whosTurn++;
+                whosTurn = 0;
             }
         }
     }
