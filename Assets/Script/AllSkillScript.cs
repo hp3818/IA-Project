@@ -33,7 +33,7 @@ public class AllSkillScript : MonoBehaviour {
     public void choosePeople2ForJail()
     {
         player2.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
-        player1.GetComponent<FollowThePath>().wayPointIndex = 30;
+        player2.GetComponent<FollowThePath>().wayPointIndex = 30;
         GameControl.ImageForJailSkill.gameObject.SetActive(false);
         DiceNumberTextScript.jail2 = 1; 
         DropZone1.doing = 0;
@@ -41,14 +41,18 @@ public class AllSkillScript : MonoBehaviour {
 
     public void choosePeople3ForJail()
     {
-        player3.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+        
         if (GameControl.numberOfPlayer ==4 || GameControl.numberOfPlayer == 5)
         {
-            DiceNumberTextScript.jail4 = 1; 
+            player4.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+            player4.GetComponent<FollowThePath>().wayPointIndex = 30;
+            DiceNumberTextScript.jail4 = 1;
         }
         else
         {
-            DiceNumberTextScript.jail3 = 1; 
+            player3.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+            player3.GetComponent<FollowThePath>().wayPointIndex = 30;
+            DiceNumberTextScript.jail3 = 1;
         }
         GameControl.ImageForJailSkill.gameObject.SetActive(false);
         DropZone1.doing = 0;
@@ -59,11 +63,13 @@ public class AllSkillScript : MonoBehaviour {
         if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
         {
             player4.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+            player4.GetComponent<FollowThePath>().wayPointIndex = 30;
             DiceNumberTextScript.jail4 = 1; 
         }
         else
         {
             player3.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+            player3.GetComponent<FollowThePath>().wayPointIndex = 30;
             DiceNumberTextScript.jail3 = 1; 
         }
         GameControl.ImageForJailSkill.gameObject.SetActive(false);
@@ -75,11 +81,13 @@ public class AllSkillScript : MonoBehaviour {
         if (GameControl.numberOfPlayer == 4 || GameControl.numberOfPlayer == 5)
         {
             player4.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+            player4.GetComponent<FollowThePath>().wayPointIndex = 30;
             DiceNumberTextScript.jail4 = 1; 
         }
         else
         {
             player5.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+            player5.GetComponent<FollowThePath>().wayPointIndex = 30;
             DiceNumberTextScript.jail5 = 1; 
         }
         GameControl.ImageForJailSkill.gameObject.SetActive(false);
@@ -89,6 +97,7 @@ public class AllSkillScript : MonoBehaviour {
     public void choosePeople6ForJail()
     {
         player6.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+        player6.GetComponent<FollowThePath>().wayPointIndex = 30;
         GameControl.ImageForJailSkill.gameObject.SetActive(false);
         DiceNumberTextScript.jail6 = 1; 
         DropZone1.doing = 0;
@@ -97,6 +106,7 @@ public class AllSkillScript : MonoBehaviour {
     public void choosePeople7ForJail()
     {
         player7.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+        player7.GetComponent<FollowThePath>().wayPointIndex = 30;
         GameControl.ImageForJailSkill.gameObject.SetActive(false);
         DiceNumberTextScript.jail7 = 1; 
         DropZone1.doing = 0;
@@ -105,6 +115,7 @@ public class AllSkillScript : MonoBehaviour {
     public void choosePeople8ForJail()
     {
         player8.GetComponent<FollowThePath>().transform.position = waypoints[30].transform.position;
+        player8.GetComponent<FollowThePath>().wayPointIndex = 30;
         GameControl.ImageForJailSkill.gameObject.SetActive(false);
         DiceNumberTextScript.jail8 = 1;
         DropZone1.doing = 0;

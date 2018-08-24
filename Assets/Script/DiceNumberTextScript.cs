@@ -586,7 +586,6 @@ public class DiceNumberTextScript : MonoBehaviour
         {
             if (whosTurn == 1)
             {
-                Debug.Log("CA animation");
                 Card1.gameObject.SetActive(true);
                 Card2.gameObject.SetActive(true);
                 Card3.gameObject.SetActive(true);
@@ -619,15 +618,15 @@ public class DiceNumberTextScript : MonoBehaviour
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card3.gameObject.activeSelf == false)
-                {
-                    CA.PlayAnimation();
-                }
                 else if (Card4.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
-                
+                else if (Card5.gameObject.activeSelf == false)
+                {
+                    CA.PlayAnimation();
+                }
+
             }
             else if (whosTurn == 2)
             {
@@ -663,11 +662,11 @@ public class DiceNumberTextScript : MonoBehaviour
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card3.gameObject.activeSelf == false)
+                else if (Card4.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card4.gameObject.activeSelf == false)
+                else if (Card5.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
@@ -706,11 +705,11 @@ public class DiceNumberTextScript : MonoBehaviour
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card3.gameObject.activeSelf == false)
+                else if (Card4.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card4.gameObject.activeSelf == false)
+                else if (Card5.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
@@ -749,11 +748,11 @@ public class DiceNumberTextScript : MonoBehaviour
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card3.gameObject.activeSelf == false)
+                else if (Card4.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card4.gameObject.activeSelf == false)
+                else if (Card5.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
@@ -792,11 +791,11 @@ public class DiceNumberTextScript : MonoBehaviour
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card3.gameObject.activeSelf == false)
+                else if (Card4.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card4.gameObject.activeSelf == false)
+                else if (Card5.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
@@ -835,11 +834,11 @@ public class DiceNumberTextScript : MonoBehaviour
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card3.gameObject.activeSelf == false)
+                else if (Card4.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card4.gameObject.activeSelf == false)
+                else if (Card5.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
@@ -878,11 +877,11 @@ public class DiceNumberTextScript : MonoBehaviour
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card3.gameObject.activeSelf == false)
+                else if (Card4.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card4.gameObject.activeSelf == false)
+                else if (Card5.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
@@ -921,11 +920,11 @@ public class DiceNumberTextScript : MonoBehaviour
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card3.gameObject.activeSelf == false)
+                else if (Card4.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
-                else if (Card4.gameObject.activeSelf == false)
+                else if (Card5.gameObject.activeSelf == false)
                 {
                     CA.PlayAnimation();
                 }
@@ -1203,12 +1202,13 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void FivePeople()
     {
-        round++;
-        i++;
-        j++;
-        RoundText.text = round.ToString();
+        
         if (whosTurn == 1)
         {
+            round++;
+            i++;
+            j++;
+            RoundText.text = round.ToString();
             if (jail1 == 1)
             {
                 if (DiceNumberTextScript.dice1Number == 6)
@@ -1493,12 +1493,13 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void SixPeople()
     {
-        round++;
-        i++;
-        j++;
-        RoundText.text = round.ToString();
+        
         if (whosTurn == 1)
         {
+            round++;
+            i++;
+            j++;
+            RoundText.text = round.ToString();
             if (jail1 == 1)
             {
                 if (DiceNumberTextScript.dice1Number == 6)
@@ -1873,12 +1874,13 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void SevenPeople()
     {
-        round++;
-        i++;
-        j++;
-        RoundText.text = round.ToString();
+        
         if (whosTurn == 1)
         {
+            round++;
+            i++;
+            j++;
+            RoundText.text = round.ToString();
             if (jail1 == 1)
             {
                 if (DiceNumberTextScript.dice1Number == 6)
@@ -2320,12 +2322,13 @@ public class DiceNumberTextScript : MonoBehaviour
 
     public void EightPeople()
     {
-        round++;
-        i++;
-        j++;
-        RoundText.text = round.ToString();
+        
         if (whosTurn == 1)
         {
+            round++;
+            i++;
+            j++;
+            RoundText.text = round.ToString();
             if (jail1 == 1)
             {
                 if (DiceNumberTextScript.dice1Number == 6)
