@@ -7,7 +7,7 @@ public class DiceCheckZoneScript2 : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		diceVelocity = DiceScript2.diceVelocity;
-	}
+	}/**/
 
 	void OnTriggerStay(Collider col)
 	{
