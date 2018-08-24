@@ -13,7 +13,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public Text JailTurn; public Text RoundText; public static int round = 0; public static float i = 0; public static float j = 0;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
-    public static GameObject ImageForBuyOtherHouse;
+    public static GameObject ImageForBuyOtherHouse, ImageForMidMainSkill;
     public Button dropButton;
     public static GameObject ImageForJail;
     public static GameObject ImageForHospital;
@@ -56,11 +56,14 @@ public class DiceNumberTextScript : MonoBehaviour
     public static int Redrop = 0;
     public static GameObject ImageForGameOver;
     public Text winner;
-
+    public Text whatYouEarn;
     public CardAnimation CA;
 
     public void Start()
     {
+        ImageForMidMainSkill = GameObject.Find("ImageForMidMainSkill");
+        ImageForMidMainSkill.gameObject.SetActive(false);
+
         ImageForGameOver = GameObject.Find("ImageForGameOver");
         ImageForGameOver.gameObject.SetActive(false);
         Card1 = GameObject.Find("Card1");
@@ -1063,12 +1066,15 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         HouseSelection.sum2 += 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你賺了三萬";
                     }
                     else if (dice1Number <= 3)
                     {
                         HouseSelection.sum2 -= 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你蝕了三萬";
                     }
+                    StartCoroutine(TemporarilyDeactivate5(2));
                     Skill.luckydraw = 0;
                     whosTurn--;
                     dropButton.interactable = false;
@@ -1301,12 +1307,15 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         HouseSelection.sum2 += 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你賺了三萬";
                     }
                     else if (dice1Number <= 3)
                     {
                         HouseSelection.sum2 -= 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你蝕了三萬";
                     }
+                    StartCoroutine(TemporarilyDeactivate5(2));
                     Skill.luckydraw = 0;
                     whosTurn--;
                     dropButton.interactable = false;
@@ -1594,12 +1603,15 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         HouseSelection.sum2 += 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你賺了三萬";
                     }
                     else if (dice1Number <= 3)
                     {
                         HouseSelection.sum2 -= 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你蝕了三萬";
                     }
+                    StartCoroutine(TemporarilyDeactivate5(2));
                     Skill.luckydraw = 0;
                     whosTurn--;
                     dropButton.interactable = false;
@@ -1674,12 +1686,15 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         HouseSelection.sum3 += 30000;
                         player3Cost.text = HouseSelection.sum3.ToString();
+                        whatYouEarn.text = "你賺了三萬";
                     }
                     else if (dice1Number <= 3)
                     {
                         HouseSelection.sum3 -= 30000;
                         player3Cost.text = HouseSelection.sum3.ToString();
+                        whatYouEarn.text = "你蝕了三萬";
                     }
+                    StartCoroutine(TemporarilyDeactivate5(2));
                     Skill.luckydraw = 0;
                     whosTurn--;
                     dropButton.interactable = false;
@@ -1978,13 +1993,16 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         HouseSelection.sum2 += 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你賺了三萬";
                     }
                     else if (dice1Number <= 3)
                     {
                         HouseSelection.sum2 -= 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你蝕了三萬";
                     }
                     Skill.luckydraw = 0;
+                    StartCoroutine(TemporarilyDeactivate5(2));
                     whosTurn--;
                     dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
@@ -2060,13 +2078,16 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         HouseSelection.sum3 += 30000;
                         player3Cost.text = HouseSelection.sum3.ToString();
+                        whatYouEarn.text = "你賺了三萬";
                     }
                     else if (dice1Number <= 3)
                     {
                         HouseSelection.sum3 -= 30000;
                         player3Cost.text = HouseSelection.sum3.ToString();
+                        whatYouEarn.text = "你蝕了三萬";
                     }
                     Skill.luckydraw = 0;
+                    StartCoroutine(TemporarilyDeactivate5(2));
                     whosTurn--;
                     dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
@@ -2427,13 +2448,16 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         HouseSelection.sum2 += 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你賺了三萬";
                     }
                     else if (dice1Number <= 3)
                     {
                         HouseSelection.sum2 -= 30000;
                         player2Cost.text = HouseSelection.sum2.ToString();
+                        whatYouEarn.text = "你蝕了三萬";
                     }
                     Skill.luckydraw = 0;
+                    StartCoroutine(TemporarilyDeactivate5(2));
                     whosTurn--;
                     dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
@@ -2511,13 +2535,16 @@ public class DiceNumberTextScript : MonoBehaviour
                     {
                         HouseSelection.sum3 += 30000;
                         player3Cost.text = HouseSelection.sum3.ToString();
+                        whatYouEarn.text = "你賺了三萬";
                     }
                     else if (dice1Number <= 3)
                     {
                         HouseSelection.sum3 -= 30000;
                         player3Cost.text = HouseSelection.sum3.ToString();
+                        whatYouEarn.text = "你蝕了三萬";
                     }
                     Skill.luckydraw = 0;
+                    StartCoroutine(TemporarilyDeactivate5(2));
                     whosTurn--;
                     dropButton.interactable = false;
                     GameControl.ImageForMid.gameObject.SetActive(true);
@@ -3163,6 +3190,12 @@ public class DiceNumberTextScript : MonoBehaviour
             challengeRule = 0;
             challengeRuleRound = 2;
         }
+    }
+
+    public IEnumerator TemporarilyDeactivate5(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        ImageForMidMainSkill.gameObject.SetActive(true);
     }
 
 }
