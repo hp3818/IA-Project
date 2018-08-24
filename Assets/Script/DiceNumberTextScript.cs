@@ -3196,6 +3196,7 @@ public class DiceNumberTextScript : MonoBehaviour
             challengeRule = 0;
             challengeRuleRound = 2;
         }
+        yield return null;
     }
 
     public IEnumerator TemporarilyDeactivate5(float duration)
