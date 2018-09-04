@@ -2870,7 +2870,7 @@ public class DiceNumberTextScript : MonoBehaviour
             }
         }
     }
-
+    /*
     public void camMain()
     {
         camera[0].enabled = true; //
@@ -2883,7 +2883,7 @@ public class DiceNumberTextScript : MonoBehaviour
         camera[7].enabled = false;
         camera[8].enabled = false;
     }
-
+    */
     public void cam1()
     {
         camera[0].enabled = false;
@@ -3202,7 +3202,7 @@ public class DiceNumberTextScript : MonoBehaviour
     public IEnumerator TemporarilyDeactivate5(float duration)
     {
         yield return new WaitForSeconds(duration);
-        ImageForMidMainSkill.gameObject.SetActive(true);
+        ImageForMidMainSkill.gameObject.SetActive(false);
     }
 
 }

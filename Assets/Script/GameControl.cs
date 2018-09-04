@@ -35,7 +35,7 @@ public class GameControl : MonoBehaviour {
     public static int getRichBuilding = 0, getMidAndRichBuilding = 0;
     public static int whoTurn;
     public Button dropButton;
-    public static int numberOfPlayer = 4;
+    public static int numberOfPlayer = 4 ;
     public Camera[] camera;
     public static GameObject ImageForMid, ImageForRich;
     public static GameObject ImageForBuyHouse;
@@ -18711,6 +18711,118 @@ public class GameControl : MonoBehaviour {
         camera[6].enabled = false;
         camera[7].enabled = false;
         camera[8].enabled = false;
+    }
+
+        public void cam1()
+    {
+        camera[0].enabled = false;
+        camera[1].enabled = true; //
+        camera[2].enabled = false;
+        camera[3].enabled = false;
+        camera[4].enabled = false;
+        camera[5].enabled = false;
+        camera[6].enabled = false;
+        camera[7].enabled = false;
+        camera[8].enabled = false;
+        FollowThePath.whosTurn = 1;
+    }
+
+    public void cam2()
+    {
+        camera[0].enabled = false;
+        camera[1].enabled = false;
+        camera[2].enabled = true; //
+        camera[3].enabled = false;
+        camera[4].enabled = false;
+        camera[5].enabled = false;
+        camera[6].enabled = false;
+        camera[7].enabled = false;
+        camera[8].enabled = false;
+        FollowThePath.whosTurn = 2;
+    }
+
+    public void cam3()
+    {
+        camera[0].enabled = false;
+        camera[1].enabled = false;
+        camera[2].enabled = false;
+        camera[3].enabled = true; //
+        camera[4].enabled = false;
+        camera[5].enabled = false;
+        camera[6].enabled = false;
+        camera[7].enabled = false;
+        camera[8].enabled = false;
+        FollowThePath.whosTurn = 3;
+    }
+
+    public void cam4()
+    {
+        camera[0].enabled = false;
+        camera[1].enabled = false;
+        camera[2].enabled = false;
+        camera[3].enabled = false;
+        camera[4].enabled = true; // 
+        camera[5].enabled = false;
+        camera[6].enabled = false;
+        camera[7].enabled = false;
+        camera[8].enabled = false;
+        FollowThePath.whosTurn = 4;
+    }
+
+    public void cam5()
+    {
+        camera[0].enabled = false;
+        camera[1].enabled = false;
+        camera[2].enabled = false;
+        camera[3].enabled = false;
+        camera[4].enabled = false;
+        camera[5].enabled = true; //
+        camera[6].enabled = false;
+        camera[7].enabled = false;
+        camera[8].enabled = false;
+        FollowThePath.whosTurn = 5;
+    }
+
+    public void cam6()
+    {
+        camera[0].enabled = false;
+        camera[1].enabled = false;
+        camera[2].enabled = false;
+        camera[3].enabled = false;
+        camera[4].enabled = false;
+        camera[5].enabled = false;
+        camera[6].enabled = true; //
+        camera[7].enabled = false;
+        camera[8].enabled = false;
+        FollowThePath.whosTurn = 6;
+    }
+
+    public void cam7()
+    {
+        camera[0].enabled = false;
+        camera[1].enabled = false;
+        camera[2].enabled = false;
+        camera[3].enabled = false;
+        camera[4].enabled = false;
+        camera[5].enabled = false;
+        camera[6].enabled = false;
+        camera[7].enabled = true; //;
+        camera[8].enabled = false;
+        FollowThePath.whosTurn = 7;
+    }
+
+    public void cam8()
+    {
+        camera[0].enabled = false;
+        camera[1].enabled = false;
+        camera[2].enabled = false;
+        camera[3].enabled = false;
+        camera[4].enabled = false;
+        camera[5].enabled = false;
+        camera[6].enabled = false;
+        camera[7].enabled = false;
+        camera[8].enabled = true; //
+        FollowThePath.whosTurn = 8;
     }
 
 	public void ReduceSum(int player, int x, int geter)
